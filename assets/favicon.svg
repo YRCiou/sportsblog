@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1e3a8a"/>
+      <stop offset="100%" stop-color="#0c1630"/>
+    </linearGradient>
+  </defs>
+  <!-- 圓角背景 -->
+  <rect width="64" height="64" rx="14" fill="url(#bg)"/>
+  <!-- 頂部藍色細線裝飾 -->
+  <rect x="11" y="9" width="42" height="2.5" rx="1.25" fill="#60a5fa" opacity="0.85"/>
+
+  <!-- Y：兩條斜線 + 垂直莖 -->
+  <line x1="10" y1="20" x2="22" y2="39" stroke="#e2e8f0" stroke-width="4" stroke-linecap="round"/>
+  <line x1="33" y1="20" x2="22" y2="39" stroke="#e2e8f0" stroke-width="4" stroke-linecap="round"/>
+  <line x1="22" y1="39" x2="22" y2="54" stroke="#e2e8f0" stroke-width="4" stroke-linecap="round"/>
+
+  <!-- R：脊柱 + 弧形凸塊 + 斜腿 -->
+  <line x1="37" y1="20" x2="37" y2="54" stroke="#e2e8f0" stroke-width="4" stroke-linecap="round"/>
+  <path d="M37,20 C52,20 54,32 37,39" stroke="#e2e8f0" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <line x1="42" y1="39" x2="55" y2="54" stroke="#e2e8f0" stroke-width="4" stroke-linecap="round"/>
+
+  <!-- 藍色圓點裝飾 -->
+  <circle cx="55" cy="57" r="3.2" fill="#60a5fa"/>
+</svg>

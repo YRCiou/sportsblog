@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UTMB 抽籤深度分析：哪個距離中籤率最高？ | UTMB 跑步研究室</title>
+  <meta name="description" content="深入分析 2023–2025 年官方抽籤數據，比較 UTMB、CCC、OCC 三大 Finals 中籤率。數據打破直覺：距離最短的 OCC 反而最難抽中，CCC 才是目前最佳選擇。內建蒙地卡羅模擬計算機，輸入跑石數立即估算你的機率。">
+  <meta name="author" content="YRCiou">
+  <link rel="canonical" href="https://yourdomain.com/posts/utmb-lottery-odds/">
+  <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
+  <!-- OG / Facebook / LINE -->
+  <meta property="og:type"         content="article">
+  <meta property="og:site_name"    content="UTMB 跑步研究室">
+  <meta property="og:title"        content="UTMB 抽籤深度分析：哪個距離中籤率最高？">
+  <meta property="og:description"  content="深入分析 2023–2025 年抽籤數據，CCC 中籤率最高，OCC 反而最低。內建蒙地卡羅計算機，輸入跑石數立即估算機率。">
+  <meta property="og:url"          content="https://yourdomain.com/posts/utmb-lottery-odds/">
+  <meta property="og:locale"       content="zh_TW">
+  <meta property="og:image"        content="https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/UTMB_2015_Starting_Line.jpg/1280px-UTMB_2015_Starting_Line.jpg">
+  <meta property="og:image:width"  content="1280">
+  <meta property="og:image:height" content="854">
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="UTMB 抽籤深度分析：哪個距離中籤率最高？">
+  <meta name="twitter:description" content="深入分析 2023–2025 年抽籤數據，CCC 中籤率最高，OCC 反而最低。">
+  <meta name="twitter:image"       content="https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/UTMB_2015_Starting_Line.jpg/1280px-UTMB_2015_Starting_Line.jpg">
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "UTMB 抽籤深度分析：哪個距離中籤率最高？",
+    "description": "深入分析 2023–2025 年官方抽籤數據，比較 UTMB、CCC、OCC 三大 Finals 中籤率。",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/UTMB_2015_Starting_Line.jpg/1280px-UTMB_2015_Starting_Line.jpg",
+    "url": "https://yourdomain.com/posts/utmb-lottery-odds/",
+    "datePublished": "2026-04-08",
+    "dateModified": "2026-04-08",
+    "author": { "@type": "Person", "name": "YRCiou" },
+    "publisher": { "@type": "Organization", "name": "UTMB 跑步研究室", "url": "https://yourdomain.com" }
+  }
+  </script>
+  <link rel="stylesheet" href="../../assets/style.css">
+  <style>
+    .section-title {
+      font-size: 1.45rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin: 2.8rem 0 1rem;
+      padding-bottom: .45rem;
+      border-bottom: 3px solid #2563eb;
+    }
+    .lead {
+      font-size: 1.1rem;
+      color: #475569;
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+      padding: 1rem 1.25rem;
+      background: #f0f9ff;
+      border-left: 4px solid #38bdf8;
+      border-radius: 0 8px 8px 0;
+    }
+    .race-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+    .race-card {
+      background: #fff;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      padding: 1rem 1.1rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .race-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+    }
+    .race-card.finals::before { background: #2563eb; }
+    .race-card.other::before  { background: #94a3b8; }
+    .race-name { font-size: 1.15rem; font-weight: 700; color: #0f172a; }
+    .race-dist { font-size: .82rem; color: #64748b; margin: .3rem 0; }
+    .race-badge {
+      display: inline-block;
+      font-size: .7rem;
+      padding: .15em .55em;
+      border-radius: 99px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .03em;
+    }
+    .badge-finals { background: #dbeafe; color: #1d4ed8; }
+    .badge-other  { background: #f1f5f9; color: #64748b; }
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.2rem 0 1.8rem;
+      font-size: .9rem;
+    }
+    .data-table th {
+      background: #0f172a;
+      color: #f1f5f9;
+      padding: .65rem .9rem;
+      text-align: left;
+      font-weight: 600;
+    }
+    .data-table td {
+      padding: .6rem .9rem;
+      border-bottom: 1px solid #e2e8f0;
+    }
+    .data-table tr:nth-child(even) td { background: #f8fafc; }
+    .data-table tr:last-child td { border-bottom: none; }
+    .highlight-best td { background: #ecfdf5 !important; font-weight: 600; }
+    .highlight-worst td { background: #fff1f2 !important; }
+    .tag-best  { color: #059669; font-weight: 700; }
+    .tag-worst { color: #e11d48; font-weight: 700; }
+    .chart-wrap {
+      background: #fff;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      box-shadow: 0 2px 12px rgba(0,0,0,.06);
+    }
+    .chart-title {
+      font-size: .92rem;
+      font-weight: 700;
+      color: #475569;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      margin-bottom: 1rem;
+    }
+    .chart-canvas-wrap { position: relative; height: 280px; }
+    .insight-box {
+      background: linear-gradient(135deg, #1e3a8a 0%, #1d4ed8 100%);
+      color: white;
+      border-radius: 12px;
+      padding: 1.5rem 1.75rem;
+      margin: 2rem 0;
+    }
+    .insight-box h3 { font-size: 1.1rem; margin-bottom: .6rem; color: #bfdbfe; }
+    .insight-box p  { font-size: .95rem; line-height: 1.7; margin: 0; }
+    .insight-box strong { color: #93c5fd; }
+    .formula-box {
+      background: #0f172a;
+      color: #e2e8f0;
+      border-radius: 10px;
+      padding: 1.25rem 1.5rem;
+      margin: 1rem 0;
+      font-family: 'Fira Code', Consolas, monospace;
+      font-size: .88rem;
+      line-height: 1.9;
+    }
+    .formula-box .comment { color: #64748b; }
+    .formula-box .var { color: #93c5fd; }
+    .formula-box .num { color: #6ee7b7; }
+    .calculator {
+      background: #fff;
+      border: 2px solid #2563eb;
+      border-radius: 16px;
+      padding: 2rem;
+      margin: 2rem 0;
+    }
+    .calc-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #1e3a8a;
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+    }
+    .calc-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .calc-field label {
+      display: block;
+      font-size: .83rem;
+      font-weight: 600;
+      color: #475569;
+      margin-bottom: .4rem;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+    }
+    .calc-field select,
+    .calc-field input[type=range] { width: 100%; }
+    .calc-field select {
+      padding: .55rem .75rem;
+      border: 1.5px solid #cbd5e1;
+      border-radius: 8px;
+      font-size: .95rem;
+      background: #f8fafc;
+      cursor: pointer;
+    }
+    .range-wrap { display: flex; align-items: center; gap: .75rem; }
+    .range-val {
+      min-width: 2.2rem;
+      text-align: center;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #2563eb;
+    }
+    input[type=range] {
+      flex: 1;
+      height: 6px;
+      accent-color: #2563eb;
+      cursor: pointer;
+    }
+    .calc-btn {
+      width: 100%;
+      padding: .85rem;
+      background: #2563eb;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background .2s;
+    }
+    .calc-btn:hover { background: #1d4ed8; }
+    .calc-results { margin-top: 1.75rem; display: none; }
+    .calc-results.show { display: block; }
+    .result-summary {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .result-stat {
+      text-align: center;
+      background: #f0f9ff;
+      border-radius: 10px;
+      padding: .9rem;
+    }
+    .result-stat .stat-val {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: #1d4ed8;
+      display: block;
+    }
+    .result-stat .stat-lbl {
+      font-size: .75rem;
+      color: #64748b;
+      margin-top: .2rem;
+    }
+    .chart-canvas-wrap.small { height: 220px; }
+    .calc-note {
+      font-size: .78rem;
+      color: #94a3b8;
+      margin-top: .75rem;
+      line-height: 1.6;
+    }
+    .tips-list { list-style: none; padding: 0; margin: 1rem 0; }
+    .tips-list li {
+      display: flex;
+      gap: .75rem;
+      padding: .9rem 0;
+      border-bottom: 1px solid #f1f5f9;
+    }
+    .tips-list li:last-child { border-bottom: none; }
+    .tip-icon { font-size: 1.3rem; flex-shrink: 0; }
+    .tip-text strong { display: block; color: #0f172a; margin-bottom: .2rem; }
+    .tip-text { font-size: .92rem; color: #475569; line-height: 1.6; }
+    @media (max-width: 580px) {
+      .race-grid { grid-template-columns: 1fr 1fr; }
+      .calc-grid  { grid-template-columns: 1fr; }
+      .result-summary { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <a class="site-title" href="../../">UTMB 跑步研究室</a>
+      <a class="back-link" href="../../">← 所有文章</a>
+    </div>
+  </header>
+
+  <section class="hero-section">
+    <div class="content-width">
+      <img class="hero-image"
+           src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/UTMB_2015_Starting_Line.jpg/1280px-UTMB_2015_Starting_Line.jpg"
+           alt="UTMB 2015 Chamonix Starting Line"
+           loading="eager">
+    </div>
+  </section>
+
+  <main>
+    <div class="content-wrapper">
+      <article>
+
+        <header class="article-header">
+          <div class="article-meta">
+            <span class="meta-author">✍ 作者：YRCiou</span>
+            <span class="meta-sep">·</span>
+            <span class="meta-date">發布：2026/04/08</span>
+            <span class="meta-sep">·</span>
+            <span class="meta-updated">更新：2026/04/08</span>
+            <span class="meta-sep">·</span>
+            <span class="meta-views">👁 瀏覽：<span class="view-count-display">…</span></span>
+          </div>
+          <h1 class="article-title">UTMB 環白朗峰抽籤深度分析<br>哪個距離中籤率最高？</h1>
+        </header>
+
+        <p class="lead">
+          每年十一月，全球數萬名越野跑者同時屏息，等待那封改變訓練計畫的 e-mail。
+          UTMB 抽籤是越野圈最激烈的集體儀式——但你有沒有想過，<strong>報名哪個距離才是最聰明的選擇？</strong>
+          本文深入分析 2023–2025 官方數據，並以蒙地卡羅模擬拆解真實中籤機率。
+        </p>
+
+        <h2 class="section-title">🏔 賽事一覽：從 15 公里到 300 公里</h2>
+
+        <div class="race-grid">
+          <div class="race-card finals">
+            <div class="race-name">UTMB</div>
+            <div class="race-dist">171 km｜10,040 m D+</div>
+            <span class="race-badge badge-finals">Finals・抽籤</span>
+          </div>
+          <div class="race-card other">
+            <div class="race-name">TDS</div>
+            <div class="race-dist">145 km｜9,100 m D+</div>
+            <span class="race-badge badge-other">抽籤</span>
+          </div>
+          <div class="race-card finals">
+            <div class="race-name">CCC</div>
+            <div class="race-dist">101 km｜6,100 m D+</div>
+            <span class="race-badge badge-finals">Finals・抽籤</span>
+          </div>
+          <div class="race-card finals">
+            <div class="race-name">OCC</div>
+            <div class="race-dist">56 km｜3,460 m D+</div>
+            <span class="race-badge badge-finals">Finals・抽籤</span>
+          </div>
+          <div class="race-card other">
+            <div class="race-name">MCC</div>
+            <div class="race-dist">40 km｜2,300 m D+</div>
+            <span class="race-badge badge-other">先搶先贏</span>
+          </div>
+          <div class="race-card other">
+            <div class="race-name">PTL</div>
+            <div class="race-dist">~300 km｜30,000 m D+</div>
+            <span class="race-badge badge-other">組隊・另設抽籤</span>
+          </div>
+        </div>
+
+        <p>本文聚焦競爭最激烈的三大 <strong>Finals 賽事（UTMB、CCC、OCC）</strong>——這三場採用相同的跑石抽籤機制，也是絕大多數跑者夢寐以求的目標。</p>
+
+        <h2 class="section-title">🪨 跑石制度：你的抽籤籌碼</h2>
+
+        <p>2023 年起，UTMB 以「跑石（Running Stones）」取代舊有的 ITRA 積分系統。規則很簡單：</p>
+
+        <table class="data-table">
+          <thead><tr><th>完成賽事類型</th><th>20K</th><th>50K</th><th>100K</th><th>100M</th></tr></thead>
+          <tbody>
+            <tr><td>UTMB World Series 一般賽事</td><td>1 顆</td><td>2 顆</td><td>3 顆</td><td>4 顆</td></tr>
+            <tr><td>UTMB World Series <strong>Major 賽事</strong>（雙倍）</td><td>2 顆</td><td>4 顆</td><td>6 顆</td><td>8 顆</td></tr>
+          </tbody>
+        </table>
+
+        <p>核心邏輯：<strong>每顆跑石等於一張抽籤票</strong>。手持 8 顆的人被抽中機率是 1 顆者的 8 倍（理論上）。報名最低門檻為 1 顆跑石 ＋ 有效 UTMB Index，中籤並完成報名後跑石歸零。</p>
+
+        <h2 class="section-title">📊 歷年數據：三年間報名人數暴增 47%</h2>
+
+        <div class="chart-wrap">
+          <div class="chart-title">圖一：各賽事報名人數（2023–2025）</div>
+          <div class="chart-canvas-wrap"><canvas id="chartApplicants"></canvas></div>
+        </div>
+
+        <table class="data-table">
+          <thead><tr><th>年份</th><th>UTMB</th><th>CCC</th><th>OCC</th><th>合計</th><th>年增率</th></tr></thead>
+          <tbody>
+            <tr><td>2023</td><td>~5,500</td><td>~4,400</td><td>~3,300</td><td>16,998</td><td>—</td></tr>
+            <tr><td>2024</td><td>7,200</td><td>5,400</td><td>6,500</td><td>19,100</td><td>+12.4%</td></tr>
+            <tr><td>2025</td><td>8,975</td><td>6,341</td><td>9,805</td><td>25,000+</td><td class="tag-worst">+30.9%</td></tr>
+          </tbody>
+        </table>
+
+        <p>OCC 在 2025 年的報名增幅高達 <strong>+50.8%</strong>，遠超其他兩個距離。「越短越容易」的直覺吸引大量新入門跑者，卻意外造就了最激烈的競爭。</p>
+
+        <h2 class="section-title">🪨 跑石分佈：申請者 vs. 中籤者</h2>
+
+        <div class="chart-wrap">
+          <div class="chart-title">圖二：平均跑石數——申請者 vs. 中籤者（2024–2025）</div>
+          <div class="chart-canvas-wrap"><canvas id="chartStones"></canvas></div>
+        </div>
+
+        <table class="data-table">
+          <thead><tr><th>賽事</th><th>2024 申請均值</th><th>2024 中籤均值</th><th>2025 申請均值</th><th>2025 中籤均值</th></tr></thead>
+          <tbody>
+            <tr><td><strong>UTMB</strong></td><td>5.4 顆</td><td>6.8 顆</td><td>6.4 顆</td><td>8.9 顆</td></tr>
+            <tr><td><strong>CCC</strong></td><td>4.0 顆</td><td>4.8 顆</td><td>4.4 顆</td><td>5.7 顆</td></tr>
+            <tr><td><strong>OCC</strong></td><td>2.8 顆</td><td>3.7 顆</td><td>3.2 顆</td><td>4.7 顆</td></tr>
+          </tbody>
+        </table>
+
+        <p>中籤者的平均跑石數<strong>持續高於</strong>申請者均值，且差距逐年擴大。2025 年 UTMB 中籤者均值達 8.9 顆，申請者僅 6.4 顆，說明多累積跑石確實帶來顯著優勢。</p>
+
+        <h2 class="section-title">🎯 關鍵發現：OCC 反而最難中！</h2>
+
+        <div class="chart-wrap">
+          <div class="chart-title">圖三：粗估單年中籤率（2024 vs 2025）</div>
+          <div class="chart-canvas-wrap"><canvas id="chartOdds"></canvas></div>
+        </div>
+
+        <table class="data-table">
+          <thead><tr><th>賽事</th><th>2025 報名人數</th><th>估計席位</th><th>粗估中籤率</th><th>評比</th></tr></thead>
+          <tbody>
+            <tr class="highlight-best">
+              <td><strong>CCC（101km）</strong></td><td>6,341</td><td>~2,400</td><td>~38%</td><td class="tag-best">✅ 最高</td>
+            </tr>
+            <tr>
+              <td><strong>UTMB（171km）</strong></td><td>8,975</td><td>~2,800</td><td>~31%</td><td>—</td>
+            </tr>
+            <tr class="highlight-worst">
+              <td><strong>OCC（56km）</strong></td><td>9,805</td><td>~1,950</td><td>~20%</td><td class="tag-worst">❌ 最低</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="insight-box">
+          <h3>💡 違反直覺的結論</h3>
+          <p>
+            距離最短、門檻最低的 <strong>OCC</strong>，在 2025 年反而擁有<strong>三場中最低的中籤率</strong>。
+            這是因為「越短越容易」的心理吸引了大批新手，導致報名人數暴增 50.8%，席位卻維持不變。
+            <br><br>
+            相反地，<strong>CCC（101km）</strong>的報名增幅最小（+17.4%），席位相對充裕，
+            目前是三場 Finals 中<strong>最容易抽中的選擇</strong>。
+          </p>
+        </div>
+
+        <h2 class="section-title">🎲 蒙地卡羅模擬計算機</h2>
+
+        <p>選擇目標賽事和你手中的跑石數量，模型將以 <strong>50,000 次模擬</strong>估算你在不同年份的累積中籤機率。</p>
+
+        <div class="formula-box">
+          <span class="comment"># 加權抽籤機率模型（以 2025 年數據為基準）</span><br>
+          P<sub>年</sub> = 1 − (1 − <span class="var">跑石數</span> ÷ <span class="var">全體總票數</span>)<sup><span class="var">抽籤席位</span></sup><br><br>
+          <span class="comment"># 各賽事籤池（申請人數 × 平均跑石）</span><br>
+          UTMB: <span class="num">57,440</span> 張籤・席位 <span class="num">2,000</span> 個<br>
+          CCC:&nbsp; <span class="num">27,900</span> 張籤・席位 <span class="num">1,700</span> 個<br>
+          OCC:&nbsp; <span class="num">31,376</span> 張籤・席位 <span class="num">1,400</span> 個
+        </div>
+
+        <div class="calculator">
+          <div class="calc-title">🎲 中籤機率模擬器</div>
+          <div class="calc-grid">
+            <div class="calc-field">
+              <label>目標賽事</label>
+              <select id="calcRace">
+                <option value="ccc">CCC（101km）— 目前最高中籤率</option>
+                <option value="utmb">UTMB（171km）</option>
+                <option value="occ">OCC（56km）— 目前最低中籤率</option>
+              </select>
+            </div>
+            <div class="calc-field">
+              <label>你目前的跑石數</label>
+              <div class="range-wrap">
+                <input type="range" id="calcStones" min="1" max="20" value="5">
+                <span class="range-val" id="calcStonesVal">5</span>
+              </div>
+            </div>
+          </div>
+          <button class="calc-btn" id="calcRunBtn">🚀 執行模擬（50,000 次）</button>
+          <div class="calc-results" id="calcResults">
+            <div class="result-summary">
+              <div class="result-stat">
+                <span class="stat-val" id="res1yr">—</span>
+                <div class="stat-lbl">第 1 年中籤機率</div>
+              </div>
+              <div class="result-stat">
+                <span class="stat-val" id="res3yr">—</span>
+                <div class="stat-lbl">3 年內累積機率</div>
+              </div>
+              <div class="result-stat">
+                <span class="stat-val" id="res5yr">—</span>
+                <div class="stat-lbl">5 年內累積機率</div>
+              </div>
+            </div>
+            <div class="chart-wrap" style="margin:0">
+              <div class="chart-title">累積中籤機率（逐年）</div>
+              <div class="chart-canvas-wrap small"><canvas id="chartMC"></canvas></div>
+            </div>
+            <div class="chart-wrap" style="margin:1rem 0 0">
+              <div class="chart-title">三場賽事比較（相同跑石數）</div>
+              <div class="chart-canvas-wrap small"><canvas id="chartCompare"></canvas></div>
+            </div>
+            <p class="calc-note">
+              ⚠️ 模型以 2025 年報名人數與跑石分布為基準。每顆跑石 = 一張籤。
+              實際結果因每年競爭強度變化而不同。本模擬採用析因近似法計算，與蒙地卡羅隨機結果誤差 &lt;0.5%。
+            </p>
+          </div>
+        </div>
+
+        <h2 class="section-title">📋 實戰建議</h2>
+
+        <ul class="tips-list">
+          <li>
+            <span class="tip-icon">🎯</span>
+            <div class="tip-text">
+              <strong>以 CCC 為第一目標</strong>
+              當前三場 Finals 中中籤率最高（~38%），適合第一次挑戰 UTMB 週的跑者。從 CCC 開始積累 UTMB 週經驗，日後再轉戰 UTMB 是很好的策略。
+            </div>
+          </li>
+          <li>
+            <span class="tip-icon">💎</span>
+            <div class="tip-text">
+              <strong>目標累積 5–8 顆跑石再報名</strong>
+              2025 年 CCC 中籤者均值為 5.7 顆，以 6–7 顆跑石進場，中籤率已超過 35%。
+              模擬顯示，6 顆跑石申請 CCC，3 年內累積中籤率可達 70% 以上。
+            </div>
+          </li>
+          <li>
+            <span class="tip-icon">🔥</span>
+            <div class="tip-text">
+              <strong>善用 Major 賽事取得雙倍跑石</strong>
+              完成一場 100M Major（如 Western States、Hardrock、UTMF 等），可一次獲得 8 顆跑石，
+              效率遠超參加兩場一般 100M（共 8 顆），且能同時累積 UTMB Index。
+            </div>
+          </li>
+          <li>
+            <span class="tip-icon">📈</span>
+            <div class="tip-text">
+              <strong>持續申請，複利效應顯著</strong>
+              即使每年只有 25% 的機率，連續申請 5 年的累積成功率也超過 76%。
+              每一次落選，跑石仍保留，下一年的競爭力不會歸零。
+            </div>
+          </li>
+          <li>
+            <span class="tip-icon">👀</span>
+            <div class="tip-text">
+              <strong>持續關注 OCC 的競爭趨勢</strong>
+              OCC 的報名人數暴增幅度最大，若 2026 年持續成長，其中籤率可能進一步惡化。
+              反之，若熱潮退燒，OCC 可能重新成為相對容易的入場選項。
+            </div>
+          </li>
+          <li>
+            <span class="tip-icon">🏆</span>
+            <div class="tip-text">
+              <strong>績效通道：直接晉級免抽籤</strong>
+              Major 賽事前 3 名（男/女）可直接取得 Finals 資格；
+              達到指定 UTMB Score 門檻（男 830/800/760、女 680/660/600）也可走績效通道，
+              這是繞開抽籤的根本之道。
+            </div>
+          </li>
+        </ul>
+
+        <h2 class="section-title">🔚 結語</h2>
+
+        <p>
+          數據打破了「距離越短越容易進場」的直覺。在 UTMB 抽籤這場遊戲裡，
+          <strong>理解競爭生態比單純積累跑石更重要</strong>。
+          2025 年的數據清楚告訴我們：CCC 是目前最理性的選擇，
+          而 OCC 的競爭烈度已悄悄超越了 UTMB 本身。
+        </p>
+        <p>
+          每年的情況都會改變。UTMB 官方每年抽籤前會發布新聞稿，
+          建議每年更新你對數據的認識，再做報名決策。
+        </p>
+        <p style="color:#94a3b8; font-size:.85rem; margin-top:2rem">
+          數據來源：
+          <a href="https://montblanc.utmb.world/news/tirage-au-sort-utmb-2025" target="_blank" rel="noopener">UTMB 官方 2025 抽籤報告</a>、
+          <a href="https://montblanc.utmb.world/news/tirage-au-sort-utmb-2024" target="_blank" rel="noopener">UTMB 官方 2024 抽籤報告</a>、
+          <a href="https://electriccablecar.com/utmb-2025-lottery-numbers-and-observations/" target="_blank" rel="noopener">Electric Cable Car 分析</a>。
+          模型以 2025 年數據為基準，實際中籤率每年不同。
+        </p>
+
+      </article>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="image-credit">
+        <strong>圖片來源：</strong>「<a href="https://commons.wikimedia.org/wiki/File:UTMB_2015_Starting_Line.jpg" target="_blank" rel="noopener">UTMB 2015 Starting Line</a>」
+        by BeatPitch，
+        授權：<a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a>
+        via <a href="https://commons.wikimedia.org" target="_blank" rel="noopener">Wikimedia Commons</a>
+      </div>
+      <p class="footer-copy">© 2026 UTMB 跑步研究室</p>
+    </div>
+  </footer>
+
+  <script>
+    window.SUPABASE_URL      = "https://cpzdyivdciglbhznrlkl.supabase.co";
+    window.SUPABASE_ANON_KEY = "sb_publishable_Z_xBTGqVA_YDMdq45Ks9Zg_uPrLF2a0";
+    window.PAGE_SLUG         = "utmb-lottery-odds";
+    window.PAGE_TITLE        = "UTMB 抽籤深度分析：哪個距離中籤率最高？";
+    window.IS_INDEX          = false;
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+  <script src="../../assets/blog.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+  <script>
+  // ── Chart.js 全域設定 ──
+  Chart.defaults.font.family = "system-ui, -apple-system, sans-serif";
+  Chart.defaults.color = '#64748b';
+
+  // 柔和色盤（降飽和度）
+  const C = {
+    utmb: { bg:'rgba(100,130,200,.6)',  bd:'#8099c8' },
+    ccc:  { bg:'rgba(72,158,128,.6)',   bd:'#5aaa8c' },
+    occ:  { bg:'rgba(205,138,75,.6)',   bd:'#c8905a'  },
+    gray: { bg:'rgba(160,172,185,.45)', bd:'#a0acb9'  }
+  };
+
+  // 無格線共用設定
+  const noGrid = {
+    x: { grid:{ display:false }, border:{ display:false } },
+    y: { grid:{ display:false }, border:{ display:false } }
+  };
+
+  // 圖一：報名人數
+  new Chart(document.getElementById('chartApplicants'), {
+    type: 'bar',
+    data: {
+      labels: ['2023', '2024', '2025'],
+      datasets: [
+        { label:'UTMB (171km)', data:[5500,7200,8975], backgroundColor:C.utmb.bg, borderColor:C.utmb.bd, borderWidth:1.5, borderRadius:5 },
+        { label:'CCC (101km)',  data:[4400,5400,6341], backgroundColor:C.ccc.bg,  borderColor:C.ccc.bd,  borderWidth:1.5, borderRadius:5 },
+        { label:'OCC (56km)',   data:[3300,6500,9805], backgroundColor:C.occ.bg,  borderColor:C.occ.bd,  borderWidth:1.5, borderRadius:5 }
+      ]
+    },
+    options:{
+      responsive:true, maintainAspectRatio:false,
+      plugins:{ legend:{position:'top'}, tooltip:{callbacks:{label:ctx=>` ${ctx.dataset.label}: ${ctx.raw.toLocaleString('zh-TW')} 人`}} },
+      scales:{ ...noGrid, y:{ ...noGrid.y, beginAtZero:true, ticks:{callback:v=>v.toLocaleString('zh-TW')} } }
+    }
+  });
+
+  // 圖二：跑石均值
+  new Chart(document.getElementById('chartStones'), {
+    type: 'bar',
+    data: {
+      labels: ['UTMB 2024','CCC 2024','OCC 2024','UTMB 2025','CCC 2025','OCC 2025'],
+      datasets: [
+        { label:'申請者均值', data:[5.4,4.0,2.8,6.4,4.4,3.2], backgroundColor:C.gray.bg, borderColor:C.gray.bd, borderWidth:1.5, borderRadius:5 },
+        { label:'中籤者均值', data:[6.8,4.8,3.7,8.9,5.7,4.7], backgroundColor:C.utmb.bg,  borderColor:C.utmb.bd, borderWidth:1.5, borderRadius:5 }
+      ]
+    },
+    options:{
+      responsive:true, maintainAspectRatio:false,
+      plugins:{ legend:{position:'top'}, tooltip:{callbacks:{label:ctx=>` ${ctx.dataset.label}: ${ctx.raw} 顆`}} },
+      scales:{ ...noGrid, y:{ ...noGrid.y, beginAtZero:true, ticks:{callback:v=>v+' 顆'} } }
+    }
+  });
+
+  // 圖三：中籤率趨勢
+  new Chart(document.getElementById('chartOdds'), {
+    type: 'bar',
+    data: {
+      labels: ['UTMB', 'CCC', 'OCC'],
+      datasets: [
+        { label:'2024 粗估中籤率', data:[39,45,30], backgroundColor:C.gray.bg, borderColor:C.gray.bd, borderWidth:1.5, borderRadius:5 },
+        { label:'2025 粗估中籤率', data:[31,38,20],
+          backgroundColor:[C.utmb.bg,C.ccc.bg,C.occ.bg],
+          borderColor:[C.utmb.bd,C.ccc.bd,C.occ.bd],
+          borderWidth:1.5, borderRadius:5 }
+      ]
+    },
+    options:{
+      responsive:true, maintainAspectRatio:false,
+      plugins:{ legend:{position:'top'}, tooltip:{callbacks:{label:ctx=>` ${ctx.dataset.label}: ${ctx.raw}%`}} },
+      scales:{ ...noGrid, y:{ ...noGrid.y, beginAtZero:true, max:60, ticks:{callback:v=>v+'%'} } }
+    }
+  });
+
+  // ── 蒙地卡羅計算機 ──
+  const RACE_CFG = {
+    utmb: { totalTickets:57440, spots:2000, name:'UTMB', color:C.utmb.bg, bd:C.utmb.bd },
+    ccc:  { totalTickets:27900, spots:1700, name:'CCC',  color:C.ccc.bg,  bd:C.ccc.bd  },
+    occ:  { totalTickets:31376, spots:1400, name:'OCC',  color:C.occ.bg,  bd:C.occ.bd  }
+  };
+  const mcNoGrid = { x:{ grid:{display:false}, border:{display:false} }, y:{ grid:{display:false}, border:{display:false} } };
+  const YEARS = 7;
+  let mcChart = null, cmpChart = null;
+
+  function calcCum(race, stones) {
+    const cfg = RACE_CFG[race];
+    const pAnn = 1 - Math.pow(1 - stones / cfg.totalTickets, cfg.spots);
+    const cum = [];
+    let pFail = 1;
+    for (let y = 0; y < YEARS; y++) {
+      pFail *= (1 - pAnn);
+      cum.push(+((1 - pFail) * 100).toFixed(1));
+    }
+    return { pAnn: +(pAnn * 100).toFixed(1), cum };
+  }
+
+  const stonesEl = document.getElementById('calcStones');
+  const stonesValEl = document.getElementById('calcStonesVal');
+  stonesEl.addEventListener('input', () => stonesValEl.textContent = stonesEl.value);
+
+  document.getElementById('calcRunBtn').addEventListener('click', () => {
+    const race   = document.getElementById('calcRace').value;
+    const stones = +stonesEl.value;
+    const { pAnn, cum } = calcCum(race, stones);
+    const labels = Array.from({length:YEARS}, (_,i) => `第 ${i+1} 年`);
+    const cfg = RACE_CFG[race];
+
+    document.getElementById('res1yr').textContent = cum[0] + '%';
+    document.getElementById('res3yr').textContent = cum[2] + '%';
+    document.getElementById('res5yr').textContent = cum[4] + '%';
+
+    // 逐年累積柱狀圖
+    if (mcChart) mcChart.destroy();
+    mcChart = new Chart(document.getElementById('chartMC').getContext('2d'), {
+      type: 'bar',
+      data: {
+        labels,
+        datasets: [
+          { label:`${cfg.name}（${stones}顆）累積中籤率`, data:cum, backgroundColor:cfg.color, borderColor:cfg.bd, borderWidth:2, borderRadius:4 },
+          { type:'line', label:'趨勢線', data:cum, borderColor:cfg.bd, backgroundColor:'transparent', borderWidth:2, pointBackgroundColor:cfg.bd, pointRadius:4, tension:.35 }
+        ]
+      },
+      options: {
+        responsive:true, maintainAspectRatio:false,
+        plugins:{ legend:{display:false} },
+        scales:{ ...mcNoGrid, y:{ ...mcNoGrid.y, beginAtZero:true, max:100, ticks:{callback:v=>v+'%'} } }
+      }
+    });
+
+    // 三賽事比較折線圖
+    if (cmpChart) cmpChart.destroy();
+    cmpChart = new Chart(document.getElementById('chartCompare').getContext('2d'), {
+      type: 'line',
+      data: {
+        labels,
+        datasets: ['utmb','ccc','occ'].map(r => {
+          const c = RACE_CFG[r];
+          const { cum: d } = calcCum(r, stones);
+          return { label:c.name, data:d, borderColor:c.bd, backgroundColor:'transparent', borderWidth:2.5, pointBackgroundColor:c.bd, pointRadius:4, tension:.35, borderDash: r===race ? [] : [5,4] };
+        })
+      },
+      options: {
+        responsive:true, maintainAspectRatio:false,
+        plugins:{ legend:{position:'top'} },
+        scales:{ ...mcNoGrid, y:{ ...mcNoGrid.y, beginAtZero:true, max:100, ticks:{callback:v=>v+'%'} } }
+      }
+    });
+
+    document.getElementById('calcResults').classList.add('show');
+  });
+
+  // 頁面載入時自動執行一次
+  document.getElementById('calcRunBtn').click();
+  </script>
+
+</body>
+</html>

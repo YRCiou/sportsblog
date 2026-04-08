@@ -1,0 +1,24 @@
+{
+  "posts": [
+    {
+      "slug": "utmb-lottery-odds",
+      "title": "UTMB 抽籤深度分析：哪個距離中籤率最高？",
+      "author": "YRCiou",
+      "topic": "UTMB ultra trail Mont-Blanc running Chamonix",
+      "excerpt": "深入分析 2023–2025 年官方抽籤數據，比較 UTMB、CCC、OCC 三大 Finals 中籤率。數據打破直覺：距離最短的 OCC 反而最難抽中，CCC 才是目前最佳選擇。內建蒙地卡羅模擬計算機，輸入跑石數立即估算你的機率。",
+      "createdAt": "2026-04-08T10:00:00.000Z",
+      "updatedAt": "2026-04-08T10:00:00.000Z",
+      "customHtml": true,
+      "contentMdPath": "posts/utmb-lottery-odds/content.md",
+      "hero": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/UTMB_2015_Starting_Line.jpg/1280px-UTMB_2015_Starting_Line.jpg",
+        "thumbUrl": "https://upload.wikimedia.org/wikipedia/commons/d/db/UTMB_2015_Starting_Line.jpg",
+        "title": "UTMB 2015 Starting Line",
+        "author": "BeatPitch",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:UTMB_2015_Starting_Line.jpg",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ]
+}
