@@ -473,18 +473,25 @@
 
     <!-- Disclaimer -->
     <div class="disclaimer" id="disclaimer" style="display:none">
-      ⚠️ 機票價格由 <strong>Amadeus API</strong> 每日自動抓取，僅供參考，實際票價以航空公司或訂票平台為準。點擊「查看機票」可前往 Skyscanner 查詢最新票價。賽事日期及資訊以
+      ⚠️ 機票價格由 <strong>Travelpayouts API</strong> 每日自動抓取，為歷史最低快取票價，僅供參考，實際票價以航空公司或訂票平台為準。點擊「查看機票」可前往 Skyscanner 查詢最新票價。賽事日期及資訊以
       <a href="https://utmb.world/utmb-world-series-events" target="_blank" rel="noopener">UTMB 官網</a> 為準。
     </div>
+
+    <!-- 延伸閱讀 -->
+    <div id="related-posts-section"></div>
 
   </div>
 </main>
 
 <!-- ── Footer ─────────────────────────────────────────────────────────────── -->
 <footer class="site-footer">
-  <div class="container footer-inner">
-    <span>© 2026 YR 運動研究室</span>
-    <span>資料來源：<a href="https://utmb.world" target="_blank" rel="noopener">utmb.world</a> · <a href="https://amadeus.com" target="_blank" rel="noopener">Amadeus API</a></span>
+  <div class="container">
+    <div class="image-credit">
+      <strong>圖片來源：</strong>「<a href="https://YRCiou.github.io/sportsblog/posts/utmb-world-events/" target="_blank" rel="noopener">UTMB 世界系列賽行事曆縮圖</a>」
+      by YRCiou，
+      授權：<a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a>
+    </div>
+    <p class="footer-copy">© 2026 YR 運動研究室</p>
   </div>
 </footer>
 
@@ -499,6 +506,7 @@
 </script>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
 <script src="assets/blog.js"></script>
+<script src="assets/related.js"></script>
 <script src="assets/search.js"></script>
 
 <script>
