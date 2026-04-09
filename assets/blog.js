@@ -86,26 +86,36 @@
   // 1. 累加本頁瀏覽
   const thisCount = await incrementAndGet(PAGE_SLUG, PAGE_TITLE);
 
-  // 2. 更新本頁計數顯示（無 data-slug 或 data-slug === 本頁的元素）
-  document.querySelectorAll('.view-count-display:not([data-slug])').forEach(el => {
-    setDisplay(el, thisCount);
-  });
-  document.querySelectorAll(`.view-count-display[data-slug="${CSS.escape(PAGE_SLUG)}"]`).forEach(el => {
-    setDisplay(el, thisCount);
-  });
+  // 2. 文章頁：直接顯示本頁計數
+  if (!IS_INDEX) {
+    document.querySelectorAll('.view-count-display:not([data-slug])').forEach(el => {
+      setDisplay(el, thisCount);
+    });
+    document.querySelectorAll(`.view-count-display[data-slug="${CSS.escape(PAGE_SLUG)}"]`).forEach(el => {
+      setDisplay(el, thisCount);
+    });
+  }
 
-  // 3. 若為首頁，批次載入所有卡片的計數
+  // 3. 首頁：批次載入所有卡片計數，並加總顯示網站總瀏覽
   if (IS_INDEX) {
-    const cards    = Array.from(document.querySelectorAll('.post-card[data-slug]'));
+    const cards     = Array.from(document.querySelectorAll('.post-card[data-slug]'));
     const cardSlugs = cards.map(c => c.dataset.slug).filter(Boolean);
-    const counts   = await fetchCounts(cardSlugs);
+    const counts    = await fetchCounts(cardSlugs);
 
+    // 各卡片個別計數
     cards.forEach(card => {
       const slug  = card.dataset.slug;
       const count = counts[slug] ?? null;
       card.querySelectorAll('.view-count-display').forEach(el => {
         setDisplay(el, count);
       });
+    });
+
+    // 網站總瀏覽 = 首頁瀏覽 + 所有文章瀏覽加總
+    const articlesTotal = Object.values(counts).reduce((sum, v) => sum + (v || 0), 0);
+    const siteTotal     = (thisCount || 0) + articlesTotal;
+    document.querySelectorAll('.view-count-display:not([data-slug])').forEach(el => {
+      setDisplay(el, siteTotal);
     });
   }
 })();
