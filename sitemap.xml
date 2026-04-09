@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://YRCiou.github.io/sportsblog/</loc>
+    <loc>https://yrciou.github.io/sportsblog/</loc>
     <lastmod>2026-04-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://YRCiou.github.io/sportsblog/posts/utmb-lottery-odds/</loc>
+    <loc>https://yrciou.github.io/sportsblog/posts/utmb-lottery-odds/</loc>
     <lastmod>2026-04-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://YRCiou.github.io/sportsblog/posts/utmb-world-events/</loc>
+    <loc>https://yrciou.github.io/sportsblog/posts/utmb-world-events/</loc>
     <lastmod>2026-04-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://YRCiou.github.io/sportsblog/posts/bjj-toe-injuries/</loc>
+    <loc>https://yrciou.github.io/sportsblog/posts/bjj-toe-injuries/</loc>
     <lastmod>2026-04-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>

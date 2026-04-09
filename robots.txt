@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://YRCiou.github.io/sportsblog/sitemap.xml
+Sitemap: https://yrciou.github.io/sportsblog/sitemap.xml
