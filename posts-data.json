@@ -1,6 +1,27 @@
 {
   "posts": [
     {
+      "slug": "bjj-toe-injuries",
+      "title": "巴柔腳趾傷害完全指南：五根腳趾的受傷模式、統計與預防",
+      "author": "YRCiou",
+      "topic": "BJJ Brazilian jiu-jitsu toe injury fracture dislocation turf toe grappling barefoot",
+      "excerpt": "整合 PubMed 12 篇文獻，系統分析 BJJ 中每根腳趾最常見的受傷類型。腳趾骨折占 BJJ 所有骨折的 14.15%，是最常骨折的部位。每根腳趾受傷原因截然不同——拇趾草皮趾、小趾直接衝擊骨折、第二趾跖板損傷，分趾解析 × 受傷機制 × 預防貼紮策略。",
+      "createdAt": "2026-04-09T14:00:00.000Z",
+      "updatedAt": "2026-04-09T14:00:00.000Z",
+      "category": "巴柔",
+      "customHtml": true,
+      "contentMdPath": "posts/bjj-toe-injuries/content.md",
+      "hero": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Imanari_Roll.jpg/1280px-Imanari_Roll.jpg",
+        "thumbUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Imanari_Roll.jpg/640px-Imanari_Roll.jpg",
+        "title": "Imanari Roll",
+        "author": "Wylmer-Boo",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Imanari_Roll.jpg",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+      }
+    },
+    {
       "slug": "utmb-world-events",
       "title": "UTMB 世界系列賽行事曆：賽事資訊 × 台灣出發機票",
       "author": "YRCiou",

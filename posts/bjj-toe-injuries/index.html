@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>巴柔腳趾傷害完全指南：五根腳趾的受傷模式、統計與預防 | YR 運動研究室</title>
+  <meta name="description" content="整合 PubMed 12 篇文獻與競技賽事資料，系統分析巴柔（BJJ）中每根腳趾最常見的受傷類型、受傷機制與統計數據。腳趾骨折占 BJJ 所有骨折的 14.15%，是最常骨折的部位。">
+  <meta name="author" content="YRCiou">
+  <link rel="canonical" href="https://YRCiou.github.io/sportsblog/posts/bjj-toe-injuries/">
+  <base href="/sportsblog/">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+  <meta property="og:type"        content="article">
+  <meta property="og:site_name"   content="YR 運動研究室">
+  <meta property="og:title"       content="巴柔腳趾傷害完全指南：五根腳趾的受傷模式、統計與預防">
+  <meta property="og:description" content="整合 PubMed 12 篇文獻，分析 BJJ 中每根腳趾最常見的受傷類型。腳趾骨折是 BJJ 最常骨折的部位（14.15%），32.3% 的訓練者曾受傷。">
+  <meta property="og:url"         content="https://YRCiou.github.io/sportsblog/posts/bjj-toe-injuries/">
+  <meta property="og:locale"      content="zh_TW">
+  <meta property="og:image"       content="https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Masakazu_Imanari_MMA.jpg/1280px-Masakazu_Imanari_MMA.jpg">
+  <meta name="twitter:card"       content="summary_large_image">
+  <meta name="twitter:title"      content="巴柔腳趾傷害完全指南：每根腳趾的受傷模式與統計">
+  <meta name="twitter:image"      content="https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Masakazu_Imanari_MMA.jpg/1280px-Masakazu_Imanari_MMA.jpg">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "巴柔腳趾傷害完全指南：五根腳趾的受傷模式、統計與預防",
+    "description": "整合 PubMed 12 篇文獻與競技賽事資料，系統分析 BJJ 中每根腳趾最常見的受傷類型、受傷機制與統計數據。",
+    "url": "https://YRCiou.github.io/sportsblog/posts/bjj-toe-injuries/",
+    "datePublished": "2026-04-09",
+    "dateModified": "2026-04-09",
+    "author": { "@type": "Person", "name": "YRCiou" },
+    "publisher": { "@type": "Organization", "name": "YR 運動研究室", "url": "https://YRCiou.github.io/sportsblog" }
+  }
+  </script>
+
+  <link rel="stylesheet" href="assets/style.css">
+  <style>
+    .section-title {
+      font-size: 1.45rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin: 2.8rem 0 1rem;
+      padding-bottom: .45rem;
+      border-bottom: 3px solid #2563eb;
+    }
+    .lead {
+      font-size: 1.05rem;
+      color: #475569;
+      line-height: 1.85;
+      margin-bottom: 1.5rem;
+      padding: 1rem 1.25rem;
+      background: #f0f9ff;
+      border-left: 4px solid #38bdf8;
+      border-radius: 0 8px 8px 0;
+    }
+
+    /* ── 腳趾卡片 ─────────────────────────────────────────── */
+    .toe-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1.1rem;
+      margin: 1.5rem 0 2rem;
+    }
+    .toe-card {
+      border-radius: 12px;
+      border: 1.5px solid #e2e8f0;
+      overflow: hidden;
+      background: #fff;
+    }
+    .toe-card-header {
+      padding: .75rem 1.1rem;
+      display: flex;
+      align-items: center;
+      gap: .6rem;
+    }
+    .toe-number {
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem; font-weight: 800; color: #fff;
+      flex-shrink: 0;
+    }
+    .toe-card-title { font-size: .95rem; font-weight: 700; color: #0f172a; }
+    .toe-card-sub   { font-size: .75rem; color: #64748b; }
+    .toe-card-body  { padding: .6rem 1.1rem 1rem; font-size: .88rem; line-height: 1.7; color: #334155; }
+    .toe-card-body li { margin-bottom: .25rem; }
+    /* 顏色主題 */
+    .toe-1 .toe-card-header { background: #fff1f2; }
+    .toe-1 .toe-number { background: #e11d48; }
+    .toe-2 .toe-card-header { background: #fff7ed; }
+    .toe-2 .toe-number { background: #ea580c; }
+    .toe-3 .toe-card-header { background: #fefce8; }
+    .toe-3 .toe-number { background: #ca8a04; }
+    .toe-4 .toe-card-header { background: #f0fdf4; }
+    .toe-4 .toe-number { background: #16a34a; }
+    .toe-5 .toe-card-header { background: #eff6ff; }
+    .toe-5 .toe-number { background: #2563eb; }
+
+    /* ── 受傷機制標籤 ─────────────────────────────────────── */
+    .mech-tag {
+      display: inline-block;
+      font-size: .72rem; font-weight: 600;
+      padding: .15rem .55rem;
+      border-radius: 5px;
+      margin: .15rem .15rem .15rem 0;
+    }
+    .mech-fracture   { background: #fee2e2; color: #b91c1c; }
+    .mech-disloc     { background: #fef3c7; color: #92400e; }
+    .mech-sprain     { background: #dbeafe; color: #1e40af; }
+    .mech-stress     { background: #f3e8ff; color: #7e22ce; }
+    .mech-sesamoid   { background: #f0fdf4; color: #166534; }
+
+    /* ── 統計數字區 ───────────────────────────────────────── */
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+    .stat-card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      padding: 1rem .9rem;
+      text-align: center;
+    }
+    .stat-val {
+      font-size: 2rem;
+      font-weight: 800;
+      color: #2563eb;
+      display: block;
+      line-height: 1.1;
+    }
+    .stat-lbl {
+      font-size: .75rem;
+      color: #64748b;
+      margin-top: .3rem;
+      line-height: 1.4;
+    }
+    .stat-src {
+      font-size: .65rem;
+      color: #94a3b8;
+      margin-top: .35rem;
+    }
+
+    /* ── 比較表格 ─────────────────────────────────────────── */
+    .toe-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: .875rem;
+      margin: 1.5rem 0;
+    }
+    .toe-table th {
+      background: #1e293b;
+      color: #f1f5f9;
+      padding: .6rem .8rem;
+      text-align: left;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    .toe-table td {
+      padding: .6rem .8rem;
+      border-bottom: 1px solid #f1f5f9;
+      vertical-align: top;
+      line-height: 1.55;
+      color: #334155;
+    }
+    .toe-table tr:nth-child(even) td { background: #f8fafc; }
+    .toe-table tr:hover td { background: #eff6ff; }
+
+    /* ── 機制表格 ─────────────────────────────────────────── */
+    .mech-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: .82rem;
+      margin: 1.2rem 0;
+    }
+    .mech-table th {
+      background: #0f172a;
+      color: #94a3b8;
+      padding: .55rem .75rem;
+      text-align: left;
+      font-weight: 600;
+    }
+    .mech-table td {
+      padding: .55rem .75rem;
+      border-bottom: 1px solid #f1f5f9;
+      vertical-align: top;
+      line-height: 1.5;
+      color: #475569;
+    }
+    .mech-table tr:nth-child(even) td { background: #f8fafc; }
+
+    /* ── Insight box ──────────────────────────────────────── */
+    .insight-box {
+      background: #fffbeb;
+      border: 1.5px solid #fcd34d;
+      border-radius: 10px;
+      padding: 1rem 1.2rem;
+      margin: 1.5rem 0;
+      font-size: .9rem;
+      color: #451a03;
+      line-height: 1.75;
+    }
+    .insight-box strong { color: #92400e; }
+
+    .warning-box {
+      background: #fef2f2;
+      border: 1.5px solid #fca5a5;
+      border-radius: 10px;
+      padding: 1rem 1.2rem;
+      margin: 1.5rem 0;
+      font-size: .9rem;
+      color: #450a0a;
+      line-height: 1.75;
+    }
+    .warning-box strong { color: #b91c1c; }
+
+    .tip-box {
+      background: #f0fdf4;
+      border: 1.5px solid #86efac;
+      border-radius: 10px;
+      padding: 1rem 1.2rem;
+      margin: 1.5rem 0;
+      font-size: .9rem;
+      color: #052e16;
+      line-height: 1.75;
+    }
+
+    /* ── 引用 ─────────────────────────────────────────────── */
+    .ref-list {
+      font-size: .78rem;
+      color: #64748b;
+      line-height: 1.8;
+      padding-left: 1.2rem;
+    }
+    .ref-list li { margin-bottom: .4rem; }
+    .ref-list a  { color: #3b82f6; }
+
+    @media (max-width: 640px) {
+      .toe-grid  { grid-template-columns: 1fr; }
+      .stat-grid { grid-template-columns: repeat(2, 1fr); }
+      .toe-table, .mech-table { font-size: .78rem; }
+      .toe-table th, .toe-table td,
+      .mech-table th, .mech-table td { padding: .45rem .5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a class="site-title" href="./">
+      <img src="assets/favicon.svg" class="site-logo" alt="YR">
+      YR 運動研究室
+    </a>
+    <div class="header-spacer"></div>
+    <button class="search-toggle" id="searchToggle" aria-label="搜尋文章">
+      <svg class="search-icon-svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+    </button>
+    <a class="back-link" href="./">← 所有文章</a>
+  </div>
+</header>
+
+<div class="search-panel" id="searchPanel">
+  <div class="container">
+    <div class="search-input-row">
+      <svg class="search-icon-svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <input type="text" id="searchInput" class="search-input" placeholder="請輸入關鍵字" autocomplete="off">
+      <button class="search-close-btn" id="searchClose" aria-label="關閉">✕</button>
+    </div>
+    <div class="search-results" id="searchResults"></div>
+  </div>
+</div>
+
+<section class="hero-section">
+  <div class="content-width">
+    <img class="hero-image"
+         src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Imanari_Roll.jpg/1280px-Imanari_Roll.jpg"
+         alt="BJJ 腳部技術特寫"
+         onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Above_the_mat.jpg/1280px-Above_the_mat.jpg'">
+    <div class="hero-overlay">
+      <div class="cat-badge-wrap">
+        <span class="cat-badge">巴柔</span>
+      </div>
+      <h1 class="hero-title">巴柔腳趾傷害完全指南</h1>
+      <p class="hero-sub">五根腳趾各有弱點：文獻統計 × 受傷機制 × 預防對策</p>
+    </div>
+  </div>
+</section>
+
+<main>
+  <div class="content-wrapper">
+    <article>
+
+      <div class="article-meta">
+        <span class="cat-badge">巴柔</span> 作者：YRCiou
+        <span class="meta-sep">·</span>
+        <time datetime="2026-04-09">2026/04/09</time>
+        <span class="meta-sep">·</span>
+        瀏覽：<span class="view-count-display">–</span>
+      </div>
+
+      <div class="article-content">
+
+        <!-- ── 前言 ────────────────────────────────────────── -->
+        <p class="lead">
+          巴柔（BJJ）訓練者的腳趾幾乎都受過傷——然而大多數人都低估了它的嚴重性。
+          根據美國急診室 10 年資料，<strong>腳趾骨折是 BJJ 所有骨折中比例最高的部位，占 14.15%</strong>。
+          更令人意外的是，每根腳趾的受傷原因幾乎完全不同，對應到不同的技術環節與施力方向。
+          本文整合 12 篇 PubMed 文獻與競技賽事資料，逐根解析。
+        </p>
+
+        <!-- ── 統計概覽 ────────────────────────────────────── -->
+        <h2 class="section-title">統計概覽：數字有多驚人？</h2>
+
+        <div class="stat-grid">
+          <div class="stat-card">
+            <span class="stat-val">14.15%</span>
+            <div class="stat-lbl">BJJ 骨折中腳趾占比，為所有部位最高</div>
+            <div class="stat-src">Hasegawa et al., 2024</div>
+          </div>
+          <div class="stat-card">
+            <span class="stat-val">32.3%</span>
+            <div class="stat-lbl">訓練者曾發生腳趾受傷（含輕傷）</div>
+            <div class="stat-src">Andreato et al., 2019</div>
+          </div>
+          <div class="stat-card">
+            <span class="stat-val">10.7%</span>
+            <div class="stat-lbl">所有 BJJ 訓練傷害中，腳掌/趾為第二常見部位</div>
+            <div class="stat-src">McDonald et al., 2017</div>
+          </div>
+          <div class="stat-card">
+            <span class="stat-val">87.5%</span>
+            <div class="stat-lbl">腳趾傷害發生在平日訓練，而非比賽</div>
+            <div class="stat-src">McDonald et al., 2017</div>
+          </div>
+          <div class="stat-card">
+            <span class="stat-val">21.4%</span>
+            <div class="stat-lbl">兒少 BJJ 所有脫臼中，腳趾占比（第二高）</div>
+            <div class="stat-src">Obana et al., 2025</div>
+          </div>
+          <div class="stat-card">
+            <span class="stat-val">15.9%</span>
+            <div class="stat-lbl">所有武術骨折中腳趾占比（高於拳擊與摔角）</div>
+            <div class="stat-src">Chishti et al., 2026</div>
+          </div>
+        </div>
+
+        <div class="insight-box">
+          <strong>為什麼 BJJ 的腳趾傷害特別多？</strong><br>
+          BJJ 是赤腳訓練的運動。一般球鞋提供的「外在支撐」完全消失，腳趾關節在運動中承受的力量可達體重的 200–300%，跳躍動作甚至達到 800%（Maffulli et al.）。訓練墊的摩擦力高，容易讓腳趾在技術動作中卡住，這是有鞋運動幾乎不存在的風險。
+        </div>
+
+        <!-- ── 五趾分析總表 ────────────────────────────────── -->
+        <h2 class="section-title">五根腳趾：各有弱點，受傷模式大不相同</h2>
+
+        <p>目前沒有任何研究直接以「第幾根腳趾」作為分類統計 BJJ 傷害，現有資料均以「腳掌/趾區域」整體呈現。以下依據 BJJ 生物力學文獻與骨科臨床資料，逐趾分析。</p>
+
+        <table class="toe-table">
+          <thead>
+            <tr>
+              <th>腳趾</th>
+              <th>最常見傷害</th>
+              <th>主要受傷機制</th>
+              <th>文獻支持</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>第一趾（拇趾）</strong></td>
+              <td>草皮趾（Turf toe）、跖趾關節脫臼、應力性骨折、芝麻骨骨折</td>
+              <td>踩地前推、拇趾背屈超過生理角度</td>
+              <td>Scoggin 2014、Maffulli、StatPearls</td>
+            </tr>
+            <tr>
+              <td><strong>第二趾</strong></td>
+              <td>「夾趾」（Jammed toe）、跖板撕裂、近端指骨骨折</td>
+              <td>側向偏移受力、拇趾外翻導致負荷轉移</td>
+              <td>McDonald 2017、Zanno 2023</td>
+            </tr>
+            <tr>
+              <td><strong>第三趾</strong></td>
+              <td>近端指骨骨折、韌帶扭傷</td>
+              <td>道服/護墊糾纏時的橫向拉扯力</td>
+              <td>McDonald 2017（歸納）</td>
+            </tr>
+            <tr>
+              <td><strong>第四趾</strong></td>
+              <td>近端指骨骨折、韌帶扭傷</td>
+              <td>與第三趾類似；內外側夾擊</td>
+              <td>McDonald 2017（歸納）</td>
+            </tr>
+            <tr>
+              <td><strong>第五趾（小趾）</strong></td>
+              <td>直接衝擊骨折（近/遠端指骨）、撕脫骨折</td>
+              <td>腳掌外側裸露、踩到對方腳跟/護墊邊緣</td>
+              <td>McDonald 2017、一般骨科文獻</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <!-- ── 第一趾 ──────────────────────────────────────── -->
+        <h2 class="section-title">第一趾（拇趾）：BJJ 腳趾傷害重災區</h2>
+
+        <div class="toe-grid">
+          <div class="toe-card toe-1">
+            <div class="toe-card-header">
+              <div class="toe-number">1</div>
+              <div>
+                <div class="toe-card-title">草皮趾 Turf Toe</div>
+                <div class="toe-card-sub">最常見，Grade I–III</div>
+              </div>
+            </div>
+            <div class="toe-card-body">
+              <span class="mech-tag mech-sprain">韌帶傷害</span>
+              <ul>
+                <li>腳底關節囊–韌帶複合體扭傷</li>
+                <li>競技資料：Scoggin 2014 中 3 件趾部傷害有 2 件為草皮趾</li>
+                <li>Grade I：1–2 週；Grade III：最長 12 個月</li>
+              </ul>
+            </div>
+          </div>
+          <div class="toe-card toe-1">
+            <div class="toe-card-header">
+              <div class="toe-number">1</div>
+              <div>
+                <div class="toe-card-title">跖趾關節脫臼 / 指間關節脫臼</div>
+                <div class="toe-card-sub">含「不可復位型」</div>
+              </div>
+            </div>
+            <div class="toe-card-body">
+              <span class="mech-tag mech-disloc">脫臼</span>
+              <ul>
+                <li>芝麻骨夾入關節縫隙→手法復位失敗→需手術</li>
+                <li>開放性脫臼：拇趾卡入墊縫後旋轉暴力（Jones 2014，軍事柔術案例）</li>
+                <li>建議：接縫少的訓練墊可顯著降低此傷</li>
+              </ul>
+            </div>
+          </div>
+          <div class="toe-card toe-1">
+            <div class="toe-card-header">
+              <div class="toe-number">1</div>
+              <div>
+                <div class="toe-card-title">近端指骨骨折 / 應力性骨折</div>
+                <div class="toe-card-sub">占所有趾骨骨折 38–56%</div>
+              </div>
+            </div>
+            <div class="toe-card-body">
+              <span class="mech-tag mech-fracture">骨折</span>
+              <span class="mech-tag mech-stress">應力骨折</span>
+              <ul>
+                <li>拇趾近端指骨是所有趾骨中最常骨折的節段</li>
+                <li>應力性骨折：26 例拇趾應力骨折中 22 例（85%）合併拇外翻畸形</li>
+              </ul>
+            </div>
+          </div>
+          <div class="toe-card toe-1">
+            <div class="toe-card-header">
+              <div class="toe-number">1</div>
+              <div>
+                <div class="toe-card-title">芝麻骨骨折 / 芝麻骨炎</div>
+                <div class="toe-card-sub">容易與二分芝麻骨混淆</div>
+              </div>
+            </div>
+            <div class="toe-card-body">
+              <span class="mech-tag mech-sesamoid">芝麻骨</span>
+              <ul>
+                <li>脛側芝麻骨骨折 > 腓側</li>
+                <li>約 85% 的人有「二分芝麻骨」（先天分裂），X 光需謹慎判讀</li>
+                <li>長期站立守備動作（如 spider guard）會加重慢性炎症</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <h3 style="font-size:1.05rem;font-weight:700;color:#1e293b;margin:1.5rem 0 .75rem">第一趾的受傷機制：幾乎都與「踩地前推」有關</h3>
+
+        <table class="mech-table">
+          <thead>
+            <tr><th>BJJ 技術動作</th><th>施力方式</th><th>主要傷害</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>抱腿過肩、單腳/雙腳過肩</td>
+              <td>腳掌踩地，身體前衝 → 拇趾 MTP 關節被迫背屈</td>
+              <td>草皮趾（Grade I–III）</td>
+            </tr>
+            <tr>
+              <td>逃底（upa 翻身）</td>
+              <td>以腳尖支撐橋起，拇趾承受全身重量</td>
+              <td>草皮趾、芝麻骨骨折</td>
+            </tr>
+            <tr>
+              <td>蜘蛛防守（spider guard）</td>
+              <td>腳掌持續頂住對方手臂，拇趾維持背屈角度</td>
+              <td>慢性跖趾關節炎、應力性骨折</td>
+            </tr>
+            <tr>
+              <td>道服糾纏</td>
+              <td>對方褲管/袖口套住拇趾，施加外翻暴力</td>
+              <td>內側側韌帶撕裂、急性拇外翻</td>
+            </tr>
+            <tr>
+              <td>踩到墊縫</td>
+              <td>拇趾卡入縫隙後身體旋轉</td>
+              <td>指間關節開放性脫臼（案例報告）</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="warning-box">
+          <strong>重要：草皮趾分級決定復訓時間</strong><br>
+          Grade I（韌帶扭傷）：1–2 週可正常訓練。
+          Grade II（部分撕裂）：4–6 週。
+          Grade III（完全撕裂，跖板破裂）：術後最長 12 個月。
+          多數訓練者把草皮趾當「輕傷」繼續上課，反覆受傷是拇外翻與慢性不穩定的最大風險因子。
+        </div>
+
+        <!-- ── 第二趾 ──────────────────────────────────────── -->
+        <h2 class="section-title">第二趾：拇趾傷害的「無辜受害者」</h2>
+
+        <p>第二趾本身的受傷機制，很多時候不是直接外力，而是來自<strong>拇趾功能失常後的負荷轉移</strong>。</p>
+
+        <div class="toe-grid">
+          <div class="toe-card toe-2">
+            <div class="toe-card-header">
+              <div class="toe-number">2</div>
+              <div>
+                <div class="toe-card-title">跖板損傷（Plantar Plate Tear）</div>
+                <div class="toe-card-sub">MTP 關節掌側撕裂</div>
+              </div>
+            </div>
+            <div class="toe-card-body">
+              <span class="mech-tag mech-sprain">韌帶/板傷</span>
+              <ul>
+                <li>第二跖趾關節的掌側纖維軟骨板慢性磨損或急性撕裂</li>
+                <li>常見表現：「第二趾浮起」（floating toe）、壓腳底痛</li>
+                <li>拇外翻患者中第二趾跖板撕裂率顯著高於一般族群</li>
+              </ul>
+            </div>
+          </div>
+          <div class="toe-card toe-2">
+            <div class="toe-card-header">
+              <div class="toe-number">2</div>
+              <div>
+                <div class="toe-card-title">夾趾 / 近端指間關節脫臼</div>
+                <div class="toe-card-sub">Jammed toe / PIP dislocation</div>
+              </div>
+            </div>
+            <div class="toe-card-body">
+              <span class="mech-tag mech-disloc">脫臼</span>
+              <span class="mech-tag mech-fracture">骨折</span>
+              <ul>
+                <li>McDonald 2017：自我回報「夾趾」15 件、「腳趾過伸」13 件，多數推測為第二至第四趾</li>
+                <li>常見於過肩或爬起時腳趾頂到對手身體</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="insight-box">
+          <strong>第二趾特殊風險：拇趾外翻的連鎖反應</strong><br>
+          慢性草皮趾或拇外翻會使拇趾推蹬功能下降，行走與訓練時負荷自動轉移至第二跖趾關節（MTP2）。
+          研究顯示 MTP2 在步態中期的壓力可增加 40–60%，長期導致第二跖趾關節跖板慢性磨損、
+          甚至第二趾應力性骨折。簡單來說：<strong>拇趾沒處理好，第二趾遲早跟著出問題</strong>。
+        </div>
+
+        <!-- ── 第三、四趾 ─────────────────────────────────── -->
+        <h2 class="section-title">第三、四趾：道服糾纏的受害者</h2>
+
+        <p>第三、四趾受傷資料在 BJJ 文獻中最為稀缺，幾乎無法從現有研究中單獨量化。
+        臨床觀察與 McDonald et al. 2017 的「其他腳趾」項目顯示，它們的傷害主要來自橫向受力。</p>
+
+        <div class="toe-grid">
+          <div class="toe-card toe-3">
+            <div class="toe-card-header">
+              <div class="toe-number">3</div>
+              <div>
+                <div class="toe-card-title">近端指骨骨折 / 韌帶扭傷</div>
+                <div class="toe-card-sub">橫向拉扯傷害</div>
+              </div>
+            </div>
+            <div class="toe-card-body">
+              <span class="mech-tag mech-fracture">骨折</span>
+              <span class="mech-tag mech-sprain">扭傷</span>
+              <ul>
+                <li>機制：過肩防守時腳趾被對方道服卡住，產生橫向偏轉力</li>
+                <li>近端指骨因長度最長，彎矩最大，是最常骨折的趾骨節段</li>
+                <li>通常與第四趾同時受傷（貼紮後一起固定）</li>
+              </ul>
+            </div>
+          </div>
+          <div class="toe-card toe-4">
+            <div class="toe-card-header">
+              <div class="toe-number">4</div>
+              <div>
+                <div class="toe-card-title">近端指骨骨折 / 韌帶扭傷</div>
+                <div class="toe-card-sub">與第三趾同類型傷</div>
+              </div>
+            </div>
+            <div class="toe-card-body">
+              <span class="mech-tag mech-fracture">骨折</span>
+              <span class="mech-tag mech-sprain">扭傷</span>
+              <ul>
+                <li>機制與第三趾相同：內外側夾擊、道服糾纏</li>
+                <li>過肩傳遞防守時，腳掌側向重壓對方手臂，第三、四趾最外側承受剪切力</li>
+                <li>也常見於站立纏鬥時踩到對方腳背後的撞擊骨折</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── 第五趾 ──────────────────────────────────────── -->
+        <h2 class="section-title">第五趾（小趾）：最裸露、最容易撞傷</h2>
+
+        <p>小趾位於腳掌最外側，沒有相鄰腳趾的緩衝保護，是直接衝擊傷害最常見的目標。
+        臨床上「小趾骨折」幾乎成為 BJJ 訓練者的日常，但因為疼痛多輕微而常被忽略。</p>
+
+        <div class="toe-grid">
+          <div class="toe-card toe-5">
+            <div class="toe-card-header">
+              <div class="toe-number">5</div>
+              <div>
+                <div class="toe-card-title">直接衝擊骨折</div>
+                <div class="toe-card-sub">近/遠端指骨，最常見</div>
+              </div>
+            </div>
+            <div class="toe-card-body">
+              <span class="mech-tag mech-fracture">骨折</span>
+              <ul>
+                <li>踩到對方腳跟、護墊邊緣、或跌倒時撞擊地面</li>
+                <li>小趾骨折常被「貼紮+繼續練」帶過，癒合不良者後期可能影響步態</li>
+              </ul>
+            </div>
+          </div>
+          <div class="toe-card toe-5">
+            <div class="toe-card-header">
+              <div class="toe-number">5</div>
+              <div>
+                <div class="toe-card-title">第五蹠骨基部骨折</div>
+                <div class="toe-card-sub">撕脫骨折 / Jones 骨折</div>
+              </div>
+            </div>
+            <div class="toe-card-body">
+              <span class="mech-tag mech-fracture">骨折</span>
+              <ul>
+                <li>足部急性內翻時，腓短肌肌腱猛烈拉扯第五蹠骨基部 → 撕脫骨折</li>
+                <li>Jones 骨折（第五蹠骨近端幹骺端）：血液供應差，癒合困難，6–20 週，常需手術</li>
+                <li>足球佔第五蹠骨骨折 38.7%；BJJ 佔比未單獨統計，但站立纏鬥與摔倒機制相近</li>
+              </ul>
+            </div>
+          </div>
+          <div class="toe-card toe-5">
+            <div class="toe-card-header">
+              <div class="toe-number">5</div>
+              <div>
+                <div class="toe-card-title">過肩防守時的側向受力</div>
+                <div class="toe-card-sub">De La Riva guard 高風險</div>
+              </div>
+            </div>
+            <div class="toe-card-body">
+              <span class="mech-tag mech-sprain">扭傷</span>
+              <ul>
+                <li>De La Riva guard：鉤腳外轉頂住對方腿部，小趾承受內翻應力</li>
+                <li>過腿（torreando pass）防守方側踩時，小趾最先暴露於踩踏風險</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="insight-box">
+          <strong>「Jones 骨折」vs「撕脫骨折」：一字之差，差很多</strong><br>
+          兩者都在第五蹠骨，但位置差 1 公分。撕脫骨折（近端鉤骨處）通常可保守治療，4–6 週康復；
+          Jones 骨折（稍遠端、幹骺端）因血液供應極差，若保守治療失敗則需內固定手術，
+          競技選手多選擇直接手術縮短復訓時間。兩者初期症狀相似，務必 X 光確認位置。
+        </div>
+
+        <!-- ── 技術動作與腳趾風險對照 ────────────────────── -->
+        <h2 class="section-title">技術動作 × 腳趾風險對照表</h2>
+
+        <p>根據 Scoggin et al. 2014 的競技傷害記錄，所有腳趾傷害都發生在「腳掌踩地前推」這一個動作模式，可見特定技術動作的施力方式直接決定受傷趾位。</p>
+
+        <table class="mech-table">
+          <thead>
+            <tr><th>技術動作</th><th>生物力學機制</th><th>高風險腳趾</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>抱腿過肩（single/double leg）</td>
+              <td>腳掌踩地，全身重量前衝 → 拇趾 MTP 關節強迫背屈</td>
+              <td>第一趾（草皮趾）</td>
+            </tr>
+            <tr>
+              <td>匍匐躲避（sprawl）</td>
+              <td>快速後踢，腳尖頂地 → 拇趾、第二趾同步背屈受壓</td>
+              <td>第一、二趾</td>
+            </tr>
+            <tr>
+              <td>過腿防守（torreando pass 站立）</td>
+              <td>側步踩寬，外側趾暴露於踩踏或邊緣衝擊</td>
+              <td>第五趾</td>
+            </tr>
+            <tr>
+              <td>蜘蛛防守（spider guard）</td>
+              <td>腳掌持續頂手臂，拇趾長時間維持背屈</td>
+              <td>第一趾（慢性）</td>
+            </tr>
+            <tr>
+              <td>De La Riva 防守</td>
+              <td>鉤腳外轉，小趾承受外翻應力</td>
+              <td>第五趾</td>
+            </tr>
+            <tr>
+              <td>逃底（upa bridge）</td>
+              <td>以腳尖撐地橋起，拇趾背屈承重</td>
+              <td>第一趾</td>
+            </tr>
+            <tr>
+              <td>站立纏鬥 / 摔倒</td>
+              <td>足部急性內翻或外翻 → 第五蹠骨受力</td>
+              <td>第五趾（蹠骨基部骨折）</td>
+            </tr>
+            <tr>
+              <td>道服糾纏（gi 防守）</td>
+              <td>褲腿/袖口套住個別腳趾，產生橫向拉扯力</td>
+              <td>第一趾（外翻）、第二至四趾（側向）</td>
+            </tr>
+            <tr>
+              <td>踩到墊縫</td>
+              <td>腳趾卡入縫隙，身體繼續旋轉</td>
+              <td>第一趾（開放性脫臼，案例報告）</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <!-- ── 道服與非道服差異 ────────────────────────────── -->
+        <h2 class="section-title">道服（Gi）vs. 非道服（No-Gi）：傷害模式不同</h2>
+
+        <p>Hinz et al. 2021（1,140 名選手）發現，訓練時間有 50% 以上為 No-Gi 者，踝關節傷害顯著高於 Gi 訓練為主者。
+        反過來，<strong>Gi 訓練特有的布料糾纏</strong>增加了個別腳趾被卡住的機率，是第一趾拇外翻、第二至四趾側向骨折的主要危險因子之一。</p>
+
+        <table class="toe-table">
+          <thead>
+            <tr><th>訓練類型</th><th>較高風險傷害</th><th>原因</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>道服（Gi）</strong></td>
+              <td>第一趾外翻、第二–四趾橫向骨折、腳趾道服糾纏傷</td>
+              <td>布料可卡住個別腳趾施加橫向力</td>
+            </tr>
+            <tr>
+              <td><strong>非道服（No-Gi）</strong></td>
+              <td>踝關節扭傷、足踝送肢技術（腳踝關節鎖）傷害</td>
+              <td>無布料緩衝，腳踝直接受鎖技施力</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <!-- ── 競技賽事資料 ─────────────────────────────────── -->
+        <h2 class="section-title">競技賽事資料：IBJJF / ASJJF</h2>
+
+        <p>IBJJF（國際巴柔聯盟）目前<strong>未公開任何官方傷害統計報告</strong>。
+        現有競技資料來自獨立學術研究：</p>
+
+        <ul style="line-height:2;color:#334155;font-size:.92rem">
+          <li><strong>Scoggin et al. 2014（ASJJF 夏威夷錦標賽）：</strong>
+            5,022 場對戰中 46 件傷害，36 件為骨科傷害。
+            足踝/趾傷害 5 件，其中趾部 3 件全部為拇趾 MTP 關節傷害
+            （2 件草皮趾、1 件 MTP 過屈扭傷），所有機制均為「腳掌踩地向前推進」。
+            整體傷害率：9.2 件 / 1,000 場次。</li>
+          <li><strong>McDonald et al. 2017（IBJJF 聯盟道場問卷）：</strong>
+            166 間道場，腳掌/趾傷害 52 件，其中有醫療記錄者 19 件（骨折 7、草皮趾 5、脫臼 2），
+            87.5% 發生於訓練而非比賽。</li>
+          <li><strong>Hinz et al. 2021（1,140 名、62 個國家）：</strong>
+            腳趾鎖（toe hold submission）造成 24 件傷害，占所有鎖技傷害的 10%。
+            但腳趾鎖傷害的目標為踝關節韌帶，非腳趾指骨本身。</li>
+          <li><strong>Andreato et al. 2019：</strong>
+            70 名訓練選手中 32.3%（23 人）曾有腳趾傷害，
+            35 名競技選手中 11.4%（4 人）在比賽中受傷。</li>
+        </ul>
+
+        <!-- ── 預防 ─────────────────────────────────────────── -->
+        <h2 class="section-title">預防策略：分趾處理</h2>
+
+        <div class="tip-box">
+          <strong>貼紮原則（Buddy Taping）</strong><br>
+          腳趾傷害的第一線處理幾乎都是「兄弟貼紮」——把受傷的趾與相鄰健康趾貼在一起，
+          提供側向支撐但保留屈伸活動。注意：貼紮不等於痊癒，Grade II 以上的草皮趾需要
+          加上 MTP 關節活動限制墊，單純貼紮不夠。
+        </div>
+
+        <ul style="line-height:2.1;color:#334155;font-size:.92rem">
+          <li><strong>第一趾（草皮趾 / 芝麻骨）：</strong>
+            選用前掌較硬（carbon fiber 板）的拖鞋/訓練鞋用於熱身；
+            訓練中以剛性貼布從趾尖貼至腳底弓形固定，限制 MTP 背屈角度；
+            急性期冰敷 + 抬高，24 小時內不可推蹬。</li>
+          <li><strong>第二趾（跖板損傷）：</strong>
+            正確處理拇趾傷害是預防第二趾跖板損傷的根本；
+            跖板撕裂確診後需 MTP 關節固定（石膏或硬底鞋），嚴禁「帶傷推蹬」。</li>
+          <li><strong>第三、四趾（道服糾纏傷）：</strong>
+            訓練時使用「腳趾保護套」（toe sleeves）可減少道服直接卡趾；
+            骨折後以兄弟貼紮固定 4–6 週，近端指骨骨折需確認無旋轉畸形。</li>
+          <li><strong>第五趾（直接衝擊 / 蹠骨基部）：</strong>
+            Jones 骨折競技選手建議直接手術；
+            撕脫骨折保守治療：短腿石膏或步行靴 4–6 週；
+            De La Riva 防守訓練前確認腳踝活動度，避免踝關節過度內翻代償。</li>
+          <li><strong>環境預防：</strong>
+            選用接縫少（或無接縫）的整片拼接訓練墊，Jones 2014 的開放性脫臼案例就是
+            墊縫造成的。定期檢查墊面翹起或磨損。</li>
+        </ul>
+
+        <!-- ── 什麼時候必須就醫 ──────────────────────────── -->
+        <h2 class="section-title">什麼時候不能只貼一貼繼續練？</h2>
+
+        <table class="toe-table">
+          <thead>
+            <tr><th>症狀 / 情況</th><th>可能診斷</th><th>建議處置</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>拇趾 MTP 關節腫脹、無法正常背屈</td>
+              <td>草皮趾 Grade II–III</td>
+              <td>骨科或運動醫學評估，MRI 確認跖板完整性</td>
+            </tr>
+            <tr>
+              <td>腳趾受力後「咔」一聲，關節外觀異常</td>
+              <td>脫臼（可復位 / 不可復位）</td>
+              <td>急診 X 光，確認有無骨折合併；不可自行暴力復位</td>
+            </tr>
+            <tr>
+              <td>小趾近端指骨骨折後腳趾明顯歪斜</td>
+              <td>旋轉畸形骨折</td>
+              <td>骨科會診，可能需要閉合復位</td>
+            </tr>
+            <tr>
+              <td>第五蹠骨外側疼痛，足踝曾急性內翻</td>
+              <td>Jones 骨折 vs. 撕脫骨折</td>
+              <td>X 光確認位置，Jones 骨折不可保守拖延</td>
+            </tr>
+            <tr>
+              <td>拇趾 MTP 關節長期局部痛，X 光有陰影</td>
+              <td>芝麻骨骨折 vs. 二分芝麻骨</td>
+              <td>核醫骨掃描或 MRI 鑑別，勿直接判讀 X 光</td>
+            </tr>
+            <tr>
+              <td>第二趾浮起、壓腳底明顯痛</td>
+              <td>跖板撕裂</td>
+              <td>超音波或 MRI 確認，需固定，非貼紮可處理</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <!-- ── 結語 ──────────────────────────────────────────── -->
+        <h2 class="section-title">結語</h2>
+
+        <p>腳趾傷害在 BJJ 中既常見又容易被忽視。根據現有文獻，<strong>每根腳趾的受傷模式確實截然不同</strong>——
+        拇趾的傷害幾乎都與「踩地前推」的草皮趾機制有關；第二趾多半是拇趾失能後的連鎖受害者；
+        第三、四趾主要是道服糾纏的橫向骨折；小趾則是最外側裸露部位，受直接衝擊最多。</p>
+
+        <p>值得注意的是，87.5% 的腳趾傷害發生在日常訓練，而非比賽——這意味著
+        訓練強度控制、貼紮習慣、墊面品質，都比比賽前的準備更關鍵。
+        腳趾傷害很少讓人當場退賽，但長期忽視累積的後果，往往在幾年後以拇外翻畸形、
+        慢性跖趾關節不穩定或 Jones 骨折不癒合的形式出現。</p>
+
+        <!-- ── 參考文獻 ────────────────────────────────────── -->
+        <h2 class="section-title">參考文獻</h2>
+
+        <ol class="ref-list">
+          <li>Hasegawa ME, Obana KK, Ishikawa KM, et al. Increasing trend in Brazilian Jiu Jitsu injuries presenting to U.S. emergency departments — a 10-year analysis and injury profile. <em>Physician Sportsmed.</em> 2024;52(2):167–174. <a href="https://pubmed.ncbi.nlm.nih.gov/36995123/" target="_blank" rel="noopener">PMID: 36995123</a></li>
+          <li>Obana KK, et al. Increasing Trend in Pediatric Brazilian Jiu Jitsu Injuries Presenting to US Emergency Departments and an Injury Profile — A 10-Year Analysis. 2025. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12818471/" target="_blank" rel="noopener">PMC12818471</a></li>
+          <li>McDonald AR, Murdock FA Jr, McDonald JA, Wolf CJ. Prevalence of Injuries during Brazilian Jiu-Jitsu Training. <em>Sports (Basel).</em> 2017;5(2):39. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5968975/" target="_blank" rel="noopener">PMC5968975</a></li>
+          <li>Scoggin JF, Brusovanik G, Izuka BH, et al. Assessment of Injuries During Brazilian Jiu-Jitsu Competition. <em>Orthop J Sports Med.</em> 2014. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4555620/" target="_blank" rel="noopener">PMC4555620</a></li>
+          <li>Andreato LV, et al. Injury in Brazilian Jiu-Jitsu Training. <em>Sports Med Open.</em> 2019. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6745816/" target="_blank" rel="noopener">PMC6745816</a></li>
+          <li>Hinz M, Kleim BD, Berthold DP, et al. Injury Patterns, Risk Factors, and Return to Sport in Brazilian Jiu Jitsu: A Cross-sectional Survey of 1140 Athletes. <em>Orthop J Sports Med.</em> 2021. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8721390/" target="_blank" rel="noopener">PMC8721390</a></li>
+          <li>Chishti Z, Brotgandel A, Balen C, et al. Epidemiology of combat sport-related fractures treated in United States emergency departments. <em>J Orthop.</em> 2026.</li>
+          <li>Jones MD, May IC, Sweet KJ. Rare open hallux interphalangeal joint dislocations sustained in combatives training: a case series. <em>Mil Med.</em> 2014.</li>
+          <li>Maffulli N, et al. Injuries to the great toe. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5344861/" target="_blank" rel="noopener">PMC5344861</a></li>
+          <li>Turf Toe. <em>StatPearls.</em> NCBI Bookshelf. <a href="https://www.ncbi.nlm.nih.gov/books/NBK507810/" target="_blank" rel="noopener">NBK507810</a></li>
+          <li>Zanno et al. Return to sport after toe phalanx fracture: systematic review. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10292062/" target="_blank" rel="noopener">PMC10292062</a></li>
+          <li>Turf Toe in a Taekwondo player. <em>PMC.</em> <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC3899538/" target="_blank" rel="noopener">PMC3899538</a></li>
+        </ol>
+
+        <p style="font-size:.8rem;color:#94a3b8;margin-top:1.5rem;line-height:1.7">
+          本文統計數字均來自已發表之同儕審閱文獻。腳趾受傷情況請尋求醫師或物理治療師評估，本文不構成醫療建議。
+        </p>
+
+        <div id="related-posts-section"></div>
+
+      </div>
+    </article>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="image-credit">
+      <strong>圖片來源：</strong>「<a href="https://commons.wikimedia.org/wiki/File:Imanari_Roll.jpg" target="_blank" rel="noopener">Imanari Roll</a>」
+      by Wylmer-Boo，
+      授權：<a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener">CC BY-SA 3.0</a>
+      via <a href="https://commons.wikimedia.org" target="_blank" rel="noopener">Wikimedia Commons</a>
+    </div>
+    <p class="footer-copy">© 2026 YR 運動研究室</p>
+  </div>
+</footer>
+
+<script>
+  window.SUPABASE_URL      = "https://cpzdyivdciglbhznrlkl.supabase.co";
+  window.SUPABASE_ANON_KEY = "sb_publishable_Z_xBTGqVA_YDMdq45Ks9Zg_uPrLF2a0";
+  window.PAGE_SLUG         = "bjj-toe-injuries";
+  window.PAGE_TITLE        = "巴柔腳趾傷害完全指南：五根腳趾的受傷模式、統計與預防";
+  window.IS_INDEX          = false;
+</script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script src="assets/blog.js"></script>
+<script src="assets/related.js"></script>
+<script src="assets/search.js"></script>
+
+</body>
+</html>
