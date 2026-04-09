@@ -27,7 +27,7 @@ function runCapture(cmd) {
   catch { return ''; }
 }
 
-console.log('\n🚀  UTMB 跑步研究室 — 一鍵上線\n');
+console.log('\n🚀  YR 運動研究室 — 一鍵上線\n');
 
 // ── 先重新產生所有 HTML + sitemap ─────────────────────────────
 console.log('📄  重新產生靜態檔案…');
