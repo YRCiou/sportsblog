@@ -1,6 +1,27 @@
 {
   "posts": [
     {
+      "slug": "utmb-world-events",
+      "title": "UTMB 世界系列賽行事曆：賽事資訊 × 台灣出發機票",
+      "author": "YRCiou",
+      "topic": "UTMB world series events flight ticket Taiwan travel ultratrail",
+      "excerpt": "未來 10 個月所有 UTMB World Series 賽事一覽，每日自動更新從台灣出發的最低來回機票價格。支援日期排序、價格排序，以及世界地圖賽事定位。",
+      "createdAt": "2026-04-09T12:00:00.000Z",
+      "updatedAt": "2026-04-09T12:00:00.000Z",
+      "category": "越野",
+      "customHtml": true,
+      "contentMdPath": "posts/utmb-world-events/content.md",
+      "hero": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/World_map_blank_without_borders.svg/1280px-World_map_blank_without_borders.svg.png",
+        "thumbUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/World_map_blank_without_borders.svg/640px-World_map_blank_without_borders.svg.png",
+        "title": "World Map",
+        "author": "Wikimedia",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:World_map_blank_without_borders.svg",
+        "license": "CC0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
       "slug": "utmb-lottery-odds",
       "title": "UTMB 抽籤深度分析：哪個距離中籤率最高？",
       "author": "YRCiou",

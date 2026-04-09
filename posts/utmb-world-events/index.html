@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UTMB 世界系列賽行事曆：賽事資訊 × 台灣出發機票 | YR 運動研究室</title>
+  <meta name="description" content="未來 10 個月 UTMB 世界系列賽一覽，每日自動更新。顯示從台灣出發的最低來回機票價格，支援日期排序、價格排序，以及世界地圖賽事定位。">
+  <meta name="author" content="YRCiou">
+  <link rel="canonical" href="https://YRCiou.github.io/sportsblog/posts/utmb-world-events/">
+  <base href="/sportsblog/">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <meta property="og:type"        content="article">
+  <meta property="og:site_name"   content="YR 運動研究室">
+  <meta property="og:title"       content="UTMB 世界系列賽行事曆 × 台灣出發機票">
+  <meta property="og:description" content="未來 10 個月所有 UTMB World Series 賽事，每日自動更新最低來回機票，支援日期、價格排序與地圖瀏覽。">
+  <meta property="og:url"         content="https://YRCiou.github.io/sportsblog/posts/utmb-world-events/">
+  <meta property="og:locale"      content="zh_TW">
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <!-- Blog CSS -->
+  <link rel="stylesheet" href="assets/style.css">
+
+  <style>
+    /* ── 頁面專用變數 ─────────────────────────────────────── */
+    :root {
+      --c-cyan:    #22d3ee;
+      --c-cyan-d:  #0891b2;
+      --c-major:   #f59e0b;
+    }
+
+    /* ── 頁面 Hero ────────────────────────────────────────── */
+    .events-hero {
+      background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 60%, #0c4a6e 100%);
+      color: #fff;
+      padding: 3.5rem 1.5rem 2.5rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .events-hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2322d3ee' fill-opacity='0.04'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      pointer-events: none;
+    }
+    .events-hero h1 {
+      font-size: clamp(1.6rem, 4vw, 2.4rem);
+      font-weight: 800;
+      line-height: 1.25;
+      margin-bottom: .75rem;
+      position: relative;
+    }
+    .events-hero h1 span { color: var(--c-cyan); }
+    .events-hero .hero-sub {
+      font-size: .95rem;
+      color: #94a3b8;
+      position: relative;
+    }
+    .events-hero .hero-sub strong { color: #e2e8f0; }
+    .updated-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: .4rem;
+      margin-top: .9rem;
+      background: rgba(34,211,238,.12);
+      border: 1px solid rgba(34,211,238,.3);
+      border-radius: 20px;
+      padding: .3rem .9rem;
+      font-size: .78rem;
+      color: var(--c-cyan);
+      position: relative;
+    }
+    .updated-badge::before {
+      content: '';
+      display: inline-block;
+      width: 7px; height: 7px;
+      background: var(--c-cyan);
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50%       { opacity: .5; transform: scale(.75); }
+    }
+
+    /* ── 控制列 ───────────────────────────────────────────── */
+    .events-controls {
+      background: #fff;
+      border-bottom: 1px solid var(--c-border);
+      position: sticky; top: 54px; z-index: 100;
+    }
+    .controls-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .view-tabs {
+      display: flex;
+    }
+    .view-tab {
+      display: flex;
+      align-items: center;
+      gap: .4rem;
+      padding: .85rem 1.2rem;
+      font-size: .88rem;
+      font-weight: 600;
+      color: #64748b;
+      background: none;
+      border: none;
+      border-bottom: 3px solid transparent;
+      cursor: pointer;
+      transition: color .2s, border-color .2s;
+      white-space: nowrap;
+    }
+    .view-tab:hover { color: #1e293b; }
+    .view-tab.active {
+      color: var(--c-cyan-d);
+      border-bottom-color: var(--c-cyan);
+    }
+    .view-tab svg { flex-shrink: 0; }
+    .controls-spacer { flex: 1; }
+    .event-count {
+      font-size: .82rem;
+      color: #94a3b8;
+      white-space: nowrap;
+    }
+
+    /* ── 主內容區 ─────────────────────────────────────────── */
+    .events-main {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 2rem 1.5rem 4rem;
+    }
+
+    /* ── 卡片格線 ─────────────────────────────────────────── */
+    #events-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.25rem;
+    }
+
+    /* ── 賽事卡片 ─────────────────────────────────────────── */
+    .ev-card {
+      background: #fff;
+      border: 1px solid var(--c-border);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: transform .2s, box-shadow .2s;
+      display: flex;
+      flex-direction: column;
+    }
+    .ev-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-hover);
+    }
+    .ev-card.is-major {
+      border-color: var(--c-major);
+    }
+    .ev-card-bar {
+      height: 5px;
+      background: var(--c-cyan);
+    }
+    .ev-card.is-major .ev-card-bar { background: var(--c-major); }
+    .ev-card-body { padding: 1.1rem 1.2rem; flex: 1; }
+
+    .ev-flag {
+      font-size: 1.4rem;
+      line-height: 1;
+      margin-bottom: .5rem;
+    }
+    .ev-name {
+      font-size: .98rem;
+      font-weight: 700;
+      color: #0f172a;
+      line-height: 1.35;
+      margin-bottom: .3rem;
+    }
+    .ev-name .major-star {
+      color: var(--c-major);
+      font-size: .85rem;
+      margin-left: .3rem;
+    }
+    .ev-location {
+      font-size: .82rem;
+      color: #64748b;
+      margin-bottom: .7rem;
+      display: flex;
+      align-items: center;
+      gap: .3rem;
+    }
+    .ev-dates {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: .8rem;
+    }
+    .ev-date-text {
+      font-size: .85rem;
+      font-weight: 600;
+      color: #334155;
+    }
+    .ev-countdown {
+      font-size: .75rem;
+      font-weight: 600;
+      padding: .15rem .55rem;
+      border-radius: 10px;
+    }
+    .ev-countdown.soon    { background: #fef2f2; color: #dc2626; }
+    .ev-countdown.near    { background: #fff7ed; color: #ea580c; }
+    .ev-countdown.medium  { background: #f0fdf4; color: #16a34a; }
+    .ev-countdown.far     { background: #f8fafc; color: #64748b; }
+
+    .ev-distances {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .3rem;
+      margin-bottom: .9rem;
+    }
+    .dist-badge {
+      font-size: .7rem;
+      font-weight: 700;
+      padding: .1rem .45rem;
+      border-radius: 5px;
+      letter-spacing: .02em;
+    }
+    .dist-s  { background: #dcfce7; color: #15803d; }
+    .dist-m  { background: #fef9c3; color: #a16207; }
+    .dist-l  { background: #ffedd5; color: #c2410c; }
+    .dist-xl { background: #fee2e2; color: #b91c1c; }
+    .dist-sp { background: #f3e8ff; color: #7e22ce; }
+
+    .ev-card-footer {
+      border-top: 1px solid #f1f5f9;
+      padding: .85rem 1.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: .75rem;
+    }
+    .ev-price-block {}
+    .ev-price-label {
+      font-size: .72rem;
+      color: #94a3b8;
+      margin-bottom: .1rem;
+    }
+    .ev-price {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: #0f172a;
+      line-height: 1;
+    }
+    .ev-price sub {
+      font-size: .7rem;
+      font-weight: 500;
+      color: #64748b;
+      vertical-align: baseline;
+      margin-left: .1rem;
+    }
+    .ev-price.no-price {
+      font-size: .82rem;
+      font-weight: 500;
+      color: #94a3b8;
+    }
+    .ev-flight-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: .35rem;
+      padding: .5rem 1rem;
+      background: var(--c-cyan);
+      color: #fff;
+      border-radius: 8px;
+      font-size: .8rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: background .2s;
+      white-space: nowrap;
+    }
+    .ev-flight-btn:hover { background: var(--c-cyan-d); text-decoration: none; color: #fff; }
+    .ev-flight-btn svg { flex-shrink: 0; }
+
+    /* ── Loading / Empty State ────────────────────────────── */
+    .state-box {
+      text-align: center;
+      padding: 4rem 1.5rem;
+      color: #94a3b8;
+    }
+    .state-box .state-icon { font-size: 2.5rem; margin-bottom: .75rem; }
+    .state-box p { font-size: .95rem; }
+    .spinner {
+      display: inline-block;
+      width: 36px; height: 36px;
+      border: 3px solid #e2e8f0;
+      border-top-color: var(--c-cyan);
+      border-radius: 50%;
+      animation: spin .7s linear infinite;
+      margin-bottom: .75rem;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* ── 地圖容器 ─────────────────────────────────────────── */
+    #map-container { display: none; }
+    #map-container.active { display: block; }
+    #map {
+      height: 70vh;
+      min-height: 480px;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--c-border);
+    }
+
+    /* Leaflet popup override */
+    .leaflet-popup-content-wrapper {
+      border-radius: 10px !important;
+      padding: 0 !important;
+      overflow: hidden;
+    }
+    .leaflet-popup-content { margin: 0 !important; }
+    .map-popup {
+      width: 220px;
+      font-family: var(--font-sans);
+    }
+    .map-popup-bar { height: 4px; background: var(--c-cyan); }
+    .map-popup.is-major .map-popup-bar { background: var(--c-major); }
+    .map-popup-body { padding: .75rem .9rem; }
+    .map-popup-name {
+      font-size: .88rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: .25rem;
+      line-height: 1.3;
+    }
+    .map-popup-loc  { font-size: .75rem; color: #64748b; margin-bottom: .35rem; }
+    .map-popup-date { font-size: .78rem; color: #334155; font-weight: 600; margin-bottom: .45rem; }
+    .map-popup-price { font-size: .82rem; color: #0f172a; }
+    .map-popup-price strong { font-size: 1.05rem; }
+    .map-popup-link {
+      display: block;
+      text-align: center;
+      padding: .45rem;
+      background: var(--c-cyan);
+      color: #fff !important;
+      font-size: .78rem;
+      font-weight: 700;
+      text-decoration: none;
+    }
+    .map-popup-link:hover { background: var(--c-cyan-d); }
+
+    /* ── 地圖圖例 ─────────────────────────────────────────── */
+    .map-legend {
+      display: flex;
+      gap: 1.5rem;
+      margin-top: .75rem;
+      font-size: .8rem;
+      color: #64748b;
+    }
+    .map-legend span { display: flex; align-items: center; gap: .4rem; }
+    .legend-dot {
+      width: 12px; height: 12px;
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    /* ── 免責聲明 ─────────────────────────────────────────── */
+    .disclaimer {
+      margin-top: 2rem;
+      padding: 1rem 1.2rem;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      font-size: .8rem;
+      color: #94a3b8;
+      line-height: 1.6;
+    }
+
+    /* ── 響應式 ───────────────────────────────────────────── */
+    @media (max-width: 600px) {
+      #events-grid { grid-template-columns: 1fr; }
+      .view-tab { padding: .75rem .8rem; font-size: .82rem; }
+      .controls-spacer, .event-count { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── Header ────────────────────────────────────────────────────────────── -->
+<header class="site-header">
+  <div class="header-inner container">
+    <a href="" class="site-brand">
+      <img src="assets/favicon.svg" class="site-logo" alt="YR logo">
+      <span class="site-name">YR 運動研究室</span>
+    </a>
+    <nav class="header-tabs">
+      <a href="" class="tab-link">最新</a>
+      <a href="" class="tab-link">越野</a>
+      <a href="" class="tab-link">路跑</a>
+    </nav>
+    <div class="header-spacer"></div>
+    <button class="search-toggle" id="searchToggle" aria-label="搜尋">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+        <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+      </svg>
+    </button>
+  </div>
+</header>
+
+<!-- Search Panel -->
+<div class="search-panel" id="searchPanel">
+  <div class="search-panel-inner container">
+    <input type="text" class="search-input" id="searchInput" placeholder="搜尋文章…" autocomplete="off">
+    <button class="search-close" id="searchClose">✕</button>
+  </div>
+  <div class="search-results" id="searchResults"></div>
+</div>
+
+<!-- ── Hero ───────────────────────────────────────────────────────────────── -->
+<div class="events-hero">
+  <h1>UTMB 世界系列賽<br><span>行事曆 × 台灣出發機票</span></h1>
+  <p class="hero-sub">
+    未來 <strong>10 個月</strong>所有 UTMB World Series 賽事 ·
+    從 <strong>台灣桃園 (TPE)</strong> 出發最低來回機票
+  </p>
+  <div class="updated-badge" id="updatedBadge">每日台灣時間凌晨 3 點自動更新</div>
+</div>
+
+<!-- ── Controls ───────────────────────────────────────────────────────────── -->
+<div class="events-controls">
+  <div class="controls-inner">
+    <div class="view-tabs">
+      <button class="view-tab active" data-view="date">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+          <rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/>
+        </svg>
+        日期排序
+      </button>
+      <button class="view-tab" data-view="price">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+          <path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+        </svg>
+        價格排序
+      </button>
+      <button class="view-tab" data-view="map">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+          <polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/>
+        </svg>
+        世界地圖
+      </button>
+    </div>
+    <div class="controls-spacer"></div>
+    <span class="event-count" id="eventCount"></span>
+  </div>
+</div>
+
+<!-- ── Main ───────────────────────────────────────────────────────────────── -->
+<main>
+  <div class="events-main">
+
+    <!-- Card grid (date / price view) -->
+    <div id="events-grid">
+      <div class="state-box" id="loadingState">
+        <div class="spinner"></div>
+        <p>載入賽事資料中…</p>
+      </div>
+    </div>
+
+    <!-- Map view -->
+    <div id="map-container">
+      <div id="map"></div>
+      <div class="map-legend">
+        <span><i class="legend-dot" style="background:var(--c-cyan)"></i>一般賽事</span>
+        <span><i class="legend-dot" style="background:var(--c-major)"></i>重要賽事（Major）</span>
+      </div>
+    </div>
+
+    <!-- Disclaimer -->
+    <div class="disclaimer" id="disclaimer" style="display:none">
+      ⚠️ 機票價格由 <strong>Amadeus API</strong> 每日自動抓取，僅供參考，實際票價以航空公司或訂票平台為準。點擊「查看機票」可前往 Skyscanner 查詢最新票價。賽事日期及資訊以
+      <a href="https://utmb.world/utmb-world-series-events" target="_blank" rel="noopener">UTMB 官網</a> 為準。
+    </div>
+
+  </div>
+</main>
+
+<!-- ── Footer ─────────────────────────────────────────────────────────────── -->
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <span>© 2026 YR 運動研究室</span>
+    <span>資料來源：<a href="https://utmb.world" target="_blank" rel="noopener">utmb.world</a> · <a href="https://amadeus.com" target="_blank" rel="noopener">Amadeus API</a></span>
+  </div>
+</footer>
+
+<!-- ── Scripts ────────────────────────────────────────────────────────────── -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="assets/blog.js" data-slug="utmb-world-events"></script>
+<script src="assets/search.js"></script>
+
+<script>
+(function () {
+  'use strict';
+
+  // ─── Constants ───────────────────────────────────────────────────────────
+  const BASE      = document.querySelector('base')?.href || '/sportsblog/';
+  const DATA_URL  = BASE + 'data/events.json';
+
+  // ─── Country → flag emoji ────────────────────────────────────────────────
+  const FLAGS = {
+    '克羅埃西亞': '🇭🇷', '中國':   '🇨🇳', '美國':     '🇺🇸',
+    '墨西哥':     '🇲🇽', '法國':   '🇫🇷', '泰國':     '🇹🇭',
+    '葡萄牙':     '🇵🇹', '澳洲':   '🇦🇺', '英國':     '🇬🇧',
+    '奧地利':     '🇦🇹', '南非':   '🇿🇦', '安道爾':   '🇦🇩',
+    '印尼':       '🇮🇩', '日本':   '🇯🇵', '德國':     '🇩🇪',
+    '義大利':     '🇮🇹', '智利':   '🇨🇱', '西班牙':   '🇪🇸',
+    '瑞士':       '🇨🇭', '羅馬尼亞': '🇷🇴','厄瓜多':  '🇪🇨',
+    '加拿大':     '🇨🇦', '香港':   '🇭🇰', '韓國':     '🇰🇷',
+  };
+
+  // ─── Helpers ─────────────────────────────────────────────────────────────
+
+  function formatDate(str) {
+    if (!str) return '';
+    const [y, m, d] = str.split('-');
+    return `${y}/${m}/${d}`;
+  }
+
+  function formatDateRange(start, end) {
+    if (!start) return '';
+    if (!end || end === start) return formatDate(start);
+    const [sy, sm, sd] = start.split('-');
+    const [ey, em, ed] = end.split('-');
+    if (sy === ey && sm === em) return `${sy}/${sm}/${sd}–${ed}`;
+    return `${formatDate(start)} – ${formatDate(end)}`;
+  }
+
+  function daysUntil(dateStr) {
+    const now  = new Date(); now.setHours(0,0,0,0);
+    const then = new Date(dateStr); then.setHours(0,0,0,0);
+    return Math.round((then - now) / 86400000);
+  }
+
+  function countdownEl(days) {
+    let cls, txt;
+    if (days < 0)  { cls = 'far';    txt = '已結束'; }
+    else if (days === 0) { cls = 'soon'; txt = '今天！'; }
+    else if (days <= 14) { cls = 'soon';   txt = `${days} 天後`; }
+    else if (days <= 45) { cls = 'near';   txt = `${days} 天後`; }
+    else if (days <= 90) { cls = 'medium'; txt = `${days} 天後`; }
+    else                 { cls = 'far';    txt = `${days} 天後`; }
+    return `<span class="ev-countdown ${cls}">${txt}</span>`;
+  }
+
+  function distBadge(dist) {
+    const d = dist.toUpperCase();
+    let cls = 'dist-m';
+    if (d.includes('M') && !d.includes('MCC')) cls = 'dist-xl';
+    else if (d.includes('MCC') || d.includes('PTL') || d.includes('OCC')) cls = 'dist-sp';
+    else {
+      const km = parseInt(d);
+      if      (km <= 25)  cls = 'dist-s';
+      else if (km <= 55)  cls = 'dist-m';
+      else if (km <= 105) cls = 'dist-l';
+      else                cls = 'dist-xl';
+    }
+    return `<span class="dist-badge ${cls}">${dist}</span>`;
+  }
+
+  function buildSkyscannerUrl(airport, dateStart, dateEnd) {
+    function pad(n) { return String(n).padStart(2,'0'); }
+    function addDays(d, n) {
+      const dt = new Date(d); dt.setDate(dt.getDate() + n);
+      const yy = String(dt.getFullYear()).slice(2);
+      return yy + pad(dt.getMonth()+1) + pad(dt.getDate());
+    }
+    const out = addDays(dateStart, -3);
+    const ret = addDays(dateEnd || dateStart, 2);
+    return `https://www.skyscanner.com.tw/transport/flights/tpe/${airport.toLowerCase()}/${out}/${ret}/?adults=1&cabinclass=economy`;
+  }
+
+  // ─── Render card ─────────────────────────────────────────────────────────
+  function renderCard(ev) {
+    const flag  = FLAGS[ev.country] || '🌍';
+    const days  = daysUntil(ev.dateStart);
+    const major = ev.isMajor ? '<span class="major-star" title="重要賽事">★</span>' : '';
+    const skUrl = ev.flightUrl || buildSkyscannerUrl(ev.nearestAirport, ev.dateStart, ev.dateEnd);
+
+    const priceHtml = ev.flightPrice
+      ? `<div class="ev-price-label">最低來回機票（含稅）</div>
+         <div class="ev-price">NT$${ev.flightPrice.toLocaleString()}<sub>TWD</sub></div>`
+      : `<div class="ev-price-label">機票</div>
+         <div class="ev-price no-price">點擊查詢</div>`;
+
+    return `
+    <div class="ev-card${ev.isMajor ? ' is-major' : ''}" data-id="${ev.id}"
+         data-date="${ev.dateStart}" data-price="${ev.flightPrice || 9999999}">
+      <div class="ev-card-bar"></div>
+      <div class="ev-card-body">
+        <div class="ev-flag">${flag}</div>
+        <div class="ev-name">${ev.name}${major}</div>
+        <div class="ev-location">
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+          </svg>
+          ${ev.city}，${ev.country}
+        </div>
+        <div class="ev-dates">
+          <span class="ev-date-text">${formatDateRange(ev.dateStart, ev.dateEnd)}</span>
+          ${countdownEl(days)}
+        </div>
+        <div class="ev-distances">
+          ${(ev.distances || []).map(distBadge).join('')}
+        </div>
+      </div>
+      <div class="ev-card-footer">
+        <div class="ev-price-block">${priceHtml}</div>
+        <a class="ev-flight-btn" href="${skUrl}" target="_blank" rel="noopener noreferrer">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/>
+          </svg>
+          查看機票
+        </a>
+      </div>
+    </div>`;
+  }
+
+  // ─── Sort & render grid ───────────────────────────────────────────────────
+  let allEvents  = [];
+  let currentView = 'date';
+  let leafletMap  = null;
+
+  function renderGrid(events, sortBy) {
+    const grid = document.getElementById('events-grid');
+    if (events.length === 0) {
+      grid.innerHTML = `<div class="state-box" style="grid-column:1/-1">
+        <div class="state-icon">🏔</div>
+        <p>目前沒有符合條件的賽事</p>
+      </div>`;
+      return;
+    }
+
+    const sorted = [...events].sort((a, b) => {
+      if (sortBy === 'price') {
+        const pa = a.flightPrice || 9999999;
+        const pb = b.flightPrice || 9999999;
+        return pa !== pb ? pa - pb : a.dateStart.localeCompare(b.dateStart);
+      }
+      // default: date
+      return a.dateStart.localeCompare(b.dateStart);
+    });
+
+    grid.innerHTML = sorted.map(renderCard).join('');
+  }
+
+  // ─── Init map ─────────────────────────────────────────────────────────────
+  function initMap(events) {
+    if (leafletMap) {
+      leafletMap.invalidateSize();
+      return;
+    }
+    leafletMap = L.map('map', { zoomControl: true }).setView([20, 10], 2);
+
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+      attribution: '© OpenStreetMap, © CARTO',
+      subdomains: 'abcd',
+      maxZoom: 18
+    }).addTo(leafletMap);
+
+    events.forEach(ev => {
+      if (ev.lat == null || ev.lng == null) return;
+
+      const color = ev.isMajor ? '#f59e0b' : '#22d3ee';
+      const icon  = L.divIcon({
+        className: '',
+        html: `<div style="
+          width:16px;height:16px;
+          background:${color};
+          border:2.5px solid #fff;
+          border-radius:50%;
+          box-shadow:0 2px 8px rgba(0,0,0,.4);
+          cursor:pointer;
+        "></div>`,
+        iconSize: [16, 16],
+        iconAnchor: [8, 8],
+        popupAnchor: [0, -10]
+      });
+
+      const skUrl = ev.flightUrl || buildSkyscannerUrl(ev.nearestAirport, ev.dateStart, ev.dateEnd);
+      const priceStr = ev.flightPrice
+        ? `來回最低 <strong>NT$${ev.flightPrice.toLocaleString()}</strong>`
+        : '點擊查看機票';
+
+      const popup = `
+        <div class="map-popup${ev.isMajor ? ' is-major' : ''}">
+          <div class="map-popup-bar"></div>
+          <div class="map-popup-body">
+            <div class="map-popup-name">${ev.name}</div>
+            <div class="map-popup-loc">${FLAGS[ev.country] || '🌍'} ${ev.city}，${ev.country}</div>
+            <div class="map-popup-date">${formatDateRange(ev.dateStart, ev.dateEnd)}</div>
+            <div class="map-popup-price">${priceStr}</div>
+          </div>
+          <a class="map-popup-link" href="${skUrl}" target="_blank" rel="noopener">
+            查看 Skyscanner 機票 →
+          </a>
+        </div>`;
+
+      L.marker([ev.lat, ev.lng], { icon })
+        .addTo(leafletMap)
+        .bindPopup(popup, { maxWidth: 240, minWidth: 220 });
+    });
+  }
+
+  // ─── Switch view ─────────────────────────────────────────────────────────
+  function switchView(view) {
+    currentView = view;
+    const grid     = document.getElementById('events-grid');
+    const mapCont  = document.getElementById('map-container');
+    const disc     = document.getElementById('disclaimer');
+
+    document.querySelectorAll('.view-tab').forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.view === view);
+    });
+
+    if (view === 'map') {
+      grid.style.display    = 'none';
+      mapCont.classList.add('active');
+      disc.style.display    = 'block';
+      setTimeout(() => {
+        initMap(allEvents);
+        leafletMap && leafletMap.invalidateSize();
+      }, 100);
+    } else {
+      grid.style.display    = 'grid';
+      mapCont.classList.remove('active');
+      disc.style.display    = 'block';
+      renderGrid(allEvents, view);
+    }
+  }
+
+  // ─── Load data ───────────────────────────────────────────────────────────
+  async function loadEvents() {
+    try {
+      const res  = await fetch(DATA_URL + '?t=' + Date.now());
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      const json = await res.json();
+
+      // 過濾：今天以後才開始的賽事
+      const now = new Date(); now.setHours(0,0,0,0);
+      allEvents = (json.events || []).filter(e => new Date(e.dateStart) >= now);
+
+      // 更新 badge
+      const badge = document.getElementById('updatedBadge');
+      if (json.updated) {
+        const dt = new Date(json.updated);
+        const opts = { timeZone: 'Asia/Taipei', year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit' };
+        badge.textContent = '更新：' + dt.toLocaleString('zh-TW', opts) + ' (台灣)';
+      }
+
+      // 計數
+      document.getElementById('eventCount').textContent = `共 ${allEvents.length} 場賽事`;
+      document.getElementById('disclaimer').style.display = 'block';
+
+      // Render default view
+      renderGrid(allEvents, 'date');
+
+    } catch (err) {
+      document.getElementById('events-grid').innerHTML = `
+        <div class="state-box" style="grid-column:1/-1">
+          <div class="state-icon">⚠️</div>
+          <p>資料載入失敗，請稍後再試。<br><small style="color:#cbd5e1">${err.message}</small></p>
+        </div>`;
+    }
+  }
+
+  // ─── Event listeners ─────────────────────────────────────────────────────
+  document.querySelectorAll('.view-tab').forEach(btn => {
+    btn.addEventListener('click', () => switchView(btn.dataset.view));
+  });
+
+  // ─── Init ────────────────────────────────────────────────────────────────
+  loadEvents();
+
+})();
+</script>
+
+</body>
+</html>
