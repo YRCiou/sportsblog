@@ -100,16 +100,18 @@ img { max-width: 100%; height: auto; display: block; }
 }
 .site-title:hover { text-decoration: none; color: white; }
 
-/* 頁籤導覽（首頁用） */
+/* 頁籤導覽（首頁用）— 靠左 */
 .header-tabs {
   display: flex;
   gap: .2rem;
-  flex: 1;
-  justify-content: center;
+  flex: 0 0 auto;
   overflow-x: auto;
   scrollbar-width: none;
 }
 .header-tabs::-webkit-scrollbar { display: none; }
+
+/* 彈性空白（tabs 與右側按鈕之間） */
+.header-spacer { flex: 1; }
 .tab-btn {
   background: transparent;
   border: 1px solid transparent;
@@ -133,18 +135,152 @@ img { max-width: 100%; height: auto; display: block; }
   border-color: rgba(34,211,238,.45);
 }
 
-.site-stats {
-  font-size: .82rem;
-  color: #94a3b8;
-  white-space: nowrap;
-  flex-shrink: 0;
-}
 .back-link {
   font-size: .9rem;
   color: #94a3b8;
   white-space: nowrap;
+  flex-shrink: 0;
 }
 .back-link:hover { color: white; text-decoration: none; }
+
+/* 搜尋按鈕（右上角） */
+.search-toggle {
+  background: transparent;
+  border: 1px solid transparent;
+  color: #94a3b8;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: color .18s, border-color .18s, background .18s;
+}
+.search-toggle:hover,
+.search-toggle.active {
+  color: #ffffff;
+  border-color: rgba(34,211,238,.4);
+  background: rgba(34,211,238,.12);
+}
+
+/* ── 搜尋面板 ────────────────────────────────────────────── */
+.search-panel {
+  display: none;
+  position: fixed;
+  top: 58px;
+  left: 0;
+  right: 0;
+  z-index: 200;
+  background: #1a1a1a;
+  box-shadow: 0 8px 32px rgba(0,0,0,.5);
+  padding: 1.1rem 0 1.4rem;
+  max-height: calc(100vh - 58px);
+  overflow-y: auto;
+}
+.search-panel.open { display: block; }
+
+.search-input-row {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  background: #ffffff;
+  border-radius: 8px;
+  padding: .55rem 1rem;
+}
+.search-icon-svg { color: #64748b; flex-shrink: 0; }
+.search-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  background: transparent;
+  color: #1e293b;
+  font-family: var(--font-sans);
+}
+.search-input::placeholder { color: #94a3b8; }
+.search-close-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #94a3b8;
+  font-size: 1.1rem;
+  line-height: 1;
+  padding: 0 .2rem;
+  transition: color .15s;
+}
+.search-close-btn:hover { color: #1e293b; }
+
+/* 結果區 */
+.search-results { margin-top: 1rem; }
+.search-count {
+  font-size: .82rem;
+  color: #94a3b8;
+  margin-bottom: .75rem;
+}
+.search-count strong { color: #22d3ee; }
+.search-empty {
+  color: #64748b;
+  font-size: .9rem;
+  padding: .5rem 0;
+}
+.sr-list {
+  display: flex;
+  flex-direction: column;
+  gap: .6rem;
+}
+.sr-card {
+  display: flex;
+  gap: .85rem;
+  padding: .75rem;
+  border-radius: 8px;
+  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(255,255,255,.08);
+  text-decoration: none;
+  color: inherit;
+  transition: background .15s;
+}
+.sr-card:hover {
+  background: rgba(255,255,255,.1);
+  text-decoration: none;
+}
+.sr-img {
+  width: 90px;
+  height: 60px;
+  flex-shrink: 0;
+  border-radius: 6px;
+  overflow: hidden;
+}
+.sr-img img { width: 100%; height: 100%; object-fit: cover; }
+.sr-img--empty { background: rgba(255,255,255,.1); }
+.sr-body { flex: 1; display: flex; flex-direction: column; gap: .25rem; justify-content: center; }
+.sr-meta { min-height: 1.1em; }
+.sr-title {
+  font-size: .9rem;
+  font-weight: 600;
+  color: #f1f5f9;
+  line-height: 1.4;
+}
+.sr-title mark {
+  background: rgba(34,211,238,.3);
+  color: #ffffff;
+  border-radius: 2px;
+  padding: 0 .1em;
+}
+.sr-excerpt { font-size: .78rem; color: #94a3b8; line-height: 1.4; }
+
+/* 搜尋面板的 cat-badge 改為深色背景配色 */
+.search-panel .cat-badge {
+  color: #e2e8f0;
+  border-color: rgba(255,255,255,.3);
+}
+
+@media (max-width: 640px) {
+  .search-panel { top: 50px; max-height: calc(100vh - 50px); }
+  .sr-img { width: 68px; height: 48px; }
+  .sr-excerpt { display: none; }
+}
 
 /* ── Hero 區塊 ──────────────────────────────────────────── */
 .hero-section {

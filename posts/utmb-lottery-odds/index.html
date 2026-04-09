@@ -282,9 +282,23 @@
         <img src="assets/favicon.svg" class="site-logo" alt="YR">
         YR 運動研究室
       </a>
+      <div class="header-spacer"></div>
+      <button class="search-toggle" id="searchToggle" aria-label="搜尋文章">
+        <svg class="search-icon-svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      </button>
       <a class="back-link" href="./">← 所有文章</a>
     </div>
   </header>
+  <div class="search-panel" id="searchPanel">
+    <div class="container">
+      <div class="search-input-row">
+        <svg class="search-icon-svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="text" id="searchInput" class="search-input" placeholder="請輸入關鍵字" autocomplete="off">
+        <button class="search-close-btn" id="searchClose" aria-label="關閉">✕</button>
+      </div>
+      <div class="search-results" id="searchResults"></div>
+    </div>
+  </div>
 
   <section class="hero-section">
     <div class="content-width">
@@ -599,6 +613,7 @@
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
   <script src="assets/blog.js"></script>
   <script src="assets/related.js"></script>
+  <script src="assets/search.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
   <script>
   // ── Chart.js 全域設定 ──
