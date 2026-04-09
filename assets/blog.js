@@ -82,6 +82,20 @@
     }
   }
 
+  // ── 全站總瀏覽（所有頁面加總）──────────────────────────
+  async function fetchSiteTotal() {
+    try {
+      const { data, error } = await client
+        .from('page_views')
+        .select('view_count');
+      if (error) { console.warn('[blog.js] 總計查詢錯誤:', error.message); return null; }
+      return (data ?? []).reduce((sum, r) => sum + (r.view_count || 0), 0);
+    } catch (e) {
+      console.warn('[blog.js] 無法讀取總計:', e.message);
+      return null;
+    }
+  }
+
   // ── 主邏輯 ────────────────────────────────────────────────
   // 1. 累加本頁瀏覽
   const thisCount = await incrementAndGet(PAGE_SLUG, PAGE_TITLE);
@@ -96,11 +110,16 @@
     });
   }
 
-  // 3. 首頁：批次載入所有卡片計數，並加總顯示網站總瀏覽
+  // 3. 首頁：批次載入卡片計數 + 從 DB 直接取全站加總
   if (IS_INDEX) {
     const cards     = Array.from(document.querySelectorAll('.post-card[data-slug]'));
     const cardSlugs = cards.map(c => c.dataset.slug).filter(Boolean);
-    const counts    = await fetchCounts(cardSlugs);
+
+    // 並行查詢：卡片個別計數 + 全站總計
+    const [counts, siteTotal] = await Promise.all([
+      fetchCounts(cardSlugs),
+      fetchSiteTotal()
+    ]);
 
     // 各卡片個別計數
     cards.forEach(card => {
@@ -111,9 +130,7 @@
       });
     });
 
-    // 網站總瀏覽 = 首頁瀏覽 + 所有文章瀏覽加總
-    const articlesTotal = Object.values(counts).reduce((sum, v) => sum + (v || 0), 0);
-    const siteTotal     = (thisCount || 0) + articlesTotal;
+    // 全站總瀏覽：直接來自 DB 所有頁面加總，永遠 >= 任何單篇文章
     document.querySelectorAll('.view-count-display:not([data-slug])').forEach(el => {
       setDisplay(el, siteTotal);
     });

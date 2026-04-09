@@ -136,7 +136,8 @@ img { max-width: 100%; height: auto; display: block; }
 }
 
 .site-stats {
-  font-size: .8rem;
+  font-size: .88rem;
+  font-weight: 500;
   color: #94a3b8;
   white-space: nowrap;
   flex-shrink: 0;
