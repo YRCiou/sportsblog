@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>UTMB 世界系列賽行事曆：賽事資訊 × 台灣出發機票 | YR 運動研究室</title>
-  <meta name="description" content="未來 10 個月 UTMB 世界系列賽一覽，每日自動更新。顯示從台灣出發的最低來回機票價格，支援日期排序、價格排序，以及世界地圖賽事定位。">
+  <meta name="description" content="未來 10 個月所有 UTMB World Series 越野跑賽事一覽，每日凌晨 3 點自動更新台灣出發最低來回機票。支援日期排序、價格排序，以及 Leaflet 世界地圖賽事定位。免費查看 20+ 場全球越野賽事資訊。">
   <meta name="author" content="YRCiou">
   <link rel="canonical" href="https://yrciou.github.io/sportsblog/posts/utmb-world-events/">
   <base href="/sportsblog/">
@@ -24,7 +24,7 @@
   <meta name="twitter:description" content="未來 10 個月所有 UTMB World Series 賽事，每日自動更新最低來回機票。">
   <meta name="twitter:image"       content="https://yrciou.github.io/sportsblog/assets/og-utmb.jpg">
   <!-- Leaflet CSS -->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
   <!-- Blog CSS -->
   <link rel="stylesheet" href="assets/style.css">
 
@@ -390,6 +390,26 @@
       .controls-spacer, .event-count { display: none; }
     }
   </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "UTMB 世界系列賽行事曆：賽事資訊 × 台灣出發機票",
+  "description": "未來 10 個月所有 UTMB World Series 賽事，每日自動更新最低來回機票，支援日期、價格排序與地圖瀏覽。",
+  "image": "https://yrciou.github.io/sportsblog/assets/og-utmb.jpg",
+  "url": "https://yrciou.github.io/sportsblog/posts/utmb-world-events/",
+  "datePublished": "2026-04-09",
+  "dateModified": "2026-04-09",
+  "author": { "@type": "Person", "name": "YRCiou" },
+  "publisher": {
+    "@type": "Organization",
+    "name": "YR 運動研究室",
+    "url": "https://yrciou.github.io/sportsblog",
+    "logo": { "@type": "ImageObject", "url": "https://yrciou.github.io/sportsblog/assets/favicon.svg" }
+  },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://yrciou.github.io/sportsblog/posts/utmb-world-events/" }
+}
+</script>
   <!-- Google Tag Manager -->
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -408,7 +428,7 @@
 <header class="site-header">
   <div class="container">
     <a class="site-title" href="./">
-      <img src="assets/favicon.svg" class="site-logo" alt="YR">
+      <img src="assets/favicon.svg" class="site-logo" alt="YR 運動研究室">
       YR 運動研究室
     </a>
     <div class="header-spacer"></div>
@@ -442,6 +462,7 @@
 </div>
 
 <!-- ── Controls ───────────────────────────────────────────────────────────── -->
+<h2 class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)">即將舉辦的 UTMB 世界系列賽事</h2>
 <div class="events-controls">
   <div class="controls-inner">
     <div class="view-tabs">
@@ -491,6 +512,7 @@
     </div>
 
     <!-- Disclaimer -->
+    <h2 class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)">機票價格資料說明</h2>
     <div class="disclaimer" id="disclaimer" style="display:none">
       ⚠️ 機票價格由 <strong>Travelpayouts API</strong> 每日自動抓取，為歷史最低快取票價，僅供參考，實際票價以航空公司或訂票平台為準。點擊「查看機票」可前往 Skyscanner 查詢最新票價。賽事日期及資訊以
       <a href="https://utmb.world/utmb-world-series-events" target="_blank" rel="noopener">UTMB 官網</a> 為準。
@@ -498,6 +520,8 @@
 
     <!-- 延伸閱讀 -->
     <div id="related-posts-section"></div>
+
+    <p style="text-align:center;padding:1rem 0;font-size:.9rem">深度研究 UTMB 抽籤策略：<a href="../utmb-lottery-odds/">UTMB 抽籤分析 — 哪個距離中籤率最高？</a></p>
 
   </div>
 </main>
@@ -515,7 +539,7 @@
 </footer>
 
 <!-- ── Scripts ────────────────────────────────────────────────────────────── -->
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
 <script>
   window.SUPABASE_URL      = "https://cpzdyivdciglbhznrlkl.supabase.co";
   window.SUPABASE_ANON_KEY = "sb_publishable_Z_xBTGqVA_YDMdq45Ks9Zg_uPrLF2a0";
