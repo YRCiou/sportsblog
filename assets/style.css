@@ -1,24 +1,24 @@
 /* ═══════════════════════════════════════════════════════
-   UTMB Blog — Global Stylesheet
+   YR 運動研究室 — Global Stylesheet
    ═══════════════════════════════════════════════════════ */
 
 /* ── 變數 ─────────────────────────────────────────────── */
 :root {
-  --c-bg:          #f8fafc;
+  --c-bg:          #F7F4ED;
   --c-surface:     #ffffff;
   --c-text:        #1e293b;
   --c-muted:       #64748b;
   --c-border:      #e2e8f0;
   --c-accent:      #2563eb;
   --c-accent-dark: #1d4ed8;
-  --c-header-bg:   #0f172a;
+  --c-header-bg:   #111111;
   --c-header-fg:   #f1f5f9;
-  --c-hero-bg:     #0f172a;
-  --c-footer-bg:   #1e293b;
+  --c-hero-bg:     #111111;
+  --c-footer-bg:   #1a1a1a;
   --c-footer-fg:   #94a3b8;
 
-  --content-width: 780px;
-  --max-width:     1140px;
+  --content-width: 820px;
+  --max-width:     1320px;
   --radius:        10px;
   --shadow:        0 2px 16px rgba(0, 0, 0, .08);
   --shadow-hover:  0 6px 28px rgba(0, 0, 0, .15);
@@ -71,27 +71,73 @@ img { max-width: 100%; height: auto; display: block; }
   position: sticky;
   top: 0;
   z-index: 100;
-  box-shadow: 0 2px 8px rgba(0,0,0,.3);
+  box-shadow: 0 2px 12px rgba(0,0,0,.45);
 }
 .site-header .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 56px;
-  gap: 1rem;
+  height: 58px;
+  gap: 1.25rem;
+}
+/* Logo 圖示 */
+.site-logo {
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+  display: inline-block;
+  vertical-align: middle;
 }
 .site-title {
-  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: .55rem;
+  font-size: 1.15rem;
   font-weight: 700;
   color: var(--c-header-fg);
   letter-spacing: .02em;
   flex-shrink: 0;
 }
 .site-title:hover { text-decoration: none; color: white; }
+
+/* 頁籤導覽（首頁用） */
+.header-tabs {
+  display: flex;
+  gap: .2rem;
+  flex: 1;
+  justify-content: center;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.header-tabs::-webkit-scrollbar { display: none; }
+.tab-btn {
+  background: transparent;
+  border: 1px solid transparent;
+  color: #94a3b8;
+  padding: .3rem .9rem;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: .88rem;
+  font-weight: 500;
+  font-family: var(--font-sans);
+  transition: all .18s ease;
+  white-space: nowrap;
+}
+.tab-btn:hover {
+  color: #e2e8f0;
+  border-color: rgba(255,255,255,.2);
+}
+.tab-btn.active {
+  color: #ffffff;
+  background: rgba(34,211,238,.18);
+  border-color: rgba(34,211,238,.45);
+}
+
 .site-stats {
   font-size: .82rem;
   color: #94a3b8;
   white-space: nowrap;
+  flex-shrink: 0;
 }
 .back-link {
   font-size: .9rem;
@@ -355,13 +401,18 @@ img { max-width: 100%; height: auto; display: block; }
 .footer-copy { color: #64748b; }
 
 /* ── RWD ─────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .site-stats { display: none; }
+  .header-tabs { justify-content: flex-start; }
+}
 @media (max-width: 640px) {
   .article-meta { font-size: .78rem; }
   .article-title { font-size: 1.5rem; }
   .cards-grid { grid-template-columns: 1fr; }
   .hero-image { max-height: 280px; }
-  .site-header .container { height: 50px; }
-  .site-title { font-size: 1rem; }
+  .site-header .container { height: auto; min-height: 50px; flex-wrap: wrap; padding-top: .4rem; padding-bottom: .4rem; }
+  .site-title { font-size: .95rem; }
+  .site-logo { width: 24px; height: 24px; }
   .content-wrapper { padding: 1.5rem 1rem 3rem; }
   .index-main { padding: 1.5rem 1rem; }
 }
