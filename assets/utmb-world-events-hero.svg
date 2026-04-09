@@ -6,13 +6,9 @@
       <stop offset="100%" stop-color="#060f1f"/>
     </linearGradient>
     <radialGradient id="globeGlow" cx="50%" cy="50%" r="50%">
-      <stop offset="0%"   stop-color="#22d3ee" stop-opacity="0.18"/>
-      <stop offset="60%"  stop-color="#22d3ee" stop-opacity="0.05"/>
+      <stop offset="0%"   stop-color="#22d3ee" stop-opacity="0.2"/>
+      <stop offset="60%"  stop-color="#22d3ee" stop-opacity="0.06"/>
       <stop offset="100%" stop-color="#22d3ee" stop-opacity="0"/>
-    </radialGradient>
-    <radialGradient id="centerGlow" cx="50%" cy="50%" r="50%">
-      <stop offset="0%"   stop-color="#0ea5e9" stop-opacity="0.25"/>
-      <stop offset="100%" stop-color="#0ea5e9" stop-opacity="0"/>
     </radialGradient>
     <radialGradient id="tpeGlow" cx="50%" cy="50%" r="50%">
       <stop offset="0%"   stop-color="#f59e0b" stop-opacity="0.9"/>
@@ -21,181 +17,140 @@
     <pattern id="dots" x="0" y="0" width="32" height="32" patternUnits="userSpaceOnUse">
       <circle cx="2" cy="2" r="1" fill="#22d3ee" fill-opacity="0.06"/>
     </pattern>
-    <filter id="blur4">
-      <feGaussianBlur stdDeviation="4"/>
-    </filter>
-    <filter id="blur2">
-      <feGaussianBlur stdDeviation="2"/>
-    </filter>
+    <filter id="blur3"><feGaussianBlur stdDeviation="3"/></filter>
   </defs>
 
-  <!-- ── Background ───────────────────────────────────────── -->
+  <!-- Background -->
   <rect width="1200" height="630" fill="url(#bg)"/>
   <rect width="1200" height="630" fill="url(#dots)"/>
 
-  <!-- ── Globe (centered at 600, 315) ─────────────────────── -->
+  <!-- Globe (centered at 600,315) -->
   <circle cx="600" cy="315" r="340" fill="url(#globeGlow)"/>
 
   <!-- Latitude rings -->
-  <g fill="none" stroke="#22d3ee" stroke-opacity="0.12" stroke-width="1">
+  <g fill="none" stroke="#22d3ee" stroke-opacity="0.11" stroke-width="1">
     <circle cx="600" cy="315" r="270"/>
     <ellipse cx="600" cy="315" rx="270" ry="200"/>
-    <ellipse cx="600" cy="315" rx="270" ry="125"/>
-    <ellipse cx="600" cy="315" rx="270" ry="48"/>
+    <ellipse cx="600" cy="315" rx="270" ry="122"/>
+    <ellipse cx="600" cy="315" rx="270" ry="46"/>
     <line x1="330" y1="315" x2="870" y2="315"/>
   </g>
   <!-- Longitude rings -->
   <g fill="none" stroke="#22d3ee" stroke-opacity="0.09" stroke-width="1">
     <ellipse cx="600" cy="315" rx="68"  ry="270"/>
-    <ellipse cx="600" cy="315" rx="140" ry="270"/>
-    <ellipse cx="600" cy="315" rx="210" ry="270"/>
-    <line x1="600" y1="45"  x2="600" y2="585"/>
+    <ellipse cx="600" cy="315" rx="138" ry="270"/>
+    <ellipse cx="600" cy="315" rx="208" ry="270"/>
+    <line x1="600" y1="45" x2="600" y2="585"/>
   </g>
-
   <!-- Globe rim -->
-  <circle cx="600" cy="315" r="270" fill="none" stroke="#22d3ee" stroke-width="1.5" stroke-opacity="0.4"/>
+  <circle cx="600" cy="315" r="270" fill="none" stroke="#22d3ee" stroke-width="1.5" stroke-opacity="0.35"/>
 
-  <!-- ── Continent blobs ────────────────────────────────────── -->
-  <g fill="#22d3ee" fill-opacity="0.09">
-    <!-- Europe -->
+  <!-- Continent blobs -->
+  <g fill="#22d3ee" fill-opacity="0.08">
     <path d="M555 220 Q580 210 600 218 Q618 228 608 245 Q590 255 568 248 Q549 238 555 220Z"/>
-    <!-- Asia main -->
     <path d="M610 195 Q665 183 715 198 Q740 212 730 238 Q702 255 665 250 Q632 244 612 228 Q598 212 610 195Z"/>
-    <!-- Africa -->
     <path d="M562 268 Q583 258 600 270 Q614 286 607 328 Q596 365 577 370 Q558 362 552 335 Q542 298 562 268Z"/>
-    <!-- Americas -->
     <path d="M410 215 Q430 208 440 228 Q444 248 430 263 Q413 268 404 250 Q398 230 410 215Z"/>
     <path d="M415 290 Q432 284 438 305 Q441 328 428 346 Q412 355 403 337 Q394 312 415 290Z"/>
-    <!-- Australia -->
     <path d="M718 358 Q742 350 756 366 Q763 384 750 398 Q731 406 716 396 Q703 380 718 358Z"/>
-    <!-- Japan -->
     <path d="M720 213 Q728 207 737 215 Q742 224 734 232 Q724 235 717 226 Q712 218 720 213Z"/>
   </g>
 
-  <!-- ── Flight arcs from Taiwan (≈ 695, 255 on this globe) ── -->
-  <g fill="none" stroke="#f59e0b" stroke-opacity="0.4" stroke-width="1.2" stroke-dasharray="5 4">
-    <!-- To Chamonix (≈ 577, 228) -->
+  <!-- Flight arcs from Taiwan -->
+  <g fill="none" stroke="#f59e0b" stroke-opacity="0.35" stroke-width="1.2" stroke-dasharray="5 4">
     <path d="M692 252 Q640 190 578 225"/>
-    <!-- To Australia (≈ 748, 375) -->
     <path d="M692 252 Q730 305 746 373"/>
-    <!-- To Sacramento / Americas (≈ 430, 242) -->
     <path d="M692 252 Q580 185 432 238"/>
-    <!-- To Thailand (≈ 665 310) -->
     <path d="M692 252 Q680 280 663 308"/>
-    <!-- To Japan (≈ 729 218) -->
     <path d="M692 252 Q710 232 727 216"/>
-    <!-- To Korea (≈ 716 210) -->
-    <path d="M692 252 Q703 228 714 212"/>
   </g>
 
-  <!-- ── Event dots ─────────────────────────────────────────── -->
-  <!-- Chamonix (major) -->
-  <circle cx="578" cy="225" r="5" fill="#f59e0b" fill-opacity="0.9"/>
-  <circle cx="578" cy="225" r="11" fill="#f59e0b" fill-opacity="0.2" filter="url(#blur2)"/>
-  <!-- Val D'Aran Spain (major) -->
-  <circle cx="562" cy="230" r="5" fill="#f59e0b" fill-opacity="0.9"/>
-  <circle cx="562" cy="230" r="11" fill="#f59e0b" fill-opacity="0.15" filter="url(#blur2)"/>
-  <!-- Australia (major) -->
-  <circle cx="748" cy="374" r="5" fill="#f59e0b" fill-opacity="0.9"/>
-  <circle cx="748" cy="374" r="11" fill="#f59e0b" fill-opacity="0.2" filter="url(#blur2)"/>
-  <!-- Grindelwald -->
+  <!-- Event dots -->
+  <circle cx="578" cy="225" r="5"  fill="#f59e0b" fill-opacity="0.9"/>
+  <circle cx="578" cy="225" r="11" fill="#f59e0b" fill-opacity="0.2" filter="url(#blur3)"/>
+  <circle cx="562" cy="230" r="5"  fill="#f59e0b" fill-opacity="0.9"/>
+  <circle cx="562" cy="230" r="11" fill="#f59e0b" fill-opacity="0.15" filter="url(#blur3)"/>
+  <circle cx="746" cy="374" r="5"  fill="#f59e0b" fill-opacity="0.9"/>
+  <circle cx="746" cy="374" r="11" fill="#f59e0b" fill-opacity="0.2" filter="url(#blur3)"/>
   <circle cx="587" cy="220" r="3.5" fill="#22d3ee" fill-opacity="0.85"/>
-  <!-- Cortina -->
   <circle cx="596" cy="222" r="3.5" fill="#22d3ee" fill-opacity="0.85"/>
-  <!-- Garmisch -->
   <circle cx="590" cy="213" r="3.5" fill="#22d3ee" fill-opacity="0.85"/>
-  <!-- Auburn CA -->
   <circle cx="432" cy="240" r="3.5" fill="#22d3ee" fill-opacity="0.85"/>
-  <!-- Whistler -->
   <circle cx="415" cy="218" r="3.5" fill="#22d3ee" fill-opacity="0.85"/>
-  <!-- Quebec -->
   <circle cx="452" cy="225" r="3.5" fill="#22d3ee" fill-opacity="0.85"/>
-  <!-- Hong Kong -->
   <circle cx="695" cy="272" r="3.5" fill="#22d3ee" fill-opacity="0.85"/>
-  <!-- Japan -->
   <circle cx="730" cy="218" r="3.5" fill="#22d3ee" fill-opacity="0.85"/>
-  <!-- South Korea -->
-  <circle cx="715" cy="212" r="3.5" fill="#22d3ee" fill-opacity="0.85"/>
-  <!-- Thailand -->
   <circle cx="660" cy="308" r="3.5" fill="#22d3ee" fill-opacity="0.85"/>
-  <!-- Indonesia -->
-  <circle cx="675" cy="325" r="3.5" fill="#22d3ee" fill-opacity="0.85"/>
-  <!-- South Africa -->
   <circle cx="580" cy="400" r="3.5" fill="#22d3ee" fill-opacity="0.85"/>
-  <!-- Chile -->
   <circle cx="452" cy="432" r="3.5" fill="#22d3ee" fill-opacity="0.85"/>
-  <!-- Croatia -->
-  <circle cx="593" cy="210" r="3.5" fill="#22d3ee" fill-opacity="0.85"/>
-  <!-- Portugal -->
-  <circle cx="545" cy="230" r="3.5" fill="#22d3ee" fill-opacity="0.85"/>
 
-  <!-- Taiwan origin (gold star) -->
-  <circle cx="692" cy="252" r="22" fill="url(#tpeGlow)" filter="url(#blur4)"/>
+  <!-- Taiwan origin -->
+  <circle cx="692" cy="252" r="22" fill="url(#tpeGlow)" filter="url(#blur3)"/>
   <circle cx="692" cy="252" r="7"  fill="#f59e0b"/>
   <circle cx="692" cy="252" r="3.5" fill="#fff"/>
-  <text x="704" y="248" font-family="system-ui,-apple-system,sans-serif"
-        font-size="13" fill="#fbbf24" font-weight="800">TPE</text>
 
-  <!-- ── Center text overlay ───────────────────────────────── -->
-  <!-- Dark scrim behind text (left half) -->
-  <rect x="0" y="0" width="480" height="630"
-        fill="url(#bg)" fill-opacity="0.72"/>
+  <!-- ── 全版深色遮罩（讓文字清楚可讀）──────────────────── -->
+  <rect width="1200" height="630" fill="#06111f" fill-opacity="0.58"/>
 
-  <!-- Accent line -->
-  <rect x="72" y="148" width="48" height="4" rx="2" fill="#22d3ee"/>
+  <!-- ── 置中文字（text-anchor=middle, x=600）────────────── -->
+  <!-- 所有重要文字都在水平中央，object-fit:cover 無論怎麼裁切都安全 -->
 
-  <!-- UTMB -->
-  <text x="72" y="230"
+  <!-- 頂部裝飾線 -->
+  <rect x="576" y="138" width="48" height="4" rx="2" fill="#22d3ee"/>
+
+  <!-- UTMB 大標 -->
+  <text x="600" y="240"
         font-family="system-ui,-apple-system,'Segoe UI',sans-serif"
-        font-size="82" font-weight="900" fill="#ffffff" letter-spacing="-2">UTMB</text>
+        font-size="96" font-weight="900" fill="#ffffff" letter-spacing="-2"
+        text-anchor="middle">UTMB</text>
 
   <!-- 世界系列賽 -->
-  <text x="72" y="296"
+  <text x="600" y="302"
         font-family="system-ui,-apple-system,'Segoe UI',sans-serif"
-        font-size="38" font-weight="700" fill="#e2e8f0" letter-spacing="1">世界系列賽</text>
+        font-size="40" font-weight="700" fill="#e2e8f0" letter-spacing="2"
+        text-anchor="middle">世界系列賽</text>
 
-  <!-- 行事曆 (cyan) -->
-  <text x="72" y="346"
+  <!-- 行事曆（cyan） -->
+  <text x="600" y="354"
         font-family="system-ui,-apple-system,'Segoe UI',sans-serif"
-        font-size="38" font-weight="700" fill="#22d3ee" letter-spacing="2">行事曆</text>
+        font-size="40" font-weight="700" fill="#22d3ee" letter-spacing="3"
+        text-anchor="middle">行事曆</text>
 
-  <!-- Divider -->
-  <line x1="72" y1="372" x2="420" y2="372" stroke="#1e3a5f" stroke-width="1.5"/>
+  <!-- 分隔線 -->
+  <line x1="420" y1="378" x2="780" y2="378" stroke="#1e3a5f" stroke-width="1.5"/>
 
-  <!-- Subtitle line 1 -->
-  <text x="72" y="406"
+  <!-- 副標：台灣出發 -->
+  <text x="600" y="412"
         font-family="system-ui,-apple-system,sans-serif"
-        font-size="19" fill="#94a3b8" font-weight="400">從</text>
-  <text x="101" y="406"
-        font-family="system-ui,-apple-system,sans-serif"
-        font-size="19" fill="#f59e0b" font-weight="700"> 台灣桃園 TPE </text>
-  <text x="290" y="406"
-        font-family="system-ui,-apple-system,sans-serif"
-        font-size="19" fill="#94a3b8" font-weight="400">出發</text>
+        font-size="20" fill="#94a3b8" font-weight="400"
+        text-anchor="middle">從
+    <tspan fill="#f59e0b" font-weight="700"> 台灣桃園 TPE </tspan>
+    <tspan fill="#94a3b8">出發 · 最低來回機票</tspan>
+  </text>
 
-  <!-- Subtitle line 2 -->
-  <text x="72" y="432"
-        font-family="system-ui,-apple-system,sans-serif"
-        font-size="16" fill="#64748b">最低來回機票 · 每日自動更新</text>
+  <!-- 功能 badges（置中） -->
+  <g text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="600" fill="#22d3ee">
+    <!-- badge 1 -->
+    <rect x="372" y="438" width="108" height="30" rx="6"
+          fill="#22d3ee" fill-opacity="0.12" stroke="#22d3ee" stroke-opacity="0.35" stroke-width="1"/>
+    <text x="426" y="458">日期排序</text>
+    <!-- badge 2 -->
+    <rect x="492" y="438" width="108" height="30" rx="6"
+          fill="#22d3ee" fill-opacity="0.12" stroke="#22d3ee" stroke-opacity="0.35" stroke-width="1"/>
+    <text x="546" y="458">價格排序</text>
+    <!-- badge 3 -->
+    <rect x="612" y="438" width="108" height="30" rx="6"
+          fill="#22d3ee" fill-opacity="0.12" stroke="#22d3ee" stroke-opacity="0.35" stroke-width="1"/>
+    <text x="666" y="458">世界地圖</text>
+  </g>
 
-  <!-- Three feature badges -->
-  <rect x="72"  y="460" width="102" height="30" rx="6"
-        fill="#22d3ee" fill-opacity="0.12" stroke="#22d3ee" stroke-opacity="0.35" stroke-width="1"/>
-  <text x="123" y="480" font-family="system-ui,sans-serif" font-size="12"
-        fill="#22d3ee" font-weight="600" text-anchor="middle">日期排序</text>
+  <!-- 每日更新標籤 -->
+  <text x="600" y="510"
+        font-family="system-ui,sans-serif" font-size="14"
+        fill="#475569" text-anchor="middle">每日台灣時間凌晨 3 點自動更新</text>
 
-  <rect x="184" y="460" width="102" height="30" rx="6"
-        fill="#22d3ee" fill-opacity="0.12" stroke="#22d3ee" stroke-opacity="0.35" stroke-width="1"/>
-  <text x="235" y="480" font-family="system-ui,sans-serif" font-size="12"
-        fill="#22d3ee" font-weight="600" text-anchor="middle">價格排序</text>
-
-  <rect x="296" y="460" width="102" height="30" rx="6"
-        fill="#22d3ee" fill-opacity="0.12" stroke="#22d3ee" stroke-opacity="0.35" stroke-width="1"/>
-  <text x="347" y="480" font-family="system-ui,sans-serif" font-size="12"
-        fill="#22d3ee" font-weight="600" text-anchor="middle">世界地圖</text>
-
-  <!-- Site name -->
-  <text x="72" y="572"
+  <!-- 網站名稱 -->
+  <text x="600" y="572"
         font-family="system-ui,sans-serif" font-size="13"
-        fill="#334155" font-weight="500">YR 運動研究室</text>
+        fill="#334155" font-weight="500" text-anchor="middle">YR 運動研究室</text>
 </svg>

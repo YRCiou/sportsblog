@@ -490,7 +490,15 @@
 
 <!-- ── Scripts ────────────────────────────────────────────────────────────── -->
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-<script src="assets/blog.js" data-slug="utmb-world-events"></script>
+<script>
+  window.SUPABASE_URL      = "https://cpzdyivdciglbhznrlkl.supabase.co";
+  window.SUPABASE_ANON_KEY = "sb_publishable_Z_xBTGqVA_YDMdq45Ks9Zg_uPrLF2a0";
+  window.PAGE_SLUG         = "utmb-world-events";
+  window.PAGE_TITLE        = "UTMB 世界系列賽行事曆：賽事資訊 × 台灣出發機票";
+  window.IS_INDEX          = false;
+</script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script src="assets/blog.js"></script>
 <script src="assets/search.js"></script>
 
 <script>
