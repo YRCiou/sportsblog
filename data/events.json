@@ -1,6 +1,6 @@
 {
-  "updated": "2026-04-09T00:00:00Z",
-  "source": "utmb.world",
+  "updated": "2026-04-11T14:42:31.928Z",
+  "source": "utmb.world + travelpayouts.com",
   "events": [
     {
       "id": "istria-100-2026",
@@ -10,7 +10,13 @@
       "countryEn": "Croatia",
       "dateStart": "2026-04-10",
       "dateEnd": "2026-04-12",
-      "distances": ["21K", "42K", "69K", "110K", "168K"],
+      "distances": [
+        "21K",
+        "42K",
+        "69K",
+        "110K",
+        "168K"
+      ],
       "lat": 45.0972,
       "lng": 14.1197,
       "nearestAirport": "PUY",
@@ -27,7 +33,12 @@
       "countryEn": "China",
       "dateStart": "2026-04-10",
       "dateEnd": "2026-04-12",
-      "distances": ["25K", "46K", "80K", "114K"],
+      "distances": [
+        "25K",
+        "46K",
+        "80K",
+        "114K"
+      ],
       "lat": 30.5428,
       "lng": 119.9873,
       "nearestAirport": "HGH",
@@ -44,7 +55,12 @@
       "countryEn": "USA",
       "dateStart": "2026-04-10",
       "dateEnd": "2026-04-12",
-      "distances": ["10K", "21K", "48K", "100K"],
+      "distances": [
+        "10K",
+        "21K",
+        "48K",
+        "100K"
+      ],
       "lat": 39.1583,
       "lng": -108.7293,
       "nearestAirport": "GJT",
@@ -61,14 +77,21 @@
       "countryEn": "Mexico",
       "dateStart": "2026-04-16",
       "dateEnd": "2026-04-18",
-      "distances": ["5K", "20K", "37K", "53K", "81K"],
+      "distances": [
+        "5K",
+        "20K",
+        "37K",
+        "53K",
+        "81K"
+      ],
       "lat": 20.6534,
       "lng": -105.2253,
       "nearestAirport": "PVR",
       "utmbUrl": "https://utmb.world/utmb-world-series-events",
       "flightPrice": null,
       "flightCurrency": "TWD",
-      "flightUpdated": null
+      "flightUpdated": null,
+      "flightUrl": "https://www.skyscanner.com.tw/transport/flights/tpe/pvr/260413/260420/?adults=1&cabinclass=economy"
     },
     {
       "id": "canyons-endurance-2026",
@@ -78,14 +101,20 @@
       "countryEn": "USA",
       "dateStart": "2026-04-23",
       "dateEnd": "2026-04-26",
-      "distances": ["20K", "50K", "100K", "100M"],
+      "distances": [
+        "20K",
+        "50K",
+        "100K",
+        "100M"
+      ],
       "lat": 38.8966,
       "lng": -121.0769,
       "nearestAirport": "SMF",
       "utmbUrl": "https://utmb.world/utmb-world-series-events",
       "flightPrice": null,
       "flightCurrency": "TWD",
-      "flightUpdated": null
+      "flightUpdated": null,
+      "flightUrl": "https://www.skyscanner.com.tw/transport/flights/tpe/smf/260420/260428/?adults=1&cabinclass=economy"
     },
     {
       "id": "grand-raid-ventoux-2026",
@@ -95,14 +124,20 @@
       "countryEn": "France",
       "dateStart": "2026-04-24",
       "dateEnd": "2026-04-26",
-      "distances": ["20K", "50K", "100K", "125K"],
+      "distances": [
+        "20K",
+        "50K",
+        "100K",
+        "125K"
+      ],
       "lat": 44.1722,
       "lng": 5.1289,
       "nearestAirport": "MRS",
       "utmbUrl": "https://utmb.world/utmb-world-series-events",
       "flightPrice": null,
       "flightCurrency": "TWD",
-      "flightUpdated": null
+      "flightUpdated": null,
+      "flightUrl": "https://www.skyscanner.com.tw/transport/flights/tpe/mrs/260421/260428/?adults=1&cabinclass=economy"
     },
     {
       "id": "amazean-jungle-thailand-2026",
@@ -112,14 +147,20 @@
       "countryEn": "Thailand",
       "dateStart": "2026-04-30",
       "dateEnd": "2026-05-03",
-      "distances": ["20K", "50K", "100K", "100M"],
-      "lat": 5.7750,
+      "distances": [
+        "20K",
+        "50K",
+        "100K",
+        "100M"
+      ],
+      "lat": 5.775,
       "lng": 101.0753,
       "nearestAirport": "BKK",
       "utmbUrl": "https://utmb.world/utmb-world-series-events",
       "flightPrice": null,
       "flightCurrency": "TWD",
-      "flightUpdated": null
+      "flightUpdated": null,
+      "flightUrl": "https://www.skyscanner.com.tw/transport/flights/tpe/bkk/260427/260505/?adults=1&cabinclass=economy"
     },
     {
       "id": "oh-meu-deus-2026",
@@ -129,14 +170,20 @@
       "countryEn": "Portugal",
       "dateStart": "2026-05-01",
       "dateEnd": "2026-05-03",
-      "distances": ["20K", "50K", "100K", "100M"],
+      "distances": [
+        "20K",
+        "50K",
+        "100K",
+        "100M"
+      ],
       "lat": 39.7437,
       "lng": -8.8071,
       "nearestAirport": "LIS",
       "utmbUrl": "https://utmb.world/utmb-world-series-events",
       "flightPrice": null,
       "flightCurrency": "TWD",
-      "flightUpdated": null
+      "flightUpdated": null,
+      "flightUrl": "https://www.skyscanner.com.tw/transport/flights/tpe/lis/260428/260505/?adults=1&cabinclass=economy"
     },
     {
       "id": "trail-alsace-2026",
@@ -146,14 +193,20 @@
       "countryEn": "France",
       "dateStart": "2026-05-14",
       "dateEnd": "2026-05-17",
-      "distances": ["20K", "50K", "100K", "100M"],
+      "distances": [
+        "20K",
+        "50K",
+        "100K",
+        "100M"
+      ],
       "lat": 48.4617,
       "lng": 7.4881,
       "nearestAirport": "BSL",
       "utmbUrl": "https://utmb.world/utmb-world-series-events",
       "flightPrice": null,
       "flightCurrency": "TWD",
-      "flightUpdated": null
+      "flightUpdated": null,
+      "flightUrl": "https://www.skyscanner.com.tw/transport/flights/tpe/bsl/260511/260519/?adults=1&cabinclass=economy"
     },
     {
       "id": "ultra-trail-australia-2026",
@@ -163,15 +216,21 @@
       "countryEn": "Australia",
       "dateStart": "2026-05-14",
       "dateEnd": "2026-05-17",
-      "distances": ["20K", "50K", "100K", "100M"],
+      "distances": [
+        "20K",
+        "50K",
+        "100K",
+        "100M"
+      ],
       "lat": -33.7123,
       "lng": 150.3115,
       "nearestAirport": "SYD",
       "utmbUrl": "https://utmb.world/utmb-world-series-events",
-      "flightPrice": null,
+      "flightPrice": 18321,
       "flightCurrency": "TWD",
-      "flightUpdated": null,
-      "isMajor": true
+      "flightUpdated": "2026-04-11T14:42:21.965Z",
+      "isMajor": true,
+      "flightUrl": "https://www.skyscanner.com.tw/transport/flights/tpe/syd/260511/260519/?adults=1&cabinclass=economy"
     },
     {
       "id": "ultra-trail-snowdonia-2026",
@@ -181,14 +240,20 @@
       "countryEn": "UK",
       "dateStart": "2026-05-15",
       "dateEnd": "2026-05-17",
-      "distances": ["20K", "50K", "100K", "100M"],
+      "distances": [
+        "20K",
+        "50K",
+        "100K",
+        "100M"
+      ],
       "lat": 53.1183,
       "lng": -4.1298,
       "nearestAirport": "MAN",
       "utmbUrl": "https://utmb.world/utmb-world-series-events",
       "flightPrice": null,
       "flightCurrency": "TWD",
-      "flightUpdated": null
+      "flightUpdated": null,
+      "flightUrl": "https://www.skyscanner.com.tw/transport/flights/tpe/man/260512/260519/?adults=1&cabinclass=economy"
     },
     {
       "id": "mozart-100-2026",
@@ -198,14 +263,20 @@
       "countryEn": "Austria",
       "dateStart": "2026-05-22",
       "dateEnd": "2026-05-24",
-      "distances": ["20K", "50K", "100K", "100M"],
+      "distances": [
+        "20K",
+        "50K",
+        "100K",
+        "100M"
+      ],
       "lat": 47.7997,
       "lng": 13.2961,
       "nearestAirport": "SZG",
       "utmbUrl": "https://utmb.world/utmb-world-series-events",
       "flightPrice": null,
       "flightCurrency": "TWD",
-      "flightUpdated": null
+      "flightUpdated": null,
+      "flightUrl": "https://www.skyscanner.com.tw/transport/flights/tpe/szg/260519/260526/?adults=1&cabinclass=economy"
     },
     {
       "id": "mountain-ultra-trail-2026",
@@ -215,14 +286,20 @@
       "countryEn": "South Africa",
       "dateStart": "2026-05-29",
       "dateEnd": "2026-05-31",
-      "distances": ["20K", "50K", "100K", "100M"],
+      "distances": [
+        "20K",
+        "50K",
+        "100K",
+        "100M"
+      ],
       "lat": -33.9608,
       "lng": 22.4609,
       "nearestAirport": "GRJ",
       "utmbUrl": "https://utmb.world/utmb-world-series-events",
       "flightPrice": null,
       "flightCurrency": "TWD",
-      "flightUpdated": null
+      "flightUpdated": null,
+      "flightUrl": "https://www.skyscanner.com.tw/transport/flights/tpe/grj/260526/260602/?adults=1&cabinclass=economy"
     },
     {
       "id": "trail-100-andorra-2026",
@@ -232,14 +309,20 @@
       "countryEn": "Andorra",
       "dateStart": "2026-06-11",
       "dateEnd": "2026-06-14",
-      "distances": ["20K", "50K", "100K", "100M"],
+      "distances": [
+        "20K",
+        "50K",
+        "100K",
+        "100M"
+      ],
       "lat": 42.5564,
       "lng": 1.5332,
       "nearestAirport": "BCN",
       "utmbUrl": "https://utmb.world/utmb-world-series-events",
       "flightPrice": null,
       "flightCurrency": "TWD",
-      "flightUpdated": null
+      "flightUpdated": null,
+      "flightUrl": "https://www.skyscanner.com.tw/transport/flights/tpe/bcn/260608/260616/?adults=1&cabinclass=economy"
     },
     {
       "id": "trail-du-saint-jacques-2026",
@@ -249,14 +332,20 @@
       "countryEn": "France",
       "dateStart": "2026-06-12",
       "dateEnd": "2026-06-14",
-      "distances": ["20K", "50K", "100K", "100M"],
+      "distances": [
+        "20K",
+        "50K",
+        "100K",
+        "100M"
+      ],
       "lat": 45.0433,
       "lng": 3.8853,
       "nearestAirport": "LYS",
       "utmbUrl": "https://utmb.world/utmb-world-series-events",
       "flightPrice": null,
       "flightCurrency": "TWD",
-      "flightUpdated": null
+      "flightUpdated": null,
+      "flightUrl": "https://www.skyscanner.com.tw/transport/flights/tpe/lys/260609/260616/?adults=1&cabinclass=economy"
     },
     {
       "id": "trail-kings-lake-toba-2026",
@@ -266,14 +355,19 @@
       "countryEn": "Indonesia",
       "dateStart": "2026-06-12",
       "dateEnd": "2026-06-14",
-      "distances": ["20K", "50K", "100K"],
+      "distances": [
+        "20K",
+        "50K",
+        "100K"
+      ],
       "lat": 2.6283,
       "lng": 98.8356,
       "nearestAirport": "KNO",
       "utmbUrl": "https://utmb.world/utmb-world-series-events",
       "flightPrice": null,
       "flightCurrency": "TWD",
-      "flightUpdated": null
+      "flightUpdated": null,
+      "flightUrl": "https://www.skyscanner.com.tw/transport/flights/tpe/kno/260609/260616/?adults=1&cabinclass=economy"
     },
     {
       "id": "kagaspa-trail-2026",
@@ -283,14 +377,19 @@
       "countryEn": "Japan",
       "dateStart": "2026-06-18",
       "dateEnd": "2026-06-21",
-      "distances": ["20K", "50K", "100K"],
+      "distances": [
+        "20K",
+        "50K",
+        "100K"
+      ],
       "lat": 36.2279,
       "lng": 136.3512,
       "nearestAirport": "KMQ",
       "utmbUrl": "https://utmb.world/utmb-world-series-events",
       "flightPrice": null,
       "flightCurrency": "TWD",
-      "flightUpdated": null
+      "flightUpdated": null,
+      "flightUrl": "https://www.skyscanner.com.tw/transport/flights/tpe/kmq/260615/260623/?adults=1&cabinclass=economy"
     },
     {
       "id": "zugspitz-ultra-trail-2026",
@@ -300,14 +399,20 @@
       "countryEn": "Germany",
       "dateStart": "2026-06-18",
       "dateEnd": "2026-06-20",
-      "distances": ["20K", "50K", "100K", "100M"],
-      "lat": 47.4920,
+      "distances": [
+        "20K",
+        "50K",
+        "100K",
+        "100M"
+      ],
+      "lat": 47.492,
       "lng": 11.0953,
       "nearestAirport": "MUC",
       "utmbUrl": "https://utmb.world/utmb-world-series-events",
       "flightPrice": null,
       "flightCurrency": "TWD",
-      "flightUpdated": null
+      "flightUpdated": null,
+      "flightUrl": "https://www.skyscanner.com.tw/transport/flights/tpe/muc/260615/260622/?adults=1&cabinclass=economy"
     },
     {
       "id": "lavaredo-ultra-trail-2026",
@@ -317,14 +422,20 @@
       "countryEn": "Italy",
       "dateStart": "2026-06-24",
       "dateEnd": "2026-06-27",
-      "distances": ["20K", "50K", "100K", "100M"],
+      "distances": [
+        "20K",
+        "50K",
+        "100K",
+        "100M"
+      ],
       "lat": 46.5361,
       "lng": 12.1356,
       "nearestAirport": "VCE",
       "utmbUrl": "https://utmb.world/utmb-world-series-events",
       "flightPrice": null,
       "flightCurrency": "TWD",
-      "flightUpdated": null
+      "flightUpdated": null,
+      "flightUrl": "https://www.skyscanner.com.tw/transport/flights/tpe/vce/260621/260629/?adults=1&cabinclass=economy"
     },
     {
       "id": "torrencial-chile-2026",
@@ -334,14 +445,19 @@
       "countryEn": "Chile",
       "dateStart": "2026-06-26",
       "dateEnd": "2026-06-28",
-      "distances": ["20K", "50K", "100K"],
+      "distances": [
+        "20K",
+        "50K",
+        "100K"
+      ],
       "lat": -39.8142,
       "lng": -73.2459,
       "nearestAirport": "ZAL",
       "utmbUrl": "https://utmb.world/utmb-world-series-events",
       "flightPrice": null,
       "flightCurrency": "TWD",
-      "flightUpdated": null
+      "flightUpdated": null,
+      "flightUrl": "https://www.skyscanner.com.tw/transport/flights/tpe/zal/260623/260630/?adults=1&cabinclass=economy"
     },
     {
       "id": "western-states-2026",
@@ -351,14 +467,17 @@
       "countryEn": "USA",
       "dateStart": "2026-06-27",
       "dateEnd": "2026-06-28",
-      "distances": ["100M"],
+      "distances": [
+        "100M"
+      ],
       "lat": 39.1969,
       "lng": -120.2357,
       "nearestAirport": "SMF",
       "utmbUrl": "https://utmb.world/utmb-world-series-events",
       "flightPrice": null,
       "flightCurrency": "TWD",
-      "flightUpdated": null
+      "flightUpdated": null,
+      "flightUrl": "https://www.skyscanner.com.tw/transport/flights/tpe/smf/260624/260630/?adults=1&cabinclass=economy"
     },
     {
       "id": "val-daran-2026",
@@ -368,15 +487,21 @@
       "countryEn": "Spain",
       "dateStart": "2026-07-01",
       "dateEnd": "2026-07-05",
-      "distances": ["20K", "50K", "100K", "100M"],
+      "distances": [
+        "20K",
+        "50K",
+        "100K",
+        "100M"
+      ],
       "lat": 42.6993,
-      "lng": 0.7960,
+      "lng": 0.796,
       "nearestAirport": "BCN",
       "utmbUrl": "https://utmb.world/utmb-world-series-events",
       "flightPrice": null,
       "flightCurrency": "TWD",
       "flightUpdated": null,
-      "isMajor": true
+      "isMajor": true,
+      "flightUrl": "https://www.skyscanner.com.tw/transport/flights/tpe/bcn/260628/260707/?adults=1&cabinclass=economy"
     },
     {
       "id": "restonica-trail-2026",
@@ -386,14 +511,20 @@
       "countryEn": "France",
       "dateStart": "2026-07-09",
       "dateEnd": "2026-07-11",
-      "distances": ["20K", "50K", "100K", "100M"],
+      "distances": [
+        "20K",
+        "50K",
+        "100K",
+        "100M"
+      ],
       "lat": 42.3046,
       "lng": 9.1494,
       "nearestAirport": "AJA",
       "utmbUrl": "https://utmb.world/utmb-world-series-events",
       "flightPrice": null,
       "flightCurrency": "TWD",
-      "flightUpdated": null
+      "flightUpdated": null,
+      "flightUrl": "https://www.skyscanner.com.tw/transport/flights/tpe/aja/260706/260713/?adults=1&cabinclass=economy"
     },
     {
       "id": "trail-verbier-2026",
@@ -403,14 +534,20 @@
       "countryEn": "Switzerland",
       "dateStart": "2026-07-10",
       "dateEnd": "2026-07-12",
-      "distances": ["20K", "50K", "100K", "100M"],
+      "distances": [
+        "20K",
+        "50K",
+        "100K",
+        "100M"
+      ],
       "lat": 46.0967,
       "lng": 7.2283,
       "nearestAirport": "GVA",
       "utmbUrl": "https://utmb.world/utmb-world-series-events",
       "flightPrice": null,
       "flightCurrency": "TWD",
-      "flightUpdated": null
+      "flightUpdated": null,
+      "flightUrl": "https://www.skyscanner.com.tw/transport/flights/tpe/gva/260707/260714/?adults=1&cabinclass=economy"
     },
     {
       "id": "eiger-ultra-trail-2026",
@@ -420,14 +557,20 @@
       "countryEn": "Switzerland",
       "dateStart": "2026-07-15",
       "dateEnd": "2026-07-19",
-      "distances": ["20K", "50K", "100K", "100M"],
+      "distances": [
+        "20K",
+        "50K",
+        "100K",
+        "100M"
+      ],
       "lat": 46.6244,
       "lng": 8.0413,
       "nearestAirport": "ZRH",
       "utmbUrl": "https://utmb.world/utmb-world-series-events",
       "flightPrice": null,
       "flightCurrency": "TWD",
-      "flightUpdated": null
+      "flightUpdated": null,
+      "flightUrl": "https://www.skyscanner.com.tw/transport/flights/tpe/zrh/260712/260721/?adults=1&cabinclass=economy"
     },
     {
       "id": "monte-rosa-walserwaeg-2026",
@@ -437,14 +580,20 @@
       "countryEn": "Italy",
       "dateStart": "2026-07-17",
       "dateEnd": "2026-07-19",
-      "distances": ["20K", "50K", "100K", "100M"],
+      "distances": [
+        "20K",
+        "50K",
+        "100K",
+        "100M"
+      ],
       "lat": 45.7859,
       "lng": 7.8222,
       "nearestAirport": "TRN",
       "utmbUrl": "https://utmb.world/utmb-world-series-events",
       "flightPrice": null,
       "flightCurrency": "TWD",
-      "flightUpdated": null
+      "flightUpdated": null,
+      "flightUrl": "https://www.skyscanner.com.tw/transport/flights/tpe/trn/260714/260721/?adults=1&cabinclass=economy"
     },
     {
       "id": "speedgoat-2026",
@@ -454,14 +603,17 @@
       "countryEn": "USA",
       "dateStart": "2026-07-23",
       "dateEnd": "2026-07-25",
-      "distances": ["50K"],
+      "distances": [
+        "50K"
+      ],
       "lat": 40.5649,
       "lng": -111.8847,
       "nearestAirport": "SLC",
       "utmbUrl": "https://utmb.world/utmb-world-series-events",
       "flightPrice": null,
       "flightCurrency": "TWD",
-      "flightUpdated": null
+      "flightUpdated": null,
+      "flightUrl": "https://www.skyscanner.com.tw/transport/flights/tpe/slc/260720/260727/?adults=1&cabinclass=economy"
     },
     {
       "id": "bucovina-ultra-rocks-2026",
@@ -471,14 +623,20 @@
       "countryEn": "Romania",
       "dateStart": "2026-07-24",
       "dateEnd": "2026-07-26",
-      "distances": ["20K", "50K", "100K", "100M"],
+      "distances": [
+        "20K",
+        "50K",
+        "100K",
+        "100M"
+      ],
       "lat": 47.5273,
       "lng": 25.5574,
       "nearestAirport": "IAS",
       "utmbUrl": "https://utmb.world/utmb-world-series-events",
       "flightPrice": null,
       "flightCurrency": "TWD",
-      "flightUpdated": null
+      "flightUpdated": null,
+      "flightUrl": "https://www.skyscanner.com.tw/transport/flights/tpe/ias/260721/260728/?adults=1&cabinclass=economy"
     },
     {
       "id": "quito-trail-ecuador-2026",
@@ -488,14 +646,19 @@
       "countryEn": "Ecuador",
       "dateStart": "2026-07-31",
       "dateEnd": "2026-08-02",
-      "distances": ["20K", "50K", "100K"],
+      "distances": [
+        "20K",
+        "50K",
+        "100K"
+      ],
       "lat": -0.2295,
       "lng": -78.5243,
       "nearestAirport": "UIO",
       "utmbUrl": "https://utmb.world/utmb-world-series-events",
       "flightPrice": null,
       "flightCurrency": "TWD",
-      "flightUpdated": null
+      "flightUpdated": null,
+      "flightUrl": "https://www.skyscanner.com.tw/transport/flights/tpe/uio/260728/260804/?adults=1&cabinclass=economy"
     },
     {
       "id": "borealys-2026",
@@ -505,14 +668,20 @@
       "countryEn": "Canada",
       "dateStart": "2026-08-14",
       "dateEnd": "2026-08-16",
-      "distances": ["20K", "50K", "100K", "100M"],
+      "distances": [
+        "20K",
+        "50K",
+        "100K",
+        "100M"
+      ],
       "lat": 46.8139,
-      "lng": -71.2080,
+      "lng": -71.208,
       "nearestAirport": "YQB",
       "utmbUrl": "https://utmb.world/utmb-world-series-events",
       "flightPrice": null,
       "flightCurrency": "TWD",
-      "flightUpdated": null
+      "flightUpdated": null,
+      "flightUrl": "https://www.skyscanner.com.tw/transport/flights/tpe/yqb/260811/260818/?adults=1&cabinclass=economy"
     },
     {
       "id": "whistler-2026",
@@ -522,14 +691,20 @@
       "countryEn": "Canada",
       "dateStart": "2026-08-21",
       "dateEnd": "2026-08-23",
-      "distances": ["20K", "50K", "100K", "100M"],
+      "distances": [
+        "20K",
+        "50K",
+        "100K",
+        "100M"
+      ],
       "lat": 50.1163,
       "lng": -122.9574,
       "nearestAirport": "YVR",
       "utmbUrl": "https://utmb.world/utmb-world-series-events",
       "flightPrice": null,
       "flightCurrency": "TWD",
-      "flightUpdated": null
+      "flightUpdated": null,
+      "flightUrl": "https://www.skyscanner.com.tw/transport/flights/tpe/yvr/260818/260825/?adults=1&cabinclass=economy"
     },
     {
       "id": "utmb-mont-blanc-2026",
@@ -539,7 +714,13 @@
       "countryEn": "France",
       "dateStart": "2026-08-24",
       "dateEnd": "2026-08-30",
-      "distances": ["OCC 55K", "CCC 101K", "UTMB 171K", "MCC 40K", "PTL 300K"],
+      "distances": [
+        "OCC 55K",
+        "CCC 101K",
+        "UTMB 171K",
+        "MCC 40K",
+        "PTL 300K"
+      ],
       "lat": 45.9237,
       "lng": 6.8694,
       "nearestAirport": "GVA",
@@ -547,7 +728,8 @@
       "flightPrice": null,
       "flightCurrency": "TWD",
       "flightUpdated": null,
-      "isMajor": true
+      "isMajor": true,
+      "flightUrl": "https://www.skyscanner.com.tw/transport/flights/tpe/gva/260821/260901/?adults=1&cabinclass=economy"
     },
     {
       "id": "transgrancanaria-2026",
@@ -557,14 +739,20 @@
       "countryEn": "Spain",
       "dateStart": "2026-09-04",
       "dateEnd": "2026-09-06",
-      "distances": ["20K", "50K", "100K", "128K"],
+      "distances": [
+        "20K",
+        "50K",
+        "100K",
+        "128K"
+      ],
       "lat": 27.9202,
       "lng": -15.5474,
       "nearestAirport": "LPA",
       "utmbUrl": "https://utmb.world/utmb-world-series-events",
       "flightPrice": null,
       "flightCurrency": "TWD",
-      "flightUpdated": null
+      "flightUpdated": null,
+      "flightUrl": "https://www.skyscanner.com.tw/transport/flights/tpe/lpa/260901/260908/?adults=1&cabinclass=economy"
     },
     {
       "id": "ultra-trail-hong-kong-2026",
@@ -574,14 +762,20 @@
       "countryEn": "Hong Kong",
       "dateStart": "2026-11-27",
       "dateEnd": "2026-11-29",
-      "distances": ["20K", "50K", "100K", "100M"],
+      "distances": [
+        "20K",
+        "50K",
+        "100K",
+        "100M"
+      ],
       "lat": 22.3193,
       "lng": 114.1694,
       "nearestAirport": "HKG",
       "utmbUrl": "https://utmb.world/utmb-world-series-events",
       "flightPrice": null,
       "flightCurrency": "TWD",
-      "flightUpdated": null
+      "flightUpdated": null,
+      "flightUrl": "https://www.skyscanner.com.tw/transport/flights/tpe/hkg/261124/261201/?adults=1&cabinclass=economy"
     },
     {
       "id": "north-face-endurance-challenge-korea-2026",
@@ -591,14 +785,19 @@
       "countryEn": "South Korea",
       "dateStart": "2026-10-09",
       "dateEnd": "2026-10-11",
-      "distances": ["20K", "50K", "100K"],
+      "distances": [
+        "20K",
+        "50K",
+        "100K"
+      ],
       "lat": 37.3742,
       "lng": 128.3954,
       "nearestAirport": "GMP",
       "utmbUrl": "https://utmb.world/utmb-world-series-events",
       "flightPrice": null,
       "flightCurrency": "TWD",
-      "flightUpdated": null
+      "flightUpdated": null,
+      "flightUrl": "https://www.skyscanner.com.tw/transport/flights/tpe/gmp/261006/261013/?adults=1&cabinclass=economy"
     }
   ]
 }
