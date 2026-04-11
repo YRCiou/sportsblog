@@ -1,5 +1,5 @@
 {
-  "updated": "2026-04-11T14:42:31.928Z",
+  "updated": "2026-04-11T14:38:01.248Z",
   "source": "utmb.world + travelpayouts.com",
   "events": [
     {
@@ -226,9 +226,9 @@
       "lng": 150.3115,
       "nearestAirport": "SYD",
       "utmbUrl": "https://utmb.world/utmb-world-series-events",
-      "flightPrice": 18321,
+      "flightPrice": null,
       "flightCurrency": "TWD",
-      "flightUpdated": "2026-04-11T14:42:21.965Z",
+      "flightUpdated": null,
       "isMajor": true,
       "flightUrl": "https://www.skyscanner.com.tw/transport/flights/tpe/syd/260511/260519/?adults=1&cabinclass=economy"
     },

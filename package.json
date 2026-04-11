@@ -3,15 +3,19 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "new":      "node create-post.js",
-    "update":   "node update-post.js",
-    "regen":    "node regenerate.js",
-    "sitemap":  "node generate-sitemap.js",
-    "deploy":   "node deploy.js"
+    "new": "node create-post.js",
+    "update": "node update-post.js",
+    "regen": "node regenerate.js",
+    "sitemap": "node generate-sitemap.js",
+    "deploy": "node deploy.js"
   },
   "dependencies": {
     "marked": "^12.0.0",
     "slugify": "^1.6.6",
     "yargs": "^17.7.2"
+  },
+  "devDependencies": {
+    "@resvg/resvg-js": "^2.6.2",
+    "sharp": "^0.34.5"
   }
 }
