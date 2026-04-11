@@ -8,9 +8,12 @@
  *   TRAVELPAYOUTS_TOKEN  - Travelpayouts Data API token（免費，聯盟帳號取得）
  */
 
-const https = require('https');
-const fs    = require('fs');
-const path  = require('path');
+import https from 'https';
+import fs    from 'fs';
+import path  from 'path';
+import { fileURLToPath } from 'url';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const DATA_FILE     = path.join(__dirname, '..', 'data', 'events.json');
 const ORIGIN        = 'TPE';
