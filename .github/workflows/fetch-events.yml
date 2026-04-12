@@ -4,6 +4,10 @@ on:
   schedule:
     # 每天台灣時間凌晨 3 點執行（UTC 19:00）
     - cron: '0 19 * * *'
+  push:
+    # 每次 push 時同步首頁卡片（確保圖片與 posts-data.json 一致）
+    paths:
+      - 'posts-data.json'
   workflow_dispatch:
     # 允許手動觸發
 
@@ -24,25 +28,33 @@ jobs:
         with:
           node-version: '20'
 
+      - name: 同步首頁卡片（posts-data.json → index.html）
+        run: node scripts/sync-homepage.js
+
       - name: 執行賽事與機票抓取腳本
+        if: github.event_name != 'push'
         env:
           TRAVELPAYOUTS_TOKEN: ${{ secrets.TRAVELPAYOUTS_TOKEN }}
         run: node scripts/fetch-events.js
 
-      - name: 檢查是否有資料異動
+      - name: 檢查是否有任何異動
         id: check-changes
         run: |
-          if git diff --quiet data/events.json; then
+          if git diff --quiet; then
             echo "changed=false" >> $GITHUB_OUTPUT
           else
             echo "changed=true" >> $GITHUB_OUTPUT
           fi
 
-      - name: Commit 並 Push 更新的資料
+      - name: Commit 並 Push 更新
         if: steps.check-changes.outputs.changed == 'true'
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/events.json
-          git commit -m "chore: 自動更新 UTMB 賽事與機票資料 [$(date -u '+%Y-%m-%d %H:%M UTC')]"
+          git add -A
+          if [ "${{ github.event_name }}" = "push" ]; then
+            git commit -m "chore: 自動同步首頁卡片 [$(date -u '+%Y-%m-%d %H:%M UTC')]"
+          else
+            git commit -m "chore: 自動更新 UTMB 賽事與機票資料 [$(date -u '+%Y-%m-%d %H:%M UTC')]"
+          fi
           git push

@@ -1,6 +1,26 @@
 {
   "posts": [
     {
+      "slug": "bjj-finishing-moves",
+      "title": "BJJ 致勝招式歷史演進：GI × No-GI 完整統計（2002–2025）× 2026 趨勢預測",
+      "author": "YRCiou",
+      "topic": "BJJ Brazilian jiu-jitsu finishing moves submission heel hook rear naked choke kimura armbar history statistics IBJJF ASJJF GI no-gi",
+      "excerpt": "整合 IBJJF 與 ASJJF 歷年賽事資料，分析 GI 有道袍與 No-GI 無道袍比賽 2002–2025 年致勝招式演進。腳踝鉤從 2% 成長至 26%，木村固系統悄然崛起。附互動圖表、招式動畫模擬，並以 EWMA × 線性回歸集成模型預測 2026 年熱門招式。",
+      "createdAt": "2026-04-12T10:00:00.000Z",
+      "updatedAt": "2026-04-12T10:00:00.000Z",
+      "category": "巴柔",
+      "customHtml": true,
+      "hero": {
+        "url": "https://yrciou.github.io/sportsblog/assets/og-bjj-finishing.jpg",
+        "thumbUrl": "https://yrciou.github.io/sportsblog/assets/og-bjj-finishing.jpg",
+        "title": "BJJ 致勝招式歷史演進統計分析",
+        "author": "YRCiou",
+        "sourceUrl": "https://yrciou.github.io/sportsblog/posts/bjj-finishing-moves/",
+        "license": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      }
+    },
+    {
       "slug": "bjj-toe-injuries",
       "title": "巴柔腳趾傷害完全指南：五根腳趾的受傷模式、統計與預防",
       "author": "YRCiou",
@@ -10,7 +30,6 @@
       "updatedAt": "2026-04-09T14:00:00.000Z",
       "category": "巴柔",
       "customHtml": true,
-      "contentMdPath": "posts/bjj-toe-injuries/content.md",
       "hero": {
         "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/156_365_no-gi_grappling_%284672861418%29.jpg/1280px-156_365_no-gi_grappling_%284672861418%29.jpg",
         "thumbUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/156_365_no-gi_grappling_%284672861418%29.jpg/640px-156_365_no-gi_grappling_%284672861418%29.jpg",
@@ -31,7 +50,6 @@
       "updatedAt": "2026-04-09T12:00:00.000Z",
       "category": "越野",
       "customHtml": true,
-      "contentMdPath": "posts/utmb-world-events/content.md",
       "hero": {
         "url": "assets/utmb-world-events-hero.svg",
         "thumbUrl": "assets/utmb-world-events-hero.svg",
@@ -52,7 +70,6 @@
       "updatedAt": "2026-04-08T10:00:00.000Z",
       "category": "越野",
       "customHtml": true,
-      "contentMdPath": "posts/utmb-lottery-odds/content.md",
       "hero": {
         "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/UTMB_2015_Starting_Line.jpg/1280px-UTMB_2015_Starting_Line.jpg",
         "thumbUrl": "https://upload.wikimedia.org/wikipedia/commons/d/db/UTMB_2015_Starting_Line.jpg",
