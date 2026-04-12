@@ -650,3 +650,148 @@ img { max-width: 100%; height: auto; display: block; }
   .content-wrapper { padding: 1.5rem 1rem 3rem; }
   .index-main { padding: 1.5rem 1rem; }
 }
+
+/* ═══════════════════════════════════════════════════════
+   深色模式 Dark Mode
+   ═══════════════════════════════════════════════════════ */
+
+/* ── CSS 變數（JS inline script 同步設定，防 FOUC）────── */
+:root[data-theme="dark"] {
+  --c-bg:          #0f172a;
+  --c-surface:     #1e293b;
+  --c-text:        #e2e8f0;
+  --c-muted:       #94a3b8;
+  --c-border:      #334155;
+  --c-accent:      #38bdf8;
+  --c-accent-dark: #0ea5e9;
+  --shadow:        0 2px 16px rgba(0,0,0,.45);
+  --shadow-hover:  0 6px 28px rgba(0,0,0,.65);
+}
+/* 無 JS 環境：依系統設定自動套用 */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --c-bg:          #0f172a;
+    --c-surface:     #1e293b;
+    --c-text:        #e2e8f0;
+    --c-muted:       #94a3b8;
+    --c-border:      #334155;
+    --c-accent:      #38bdf8;
+    --c-accent-dark: #0ea5e9;
+    --shadow:        0 2px 16px rgba(0,0,0,.45);
+    --shadow-hover:  0 6px 28px rgba(0,0,0,.65);
+  }
+}
+
+/* ── 硬碼顏色覆寫（深色模式）────────────────────────── */
+
+/* 文章內文 */
+[data-theme="dark"] .article-content                   { color: var(--c-text); }
+[data-theme="dark"] .article-content h2,
+[data-theme="dark"] .article-content h3,
+[data-theme="dark"] .article-content h4                { color: var(--c-text); }
+[data-theme="dark"] .article-content blockquote        { background: #162032; color: #cbd5e1; }
+[data-theme="dark"] .article-content code              { background: #334155; color: #e2e8f0; }
+[data-theme="dark"] .article-content th                { background: #1e3a5f; color: #e2e8f0; }
+[data-theme="dark"] .article-content td                { color: #cbd5e1; border-color: var(--c-border); }
+[data-theme="dark"] .article-content tr:nth-child(even){ background: rgba(255,255,255,.04); }
+
+/* 首頁卡片 */
+[data-theme="dark"] .card-excerpt  { color: var(--c-muted); }
+[data-theme="dark"] .card-image    { background: #334155; }
+[data-theme="dark"] .cat-badge     { color: var(--c-muted); border-color: var(--c-border); }
+
+/* 搜尋面板輸入框（panel 本身已為深色）*/
+[data-theme="dark"] .search-input-row         { background: #1e293b; border: 1px solid #334155; }
+[data-theme="dark"] .search-input             { color: #e2e8f0; }
+[data-theme="dark"] .search-close-btn         { color: #64748b; }
+[data-theme="dark"] .search-close-btn:hover   { color: #e2e8f0; }
+
+/* 計數器佔位動畫（Shimmer 深色版）*/
+[data-theme="dark"] .view-count-display:not([data-loaded]) {
+  background: linear-gradient(90deg, #334155 25%, #475569 50%, #334155 75%);
+  background-size: 200% 100%;
+}
+
+/* ── 文章共用元件（各文章 inline style 的深色覆寫）────── */
+
+/* section-title、lead、insight/warn box（所有文章共用）*/
+[data-theme="dark"] .section-title            { color: #e2e8f0; border-color: var(--c-accent); }
+[data-theme="dark"] .lead                     { background: #0c1f35; color: #cbd5e1; border-left-color: #38bdf8; }
+[data-theme="dark"] .insight-box              { background: #0a2219; color: #86efac; border-left-color: #22c55e; }
+[data-theme="dark"] .warn-box                 { background: #1c1506; color: #fde68a; border-left-color: #f59e0b; }
+
+/* KPI stat 卡片 */
+[data-theme="dark"] .stat-card  { background: #1e293b; border-color: #334155; }
+[data-theme="dark"] .stat-lbl   { color: #94a3b8; }
+[data-theme="dark"] .stat-src   { color: #64748b; }
+
+/* 表格（共用 .data-table）*/
+[data-theme="dark"] .table-scroll                         { border-color: #334155; }
+[data-theme="dark"] .data-table tbody td                  { color: #cbd5e1; border-color: #2d3f52; }
+[data-theme="dark"] .data-table tbody tr:nth-child(odd)  td { background: #1e293b; }
+[data-theme="dark"] .data-table tbody tr:nth-child(even) td { background: #162032; }
+[data-theme="dark"] .data-table tbody tr:hover           td { background: #1e3a5f; }
+
+/* 互動面板（bjj-finishing-moves）*/
+[data-theme="dark"] .interactive-panel        { background: #1a2744; border-color: #334155; }
+[data-theme="dark"] .interactive-panel h3     { color: #e2e8f0; }
+[data-theme="dark"] .toggle-btn               { background: #1e293b; border-color: #475569; color: #94a3b8; }
+[data-theme="dark"] .toggle-btn.active        { background: var(--c-accent); border-color: var(--c-accent); color: #fff; }
+
+/* 招式動畫卡片 */
+[data-theme="dark"] .tech-card                { background: #1e293b; border-color: #334155; }
+[data-theme="dark"] .tc-name-zh               { color: #e2e8f0; }
+[data-theme="dark"] .tc-desc                  { color: #64748b; }
+
+/* 預測公式 */
+[data-theme="dark"] .formula-box              { background: #0f1e30; border-color: #334155; color: #93c5fd; }
+[data-theme="dark"] .pred-list li             { border-color: #334155; }
+[data-theme="dark"] .pred-name                { color: #cbd5e1; }
+[data-theme="dark"] .pred-bar-wrap            { background: #334155; }
+[data-theme="dark"] .ref-list                 { color: #94a3b8; }
+[data-theme="dark"] .ref-list a               { color: #38bdf8; }
+
+/* 腳趾傷害文章 */
+[data-theme="dark"] .toe-card                 { background: #1e293b; border-color: #334155; }
+[data-theme="dark"] .toe-card-body            { color: #cbd5e1; }
+[data-theme="dark"] .toe-card-title           { color: #e2e8f0; }
+[data-theme="dark"] .toe-1 .toe-card-header   { background: #2a1520; }
+[data-theme="dark"] .toe-2 .toe-card-header   { background: #261510; }
+[data-theme="dark"] .toe-3 .toe-card-header   { background: #221d05; }
+[data-theme="dark"] .toe-4 .toe-card-header   { background: #0f2018; }
+[data-theme="dark"] .toe-5 .toe-card-header   { background: #0c1a35; }
+
+/* UTMB 抽籤文章 */
+[data-theme="dark"] .race-card                { background: #1e293b; border-color: #334155; }
+[data-theme="dark"] .race-name                { color: #e2e8f0; }
+[data-theme="dark"] .race-dist                { color: #94a3b8; }
+
+/* ── 深色模式切換按鈕 ─────────────────────────────────── */
+.theme-toggle {
+  background: transparent;
+  border: 1px solid transparent;
+  color: #94a3b8;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: color .18s, border-color .18s, background .18s;
+}
+.theme-toggle:hover {
+  color: #ffffff;
+  border-color: rgba(34,211,238,.4);
+  background: rgba(34,211,238,.12);
+}
+/* 淺色模式顯示月亮；深色模式顯示太陽 */
+.theme-toggle .icon-sun  { display: none; }
+.theme-toggle .icon-moon { display: block; }
+[data-theme="dark"] .theme-toggle .icon-sun  { display: block; }
+[data-theme="dark"] .theme-toggle .icon-moon { display: none; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .theme-toggle .icon-sun  { display: block; }
+  :root:not([data-theme="light"]) .theme-toggle .icon-moon { display: none; }
+}
