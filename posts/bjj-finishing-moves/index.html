@@ -1010,15 +1010,18 @@ new Chart(document.getElementById('predChart'),{
   options: predChartOpts
 });
 
-/* No-GI prediction comparison chart */
-const nogiPredLabels = NOGI.labels.filter((_,i)=>NOGI.keys[i]!=='ot');
+/* No-GI prediction comparison chart — sorted by 2025 actual value desc */
+const nogiSorted = NOGI.keys
+  .map((k,i) => ({ k, label: NOGI.labels[i] }))
+  .filter(o => o.k !== 'ot')
+  .sort((a,b) => NOGI.data[b.k][23] - NOGI.data[a.k][23]);
 new Chart(document.getElementById('predChartNogi'),{
   type:'bar',
   data:{
-    labels: nogiPredLabels,
+    labels: nogiSorted.map(o=>o.label),
     datasets:[
-      {label:'No-GI 2025 實際值', data:NOGI.keys.filter(k=>k!=='ot').map(k=>NOGI.data[k][23]), backgroundColor:'#e2e8f0bb', borderColor:'#94a3b8', borderWidth:1.5, borderRadius:4},
-      {label:'No-GI 2026 預測值', data:NOGI.keys.filter(k=>k!=='ot').map(k=>nogiPred[k].v), backgroundColor:'#fca5a5bb', borderColor:'#dc2626', borderWidth:1.5, borderRadius:4},
+      {label:'No-GI 2025 實際值', data:nogiSorted.map(o=>NOGI.data[o.k][23]), backgroundColor:'#e2e8f0bb', borderColor:'#94a3b8', borderWidth:1.5, borderRadius:4},
+      {label:'No-GI 2026 預測值', data:nogiSorted.map(o=>nogiPred[o.k].v), backgroundColor:'#fca5a5bb', borderColor:'#dc2626', borderWidth:1.5, borderRadius:4},
     ]
   },
   options: predChartOpts
