@@ -156,18 +156,32 @@
       padding: .6rem 1rem;
       color: #334155;
       border-bottom: 1px solid #e8eef5;
+      border-left: none;
+      border-right: none;
+    }
+    .data-table thead th {
+      border-left: none;
+      border-right: none;
     }
     .data-table tbody tr:nth-child(odd)  td { background: #ffffff; }
     .data-table tbody tr:nth-child(even) td { background: #f0f7ff; }
     .data-table tbody tr:last-child td { border-bottom: none; }
     .data-table tbody tr:hover td { background: #e8f4fd; }
-    /* Highlight badges (instead of coloring entire cells) */
-    .badge-gold   { display:inline-block; background:#fef3c7; color:#92400e; border:1px solid #fcd34d; border-radius:5px; padding:.1rem .5rem; font-weight:700; font-size:.8rem; }
-    .badge-silver { display:inline-block; background:#f1f5f9; color:#475569; border:1px solid #cbd5e1; border-radius:5px; padding:.1rem .5rem; font-weight:700; font-size:.8rem; }
-    .badge-bronze { display:inline-block; background:#fef9ee; color:#78350f; border:1px solid #fde68a; border-radius:5px; padding:.1rem .5rem; font-weight:700; font-size:.8rem; }
+    /* Rank badges */
     .badge-up     { display:inline-block; background:#dcfce7; color:#15803d; border:1px solid #86efac; border-radius:5px; padding:.1rem .45rem; font-size:.78rem; font-weight:600; }
     .badge-down   { display:inline-block; background:#fee2e2; color:#dc2626; border:1px solid #fca5a5; border-radius:5px; padding:.1rem .45rem; font-size:.78rem; font-weight:600; }
     .badge-flat   { display:inline-block; background:#f1f5f9; color:#64748b; border:1px solid #cbd5e1; border-radius:5px; padding:.1rem .45rem; font-size:.78rem; font-weight:600; }
+    /* Technique name colour badges */
+    .tb { display:inline-block; border-radius:5px; padding:.08rem .48rem; font-weight:600; font-size:.82rem; border:1px solid; white-space:nowrap; }
+    .tb-ba { background:#dbeafe; color:#1e40af; border-color:#bfdbfe; }
+    .tb-ab { background:#fef3c7; color:#92400e; border-color:#fde68a; }
+    .tb-tr { background:#f3e8ff; color:#7e22ce; border-color:#e9d5ff; }
+    .tb-ki { background:#dcfce7; color:#166534; border-color:#bbf7d0; }
+    .tb-cc { background:#fee2e2; color:#991b1b; border-color:#fecaca; }
+    .tb-gu { background:#cffafe; color:#0e7490; border-color:#a5f3fc; }
+    .tb-rn { background:#e0f2fe; color:#0369a1; border-color:#bae6fd; }
+    .tb-hh { background:#fce7f3; color:#9d174d; border-color:#fbcfe8; }
+    .tb-al { background:#fff7ed; color:#c2410c; border-color:#fed7aa; }
 
     /* ── 圖表容器（深色背景資料視覺化面板）─────────── */
     .chart-panel {
@@ -458,47 +472,47 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <tbody>
               <tr>
                 <td>2002–2005</td>
-                <td><span class="badge-gold">弓箭絞 28%</span></td>
-                <td><span class="badge-silver">手臂十字固 24%</span></td>
-                <td><span class="badge-bronze">三角絞 18%</span></td>
-                <td>斷頭台 8%</td>
-                <td>木村固 7%</td>
+                <td><span class="tb tb-ba">弓箭絞 28%</span></td>
+                <td><span class="tb tb-ab">手臂十字固 24%</span></td>
+                <td><span class="tb tb-tr">三角絞 18%</span></td>
+                <td><span class="tb tb-gu">斷頭台 8%</span></td>
+                <td><span class="tb tb-ki">木村固 7%</span></td>
                 <td>~32%</td>
               </tr>
               <tr>
                 <td>2006–2010</td>
-                <td><span class="badge-gold">弓箭絞 30%</span></td>
-                <td><span class="badge-silver">手臂十字固 22%</span></td>
-                <td><span class="badge-bronze">三角絞 17%</span></td>
-                <td>木村固 9%</td>
-                <td>斷頭台 7%</td>
+                <td><span class="tb tb-ba">弓箭絞 30%</span></td>
+                <td><span class="tb tb-ab">手臂十字固 22%</span></td>
+                <td><span class="tb tb-tr">三角絞 17%</span></td>
+                <td><span class="tb tb-ki">木村固 9%</span></td>
+                <td><span class="tb tb-gu">斷頭台 7%</span></td>
                 <td>~33%</td>
               </tr>
               <tr>
                 <td>2011–2015</td>
-                <td><span class="badge-gold">弓箭絞 32%</span></td>
-                <td><span class="badge-silver">手臂十字固 20%</span></td>
-                <td><span class="badge-bronze">三角絞 16%</span></td>
-                <td>木村固 10%</td>
-                <td>十字領絞 6%</td>
+                <td><span class="tb tb-ba">弓箭絞 32%</span></td>
+                <td><span class="tb tb-ab">手臂十字固 20%</span></td>
+                <td><span class="tb tb-tr">三角絞 16%</span></td>
+                <td><span class="tb tb-ki">木村固 10%</span></td>
+                <td><span class="tb tb-cc">十字領絞 6%</span></td>
                 <td>~34%</td>
               </tr>
               <tr>
                 <td>2016–2020</td>
-                <td><span class="badge-gold">弓箭絞 33%</span></td>
-                <td><span class="badge-silver">手臂十字固 19%</span></td>
-                <td><span class="badge-bronze">三角絞 15%</span></td>
-                <td>木村固 12%</td>
-                <td>十字領絞 7%</td>
+                <td><span class="tb tb-ba">弓箭絞 33%</span></td>
+                <td><span class="tb tb-ab">手臂十字固 19%</span></td>
+                <td><span class="tb tb-tr">三角絞 15%</span></td>
+                <td><span class="tb tb-ki">木村固 12%</span></td>
+                <td><span class="tb tb-cc">十字領絞 7%</span></td>
                 <td>~35%</td>
               </tr>
               <tr>
                 <td>2021–2025</td>
-                <td><span class="badge-gold">弓箭絞 35%</span></td>
-                <td><span class="badge-silver">手臂十字固 17%</span> <span class="badge-down">↓</span></td>
-                <td><span class="badge-bronze">木村固 14%</span> <span class="badge-up">↑</span></td>
-                <td>三角絞 13%</td>
-                <td>十字領絞 7%</td>
+                <td><span class="tb tb-ba">弓箭絞 35%</span></td>
+                <td><span class="tb tb-ab">手臂十字固 17%</span> <span class="badge-down">↓</span></td>
+                <td><span class="tb tb-ki">木村固 14%</span> <span class="badge-up">↑</span></td>
+                <td><span class="tb tb-tr">三角絞 13%</span></td>
+                <td><span class="tb tb-cc">十字領絞 7%</span></td>
                 <td>~35%</td>
               </tr>
             </tbody>
@@ -548,43 +562,43 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <tbody>
               <tr>
                 <td>2002–2005</td>
-                <td><span class="badge-gold">後裸絞 30%</span></td>
-                <td><span class="badge-silver">手臂十字固 24%</span></td>
-                <td><span class="badge-bronze">三角絞 15%</span></td>
-                <td>斷頭台 12%</td>
-                <td>木村固 8%</td>
+                <td><span class="tb tb-rn">後裸絞 30%</span></td>
+                <td><span class="tb tb-ab">手臂十字固 24%</span></td>
+                <td><span class="tb tb-tr">三角絞 15%</span></td>
+                <td><span class="tb tb-gu">斷頭台 12%</span></td>
+                <td><span class="tb tb-ki">木村固 8%</span></td>
               </tr>
               <tr>
                 <td>2006–2010</td>
-                <td><span class="badge-gold">後裸絞 28%</span></td>
-                <td><span class="badge-silver">手臂十字固 22%</span></td>
-                <td><span class="badge-bronze">三角絞 14%</span></td>
-                <td>斷頭台 13%</td>
-                <td>腳踝鉤 5% <span class="badge-up">↑</span></td>
+                <td><span class="tb tb-rn">後裸絞 28%</span></td>
+                <td><span class="tb tb-ab">手臂十字固 22%</span></td>
+                <td><span class="tb tb-tr">三角絞 14%</span></td>
+                <td><span class="tb tb-gu">斷頭台 13%</span></td>
+                <td><span class="tb tb-hh">腳踝鉤 5%</span> <span class="badge-up">↑</span></td>
               </tr>
               <tr>
                 <td>2011–2015</td>
-                <td><span class="badge-gold">後裸絞 26%</span></td>
-                <td><span class="badge-silver">手臂十字固 21%</span></td>
-                <td><span class="badge-bronze">斷頭台 13%</span></td>
-                <td>三角絞 13%</td>
-                <td>腳踝鉤 9% <span class="badge-up">↑↑</span></td>
+                <td><span class="tb tb-rn">後裸絞 26%</span></td>
+                <td><span class="tb tb-ab">手臂十字固 21%</span></td>
+                <td><span class="tb tb-gu">斷頭台 13%</span></td>
+                <td><span class="tb tb-tr">三角絞 13%</span></td>
+                <td><span class="tb tb-hh">腳踝鉤 9%</span> <span class="badge-up">↑↑</span></td>
               </tr>
               <tr>
                 <td>2016–2020</td>
-                <td><span class="badge-gold">後裸絞 24%</span></td>
-                <td><span class="badge-silver">腳踝鉤 16%</span> <span class="badge-up">↑↑↑</span></td>
-                <td><span class="badge-bronze">手臂十字固 18%</span></td>
-                <td>斷頭台 13%</td>
-                <td>三角絞 12%</td>
+                <td><span class="tb tb-rn">後裸絞 24%</span></td>
+                <td><span class="tb tb-hh">腳踝鉤 16%</span> <span class="badge-up">↑↑↑</span></td>
+                <td><span class="tb tb-ab">手臂十字固 18%</span></td>
+                <td><span class="tb tb-gu">斷頭台 13%</span></td>
+                <td><span class="tb tb-tr">三角絞 12%</span></td>
               </tr>
               <tr>
                 <td>2021–2025</td>
-                <td><span class="badge-gold">腳踝鉤 24%</span> <span class="badge-up">↑</span></td>
-                <td><span class="badge-silver">後裸絞 22%</span></td>
-                <td><span class="badge-bronze">斷頭台 14%</span></td>
-                <td>手臂十字固 15%</td>
-                <td>三角絞 10%</td>
+                <td><span class="tb tb-hh">腳踝鉤 24%</span> <span class="badge-up">↑</span></td>
+                <td><span class="tb tb-rn">後裸絞 22%</span></td>
+                <td><span class="tb tb-gu">斷頭台 14%</span></td>
+                <td><span class="tb tb-ab">手臂十字固 15%</span></td>
+                <td><span class="tb tb-tr">三角絞 10%</span></td>
               </tr>
             </tbody>
           </table>
@@ -617,7 +631,37 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <!-- ── 2026 預測 ───────────────────────────── -->
         <h2 class="section-title">2026 年趨勢預測</h2>
 
-        <h3 style="font-size:1rem; color:#0f172a; margin:1.2rem 0 .6rem;">預測模型說明</h3>
+        <div class="model-grid">
+          <div>
+            <h3 style="font-size:.95rem; font-weight:700; color:#0f172a; margin-bottom:.8rem;">GI 有道袍 2026 預測</h3>
+            <ul class="pred-list" id="giPredList"></ul>
+          </div>
+          <div>
+            <h3 style="font-size:.95rem; font-weight:700; color:#0f172a; margin-bottom:.8rem;">No-GI 無道袍 2026 預測</h3>
+            <ul class="pred-list" id="nogiPredList"></ul>
+          </div>
+        </div>
+
+        <div class="chart-panel">
+          <div class="chart-label">2026 預測值 vs 2025 實際值比較（GI）</div>
+          <canvas id="predChart" style="max-height:260px;"></canvas>
+        </div>
+
+        <div class="chart-panel" style="margin-top:1rem;">
+          <div class="chart-label">2026 預測值 vs 2025 實際值比較（No-GI）</div>
+          <canvas id="predChartNogi" style="max-height:260px;"></canvas>
+        </div>
+
+        <h3 style="font-size:1rem; color:#0f172a; margin:1.5rem 0 .6rem;">預測結果解讀</h3>
+        <p><strong>GI 賽場：</strong>弓箭絞預測持續微升至 ~36.5%，木村固預計首次突破 15%（<span class="badge-up">↑</span>），
+        手臂十字固持續下滑至約 15.5%（<span class="badge-down">↓</span>）。
+        木村固配套體系（含反木村、追刀系列）已成為高段位選手的標準武器，預計 2026–2027 年持續上升。
+        </p>
+        <p><strong>No-GI 賽場：</strong>腳踝鉤預測繼續成長但速率趨緩（~27.5%，+1.5% vs 2025），
+        顯示成長可能已進入高原期。主因是各大道場的腳踝鉤防禦訓練已大幅提升。
+        斷頭台（Guillotine）預測維持穩定（14%±），是除腳踝鉤外最穩健的投資技術。</p>
+
+        <h3 style="font-size:1rem; color:#0f172a; margin:1.5rem 0 .6rem;">預測模型說明</h3>
         <p>本文採用<strong>集成模型（Ensemble Model）</strong>：以指數加權移動平均（EWMA）捕捉短期動能，
         以線性回歸（OLS）捕捉長期趨勢，加權合成預測值，並以 RMSE 計算 95% 信賴區間。</p>
 
@@ -639,35 +683,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
 
         <div class="warn-box">
-          ⚠️ <strong>模型限制：</strong>本模型為純資料驅動的時間序列外推，不具因果推論能力。
+          ⚠️ <strong>預測限制：</strong>本模型為純資料驅動的時間序列外推，不具因果推論能力。
           若 2026 年發生重大規則修訂、主要頂級選手退役或顛覆性新戰術出現，預測誤差將顯著擴大。
           預測結果應視為「基準情境下的統計期望值」。
         </div>
-
-        <div class="model-grid">
-          <div>
-            <h3 style="font-size:.95rem; font-weight:700; color:#0f172a; margin-bottom:.8rem;">GI 有道袍 2026 預測</h3>
-            <ul class="pred-list" id="giPredList"></ul>
-          </div>
-          <div>
-            <h3 style="font-size:.95rem; font-weight:700; color:#0f172a; margin-bottom:.8rem;">No-GI 無道袍 2026 預測</h3>
-            <ul class="pred-list" id="nogiPredList"></ul>
-          </div>
-        </div>
-
-        <div class="chart-panel">
-          <div class="chart-label">2026 預測值 vs 2025 實際值比較（GI）</div>
-          <canvas id="predChart" style="max-height:260px;"></canvas>
-        </div>
-
-        <h3 style="font-size:1rem; color:#0f172a; margin:1.5rem 0 .6rem;">預測結果解讀</h3>
-        <p><strong>GI 賽場：</strong>弓箭絞預測持續微升至 ~36.5%，木村固預計首次突破 15%（<span class="badge-up">↑</span>），
-        手臂十字固持續下滑至約 15.5%（<span class="badge-down">↓</span>）。
-        木村固配套體系（含反木村、追刀系列）已成為高段位選手的標準武器，預計 2026–2027 年持續上升。
-        </p>
-        <p><strong>No-GI 賽場：</strong>腳踝鉤預測繼續成長但速率趨緩（~27.5%，+1.5% vs 2025），
-        顯示成長可能已進入高原期。主因是各大道場的腳踝鉤防禦訓練已大幅提升。
-        斷頭台（Guillotine）預測維持穩定（14%±），是除腳踝鉤外最穩健的投資技術。</p>
 
         <!-- ── 結語 ───────────────────────────────── -->
         <h2 class="section-title">結論</h2>
@@ -769,6 +788,14 @@ const NOGI = {
 Chart.defaults.color = '#9ca3af';
 Chart.defaults.borderColor = '#1e293b';
 
+/* ── Shared axis tick callback: show year only for 2002,2005,2010,2015,2020,2025 */
+const xTickCb = (val, idx) => {
+  const y = YEARS[idx];
+  return (y === 2002 || y % 5 === 0) ? y : '';
+};
+const cleanGrid = { grid:{ display:false }, border:{ display:false } };
+const cleanGridY = { grid:{ color:'#1e293b44' }, border:{ display:false } };
+
 /* ── GI Line Chart ────────────────────────────────── */
 new Chart(document.getElementById('giLineChart'), {
   type: 'line',
@@ -788,8 +815,8 @@ new Chart(document.getElementById('giLineChart'), {
     interaction: { mode:'index', intersect:false },
     plugins: { legend: { position:'bottom', labels:{ boxWidth:10, font:{size:11} } } },
     scales: {
-      x: { title:{ display:true, text:'年份', color:'#6b7280' } },
-      y: { title:{ display:true, text:'佔所有降服 %', color:'#6b7280' }, min:0, max:45 }
+      x: { ...cleanGrid, title:{ display:true, text:'年份', color:'#6b7280' }, ticks:{ callback: xTickCb, color:'#9ca3af', maxRotation:0 } },
+      y: { ...cleanGridY, title:{ display:true, text:'佔所有降服 %', color:'#6b7280' }, min:0, max:45 }
     }
   }
 });
@@ -813,8 +840,8 @@ new Chart(document.getElementById('nogiLineChart'), {
     interaction: { mode:'index', intersect:false },
     plugins: { legend: { position:'bottom', labels:{ boxWidth:10, font:{size:11} } } },
     scales: {
-      x: { title:{ display:true, text:'年份', color:'#6b7280' } },
-      y: { title:{ display:true, text:'佔所有降服 %', color:'#6b7280' }, min:0, max:40 }
+      x: { ...cleanGrid, title:{ display:true, text:'年份', color:'#6b7280' }, ticks:{ callback: xTickCb, color:'#9ca3af', maxRotation:0 } },
+      y: { ...cleanGridY, title:{ display:true, text:'佔所有降服 %', color:'#6b7280' }, min:0, max:40 }
     }
   }
 });
@@ -882,8 +909,8 @@ function updateBar(div, year) {
       indexAxis:'y', responsive:true,
       plugins:{ legend:{display:false}, tooltip:{callbacks:{label:ctx=>` ${ctx.raw}%`}} },
       scales:{
-        x:{title:{display:true,text:'%',color:'#6b7280'}, max:45},
-        y:{ticks:{color:'#e2e8f0', font:{size:12}}}
+        x:{grid:{display:false}, border:{display:false}, title:{display:true,text:'%',color:'#6b7280'}, max:45},
+        y:{grid:{display:false}, border:{display:false}, ticks:{color:'#e2e8f0', font:{size:12}}}
       }
     }
   });
@@ -960,22 +987,41 @@ function renderPredList(id, src, pred){
 renderPredList('giPredList', GI, giPred);
 renderPredList('nogiPredList', NOGI, nogiPred);
 
-/* Prediction comparison chart */
+const predChartOpts = {
+  responsive:true,
+  plugins:{ legend:{position:'bottom',labels:{boxWidth:10}}, tooltip:{callbacks:{label:ctx=>`${ctx.dataset.label}: ${ctx.raw}%`}} },
+  scales:{
+    x:{ grid:{display:false}, border:{display:false} },
+    y:{ grid:{display:false}, border:{display:false}, title:{display:true,text:'%',color:'#6b7280'}, min:0, max:40 }
+  }
+};
+
+/* GI prediction comparison chart */
 const predLabels = GI.labels.filter((_,i)=>GI.keys[i]!=='ot');
 new Chart(document.getElementById('predChart'),{
   type:'bar',
   data:{
     labels: predLabels,
     datasets:[
-      {label:'GI 2025 實際值', data:GI.keys.filter(k=>k!=='ot').map(k=>GI.data[k][23]), backgroundColor:'#e2e8f0', borderColor:'#94a3b8', borderWidth:1.5, borderRadius:4},
-      {label:'GI 2026 預測值', data:GI.keys.filter(k=>k!=='ot').map(k=>giPred[k].v), backgroundColor:'#93c5fd', borderColor:'#2563eb', borderWidth:1.5, borderRadius:4},
+      {label:'GI 2025 實際值', data:GI.keys.filter(k=>k!=='ot').map(k=>GI.data[k][23]), backgroundColor:'#e2e8f0bb', borderColor:'#94a3b8', borderWidth:1.5, borderRadius:4},
+      {label:'GI 2026 預測值', data:GI.keys.filter(k=>k!=='ot').map(k=>giPred[k].v), backgroundColor:'#93c5fdbb', borderColor:'#2563eb', borderWidth:1.5, borderRadius:4},
     ]
   },
-  options:{
-    responsive:true,
-    plugins:{ legend:{position:'bottom',labels:{boxWidth:10}}, tooltip:{callbacks:{label:ctx=>`${ctx.dataset.label}: ${ctx.raw}%`}} },
-    scales:{ y:{title:{display:true,text:'%',color:'#6b7280'}, min:0, max:42} }
-  }
+  options: predChartOpts
+});
+
+/* No-GI prediction comparison chart */
+const nogiPredLabels = NOGI.labels.filter((_,i)=>NOGI.keys[i]!=='ot');
+new Chart(document.getElementById('predChartNogi'),{
+  type:'bar',
+  data:{
+    labels: nogiPredLabels,
+    datasets:[
+      {label:'No-GI 2025 實際值', data:NOGI.keys.filter(k=>k!=='ot').map(k=>NOGI.data[k][23]), backgroundColor:'#e2e8f0bb', borderColor:'#94a3b8', borderWidth:1.5, borderRadius:4},
+      {label:'No-GI 2026 預測值', data:NOGI.keys.filter(k=>k!=='ot').map(k=>nogiPred[k].v), backgroundColor:'#fca5a5bb', borderColor:'#dc2626', borderWidth:1.5, borderRadius:4},
+    ]
+  },
+  options: predChartOpts
 });
 </script>
 <script src="assets/theme.js"></script>
