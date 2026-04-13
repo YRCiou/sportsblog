@@ -1,5 +1,5 @@
 {
-  "updated": "2026-04-12T19:31:49.210Z",
+  "updated": "2026-04-13T19:59:48.754Z",
   "source": "utmb.world + travelpayouts.com",
   "events": [
     {
@@ -228,7 +228,7 @@
       "utmbUrl": "https://utmb.world/utmb-world-series-events",
       "flightPrice": 18321,
       "flightCurrency": "TWD",
-      "flightUpdated": "2026-04-12T19:31:37.901Z",
+      "flightUpdated": "2026-04-13T19:59:38.991Z",
       "isMajor": true,
       "flightUrl": "https://www.skyscanner.com.tw/transport/flights/tpe/syd/260511/260519/?adults=1&cabinclass=economy"
     },
