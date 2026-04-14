@@ -1,5 +1,5 @@
 {
-  "updated": "2026-04-13T19:59:48.754Z",
+  "updated": "2026-04-14T19:59:03.498Z",
   "source": "utmb.world + travelpayouts.com",
   "events": [
     {
@@ -157,9 +157,9 @@
       "lng": 101.0753,
       "nearestAirport": "BKK",
       "utmbUrl": "https://utmb.world/utmb-world-series-events",
-      "flightPrice": null,
+      "flightPrice": 11425,
       "flightCurrency": "TWD",
-      "flightUpdated": null,
+      "flightUpdated": "2026-04-14T19:58:52.368Z",
       "flightUrl": "https://www.skyscanner.com.tw/transport/flights/tpe/bkk/260427/260505/?adults=1&cabinclass=economy"
     },
     {
@@ -228,7 +228,7 @@
       "utmbUrl": "https://utmb.world/utmb-world-series-events",
       "flightPrice": 18321,
       "flightCurrency": "TWD",
-      "flightUpdated": "2026-04-13T19:59:38.991Z",
+      "flightUpdated": "2026-04-14T19:58:53.670Z",
       "isMajor": true,
       "flightUrl": "https://www.skyscanner.com.tw/transport/flights/tpe/syd/260511/260519/?adults=1&cabinclass=economy"
     },
