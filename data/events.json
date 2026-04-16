@@ -1,5 +1,5 @@
 {
-  "updated": "2026-04-15T19:57:26.753Z",
+  "updated": "2026-04-16T19:55:32.419Z",
   "source": "utmb.world + travelpayouts.com",
   "events": [
     {
@@ -159,7 +159,7 @@
       "utmbUrl": "https://utmb.world/utmb-world-series-events",
       "flightPrice": 11413,
       "flightCurrency": "TWD",
-      "flightUpdated": "2026-04-15T19:57:15.222Z",
+      "flightUpdated": "2026-04-16T19:55:21.409Z",
       "flightUrl": "https://www.skyscanner.com.tw/transport/flights/tpe/bkk/260427/260505/?adults=1&cabinclass=economy"
     },
     {
@@ -228,7 +228,7 @@
       "utmbUrl": "https://utmb.world/utmb-world-series-events",
       "flightPrice": 18321,
       "flightCurrency": "TWD",
-      "flightUpdated": "2026-04-15T19:57:16.378Z",
+      "flightUpdated": "2026-04-16T19:55:22.594Z",
       "isMajor": true,
       "flightUrl": "https://www.skyscanner.com.tw/transport/flights/tpe/syd/260511/260519/?adults=1&cabinclass=economy"
     },
@@ -701,9 +701,9 @@
       "lng": -122.9574,
       "nearestAirport": "YVR",
       "utmbUrl": "https://utmb.world/utmb-world-series-events",
-      "flightPrice": 30528,
+      "flightPrice": 30537,
       "flightCurrency": "TWD",
-      "flightUpdated": "2026-04-15T19:57:24.794Z",
+      "flightUpdated": "2026-04-16T19:55:30.573Z",
       "flightUrl": "https://www.skyscanner.com.tw/transport/flights/tpe/yvr/260818/260825/?adults=1&cabinclass=economy"
     },
     {
