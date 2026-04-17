@@ -1,74 +1,7 @@
 {
-  "updated": "2026-04-16T19:55:32.419Z",
+  "updated": "2026-04-17T19:50:44.314Z",
   "source": "utmb.world + travelpayouts.com",
   "events": [
-    {
-      "id": "istria-100-2026",
-      "name": "Istria 100 by UTMB",
-      "city": "Labin",
-      "country": "克羅埃西亞",
-      "countryEn": "Croatia",
-      "dateStart": "2026-04-10",
-      "dateEnd": "2026-04-12",
-      "distances": [
-        "21K",
-        "42K",
-        "69K",
-        "110K",
-        "168K"
-      ],
-      "lat": 45.0972,
-      "lng": 14.1197,
-      "nearestAirport": "PUY",
-      "utmbUrl": "https://utmb.world/utmb-world-series-events",
-      "flightPrice": null,
-      "flightCurrency": "TWD",
-      "flightUpdated": null
-    },
-    {
-      "id": "ultra-trail-mogan-2026",
-      "name": "Ultra-Trail Mogan by UTMB",
-      "city": "Deqing",
-      "country": "中國",
-      "countryEn": "China",
-      "dateStart": "2026-04-10",
-      "dateEnd": "2026-04-12",
-      "distances": [
-        "25K",
-        "46K",
-        "80K",
-        "114K"
-      ],
-      "lat": 30.5428,
-      "lng": 119.9873,
-      "nearestAirport": "HGH",
-      "utmbUrl": "https://utmb.world/utmb-world-series-events",
-      "flightPrice": null,
-      "flightCurrency": "TWD",
-      "flightUpdated": null
-    },
-    {
-      "id": "desert-rats-2026",
-      "name": "Desert RATS Trail Running Festival by UTMB",
-      "city": "Fruita, Colorado",
-      "country": "美國",
-      "countryEn": "USA",
-      "dateStart": "2026-04-10",
-      "dateEnd": "2026-04-12",
-      "distances": [
-        "10K",
-        "21K",
-        "48K",
-        "100K"
-      ],
-      "lat": 39.1583,
-      "lng": -108.7293,
-      "nearestAirport": "GJT",
-      "utmbUrl": "https://utmb.world/utmb-world-series-events",
-      "flightPrice": null,
-      "flightCurrency": "TWD",
-      "flightUpdated": null
-    },
     {
       "id": "puerto-vallarta-2026",
       "name": "Puerto Vallarta México by UTMB",
@@ -157,9 +90,9 @@
       "lng": 101.0753,
       "nearestAirport": "BKK",
       "utmbUrl": "https://utmb.world/utmb-world-series-events",
-      "flightPrice": 11413,
+      "flightPrice": 10497,
       "flightCurrency": "TWD",
-      "flightUpdated": "2026-04-16T19:55:21.409Z",
+      "flightUpdated": "2026-04-17T19:50:31.048Z",
       "flightUrl": "https://www.skyscanner.com.tw/transport/flights/tpe/bkk/260427/260505/?adults=1&cabinclass=economy"
     },
     {
@@ -228,7 +161,7 @@
       "utmbUrl": "https://utmb.world/utmb-world-series-events",
       "flightPrice": 18321,
       "flightCurrency": "TWD",
-      "flightUpdated": "2026-04-16T19:55:22.594Z",
+      "flightUpdated": "2026-04-17T19:50:32.590Z",
       "isMajor": true,
       "flightUrl": "https://www.skyscanner.com.tw/transport/flights/tpe/syd/260511/260519/?adults=1&cabinclass=economy"
     },
@@ -703,7 +636,7 @@
       "utmbUrl": "https://utmb.world/utmb-world-series-events",
       "flightPrice": 30537,
       "flightCurrency": "TWD",
-      "flightUpdated": "2026-04-16T19:55:30.573Z",
+      "flightUpdated": "2026-04-17T19:50:42.080Z",
       "flightUrl": "https://www.skyscanner.com.tw/transport/flights/tpe/yvr/260818/260825/?adults=1&cabinclass=economy"
     },
     {
