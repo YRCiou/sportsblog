@@ -1,5 +1,5 @@
 {
-  "updated": "2026-04-17T19:50:44.314Z",
+  "updated": "2026-04-18T19:33:40.737Z",
   "source": "utmb.world + travelpayouts.com",
   "events": [
     {
@@ -90,9 +90,9 @@
       "lng": 101.0753,
       "nearestAirport": "BKK",
       "utmbUrl": "https://utmb.world/utmb-world-series-events",
-      "flightPrice": 10497,
+      "flightPrice": 10519,
       "flightCurrency": "TWD",
-      "flightUpdated": "2026-04-17T19:50:31.048Z",
+      "flightUpdated": "2026-04-18T19:33:29.722Z",
       "flightUrl": "https://www.skyscanner.com.tw/transport/flights/tpe/bkk/260427/260505/?adults=1&cabinclass=economy"
     },
     {
@@ -636,7 +636,7 @@
       "utmbUrl": "https://utmb.world/utmb-world-series-events",
       "flightPrice": 30537,
       "flightCurrency": "TWD",
-      "flightUpdated": "2026-04-17T19:50:42.080Z",
+      "flightUpdated": "2026-04-18T19:33:38.911Z",
       "flightUrl": "https://www.skyscanner.com.tw/transport/flights/tpe/yvr/260818/260825/?adults=1&cabinclass=economy"
     },
     {
