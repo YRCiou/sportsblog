@@ -1,5 +1,5 @@
 {
-  "updated": "2026-04-20T19:53:47.013Z",
+  "updated": "2026-04-21T19:58:42.728Z",
   "source": "utmb.world + travelpayouts.com",
   "events": [
     {
@@ -92,7 +92,7 @@
       "utmbUrl": "https://utmb.world/utmb-world-series-events",
       "flightPrice": 8894,
       "flightCurrency": "TWD",
-      "flightUpdated": "2026-04-20T19:53:35.021Z",
+      "flightUpdated": "2026-04-21T19:58:28.321Z",
       "flightUrl": "https://www.skyscanner.com.tw/transport/flights/tpe/bkk/260427/260505/?adults=1&cabinclass=economy"
     },
     {
@@ -636,7 +636,7 @@
       "utmbUrl": "https://utmb.world/utmb-world-series-events",
       "flightPrice": 30537,
       "flightCurrency": "TWD",
-      "flightUpdated": "2026-04-20T19:53:45.002Z",
+      "flightUpdated": "2026-04-21T19:58:40.399Z",
       "flightUrl": "https://www.skyscanner.com.tw/transport/flights/tpe/yvr/260818/260825/?adults=1&cabinclass=economy"
     },
     {
