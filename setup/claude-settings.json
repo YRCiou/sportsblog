@@ -1,0 +1,39 @@
+{
+  "autoUpdatesChannel": "latest",
+  "hooks": {
+    "PreToolUse": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node ~/.claude/telegram-confirm.js",
+            "timeout": 70
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node -e \"const https=require('https');const d=JSON.stringify({chat_id:'1008016537',text:'✅ Claude 完成任務'});const r=https.request({hostname:'api.telegram.org',path:'/bot8688563575:AAFru1BjEZWX8Sv9ONgjz7Mn0xzaUIr0LwQ/sendMessage',method:'POST',headers:{'Content-Type':'application/json','Content-Length':Buffer.byteLength(d)}},()=>{});r.write(d);r.end();\"",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "Notification": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node -e \"let b='';process.stdin.on('data',c=>b+=c);process.stdin.on('end',()=>{let msg;try{msg=JSON.parse(b).message||'需要你注意';}catch(e){msg='需要你注意';}const d=JSON.stringify({chat_id:'1008016537',text:'🔔 '+msg});const https=require('https');const r=https.request({hostname:'api.telegram.org',path:'/bot8688563575:AAFru1BjEZWX8Sv9ONgjz7Mn0xzaUIr0LwQ/sendMessage',method:'POST',headers:{'Content-Type':'application/json','Content-Length':Buffer.byteLength(d)}},()=>{});r.write(d);r.end();})\"",
+            "async": true,
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  }
+}
