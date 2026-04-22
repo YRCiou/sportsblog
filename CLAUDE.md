@@ -41,9 +41,32 @@ UTMB/
 ## 新文章標準流程
 1. 在 `posts/` 新增資料夾，複製現有文章的 HTML 結構
 2. 準備 OG 圖片：1200×630px JPEG，存於 `assets/`
-3. 更新 `index.html` 首頁的文章列表
-4. 更新 `sitemap.xml`
-5. `git add . && git commit -m "..." && git push origin main`
+3. **在 `posts-data.json` 新增文章物件**（首頁與延伸閱讀的唯一資料來源）：
+   - `slug` — 資料夾名稱（與 URL 一致）
+   - `title` / `author` / `excerpt` / `category` / `createdAt` / `updatedAt`
+   - `topics[]` — **由最具體到最通用排列**，最多 7 個。例：
+     ```
+     ["utmb-lottery", "utmb", "trail-running", "ultra-marathon", "race-statistics", "endurance-sports", "sports"]
+     ```
+     延伸閱讀演算法以幾何平均計算主題相似度，越具體的共同主題得分越高。
+   - `keywords[]` — 關鍵字陣列，中英文均可，用於補充主題評分。
+   - `priority` — 整數（預設 1，特別重要可設 2–5），影響延伸閱讀排序。
+   - `hero.url` / `hero.thumbUrl` — 首頁縮圖與 OG 圖同一張即可（1200×630）
+4. 執行 `node scripts/sync-homepage.js` 同步首頁（或 push 後 GitHub Actions 自動執行）
+5. 更新 `sitemap.xml`
+6. `git add . && git commit -m "..." && git push origin main`
+
+### 延伸閱讀評分說明（`assets/related.js`）
+| 維度 | 計算方式 | 最高分 |
+|------|----------|--------|
+| 主題相似度 | Σ √(w[i]×w[j])，w = [200,100,50,25,12,5,2] | 無上限 |
+| 關鍵字重疊 | 共同 keywords × 12 | 無上限 |
+| 同分類加分 | +30 | 30 |
+| 熱門度（Supabase views） | min(25, log₂(views+1)×3) | 25 |
+| 時效加分 | 發布 90 天內 +5 | 5 |
+| 優先級加分 | priority × 3 | — |
+
+最多顯示 5 篇；score = 0 的文章（完全不相關）不顯示。
 
 ## 常用指令
 ```bash
