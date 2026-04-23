@@ -793,7 +793,7 @@
           }
         },
         scales: {
-          x: { ...noGrid.x, ticks: { callback: (v, i) => {
+          x: { ...noGrid.x, ticks: { maxRotation: 0, minRotation: 0, callback: (v, i) => {
             const km = profile[i] ? profile[i][0] : null;
             if (km === null) return '';
             if (i === 0) return '0';
