@@ -203,6 +203,43 @@
     .run-card .rval   { font-size: 1.4rem; font-weight: 800; color: #0f172a; }
     .run-card .rpct   { font-size: .85rem; color: #64748b; margin-left: .2rem; }
 
+    .weather-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: .75rem;
+      margin: 1.5rem 0;
+    }
+    .wx-card {
+      border-radius: 12px;
+      padding: 1rem 1rem .9rem;
+      text-align: center;
+      border: 1.5px solid;
+    }
+    .wx-card .wx-time  { font-size: .78rem; font-weight: 700; letter-spacing: .04em; margin-bottom: .4rem; }
+    .wx-card .wx-temp  { font-size: clamp(1.8rem, 3.5vw, 2.2rem); font-weight: 800; line-height: 1.1; }
+    .wx-card .wx-sub   { font-size: .82rem; margin-top: .3rem; }
+    .wx-card .wx-feels { font-size: .78rem; margin-top: .15rem; }
+    .wx-card.lvl-ok   { background: #f0fdf4; border-color: #86efac; color: #14532d; }
+    .wx-card.lvl-ok   .wx-temp { color: #16a34a; }
+    .wx-card.lvl-warm { background: #fffbeb; border-color: #fcd34d; color: #78350f; }
+    .wx-card.lvl-warm .wx-temp { color: #d97706; }
+    .wx-card.lvl-hot  { background: #fff7ed; border-color: #fdba74; color: #7c2d12; }
+    .wx-card.lvl-hot  .wx-temp { color: #ea580c; }
+    .wx-card.lvl-danger { background: #fef2f2; border-color: #fca5a5; color: #450a0a; }
+    .wx-card.lvl-danger .wx-temp { color: #dc2626; }
+    [data-theme="dark"] .wx-card.lvl-ok     { background: #052e16; border-color: #16a34a; color: #bbf7d0; }
+    [data-theme="dark"] .wx-card.lvl-warm   { background: #1c1101; border-color: #d97706; color: #fde68a; }
+    [data-theme="dark"] .wx-card.lvl-hot    { background: #1c0d00; border-color: #ea580c; color: #fed7aa; }
+    [data-theme="dark"] .wx-card.lvl-danger { background: #1c0505; border-color: #dc2626; color: #fecaca; }
+
+    .source-note {
+      font-size: .78rem;
+      color: #94a3b8;
+      font-style: italic;
+      margin: -.5rem 0 1.5rem;
+      letter-spacing: .02em;
+    }
+
     .tactical-box {
       background: #f0fdf4;
       border: 1.5px solid #86efac;
@@ -513,7 +550,76 @@
           <li><strong>核心重點</strong>：下坡時的股四頭與臀中肌離心收縮訓練比上坡心肺更重要。</li>
         </ul>
 
-        <h2 class="section-title">五、日照與環境模擬</h2>
+        <h2 class="section-title">五、當日實況氣象</h2>
+
+        <p>
+          2026/04/19 比賽當日，坪林茶區（lat 24.936, lon 121.712）凌晨到清晨為
+          <strong>低雲、濕度接近飽和</strong>的環境；清晨有零星的霧雨（全日累積僅 0.7 mm，可視為無降雨），
+          08:00 後雲層開始裂開，正午逼近晴朗。這是一整年中台北山區最舒服的跑步天氣之一——
+          起跑氣溫 20–21°C、稜線 22–23°C、關門前後才追到 27°C。
+        </p>
+
+        <div class="weather-grid">
+          <div class="wx-card lvl-ok">
+            <div class="wx-time">06:00 出發準備</div>
+            <div class="wx-temp">19.5<span style="font-size:.9rem">°C</span></div>
+            <div class="wx-sub">濕度 100%</div>
+            <div class="wx-feels">體感 22.7°C</div>
+          </div>
+          <div class="wx-card lvl-ok">
+            <div class="wx-time">08:00 起跑</div>
+            <div class="wx-temp">21.4<span style="font-size:.9rem">°C</span></div>
+            <div class="wx-sub">濕度 92%</div>
+            <div class="wx-feels">體感 24.6°C</div>
+          </div>
+          <div class="wx-card lvl-ok">
+            <div class="wx-time">09:00 茶園爬升</div>
+            <div class="wx-temp">22.7<span style="font-size:.9rem">°C</span></div>
+            <div class="wx-sub">濕度 86%</div>
+            <div class="wx-feels">體感 25.8°C</div>
+          </div>
+          <div class="wx-card lvl-ok">
+            <div class="wx-time">10:00 稜線高點</div>
+            <div class="wx-temp">24.5<span style="font-size:.9rem">°C</span></div>
+            <div class="wx-sub">濕度 74%</div>
+            <div class="wx-feels">體感 27.2°C</div>
+          </div>
+          <div class="wx-card lvl-warm">
+            <div class="wx-time">13:00 關門</div>
+            <div class="wx-temp">26.6<span style="font-size:.9rem">°C</span></div>
+            <div class="wx-sub">濕度 66%</div>
+            <div class="wx-feels">體感 30.5°C</div>
+          </div>
+        </div>
+
+        <div class="chart-wrap">
+          <div class="chart-title">氣溫與體感溫度趨勢</div>
+          <div class="chart-subtitle">2026/04/19 05:00–14:00｜ERA5 再分析</div>
+          <div class="chart-canvas-wrap"><canvas id="chartWeather"></canvas></div>
+        </div>
+
+        <div class="tactical-box">
+          <h3>天氣戰術解讀</h3>
+          <p>
+            <strong>這場是舒適天氣——但不是零風險</strong>。100% 濕度意味著清晨林道與石階會濕滑、
+            石塊上可能有薄水膜；越野鞋齒花紋如果偏圓，下坡段要主動降速。
+          </p>
+          <p>
+            另一個陷阱：<strong>高濕度會讓汗水蒸發效率下降</strong>，即使體感只有 25°C，
+            進入 km 6–8 的稜線段時核心體溫仍會穩定上升。
+            記得在 km 5 主陡拉之前補水，不要等到口渴才喝。關門前最後 1 小時體感會衝到 30°C，
+            正是最容易抽筋的時段——後段跑者要記得補鹽。
+          </p>
+          <p>
+            <strong>與淘金越野（2025/09/28 體感 33–39°C）相比</strong>，
+            這場熱壓力大約只有淘金的三分之一，DNF 率預期極低，
+            屬於「可以專心比成績、不必擔心熱衰竭」的天氣。
+          </p>
+        </div>
+
+        <p class="source-note">*資料來源：Open-Meteo 歷史存檔（ERA5 再分析，0.25° 格點，無降雨）</p>
+
+        <h2 class="section-title">六、日照與環境模擬</h2>
 
         <p>
           4 月下旬的坪林早晨，茶園還掛著薄霧，空氣裡有草葉和泥土的潮濕味，體感溫度比手機天氣 App 涼上 3°C。但一旦跑到稜線，這些都是昨天的事了。採茶組 12K <strong>08:00 起跑，限時 5 小時，13:00 關門</strong>。起點位於坪林（約 N24.936°, E121.712°），
@@ -540,7 +646,7 @@
           頭燈預警：關門時間 13:00（08:00 起跑 + 5 小時限時），純日間賽事；即使壓線完賽也不會進入夜段，故不需攜帶頭燈。
         </p>
 
-        <h2 class="section-title">六、安全與撤退路徑</h2>
+        <h2 class="section-title">七、安全與撤退路徑</h2>
 
         <p>
           以下地圖為 GPX 軌跡對應 2D 平面投影，顏色代表<strong>該點距離賽道起點（坪林聯絡道）的直線距離</strong>──
@@ -573,7 +679,7 @@
           </p>
         </div>
 
-        <h2 class="section-title">七、戰術總結與裝備建議</h2>
+        <h2 class="section-title">八、戰術總結與裝備建議</h2>
 
         <div class="tactical-box">
           <h3>一句話戰術</h3>
@@ -634,7 +740,7 @@
           </div>
         </div>
 
-        <h2 class="section-title">八、個人心得（短評）</h2>
+        <h2 class="section-title">九、個人心得（短評）</h2>
 
         <p>
           採茶組賽道補給堪稱台灣越野界的<strong>補給典範</strong>──現煎熱食、剉冰機應有盡有，
@@ -816,6 +922,37 @@
             return (r > 0 && Math.abs(km - r) < 0.09) ? r + 'k' : '';
           }}},
           y: { ...noGrid.y, ticks: { callback: v => v + 'm' } }
+        }
+      }
+    });
+
+    // --- 3.5 Weather chart (2026/04/19 Pinglin) ---
+    const wx = {
+      hours:  ['05','06','07','08','09','10','11','12','13','14'],
+      temp:   [19.5, 19.5, 20.2, 21.4, 22.7, 24.5, 25.8, 27.0, 26.6, 26.6],
+      app:    [22.7, 22.7, 23.4, 24.6, 25.8, 27.2, 27.9, 30.6, 30.5, 29.6],
+      rh:     [100, 100, 97, 92, 86, 74, 65, 63, 66, 61]
+    };
+    new Chart(document.getElementById('chartWeather'), {
+      type: 'line',
+      data: {
+        labels: wx.hours.map(h => h + ':00'),
+        datasets: [
+          { label: '氣溫 (°C)',   data: wx.temp, borderColor: '#059669', backgroundColor: 'rgba(5,150,105,.18)', tension: .35, borderWidth: 2.5, pointRadius: 4, pointBackgroundColor: '#059669', yAxisID: 'y', fill: false },
+          { label: '體感 (°C)',   data: wx.app,  borderColor: '#d97706', backgroundColor: 'rgba(217,119,6,.18)', tension: .35, borderWidth: 2.5, pointRadius: 4, pointBackgroundColor: '#d97706', yAxisID: 'y', borderDash: [6,3], fill: false },
+          { label: '濕度 (%)',    data: wx.rh,   borderColor: '#2563eb', backgroundColor: 'rgba(37,99,235,.12)', tension: .35, borderWidth: 2, pointRadius: 3, pointBackgroundColor: '#2563eb', yAxisID: 'y1', fill: false }
+        ]
+      },
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        plugins: {
+          legend: { position: 'top' },
+          tooltip: { callbacks: { title: items => items[0].label } }
+        },
+        scales: {
+          x: { ...noGrid.x },
+          y:  { ...noGrid.y, position: 'left',  ticks: { callback: v => v + '°' }, suggestedMin: 15, suggestedMax: 35 },
+          y1: { position: 'right', grid: { drawOnChartArea: false }, border: { display: false }, ticks: { callback: v => v + '%' }, suggestedMin: 50, suggestedMax: 100 }
         }
       }
     });

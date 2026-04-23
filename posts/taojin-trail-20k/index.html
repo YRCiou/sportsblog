@@ -144,6 +144,14 @@
     [data-theme="dark"] .wx-card.lvl-hot    { background: #1c0d00; border-color: #ea580c; color: #fed7aa; }
     [data-theme="dark"] .wx-card.lvl-danger { background: #1c0505; border-color: #dc2626; color: #fecaca; }
 
+    .source-note {
+      font-size: .78rem;
+      color: #94a3b8;
+      font-style: italic;
+      margin: -.5rem 0 1.5rem;
+      letter-spacing: .02em;
+    }
+
     /* ── Section title ── */
     .section-title {
       font-size: 1.45rem;
@@ -575,8 +583,7 @@
         <h2 class="section-title">四、當日實況氣象</h2>
 
         <p>
-          2025/09/28 雙溪貂山區域（lat 25.108, lon 121.815）逐時氣象，
-          資料來源：<strong>Open-Meteo 歷史存檔（ERA5 再分析，0.25° 格點，無降雨）</strong>。
+          2025/09/28 雙溪貂山區域（lat 25.108, lon 121.815）逐時氣象。
           9 月下旬台灣北部山區尚未進入東北季風，白天溫度仍接近夏季水準。
         </p>
 
@@ -627,11 +634,13 @@
             即使沒有直接日曬，純靠跑步產熱，中段跑者的核心體溫可能在 11:00–13:00 超過 38.5°C。
           </p>
           <p>
-            <strong>與找茶越野（2026/04/23，體感 22–25°C）相比</strong>，
+            <strong>與找茶越野（2026/04/19，體感 23–27°C）相比</strong>，
             這場的熱負荷大約是找茶的 1.5–2 倍。
             超過 80% 的 DNF 案例發生在熱指數超過 35°C 的賽事中，而這場比賽整個窗口都在這個範圍內。
           </p>
         </div>
+
+        <p class="source-note">*資料來源：Open-Meteo 歷史存檔（ERA5 再分析，0.25° 格點，無降雨）</p>
 
         <h2 class="section-title">五、日照與曝曬分析</h2>
 
