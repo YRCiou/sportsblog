@@ -120,7 +120,73 @@ const svgTaojin = `<svg xmlns='http://www.w3.org/2000/svg' width='1200' height='
   <text x='120' y='602' font-family='Arial,sans-serif' font-size='16' font-weight='700' fill='rgba(255,255,255,0.28)'>YR 運動研究室</text>
 </svg>`;
 
+/* ─── taojin 30K ─── */
+const svgTaojin30k = `<svg xmlns='http://www.w3.org/2000/svg' width='1200' height='630' viewBox='0 0 1200 630'>
+  <defs>
+    <linearGradient id='sky' x1='0' y1='0' x2='0' y2='1'>
+      <stop offset='0%' stop-color='#04091a'/>
+      <stop offset='100%' stop-color='#0a1f12'/>
+    </linearGradient>
+    <linearGradient id='ov' x1='0' y1='0' x2='1' y2='0'>
+      <stop offset='0%'   stop-color='#040a1a' stop-opacity='0.60'/>
+      <stop offset='38%'  stop-color='#040a1a' stop-opacity='0.88'/>
+      <stop offset='65%'  stop-color='#040a1a' stop-opacity='0.68'/>
+      <stop offset='100%' stop-color='#040a1a' stop-opacity='0.18'/>
+    </linearGradient>
+    <linearGradient id='bf' x1='0' y1='0' x2='0' y2='1'>
+      <stop offset='58%' stop-color='#04091a' stop-opacity='0'/>
+      <stop offset='100%' stop-color='#04091a' stop-opacity='0.70'/>
+    </linearGradient>
+    <linearGradient id='r1' x1='0' y1='1' x2='0' y2='0'>
+      <stop offset='0%'  stop-color='#162b1a'/>
+      <stop offset='100%' stop-color='#2e6040' stop-opacity='0.75'/>
+    </linearGradient>
+    <linearGradient id='r2' x1='0' y1='1' x2='0' y2='0'>
+      <stop offset='0%'  stop-color='#0a1a10'/>
+      <stop offset='100%' stop-color='#1e4428' stop-opacity='0.52'/>
+    </linearGradient>
+  </defs>
+  <rect width='1200' height='630' fill='url(#sky)'/>
+  <!-- 4-peak dramatic silhouette: SP→CP1(642m)→CP2→CP3→EP -->
+  <polygon points='0,630 0,390 60,370 130,310 210,220 270,155 320,90 370,78 410,95 450,150 490,195 530,210 570,160 610,110 650,80 690,98 730,130 770,165 810,145 850,100 890,75 930,90 970,120 1010,155 1060,195 1110,220 1160,245 1200,260 1200,630' fill='url(#r2)'/>
+  <polygon points='0,630 0,450 50,430 110,390 180,330 240,260 290,195 340,135 385,118 420,132 460,185 500,230 540,250 580,200 620,148 655,108 690,122 730,160 775,195 810,178 850,135 890,108 930,122 970,158 1010,200 1060,240 1110,270 1160,295 1200,315 1200,630' fill='url(#r1)'/>
+  <!-- Sun -->
+  <circle cx='950' cy='88' r='72' fill='rgba(255,150,0,0.10)'/>
+  <circle cx='950' cy='88' r='48' fill='rgba(255,180,40,0.18)'/>
+  <circle cx='950' cy='88' r='26' fill='rgba(255,210,70,0.62)'/>
+  <!-- Peak markers -->
+  <circle cx='370' cy='75' r='5' fill='#fbbf24'/>
+  <text x='382' y='71' font-family='Arial,sans-serif' font-size='13' fill='#fbbf24' opacity='0.95'>貂山 642m</text>
+  <circle cx='650' cy='77' r='4' fill='#86efac'/>
+  <text x='662' y='73' font-family='Arial,sans-serif' font-size='12' fill='#86efac' opacity='0.85'>金瓜石</text>
+  <rect width='1200' height='630' fill='url(#ov)'/>
+  <rect width='1200' height='630' fill='url(#bf)'/>
+
+  <!-- 上：組別 -->
+  <text x='120' y='148' font-family='Arial Black,Arial,sans-serif' font-size='58' font-weight='900' fill='rgba(255,255,255,0.92)' letter-spacing='-1'>30K 越野競賽組</text>
+  <!-- 下：賽事名稱 -->
+  <text x='120' y='272' font-family='Arial Black,Arial,sans-serif' font-size='98' font-weight='900' fill='#4ade80' letter-spacing='-3'>淘金越野 GT</text>
+  <text x='122' y='322' font-family='Arial Black,Arial,sans-serif' font-size='30' font-weight='700' fill='rgba(255,255,255,0.52)'>賽道深度拆解</text>
+  <line x1='120' y1='344' x2='740' y2='344' stroke='rgba(255,255,255,0.14)' stroke-width='1'/>
+
+  <rect x='120' y='364' width='620' height='94' rx='10' fill='rgba(255,255,255,0.06)' stroke='rgba(255,255,255,0.10)' stroke-width='1'/>
+  <text x='158' y='398' font-family='Arial,sans-serif' font-size='12' fill='rgba(255,255,255,0.5)'>距離</text>
+  <text x='158' y='426' font-family='Arial Black,Arial,sans-serif' font-size='27' font-weight='900' fill='#60a5fa'>30.36km</text>
+  <line x1='318' y1='376' x2='318' y2='444' stroke='rgba(255,255,255,0.12)' stroke-width='1'/>
+  <text x='338' y='398' font-family='Arial,sans-serif' font-size='12' fill='rgba(255,255,255,0.5)'>爬升 D+</text>
+  <text x='338' y='426' font-family='Arial Black,Arial,sans-serif' font-size='27' font-weight='900' fill='#f97316'>2,446m</text>
+  <line x1='500' y1='376' x2='500' y2='444' stroke='rgba(255,255,255,0.12)' stroke-width='1'/>
+  <text x='520' y='398' font-family='Arial,sans-serif' font-size='12' fill='rgba(255,255,255,0.5)'>體感高峰</text>
+  <text x='520' y='426' font-family='Arial Black,Arial,sans-serif' font-size='27' font-weight='900' fill='#ef4444'>34°C</text>
+
+  <rect x='120' y='480' width='340' height='32' rx='6' fill='rgba(220,38,38,0.72)'/>
+  <text x='138' y='501' font-family='Arial,sans-serif' font-size='14' font-weight='700' fill='white'>垂直爬升比 80.6 m/km × 重山系</text>
+  <text x='120' y='554' font-family='Arial,sans-serif' font-size='14' fill='rgba(255,255,255,0.40)'>2025/09/28  ·  新北市瑞芳  ·  07:00 起跑  ·  限時 8h</text>
+  <text x='120' y='602' font-family='Arial,sans-serif' font-size='16' font-weight='700' fill='rgba(255,255,255,0.28)'>YR 運動研究室</text>
+</svg>`;
+
 Promise.all([
   sharp(Buffer.from(svgZhaocha)).jpeg({quality:93}).toFile(path.join(root,'assets','og-zhaocha-12k.jpg')),
   sharp(Buffer.from(svgTaojin)).jpeg({quality:93}).toFile(path.join(root,'assets','og-taojin-trail-20k.jpg')),
-]).then(()=>console.log('✅ 兩張 OG 圖重製完成')).catch(e=>console.error(e));
+  sharp(Buffer.from(svgTaojin30k)).jpeg({quality:93}).toFile(path.join(root,'assets','og-taojin-trail-30k.jpg')),
+]).then(()=>console.log('✅ 三張 OG 圖重製完成')).catch(e=>console.error(e));

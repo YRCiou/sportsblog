@@ -41,6 +41,14 @@ function formatDate(iso) {
   return `${y}/${m}/${day}`;
 }
 
+/* ── 圖片位置（與 related.js 規則一致）────────────────── */
+function imgObjectPosition(url) {
+  if (!url) return null;
+  if (/\/assets\/og-[^/]+\.jpg/.test(url)) return 'left center';
+  if (/upload\.wikimedia\.org/.test(url)) return 'center top';
+  return null;
+}
+
 /* ── 產生卡片 HTML ────────────────────────────────────── */
 function renderCard(post) {
   const imgSrc  = escHtml(post.hero?.url ?? post.hero?.thumbUrl ?? '');
@@ -51,10 +59,13 @@ function renderCard(post) {
   const slug    = escHtml(post.slug);
   const title   = escHtml(post.title);
   const cat     = escHtml(post.category ?? '');
+  const pos     = post.hero?.objectPosition
+                ?? imgObjectPosition(post.hero?.url ?? post.hero?.thumbUrl ?? '');
+  const posAttr = pos ? ` style="object-position: ${pos}"` : '';
 
   return `    <article class="post-card" data-slug="${slug}" data-category="${cat}">
       <a href="${href}" class="card-link">
-        <div class="card-image"><img src="${imgSrc}" alt="${imgAlt}" loading="lazy"></div>
+        <div class="card-image"><img src="${imgSrc}" alt="${imgAlt}" loading="lazy"${posAttr}></div>
         <div class="card-body">
           <h2 class="card-title">${title}</h2>
           <div class="card-meta">

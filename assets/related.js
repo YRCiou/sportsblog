@@ -160,7 +160,7 @@
 
   const cards = ranked.map(({ post }) => {
     const thumb = post.hero?.thumbUrl ?? post.hero?.url ?? '';
-    const pos = imgObjectPosition(thumb);
+    const pos = post.hero?.objectPosition ?? imgObjectPosition(thumb);
     const imgHtml = thumb
       ? `<div class="ri-img"><img src="${escHtml(thumb)}" alt="${escHtml(post.title)}" loading="lazy" style="object-position:${pos}"></div>`
       : `<div class="ri-img ri-img--empty"></div>`;
