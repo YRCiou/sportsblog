@@ -1,6 +1,29 @@
 {
   "posts": [
     {
+      "slug": "faraway-40k",
+      "title": "賽道分析：2025 發發爾衛 Far Away 40K",
+      "author": "YRCiou",
+      "topic": "Taiwan trail running race course analysis GPX elevation slope Wuweishan Dasyueshan Far Away 40K cliff scrambling",
+      "topics": ["faraway-course-analysis", "faraway-trail", "taiwan-trail", "trail-running", "race-analysis", "endurance-sports", "sports"],
+      "keywords": ["發發爾衛", "Far Away", "40K", "屋我尾山", "大雪山", "賽道分析", "GPX", "越野跑", "坡度", "台灣越野", "重山系", "手腳並用"],
+      "priority": 2,
+      "excerpt": "以 GPX × ASTER 地形 × 2025/03/01 實際氣象拆解 Far Away 40K：43.39 km、D+2,793 m、最高 1,760 m、垂直爬升比 64.4 m/km 準重山系。屋我尾山手腳並用 67% 陡拉、4 座大小王、完整坡度／氣象／撤退／裝備戰術全拆解。",
+      "createdAt": "2026-04-24T12:00:00.000Z",
+      "updatedAt": "2026-04-24T12:00:00.000Z",
+      "category": "越野",
+      "customHtml": true,
+      "hero": {
+        "url": "https://yrciou.github.io/sportsblog/assets/og-faraway-40k.jpg",
+        "thumbUrl": "https://yrciou.github.io/sportsblog/assets/og-faraway-40k.jpg",
+        "title": "2025 發發爾衛 Far Away 40K 賽道深度拆解",
+        "author": "YRCiou",
+        "sourceUrl": "https://yrciou.github.io/sportsblog/posts/faraway-40k/",
+        "license": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      }
+    },
+    {
       "slug": "taojin-trail-30k",
       "title": "賽道分析：2025 淘金越野 GT 30K 越野競賽組",
       "author": "YRCiou",
