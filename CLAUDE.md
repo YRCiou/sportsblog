@@ -500,6 +500,63 @@ const noGrid = {
 
 ---
 
+### 10-A. 賽道分析系列專用規範（slug 含 `*-trail-*` 或類別為「越野」的 GPX 分析文）
+
+所有賽道分析文章**必須**包含以下固定區段，缺一不可：
+
+| # | 區段 | 視覺化 | 資料來源 |
+|---|------|--------|---------|
+| 一 | 基本資訊儀表板 | 6 張 `.stat-card`（里程 / 爬升 / 下降 / 最高 / 最低 / 垂直爬升比） | GPX + ASTER 30m |
+| 二 | 可跑性戰術分佈 | 4 張 `.run-card` + 坡度長條圖（Chart.js） | 分段坡度計算 |
+| 三 | 賽道剖面與 CP 體感係數 | 海拔剖面圖（line chart）+ 分段表 | GPX 串 ele |
+| 四 | 坡度變化率：技術難度判讀 | 3 張 `.stat-card`（均值/標準差/最震盪 km） | — |
+| 五 | 當日實況氣象 | 5 張 `.wx-card`（06:00/起跑/主陡/高點/關門）+ 雙軸氣溫/體感/濕度圖 | Open-Meteo Archive API |
+| 六 | 日照與環境模擬 | 時段 × 方位 × 仰角 × 風險表 | 太陽位置計算 |
+| 七 | 安全與撤退路徑 | **GPS 軌跡 × 離公路直線距離**（見下） | GPX + 起點座標 |
+| 八 | 戰術總結與裝備建議 | `.tactical-box` + `.gear-grid` | — |
+| 九 | 個人心得 | 短評文字 | — |
+| 附錄 | 本次使用工具分析 | 兩欄表（用途 / 工具） | — |
+
+#### 【必備圖】GPS 軌跡 × 離公路直線距離
+
+**用途**：讓跑者知道「賽道哪些路段離主道路最遠」，撤退時有心理準備。
+
+**HTML**：
+```html
+<div class="chart-wrap">
+  <div class="chart-title">GPS 軌跡 × 離公路直線距離</div>
+  <div class="chart-subtitle">綠 &lt; 500 m ｜ 橘 500–1,000 m ｜ 紅 &gt; 1,000 m</div>
+  <canvas id="bailoutMap" width="1100" height="420"></canvas>
+  <div class="map-legend">
+    <span><i style="background:#10b981"></i>距主道 &lt; 500 m</span>
+    <span><i style="background:#f59e0b"></i>500–1,000 m</span>
+    <span><i style="background:#ef4444"></i>&gt; 1,000 m</span>
+    <span><i style="background:#2563eb"></i>起／終點</span>
+  </div>
+</div>
+```
+
+**CSS**：
+```css
+#bailoutMap { width: 100%; height: 420px; background: #0f172a; border-radius: 10px; display: block; }
+.map-legend { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: .8rem; font-size: .82rem; color: #475569; }
+.map-legend span { display: inline-flex; align-items: center; gap: .4rem; }
+.map-legend i { display: inline-block; width: 14px; height: 4px; border-radius: 2px; }
+```
+
+**參考實作**：見 `posts/zhaocha-trail-12k/index.html` 的 `drawBailoutMap()`，Canvas 2D 繪製：
+1. 依 GPX `bounds` 將 lat/lon 映射到 canvas 座標
+2. 每段 polyline 計算中點與起點（或公路參考點）的 haversine 距離
+3. 距離 <500m 綠、500-1000m 橘、>1000m 紅
+4. 每 2 km 標註里程點（黃色小點 + 底色標籤）
+5. 起終點藍色圓形 + 「起/終點」文字
+
+**資料需求**：每篇賽道分析必須在 `data/{slug}-compact.json` 保留欄位：
+- `b`：bounds `{minLat, maxLat, minLon, maxLon}`
+- `m`：trackMap 陣列，每筆 `[lat, lon, km]`，採樣約 200 點
+
+---
+
 ### 10. 表格規範（補充）
 
 - **無直線**：`td` 不設 `border-left` / `border-right`，只保留 `border-bottom`
