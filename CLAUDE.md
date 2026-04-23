@@ -544,16 +544,28 @@ const noGrid = {
 .map-legend i { display: inline-block; width: 14px; height: 4px; border-radius: 2px; }
 ```
 
+**距離計算**：**必須**用 OSM Overpass API 取該 bbox 的實際道路節點，再對每個 GPS 點算最近道路的 haversine 距離。不要用「離起點直線距離」當代理——CP 都設在可通車的道路口，大部分賽道實際上都在產業道路 100 m 內，用起點距離會把中段錯塗成紅色。
+
+跑 `scripts/road-distance.mjs data/{slug}-track.json data/{slug}-roaddist.json` 會：
+1. 查 Overpass：`highway~"^(motorway|trunk|primary|secondary|tertiary|unclassified|residential|service|track)$"`（含產業道路與林道，排除 footway/path/steps）
+2. 擴展 bbox ~30% 以含周邊道路
+3. 輸出 trackMap 每筆為 `[lat, lon, km, nearestRoadM]`
+
+**顏色分級**（台灣山區規模調整）：
+- `< 100 m`：`#10b981`（綠，幾乎在路上）
+- `100–300 m`：`#84cc16`（黃綠）
+- `300–500 m`：`#f59e0b`（橘）
+- `≥ 500 m`：`#ef4444`（紅，真正孤立段）
+
 **參考實作**：見 `posts/zhaocha-trail-12k/index.html` 的 `drawBailoutMap()`，Canvas 2D 繪製：
 1. 依 GPX `bounds` 將 lat/lon 映射到 canvas 座標
-2. 每段 polyline 計算中點與起點（或公路參考點）的 haversine 距離
-3. 距離 <500m 綠、500-1000m 橘、>1000m 紅
-4. 每 2 km 標註里程點（黃色小點 + 底色標籤）
-5. 起終點藍色圓形 + 「起/終點」文字
+2. 每段 polyline 的顏色取兩端點 `nearestRoadM` 較大者（較保守）
+3. 每 2 km 標註里程點（黃色小點 + 底色標籤）
+4. 起終點藍色圓形 + 「起/終點」文字
 
 **資料需求**：每篇賽道分析必須在 `data/{slug}-compact.json` 保留欄位：
 - `b`：bounds `{minLat, maxLat, minLon, maxLon}`
-- `m`：trackMap 陣列，每筆 `[lat, lon, km]`，採樣約 200 點
+- `m`：trackMap 陣列，每筆 `[lat, lon, km, nearestRoadM]`，採樣約 200 點，nearestRoadM 由 `road-distance.mjs` 產出
 
 ---
 
