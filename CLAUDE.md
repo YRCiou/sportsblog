@@ -482,6 +482,13 @@ const noGrid = {
 - **配色淺色系**：表頭用深色（`#0f172a`），奇偶行交替（白 / `#f8fafc`）
 - **全文一致**：同一篇文章中相同資料（同一賽事/招式）必須用相同顏色，不可在不同表格或圖表中換色
 - **強調行**：最佳行加 `.highlight-best`（`#ecfdf5` 綠）、最差行加 `.highlight-worst`（`#fff1f2` 紅）
+- **橫向可捲動（必須）**：所有 `.data-table` 都必須包在 `<div class="table-scroll">` 內，避免手機換行破版。CSS 加在各文章的 `<style>` 區塊：
+  ```css
+  .table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 1.2rem 0 1.8rem; }
+  .table-scroll .data-table { margin: 0; }
+  .table-scroll .data-table th,
+  .table-scroll .data-table td { white-space: nowrap; }
+  ```
 
 ---
 
