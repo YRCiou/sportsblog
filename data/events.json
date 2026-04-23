@@ -1,31 +1,7 @@
 {
-  "updated": "2026-04-22T19:59:53.781Z",
+  "updated": "2026-04-23T20:00:59.565Z",
   "source": "utmb.world + travelpayouts.com",
   "events": [
-    {
-      "id": "puerto-vallarta-2026",
-      "name": "Puerto Vallarta México by UTMB",
-      "city": "Puerto Vallarta",
-      "country": "墨西哥",
-      "countryEn": "Mexico",
-      "dateStart": "2026-04-16",
-      "dateEnd": "2026-04-18",
-      "distances": [
-        "5K",
-        "20K",
-        "37K",
-        "53K",
-        "81K"
-      ],
-      "lat": 20.6534,
-      "lng": -105.2253,
-      "nearestAirport": "PVR",
-      "utmbUrl": "https://utmb.world/utmb-world-series-events",
-      "flightPrice": null,
-      "flightCurrency": "TWD",
-      "flightUpdated": null,
-      "flightUrl": "https://www.skyscanner.com.tw/transport/flights/tpe/pvr/260413/260420/?adults=1&cabinclass=economy"
-    },
     {
       "id": "canyons-endurance-2026",
       "name": "The Canyons Endurance Runs by UTMB",
@@ -92,7 +68,7 @@
       "utmbUrl": "https://utmb.world/utmb-world-series-events",
       "flightPrice": 8894,
       "flightCurrency": "TWD",
-      "flightUpdated": "2026-04-22T19:59:42.759Z",
+      "flightUpdated": "2026-04-23T20:00:48.658Z",
       "flightUrl": "https://www.skyscanner.com.tw/transport/flights/tpe/bkk/260427/260505/?adults=1&cabinclass=economy"
     },
     {
