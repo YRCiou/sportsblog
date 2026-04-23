@@ -163,18 +163,34 @@
     /* ── Runnability grid ────────────────────────── */
     .runnability-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
-      gap: .75rem;
-      margin: 1.2rem 0 1.8rem;
+      grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+      gap: .85rem;
+      margin: 1.1rem 0 1.5rem;
     }
-    .run-card { border-radius: 10px; padding: .9rem 1rem; text-align: center; }
-    .run-card .rc-pct  { font-size: 1.9rem; font-weight: 800; line-height: 1.1; }
-    .run-card .rc-label{ font-size: .78rem; margin-top: .2rem; font-weight: 600; }
-    .run-card .rc-dist { font-size: .72rem; margin-top: .15rem; opacity: .8; }
-    .r1 { background: #f0fdf4; border: 1.5px solid #86efac; color: #14532d; }
-    .r2 { background: #eff6ff; border: 1.5px solid #93c5fd; color: #1e3a8a; }
-    .r3 { background: #fffbeb; border: 1.5px solid #fcd34d; color: #78350f; }
-    .r4 { background: #fef2f2; border: 1.5px solid #fca5a5; color: #450a0a; }
+    .run-card {
+      background: #fff;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 1rem 1.1rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .run-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+    }
+    .run-card.r1::before { background: #10b981; }
+    .run-card.r2::before { background: #84cc16; }
+    .run-card.r3::before { background: #f59e0b; }
+    .run-card.r4::before { background: #ef4444; }
+    .run-card .rlabel { font-size: .82rem; color: #64748b; font-weight: 600; }
+    .run-card .rname  { font-size: 1.05rem; font-weight: 700; color: #0f172a; margin: .2rem 0 .3rem; }
+    .run-card .rval   { font-size: 1.4rem; font-weight: 800; color: #0f172a; }
+    .run-card .rpct   { font-size: .85rem; color: #64748b; margin-left: .2rem; }
+    [data-theme="dark"] .run-card { background: #1e293b; border-color: #334155; }
+    [data-theme="dark"] .run-card .rname, [data-theme="dark"] .run-card .rval { color: #e2e8f0; }
 
     /* ── Chart wrap ──────────────────────────────── */
     .chart-wrap {
@@ -435,29 +451,30 @@
         <h2 class="section-title">二、可跑性戰術分佈</h2>
 
         <p>
-          按「絕對坡度」將每 100m 區段分成四級。這張圖告訴你這條路「有多少可以真正跑起來」：
+          把每 100 公尺作為一個區段，按「絕對坡度」分成四級：全跑（&lt;5%）、走跑結合（5–10%）、
+          技術路段（10–20%）、魔王陡坡（≥20%）。這是越野跑者心裡默默在做的決策，以下用數字把它量化出來：
         </p>
 
         <div class="runnability-grid">
           <div class="run-card r1">
-            <div class="rc-pct">27.8%</div>
-            <div class="rc-label">全跑</div>
-            <div class="rc-dist">&lt;5% ｜ 8,444m</div>
+            <div class="rlabel">Runnable</div>
+            <div class="rname">全跑路段</div>
+            <div class="rval">8,444<span class="rpct"> m / 27.8%</span></div>
           </div>
           <div class="run-card r2">
-            <div class="rc-pct">14.9%</div>
-            <div class="rc-label">走跑結合</div>
-            <div class="rc-dist">5–10% ｜ 4,532m</div>
+            <div class="rlabel">Mixed</div>
+            <div class="rname">走跑結合</div>
+            <div class="rval">4,532<span class="rpct"> m / 14.9%</span></div>
           </div>
           <div class="run-card r3">
-            <div class="rc-pct">22.0%</div>
-            <div class="rc-label">技術路段</div>
-            <div class="rc-dist">10–20% ｜ 6,682m</div>
+            <div class="rlabel">Technical</div>
+            <div class="rname">技術路段</div>
+            <div class="rval">6,682<span class="rpct"> m / 22.0%</span></div>
           </div>
           <div class="run-card r4">
-            <div class="rc-pct">35.2%</div>
-            <div class="rc-label">魔王陡坡</div>
-            <div class="rc-dist">&gt;20% ｜ 10,699m</div>
+            <div class="rlabel">Boss</div>
+            <div class="rname">魔王陡坡</div>
+            <div class="rval">10,699<span class="rpct"> m / 35.2%</span></div>
           </div>
         </div>
 
@@ -1032,8 +1049,11 @@
   /* ── Slope Histogram ── */
   const histLabels = ['-50%','-45','-40','-35','-30','-25','-20','-15','-10','-5','0','+5','+10','+15','+20','+25','+30','+35','+40','+45'];
   const histBins   = [58,23,49,46,77,83,86,81,92,46,340,79,78,76,69,52,48,26,16,38];
-  const histColors = histBins.map((_,i) => i < 9 ? C.blue.bg : i === 9 ? C.gray.bg : i === 10 ? C.gray.bg : i < 14 ? C.amber.bg : C.red.bg);
-  const histBorders = histBins.map((_,i) => i < 9 ? C.blue.bd : i === 9 ? C.gray.bd : i === 10 ? C.gray.bd : i < 14 ? C.amber.bd : C.red.bd);
+  const histEdges30 = [-50,-45,-40,-35,-30,-25,-20,-15,-10,-5,0,5,10,15,20,25,30,35,40,45];
+  const slopeBg30 = e => e < -10 ? 'rgba(96,165,250,.40)' : e < 0 ? 'rgba(147,197,253,.42)' : e < 5 ? 'rgba(134,239,172,.50)' : e < 15 ? 'rgba(253,230,138,.58)' : 'rgba(252,165,165,.58)';
+  const slopeBd30 = e => e < -10 ? '#60a5fa' : e < 0 ? '#93c5fd' : e < 5 ? '#4ade80' : e < 15 ? '#fcd34d' : '#fca5a5';
+  const histColors  = histBins.map((_,i) => slopeBg30(histEdges30[i]));
+  const histBorders = histBins.map((_,i) => slopeBd30(histEdges30[i]));
 
   new Chart(document.getElementById('chartHist'), {
     type: 'bar',

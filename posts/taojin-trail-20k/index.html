@@ -82,28 +82,37 @@
     .stat-card.accent-amber  .value { color: #d97706; }
     [data-theme="dark"] .stat-card { background: #1e293b; border-color: #334155; }
 
-    /* ── Race card grid (魔王牌) ── */
-    .race-card-grid {
+    /* ── Runnability grid ── */
+    .runnability-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-      gap: .75rem;
-      margin: 1.5rem 0;
+      grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+      gap: .85rem;
+      margin: 1.1rem 0 1.5rem;
     }
-    .race-card {
-      border: 1.5px solid #e2e8f0;
-      border-radius: 10px;
-      padding: .9rem 1rem;
-      background: #f8fafc;
+    .run-card {
+      background: #fff;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 1rem 1.1rem;
+      position: relative;
+      overflow: hidden;
     }
-    .race-card .rlabel { font-size: .72rem; text-transform: uppercase; letter-spacing: .06em; color: #94a3b8; margin-bottom: .25rem; }
-    .race-card .rname  { font-size: .92rem; font-weight: 700; color: #0f172a; margin-bottom: .3rem; }
-    .race-card .rval   { font-size: 1.15rem; font-weight: 800; color: #0f172a; }
-    .race-card .rpct   { font-size: .8rem; font-weight: 500; color: #64748b; }
-    .race-card.boss    { border-color: #fca5a5; background: #fff1f2; }
-    .race-card.boss .rval { color: #dc2626; }
-    [data-theme="dark"] .race-card { background: #1e293b; border-color: #334155; }
-    [data-theme="dark"] .race-card .rname, [data-theme="dark"] .race-card .rval { color: #e2e8f0; }
-    [data-theme="dark"] .race-card.boss { background: #2a1515; border-color: #ef4444; }
+    .run-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+    }
+    .run-card.r1::before { background: #10b981; }
+    .run-card.r2::before { background: #84cc16; }
+    .run-card.r3::before { background: #f59e0b; }
+    .run-card.r4::before { background: #ef4444; }
+    .run-card .rlabel { font-size: .82rem; color: #64748b; font-weight: 600; }
+    .run-card .rname  { font-size: 1.05rem; font-weight: 700; color: #0f172a; margin: .2rem 0 .3rem; }
+    .run-card .rval   { font-size: 1.4rem; font-weight: 800; color: #0f172a; }
+    .run-card .rpct   { font-size: .85rem; color: #64748b; margin-left: .2rem; }
+    [data-theme="dark"] .run-card { background: #1e293b; border-color: #334155; }
+    [data-theme="dark"] .run-card .rname, [data-theme="dark"] .run-card .rval { color: #e2e8f0; }
 
     /* ── Weather cards ── */
     .weather-grid {
@@ -403,38 +412,33 @@
           </div>
         </div>
 
-        <h2 class="section-title">一、坡度分佈與賽道個性</h2>
+        <h2 class="section-title">一、可跑性戰術分佈</h2>
 
         <p>
-          把 856 個軌跡點按鄰點坡度分 5% 一格，算出各區間累積里程。
-          結論很直觀：這條路幾乎沒有「平路」可言。
+          把每 100 公尺作為一個區段，按「絕對坡度」分成四級：全跑（&lt;5%）、走跑結合（5–10%）、
+          技術路段（10–20%）、魔王陡坡（≥20%）。這是越野跑者心裡默默在做的決策，以下用數字把它量化出來：
         </p>
 
-        <div class="race-card-grid">
-          <div class="race-card">
-            <div class="rlabel">段落①</div>
-            <div class="rname">暖身入林</div>
-            <div class="rval">0 – 3 <span class="rpct">km</span></div>
+        <div class="runnability-grid">
+          <div class="run-card r1">
+            <div class="rlabel">Runnable</div>
+            <div class="rname">全跑路段</div>
+            <div class="rval">6,604<span class="rpct"> m / 33.4%</span></div>
           </div>
-          <div class="race-card">
-            <div class="rlabel">段落②</div>
-            <div class="rname">長陡拉（主升）</div>
-            <div class="rval">+522<span class="rpct"> m / 4km</span></div>
+          <div class="run-card r2">
+            <div class="rlabel">Mixed</div>
+            <div class="rname">走跑結合</div>
+            <div class="rval">3,328<span class="rpct"> m / 16.9%</span></div>
           </div>
-          <div class="race-card">
-            <div class="rlabel">段落③</div>
-            <div class="rname">貂山頂下切</div>
-            <div class="rval">642<span class="rpct"> m 高點</span></div>
+          <div class="run-card r3">
+            <div class="rlabel">Technical</div>
+            <div class="rname">技術路段</div>
+            <div class="rval">3,749<span class="rpct"> m / 19.0%</span></div>
           </div>
-          <div class="race-card">
-            <div class="rlabel">段落④</div>
-            <div class="rname">谷底再爬</div>
-            <div class="rval">+423<span class="rpct"> m / 4km</span></div>
-          </div>
-          <div class="race-card boss">
+          <div class="run-card r4">
             <div class="rlabel">Boss</div>
-            <div class="rname">陡坡佔比</div>
-            <div class="rval">30.7<span class="rpct">% &gt;20%</span></div>
+            <div class="rname">魔王陡坡</div>
+            <div class="rval">6,069<span class="rpct"> m / 30.7%</span></div>
           </div>
         </div>
 
@@ -448,11 +452,11 @@
           <h3>關鍵觀察</h3>
           <p>
             坡度 <strong>−5% ~ +5%</strong>（真正能規律配速的區間）累計僅約 <strong>6,604 公尺，佔全程 33.4%</strong>。
-            聽起來比找茶 12K（23%）多，但絕對里程是 6.6 公里——意思是後面那 13 公里全都在和坡度搏鬥。
+            聽起來比找茶 12K（23%）多，但絕對里程是 6.6 公里——後面那 13 公里幾乎全在和坡度搏鬥。
           </p>
           <p>
-            超過 <strong>±20% 的陡坡共 6,069 公尺，佔 30.7%</strong>。這個數字放到 20K 賽道裡代表：
-            每跑 3 公里，就有將近 1 公里是真正的「手腳並用」地形。
+            <strong>魔王陡坡（≥20%）佔 30.7%</strong>，意思是每跑 3 公里就有將近 1 公里是真正的手腳並用地形。
+            雙波結構的第二波（12–20km）在腿部已累積疲勞的狀態下，相同坡度的體感比前半段重約 20%。
           </p>
         </div>
 
@@ -842,8 +846,10 @@
   const histEdges = [-50,-45,-40,-35,-30,-25,-20,-15,-10,-5,0,5,10,15,20,25,30,35,40,45,50];
   const shortLabels = histEdges.slice(0,-1).map(v=>v+'%');
   const fullLabels  = histEdges.slice(0,-1).map((v,i)=>v+'%~'+histEdges[i+1]+'%');
-  const histColors  = histBins.map((_,i)=> histEdges[i]<0 ? C.down.bg : (histEdges[i]<5 ? C.flat.bg : C.up.bg));
-  const histBorders = histBins.map((_,i)=> histEdges[i]<0 ? C.down.bd : (histEdges[i]<5 ? C.flat.bd : C.up.bd));
+  const slopeBg = e => e < -10 ? 'rgba(96,165,250,.40)' : e < 0 ? 'rgba(147,197,253,.42)' : e < 5 ? 'rgba(134,239,172,.50)' : e < 15 ? 'rgba(253,230,138,.58)' : 'rgba(252,165,165,.58)';
+  const slopeBd = e => e < -10 ? '#60a5fa' : e < 0 ? '#93c5fd' : e < 5 ? '#4ade80' : e < 15 ? '#fcd34d' : '#fca5a5';
+  const histColors  = histBins.map((_,i) => slopeBg(histEdges[i]));
+  const histBorders = histBins.map((_,i) => slopeBd(histEdges[i]));
 
   new Chart(document.getElementById('chartHist'), {
     type: 'bar',
