@@ -3,7 +3,7 @@
 ## 網站資訊
 - **網址**：https://yrciou.github.io/sportsblog/
 - **GitHub Repo**：https://github.com/YRCiou/sportsblog
-- **本地路徑**：任意位置（`git clone https://github.com/YRCiou/sportsblog.git`）；路徑無硬性限制
+- **本地路徑**：請 `git clone https://github.com/YRCiou/sportsblog.git` 到任意位置，所有路徑皆以專案根目錄為基準（相對路徑）
 
 ## 技術架構
 - 純靜態 HTML / CSS / JS，無後端框架

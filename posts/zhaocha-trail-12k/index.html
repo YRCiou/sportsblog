@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>賽道分析：2026 找茶越野 12K（採茶組）| YR 運動研究室</title>
+  <meta name="description" content="以 GPX 軌跡串接 ASTER 30m 數值地形，還原 2026 找茶越野採茶組 12K 全貌：12.23 公里、527 公尺總爬升、最高海拔 589 公尺。坡度分佈、可跑性、體感係數、撤退路徑與裝備建議一次看完。">
+  <meta name="author" content="YRCiou">
+  <link rel="canonical" href="https://yrciou.github.io/sportsblog/posts/zhaocha-trail-12k/">
+  <base href="/sportsblog/">
+
+  <link rel="icon" type="image/png" sizes="192x192" href="https://yrciou.github.io/sportsblog/assets/favicon-192.png">
+  <link rel="icon" type="image/png" sizes="48x48"  href="https://yrciou.github.io/sportsblog/assets/favicon-48.png">
+  <link rel="icon" type="image/png" sizes="32x32"  href="https://yrciou.github.io/sportsblog/assets/favicon-32.png">
+  <link rel="icon" type="image/svg+xml"             href="https://yrciou.github.io/sportsblog/assets/favicon.svg">
+  <link rel="apple-touch-icon"                      href="https://yrciou.github.io/sportsblog/assets/favicon-192.png">
+
+  <meta property="og:type"             content="article">
+  <meta property="og:site_name"        content="YR 運動研究室">
+  <meta property="og:title"            content="賽道分析：2026 找茶越野 12K（採茶組）">
+  <meta property="og:description"      content="GPX × ASTER 30m 數值地形，12.23 km、527 m D+、最高 589 m。坡度、可跑性、體感係數、撤退路徑、裝備建議。">
+  <meta property="og:url"              content="https://yrciou.github.io/sportsblog/posts/zhaocha-trail-12k/">
+  <meta property="og:locale"           content="zh_TW">
+  <meta property="og:image"            content="https://yrciou.github.io/sportsblog/assets/og-zhaocha-12k.jpg">
+  <meta property="og:image:secure_url" content="https://yrciou.github.io/sportsblog/assets/og-zhaocha-12k.jpg">
+  <meta property="og:image:width"      content="1200">
+  <meta property="og:image:height"     content="630">
+  <meta property="og:image:type"       content="image/jpeg">
+  <meta property="og:image:alt"        content="2026 找茶越野採茶組 12K 賽道深度拆解">
+  <meta name="twitter:card"            content="summary_large_image">
+  <meta name="twitter:title"           content="賽道分析：2026 找茶越野 12K（採茶組）">
+  <meta name="twitter:description"     content="GPX × ASTER 30m 數值地形，12.23 km、527 m D+、最高 589 m。坡度、可跑性、體感、撤退、裝備一次看完。">
+  <meta name="twitter:image"           content="https://yrciou.github.io/sportsblog/assets/og-zhaocha-12k.jpg">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "賽道分析：2026 找茶越野 12K（採茶組）",
+    "description": "以 GPX 軌跡串接 ASTER 30m 數值地形，還原 2026 找茶越野採茶組 12K 全貌；坡度、可跑性、體感、撤退、裝備完整拆解。",
+    "image": "https://yrciou.github.io/sportsblog/assets/og-zhaocha-12k.jpg",
+    "url": "https://yrciou.github.io/sportsblog/posts/zhaocha-trail-12k/",
+    "datePublished": "2026-04-23",
+    "dateModified": "2026-04-23",
+    "author": { "@type": "Person", "name": "YRCiou" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "YR 運動研究室",
+      "url": "https://yrciou.github.io/sportsblog",
+      "logo": { "@type": "ImageObject", "url": "https://yrciou.github.io/sportsblog/assets/favicon-192.png" }
+    },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://yrciou.github.io/sportsblog/posts/zhaocha-trail-12k/" }
+  }
+  </script>
+
+  <script>!function(){var t=localStorage.getItem('yr-theme')||(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.setAttribute('data-theme',t)}()</script>
+
+  <link rel="stylesheet" href="assets/style.css">
+  <style>
+    .section-title {
+      font-size: 1.45rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin: 2.8rem 0 1rem;
+      padding-bottom: .45rem;
+      border-bottom: 3px solid #2563eb;
+    }
+    .lead {
+      font-size: 1.1rem;
+      color: #475569;
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+      padding: 1rem 1.25rem;
+      background: #f0f9ff;
+      border-left: 4px solid #38bdf8;
+      border-radius: 0 8px 8px 0;
+    }
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: .85rem;
+      margin: 1.3rem 0 1.5rem;
+    }
+    .stat-card {
+      background: #fff;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 1rem 1.1rem;
+      position: relative;
+    }
+    .stat-card .label { font-size: .78rem; color: #64748b; letter-spacing: .04em; }
+    .stat-card .value { font-size: 1.55rem; font-weight: 800; color: #0f172a; margin-top: .25rem; }
+    .stat-card .unit  { font-size: .8rem; color: #64748b; margin-left: .2rem; }
+    .stat-card.accent-blue  .value { color: #2563eb; }
+    .stat-card.accent-amber .value { color: #d97706; }
+    .stat-card.accent-green .value { color: #059669; }
+    .stat-card.accent-red   .value { color: #dc2626; }
+
+    .chart-wrap {
+      background: #fff;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      box-shadow: 0 2px 12px rgba(0,0,0,.06);
+    }
+    .chart-title {
+      font-size: .92rem;
+      font-weight: 700;
+      color: #475569;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      margin-bottom: 1rem;
+    }
+    .chart-subtitle {
+      font-size: .82rem;
+      color: #94a3b8;
+      margin: -0.7rem 0 .8rem;
+      text-transform: none;
+      letter-spacing: 0;
+    }
+    .chart-canvas-wrap { position: relative; height: 280px; }
+    .chart-canvas-wrap.tall  { height: 360px; }
+    .chart-canvas-wrap.short { height: 220px; }
+
+    .insight-box {
+      background: linear-gradient(135deg, #1e3a8a 0%, #1d4ed8 100%);
+      color: white;
+      border-radius: 12px;
+      padding: 1.5rem 1.75rem;
+      margin: 2rem 0;
+    }
+    .insight-box h3     { font-size: 1.1rem; margin: 0 0 .6rem; color: #bfdbfe; }
+    .insight-box p      { font-size: .95rem; line-height: 1.7; margin: .3rem 0 0; }
+    .insight-box strong { color: #93c5fd; }
+
+    .warn-box {
+      background: #fffbeb;
+      border-left: 4px solid #f59e0b;
+      border-radius: 0 8px 8px 0;
+      padding: 1rem 1.25rem;
+      color: #78350f;
+      font-size: .95rem;
+      line-height: 1.7;
+      margin: 1.5rem 0;
+    }
+    .warn-box strong { color: #b45309; }
+
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.2rem 0 1.8rem;
+      font-size: .9rem;
+    }
+    .data-table th {
+      background: #0f172a;
+      color: #f1f5f9;
+      padding: .65rem .9rem;
+      text-align: left;
+      font-weight: 600;
+      border-left: none;
+      border-right: none;
+    }
+    .data-table td {
+      padding: .6rem .9rem;
+      border-bottom: 1px solid #e2e8f0;
+      border-left: none;
+      border-right: none;
+    }
+    .data-table tr:nth-child(even) td { background: #f8fafc; }
+    .data-table tr:last-child td      { border-bottom: none; }
+
+    .runnability-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+      gap: .85rem;
+      margin: 1.1rem 0 1.5rem;
+    }
+    .run-card {
+      background: #fff;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 1rem 1.1rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .run-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+    }
+    .run-card.r1::before { background: #10b981; }
+    .run-card.r2::before { background: #84cc16; }
+    .run-card.r3::before { background: #f59e0b; }
+    .run-card.r4::before { background: #ef4444; }
+    .run-card .rlabel { font-size: .82rem; color: #64748b; font-weight: 600; }
+    .run-card .rname  { font-size: 1.05rem; font-weight: 700; color: #0f172a; margin: .2rem 0 .3rem; }
+    .run-card .rval   { font-size: 1.4rem; font-weight: 800; color: #0f172a; }
+    .run-card .rpct   { font-size: .85rem; color: #64748b; margin-left: .2rem; }
+
+    .tactical-box {
+      background: linear-gradient(135deg, #064e3b 0%, #047857 100%);
+      color: #ecfdf5;
+      border-radius: 14px;
+      padding: 1.5rem 1.75rem;
+      margin: 2rem 0;
+    }
+    .tactical-box h3 { color: #6ee7b7; font-size: 1.1rem; margin: 0 0 .7rem; }
+    .tactical-box p  { line-height: 1.75; margin: .3rem 0; font-size: .98rem; }
+    .tactical-box strong { color: #a7f3d0; }
+
+    .gear-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 1rem;
+      margin: 1rem 0 1.8rem;
+    }
+    .gear-item {
+      background: #fff;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      padding: 1rem 1.1rem;
+    }
+    .gear-item h4 { margin: 0 0 .4rem; color: #0f172a; font-size: 1rem; font-weight: 700; }
+    .gear-item p  { margin: 0; font-size: .9rem; color: #475569; line-height: 1.65; }
+
+    #bailoutMap {
+      width: 100%;
+      height: 420px;
+      background: #0f172a;
+      border-radius: 10px;
+      display: block;
+    }
+    .map-legend {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-top: .8rem;
+      font-size: .82rem;
+      color: #475569;
+    }
+    .map-legend span { display: inline-flex; align-items: center; gap: .4rem; }
+    .map-legend i {
+      display: inline-block; width: 14px; height: 4px; border-radius: 2px;
+    }
+
+    .note { font-size: .82rem; color: #64748b; margin: .4rem 0 0; }
+  </style>
+
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-5FJGQZJ9');</script>
+</head>
+<body>
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5FJGQZJ9"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+  <header class="site-header">
+    <div class="container">
+      <a class="site-title" href="./">
+        <img src="assets/favicon.svg" class="site-logo" alt="YR 運動研究室">
+        YR 運動研究室
+      </a>
+      <div class="header-spacer"></div>
+      <button class="theme-toggle" id="themeToggle" aria-label="切換深色/淺色模式">
+        <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg class="icon-sun"  width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      </button>
+      <button class="search-toggle" id="searchToggle" aria-label="搜尋文章">
+        <svg class="search-icon-svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      </button>
+      <a class="back-link" href="./">← 所有文章</a>
+    </div>
+  </header>
+
+  <div class="search-panel" id="searchPanel">
+    <div class="container">
+      <div class="search-input-row">
+        <svg class="search-icon-svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="text" id="searchInput" class="search-input" placeholder="請輸入關鍵字" autocomplete="off">
+        <button class="search-close-btn" id="searchClose" aria-label="關閉">✕</button>
+      </div>
+      <div class="search-results" id="searchResults"></div>
+    </div>
+  </div>
+
+  <section class="hero-section">
+    <div class="content-width">
+      <img class="hero-image"
+           src="assets/og-zhaocha-12k.jpg"
+           alt="2026 找茶越野採茶組 12K 賽道深度拆解"
+           loading="eager">
+    </div>
+  </section>
+
+  <main>
+    <div class="content-wrapper">
+      <article>
+
+        <header class="article-header">
+          <div class="article-meta">
+            <span class="meta-author"><span class="cat-badge">越野</span> 作者：YRCiou</span>
+            <span class="meta-date">2026/04/23</span>
+            <span class="meta-views">瀏覽：<span class="view-count-display">…</span></span>
+          </div>
+          <h1 class="article-title">賽道分析：2026 找茶越野<br>採茶組 12K</h1>
+        </header>
+
+        <p class="lead">
+          用一條 GPX 軌跡，還原一條賽道的個性。本文把 2026 找茶越野採茶組 12K 的 4,132 個軌跡點，
+          串接 <strong>ASTER GDEM 30 公尺數值地形</strong>，逐段計算距離、海拔、坡度、可跑性、
+          疲勞加權與撤退路徑。結論先講：<strong>這是一條「腰部平易、中段陡拉」</strong>、
+          總爬升 527 公尺的坪林茶區路線，關門時間寬裕，但有 6.6% 的里程坡度超過 20%，
+          不是純粹的入門場。
+        </p>
+
+        <h2 class="section-title">一、基本資訊儀表板</h2>
+
+        <div class="stat-grid">
+          <div class="stat-card accent-blue">
+            <div class="label">總里程</div>
+            <div class="value">12.23<span class="unit">km</span></div>
+          </div>
+          <div class="stat-card accent-amber">
+            <div class="label">總爬升 D+</div>
+            <div class="value">527<span class="unit">m</span></div>
+          </div>
+          <div class="stat-card">
+            <div class="label">總下降 D−</div>
+            <div class="value">513<span class="unit">m</span></div>
+          </div>
+          <div class="stat-card accent-green">
+            <div class="label">最高海拔</div>
+            <div class="value">589<span class="unit">m</span></div>
+          </div>
+          <div class="stat-card">
+            <div class="label">最低海拔</div>
+            <div class="value">172<span class="unit">m</span></div>
+          </div>
+          <div class="stat-card accent-red">
+            <div class="label">垂直爬升比 m/km</div>
+            <div class="value">43.1</div>
+          </div>
+        </div>
+
+        <p>
+          「垂直爬升比」是越野圈常用的粗略難度指標：<strong>&lt;20 平易、20–40 中等、40–80 偏硬、&gt;80 重山系</strong>。
+          採茶組 12K 的 43.1 m/km 落在「偏硬」邊界，意味著雖然只有 12 公里，但幾乎沒有真正的平路可以恢復。
+          以 Naismith 規則換算，這條路線的「等效平路里程」約 17.5 公里，完賽時間預估如下：
+        </p>
+
+        <table class="data-table">
+          <thead><tr><th>跑者程度</th><th>預估完賽時間</th><th>平均配速（等效平路）</th></tr></thead>
+          <tbody>
+            <tr><td>菁英組</td><td>1:15 – 1:40</td><td>4:20 – 5:40 /km</td></tr>
+            <tr><td>進階跑者</td><td>1:45 – 2:15</td><td>6:00 – 7:40 /km</td></tr>
+            <tr><td>一般完賽</td><td>2:15 – 3:00</td><td>7:40 – 10:20 /km</td></tr>
+            <tr><td>悠閒完賽</td><td>3:00 – 4:00</td><td>10:20 – 13:40 /km</td></tr>
+          </tbody>
+        </table>
+
+        <div class="chart-wrap">
+          <div class="chart-title">技術等級雷達圖</div>
+          <div class="chart-subtitle">六個維度各 0–10 分，越往外代表越硬</div>
+          <div class="chart-canvas-wrap"><canvas id="chartRadar"></canvas></div>
+        </div>
+
+        <h2 class="section-title">二、可跑性戰術分佈</h2>
+
+        <p>
+          把每 100 公尺作為一個區段，按「絕對坡度」分成四級：全跑（&lt;5%）、走跑結合（5–10%）、
+          技術路段（10–20%）、魔王陡坡（≥20%）。這是越野跑者心裡默默在做的事情，只是現在我們把它畫出來：
+        </p>
+
+        <div class="runnability-grid">
+          <div class="run-card r1">
+            <div class="rlabel">Runnable</div>
+            <div class="rname">全跑路段</div>
+            <div class="rval">4,258<span class="rpct"> m / 34.8%</span></div>
+          </div>
+          <div class="run-card r2">
+            <div class="rlabel">Mixed</div>
+            <div class="rname">走跑結合</div>
+            <div class="rval">3,384<span class="rpct"> m / 27.7%</span></div>
+          </div>
+          <div class="run-card r3">
+            <div class="rlabel">Technical</div>
+            <div class="rname">技術路段</div>
+            <div class="rval">3,143<span class="rpct"> m / 25.7%</span></div>
+          </div>
+          <div class="run-card r4">
+            <div class="rlabel">Boss</div>
+            <div class="rname">魔王陡坡</div>
+            <div class="rval">809<span class="rpct"> m / 6.6%</span></div>
+          </div>
+        </div>
+
+        <div class="chart-wrap">
+          <div class="chart-title">坡度分佈長條圖</div>
+          <div class="chart-subtitle">各坡度區間累計里程（公尺）；負值為下坡、正值為上坡</div>
+          <div class="chart-canvas-wrap"><canvas id="chartHist"></canvas></div>
+        </div>
+
+        <div class="insight-box">
+          <h3>關鍵觀察</h3>
+          <p>
+            坡度 <strong>−5% ~ +5%</strong>（真正的「能規律配速」區間）只佔約 2,805 公尺，
+            <strong>不到整趟 23%</strong>。想用公路跑的節奏完賽，大概率會在中段被陡坡打爆。
+          </p>
+          <p>
+            本條路線<strong>沒有出現符合「假平路」定義</strong>的區段（連續 300 m 以上、坡度 1–4%），
+            換句話說，<strong>緩坡不給你偷懶的機會</strong>──不是讓你跑，就是讓你走，沒有灰色地帶。
+          </p>
+        </div>
+
+        <h2 class="section-title">三、賽道剖面與 CP 體感係數</h2>
+
+        <div class="chart-wrap">
+          <div class="chart-title">海拔剖面圖</div>
+          <div class="chart-subtitle">橫軸：里程（km）｜縱軸：海拔（m）</div>
+          <div class="chart-canvas-wrap tall"><canvas id="chartProfile"></canvas></div>
+        </div>
+
+        <p>
+          把 12 公里切成 6 個大段落，套上「疲勞加權係數」──起點定義為 1.00，
+          後段同樣的爬升會因為肌肉疲勞而「感覺更重」，係數採 <code>1 + 0.03 × 區段起點里程(km)</code>。
+        </p>
+
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>區段</th>
+              <th>里程</th>
+              <th>距離</th>
+              <th>爬升</th>
+              <th>下降</th>
+              <th>加權體感</th>
+              <th>定性</th>
+            </tr>
+          </thead>
+          <tbody id="segmentTableBody"></tbody>
+        </table>
+
+        <div class="warn-box">
+          <strong>⚠️ 魔鬼區段警告（坡度震盪最高）</strong><br>
+          <strong>km 6.9 – 7.9</strong> 這一公里之內，坡度標準差高達 <strong>±10.5 度</strong>，是整條賽道變化最劇烈的地方。
+          石階與陡拉混搭，加上靠近全段最高點（589 m），是攝影師最愛埋伏、也是配速最容易失控的一段。
+          此區段建議 <strong>「全程快走 + 上半身推膝」</strong>，保留心率餘裕給第 8–10 公里的快速下坡。
+        </div>
+
+        <h2 class="section-title">四、坡度變化率：技術難度判讀</h2>
+
+        <p>
+          同樣的 10% 坡度，在產業道路上可以穩定呼吸節奏，在石階亂樹根則需要頻繁變速。
+          我們計算全段坡度的標準差來量化「路面穩定度」：
+        </p>
+
+        <div class="stat-grid">
+          <div class="stat-card">
+            <div class="label">平均坡度</div>
+            <div class="value">+0.18<span class="unit">°</span></div>
+          </div>
+          <div class="stat-card accent-red">
+            <div class="label">坡度標準差</div>
+            <div class="value">±11.14<span class="unit">°</span></div>
+          </div>
+          <div class="stat-card accent-amber">
+            <div class="label">最震盪 1 km 區間</div>
+            <div class="value">6.9–7.9<span class="unit">km</span></div>
+          </div>
+        </div>
+
+        <p>
+          坡度標準差 11 度以上，屬於<strong>典型「原始林道 + 石階」混合地形</strong>的特徵值。
+          相對地，產業道路長上坡的標準差通常只在 2–4 度。訓練建議：
+        </p>
+
+        <ul>
+          <li><strong>模擬地形</strong>：陽明山冷水坑 → 七星山主峰、劍潭山→大崙尾、大同山步道群，都是坡度震盪相近的訓練場。</li>
+          <li><strong>關鍵訓練</strong>：不要只做穩定坡度的「爬坡間歇」；請加入 30 秒快跑 / 30 秒快走交替的「節奏破碎訓練」。</li>
+          <li><strong>核心重點</strong>：下坡時的股四頭與臀中肌離心收縮訓練比上坡心肺更重要。</li>
+        </ul>
+
+        <h2 class="section-title">五、日照與環境模擬</h2>
+
+        <p>
+          賽事通常早上 6:30–7:00 鳴槍。採茶組 12K 起點位於坪林（約 N24.936°, E121.712°），
+          以一般完賽時間 2:00–3:00 推算，跑者大約在 <strong>08:30–10:00 之間通過稜線段（km 7–9）</strong>。
+          對應 4 月下旬太陽方位角（東偏南 90°→120°、仰角 35°–55°），稜線兩側日照分佈如下：
+        </p>
+
+        <table class="data-table">
+          <thead>
+            <tr><th>時段</th><th>里程區間</th><th>太陽方位</th><th>曝曬風險</th><th>應對建議</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>06:45 – 07:30</td><td>0 – 3 km</td><td>東 (≈90°)</td><td>低（林道遮蔭）</td><td>配速偏保守、暖身為主</td></tr>
+            <tr><td>07:30 – 08:30</td><td>3 – 6 km</td><td>東南 (≈110°)</td><td>中</td><td>上陡坡前補水 150 ml</td></tr>
+            <tr><td>08:30 – 09:30</td><td>6 – 8 km（稜線）</td><td>東南 (≈120°)</td><td><span class="tag-worst">高</span></td><td>防曬乳、帽沿壓低、戴袖套</td></tr>
+            <tr><td>09:30 – 11:00</td><td>8 – 12 km（下山）</td><td>南 (≈150°)</td><td>中</td><td>注意膝蓋負荷、降溫補水</td></tr>
+          </tbody>
+        </table>
+
+        <p class="note">
+          頭燈預警：採茶組最晚關門通常設在 12:30 前，純日間賽事；即使慢速完賽也不會進入夜段，故本次不需攜帶頭燈。
+        </p>
+
+        <h2 class="section-title">六、安全與撤退路徑</h2>
+
+        <p>
+          以下地圖為 GPX 軌跡對應 2D 平面投影，顏色代表<strong>該點距離賽道起點（坪林聯絡道）的直線距離</strong>──
+          顏色越紅代表離主道路越遠、也就是越難自行脫離。
+        </p>
+
+        <div class="chart-wrap">
+          <div class="chart-title">GPS 軌跡 × 離公路直線距離</div>
+          <div class="chart-subtitle">綠 &lt; 500 m ｜ 橘 500–1,000 m ｜ 紅 &gt; 1,000 m</div>
+          <canvas id="bailoutMap" width="1100" height="420"></canvas>
+          <div class="map-legend">
+            <span><i style="background:#10b981"></i>距主道 &lt; 500 m</span>
+            <span><i style="background:#f59e0b"></i>500–1,000 m</span>
+            <span><i style="background:#ef4444"></i>&gt; 1,000 m</span>
+            <span><i style="background:#2563eb"></i>起／終點</span>
+          </div>
+        </div>
+
+        <div class="insight-box">
+          <h3>撤退心理學</h3>
+          <p>
+            採茶組 12K 的賽道<strong>沒有真正的「孤立無援段」</strong>──整條軌跡最遠不到主道 1.1 km，
+            大部分時間在坪林茶區的產業道路、林道、廟道網絡之間穿梭。
+            如果在 <strong>km 6–8 的稜線段</strong>失溫或嚴重抽筋，最靠近的退出方向是<strong>向東回到 km 5 附近的產業道路</strong>，
+            而非往前尋找官方補給。
+          </p>
+          <p>
+            對於首次越野跑的跑者：<strong>這條路線的心理安全感極高</strong>，
+            稜線上大多能用手機訊號（中華 / 遠傳在坪林山區覆蓋良好）連絡親友或主辦單位。
+          </p>
+        </div>
+
+        <h2 class="section-title">七、戰術總結與裝備建議</h2>
+
+        <div class="tactical-box">
+          <h3>一句話戰術</h3>
+          <p>
+            <strong>「前 5 公里深呼吸、中 3 公里硬著頭皮、後 4 公里穩穩下、別在 km 10 衝過頭」</strong>──
+            整條路線的決勝點在 <strong>km 5 → 7.5 的 386 公尺陡拉</strong>，
+            以及 <strong>km 10.6 的 −20% 急降</strong>：上坡保留的體力要在這段下坡精準釋放，
+            但最快要等下完急降（km 11）再開始衝刺，否則大概率會抽筋在終點前 1 公里。
+          </p>
+        </div>
+
+        <div class="gear-grid">
+          <div class="gear-item">
+            <h4>鞋款</h4>
+            <p>
+              建議 <strong>中等緩震 × 中深齒痕</strong>（齒深 4–5 mm）。
+              林道佔比高，純短齒路跑鞋在石階段抓地不足；全陡齒越野鞋在產業道路則浪費。
+              參考：Nike Pegasus Trail、Salomon Sense Ride、Hoka Speedgoat Mid。
+            </p>
+          </div>
+          <div class="gear-item">
+            <h4>水分補給</h4>
+            <p>
+              <strong>500–750 ml 足矣</strong>。4 月氣溫涼爽且賽道補給站密度高，
+              軟水壺 × 2 或一支 500 ml 水瓶即可。主辦有煎台熱食與剉冰，
+              可以把飲用水需求壓到最低。
+            </p>
+          </div>
+          <div class="gear-item">
+            <h4>防曬</h4>
+            <p>
+              稜線段 <strong>km 6–8 是唯一裸露時段</strong>。
+              SPF 30+ 防曬乳、鴨舌帽、輕量抗 UV 袖套三者擇二。
+              一般完賽時間不會遇到正午烈日。
+            </p>
+          </div>
+          <div class="gear-item">
+            <h4>能量補給</h4>
+            <p>
+              採茶組 12K 完賽 2–3 小時內，<strong>1–2 條能量膠足夠</strong>。
+              現場無能量膠贊助商，請自備；建議在 km 5 上陡前、km 9 下坡前各一條。
+            </p>
+          </div>
+          <div class="gear-item">
+            <h4>護具</h4>
+            <p>
+              下坡震盪較大（km 8–11 連續 −10%~−20%），
+              <strong>有膝傷史者建議戴膝套</strong>，或賽前 1 週加強股四頭離心訓練。
+            </p>
+          </div>
+          <div class="gear-item">
+            <h4>不需攜帶</h4>
+            <p>
+              頭燈、保暖層、求生毯──這是純日間、短距離、無高海拔暴露的賽事，
+              背越少跑越快。
+            </p>
+          </div>
+        </div>
+
+        <h2 class="section-title">八、個人心得（短評）</h2>
+
+        <p>
+          採茶組賽道補給堪稱台灣越野界的<strong>補給典範</strong>──現煎熱食、剉冰機應有盡有，
+          跑進主補給站像是進到了市集。唯一可惜之處是<strong>沒有能量膠廠商贊助</strong>，
+          習慣吃膠的跑者記得自備。12K 賽道平易近人、關門時間寬裕，非常適合第一次接觸越野跑的人練膽。
+        </p>
+
+        <h2 class="section-title">附錄：建議工具鏈</h2>
+
+        <table class="data-table">
+          <thead><tr><th>用途</th><th>工具</th><th>備註</th></tr></thead>
+          <tbody>
+            <tr><td>GPX 解析</td><td>gpxpy、xml2js</td><td>直接解析 trkpt lat/lon</td></tr>
+            <tr><td>海拔查詢</td><td>OpenTopoData（ASTER 30m / SRTM 90m）</td><td>本文採用；公開 API 免費，每日 1,000 次額度</td></tr>
+            <tr><td>資料分析</td><td>Python pandas + numpy</td><td>坡度切段、標準差計算</td></tr>
+            <tr><td>統計視覺化</td><td>matplotlib、Chart.js</td><td>本文採用 Chart.js 以利瀏覽器直接渲染</td></tr>
+            <tr><td>3D / 地形探索</td><td>FATMAP、Google Earth Studio、Relive</td><td>賽前心理模擬神器</td></tr>
+          </tbody>
+        </table>
+
+        <p class="note">
+          本文海拔資料來源：<strong>OpenTopoData API（ASTER GDEM v3, 30 m 解析度）</strong>；
+          坡度、可跑性、體感係數、撤退距離皆由 GPX 軌跡自動計算，可能與實際現場存在 ±2 m 誤差（地形圖固有限制）。
+        </p>
+
+        <div id="related-posts-section"></div>
+
+      </article>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="image-credit">
+        封面圖由 YRCiou 製作（GPX 軌跡 × ASTER 30m 數值地形），授權：<a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a>
+      </div>
+      <p class="footer-copy">© 2026 YR 運動研究室</p>
+    </div>
+  </footer>
+
+  <script>
+    window.SUPABASE_URL      = "https://cpzdyivdciglbhznrlkl.supabase.co";
+    window.SUPABASE_ANON_KEY = "sb_publishable_Z_xBTGqVA_YDMdq45Ks9Zg_uPrLF2a0";
+    window.PAGE_SLUG         = "zhaocha-trail-12k";
+    window.PAGE_TITLE        = "賽道分析：2026 找茶越野 12K（採茶組）";
+    window.IS_INDEX          = false;
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+  <script src="assets/blog.js"></script>
+  <script src="assets/related.js"></script>
+  <script src="assets/search.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+  <script id="trailData" type="application/json">{"t":{"distanceM":12230.9,"distanceKm":12.23,"gainM":527,"lossM":513,"maxEleM":588.9,"minEleM":172.2,"vertRatio":43.1},"r":{"runnableM":4258,"mixedM":3384,"technicalM":3143,"bossM":809,"totalM":11594,"runnablePct":34.8},"s":{"mean":0.18,"std":11.14,"histEdges":[-30,-20,-15,-10,-5,-2,0,2,5,10,15,20,30],"hist":[132,834,1219,1879,1043,877,885,1452,1505,530,560,561],"choppiestKm":{"startKm":6.912,"endKm":7.926,"std":10.47}},"ff":[],"p":[[0,190],[0.069,191],[0.144,194],[0.221,196],[0.3,196],[0.378,195],[0.452,200],[0.524,205],[0.597,211],[0.67,216],[0.747,222],[0.82,228],[0.895,231],[0.963,238],[1.037,246],[1.117,257],[1.19,262],[1.27,260],[1.35,251],[1.425,239],[1.508,232],[1.591,230],[1.666,227],[1.746,221],[1.829,213],[1.9,204],[1.981,195],[2.061,188],[2.127,184],[2.203,183],[2.284,181],[2.36,181],[2.438,182],[2.517,185],[2.598,185],[2.685,186],[2.753,185],[2.844,184],[2.894,182],[2.97,180],[3.044,178],[3.134,176],[3.224,174],[3.302,172],[3.382,174],[3.474,174],[3.554,175],[3.614,174],[3.697,173],[3.783,173],[3.859,177],[3.945,180],[4.018,181],[4.099,181],[4.187,181],[4.269,189],[4.349,194],[4.438,195],[4.519,186],[4.596,179],[4.674,177],[4.763,181],[4.853,189],[4.943,195],[5.03,201],[5.115,204],[5.192,209],[5.278,220],[5.346,234],[5.425,251],[5.508,262],[5.591,271],[5.676,278],[5.764,286],[5.836,299],[5.916,322],[6.024,355],[6.111,387],[6.176,407],[6.246,417],[6.318,423],[6.399,431],[6.483,442],[6.571,459],[6.66,480],[6.745,497],[6.831,509],[6.912,517],[6.99,536],[7.079,553],[7.172,566],[7.259,570],[7.338,573],[7.418,575],[7.488,580],[7.568,586],[7.649,588],[7.726,577],[7.8,569],[7.855,567],[7.926,573],[8.007,562],[8.103,545],[8.192,527],[8.279,519],[8.359,516],[8.427,519],[8.517,516],[8.6,510],[8.678,502],[8.733,499],[8.812,494],[8.89,487],[8.951,473],[9.062,460],[9.153,449],[9.234,446],[9.328,442],[9.397,438],[9.485,434],[9.573,423],[9.655,410],[9.74,397],[9.804,389],[9.885,382],[9.968,375],[10.046,365],[10.132,354],[10.198,341],[10.272,332],[10.353,323],[10.435,315],[10.517,304],[10.6,291],[10.687,277],[10.76,261],[10.844,246],[10.939,237],[11.019,233],[11.108,230],[11.193,225],[11.276,217],[11.369,212],[11.451,208],[11.539,205],[11.594,205]],"b":{"minLat":24.93081897497177,"maxLat":24.949566023424268,"minLon":121.6857619676739,"maxLon":121.71581503003836},"m":[[24.93612,121.71191,0],[24.93605,121.7123,0.04],[24.93637,121.71261,0.09],[24.93595,121.7128,0.14],[24.93547,121.71295,0.2],[24.9351,121.71281,0.25],[24.93476,121.71245,0.3],[24.93448,121.71202,0.35],[24.93426,121.71159,0.4],[24.9339,121.71133,0.45],[24.93356,121.71112,0.5],[24.93325,121.71147,0.55],[24.93306,121.71189,0.6],[24.93285,121.71229,0.65],[24.93241,121.71247,0.7],[24.932,121.71266,0.75],[24.93172,121.71293,0.8],[24.93155,121.7134,0.85],[24.9315,121.71387,0.9],[24.93169,121.71423,0.94],[24.93194,121.7147,0.99],[24.93187,121.71507,1.04],[24.93157,121.7155,1.09],[24.93113,121.71561,1.14],[24.93082,121.71573,1.19],[24.93129,121.71582,1.24],[24.9317,121.71558,1.3],[24.932,121.71516,1.35],[24.93214,121.71473,1.4],[24.9319,121.7143,1.45],[24.9317,121.71379,1.51],[24.93169,121.71327,1.56],[24.93205,121.71298,1.61],[24.9325,121.7131,1.67],[24.93277,121.71272,1.72],[24.9333,121.71264,1.77],[24.93346,121.71215,1.83],[24.9334,121.71164,1.88],[24.9336,121.71125,1.93],[24.93403,121.71139,1.98],[24.9345,121.71151,2.03],[24.935,121.7115,2.09],[24.93489,121.71119,2.13],[24.93467,121.71077,2.18],[24.93448,121.71025,2.23],[24.93429,121.70979,2.28],[24.93418,121.70932,2.33],[24.93405,121.70881,2.39],[24.93406,121.70831,2.44],[24.93414,121.70778,2.49],[24.93417,121.70728,2.54],[24.93416,121.70674,2.6],[24.93424,121.70622,2.65],[24.9345,121.70567,2.71],[24.93471,121.70538,2.75],[24.93499,121.70484,2.82],[24.93525,121.70439,2.87],[24.93541,121.70428,2.89],[24.93497,121.70413,2.95],[24.93499,121.70375,2.99],[24.93517,121.70328,3.04],[24.93548,121.70283,3.1],[24.9357,121.70228,3.16],[24.93583,121.70168,3.22],[24.93592,121.70106,3.29],[24.93587,121.70066,3.33],[24.93568,121.70017,3.38],[24.9352,121.6999,3.44],[24.93471,121.69975,3.5],[24.93437,121.69946,3.55],[24.93422,121.69917,3.59],[24.93404,121.69869,3.64],[24.93377,121.69822,3.7],[24.93343,121.69784,3.75],[24.933,121.69752,3.81],[24.93265,121.6972,3.86],[24.9326,121.69666,3.92],[24.93265,121.69611,3.97],[24.93263,121.69564,4.02],[24.93284,121.69516,4.07],[24.93307,121.69472,4.12],[24.9334,121.69422,4.19],[24.93386,121.69398,4.24],[24.93409,121.69356,4.3],[24.934,121.69305,4.35],[24.93385,121.69255,4.4],[24.93375,121.69194,4.46],[24.9336,121.69143,4.52],[24.93326,121.69111,4.57],[24.93291,121.6908,4.62],[24.9328,121.69029,4.67],[24.93272,121.68966,4.74],[24.93262,121.68916,4.79],[24.93277,121.68858,4.85],[24.93313,121.68811,4.92],[24.93358,121.68793,4.97],[24.93414,121.68799,5.03],[24.93458,121.6883,5.09],[24.93495,121.6886,5.14],[24.93535,121.68886,5.19],[24.9358,121.68917,5.25],[24.93616,121.68951,5.3],[24.93643,121.6893,5.35],[24.93678,121.68959,5.39],[24.93709,121.69004,5.45],[24.93741,121.69046,5.51],[24.93779,121.69029,5.57],[24.93759,121.68983,5.62],[24.93732,121.68935,5.68],[24.9372,121.68872,5.74],[24.93736,121.68836,5.79],[24.93705,121.688,5.84],[24.93691,121.68747,5.89],[24.9372,121.68687,5.96],[24.93764,121.68648,6.02],[24.93803,121.68615,6.08],[24.93857,121.68608,6.14],[24.93889,121.68612,6.18],[24.93891,121.68576,6.22],[24.93931,121.68583,6.27],[24.93971,121.68596,6.32],[24.94015,121.68623,6.37],[24.9406,121.68638,6.43],[24.94111,121.68644,6.48],[24.94166,121.6865,6.54],[24.94218,121.68655,6.6],[24.94269,121.68661,6.66],[24.94318,121.68676,6.72],[24.9437,121.687,6.78],[24.94416,121.68711,6.83],[24.94464,121.68724,6.89],[24.94506,121.68744,6.94],[24.94545,121.68772,6.99],[24.94594,121.68803,7.05],[24.94642,121.68806,7.11],[24.94698,121.68787,7.17],[24.94747,121.68771,7.23],[24.94796,121.68769,7.29],[24.94844,121.6877,7.34],[24.94892,121.6876,7.39],[24.94937,121.68747,7.44],[24.94951,121.68758,7.49],[24.9493,121.68804,7.54],[24.94899,121.68845,7.59],[24.94903,121.68899,7.65],[24.94871,121.68938,7.71],[24.94853,121.68979,7.75],[24.94829,121.6902,7.8],[24.94836,121.68999,7.83],[24.94851,121.68958,7.87],[24.94807,121.68975,7.93],[24.94765,121.69003,7.98],[24.94744,121.69039,8.02],[24.94728,121.69111,8.1],[24.94704,121.69158,8.16],[24.94672,121.69206,8.22],[24.94635,121.69249,8.28],[24.94599,121.69287,8.33],[24.94578,121.6933,8.38],[24.94567,121.69371,8.43],[24.94562,121.69431,8.49],[24.94521,121.69461,8.54],[24.94475,121.69481,8.6],[24.94488,121.69528,8.65],[24.94482,121.6958,8.7],[24.94478,121.69607,8.73],[24.94462,121.69657,8.79],[24.94451,121.69705,8.84],[24.94469,121.69753,8.89],[24.94479,121.69768,8.93],[24.94492,121.69826,8.99],[24.94504,121.699,9.06],[24.94527,121.69956,9.12],[24.94546,121.69994,9.18],[24.94528,121.70043,9.23],[24.94477,121.70078,9.3],[24.94434,121.70104,9.36],[24.94414,121.70138,9.4],[24.9439,121.70192,9.46],[24.94351,121.70234,9.52],[24.94331,121.70279,9.57],[24.94282,121.70276,9.63],[24.94256,121.7029,9.67],[24.94295,121.70341,9.74],[24.94298,121.70353,9.78],[24.94278,121.704,9.83],[24.94277,121.70454,9.88],[24.94286,121.70509,9.94],[24.94325,121.70534,9.99],[24.94329,121.70485,10.05],[24.9436,121.70529,10.1],[24.94394,121.70563,10.16],[24.9442,121.70537,10.2],[24.94413,121.70576,10.24],[24.94426,121.7063,10.3],[24.94392,121.70653,10.35],[24.94366,121.70683,10.41],[24.94361,121.70733,10.46],[24.94332,121.70775,10.52],[24.94287,121.708,10.57],[24.94268,121.70853,10.63],[24.94247,121.70897,10.69],[24.94224,121.70922,10.72],[24.94205,121.70987,10.79],[24.94194,121.71036,10.84],[24.94154,121.71067,10.9],[24.94099,121.71046,10.96],[24.9405,121.71048,11.02],[24.94001,121.71081,11.08],[24.93949,121.71107,11.15],[24.93933,121.71144,11.19],[24.93891,121.71175,11.25],[24.93843,121.71195,11.31],[24.93793,121.71167,11.37],[24.9376,121.71146,11.42],[24.93708,121.71167,11.48],[24.93662,121.71198,11.54],[24.93615,121.71198,11.59]]}</script>
+  <script>
+  (function(){
+    Chart.defaults.font.family = "system-ui, -apple-system, 'Noto Sans TC', sans-serif";
+    Chart.defaults.color = '#64748b';
+    const data = JSON.parse(document.getElementById('trailData').textContent);
+
+    // Shared options: no grid
+    const noGrid = {
+      x: { grid: { display: false }, border: { display: false } },
+      y: { grid: { color: 'rgba(148,163,184,.15)' }, border: { display: false } }
+    };
+
+    // --- 1. Radar chart: 技術等級 ---
+    const rnPct = data.r.runnablePct;           // 34.8
+    const vertR = data.t.vertRatio;             // 43.1
+    const bossPct = 100 * data.r.bossM / data.t.distanceM; // 6.6
+    const techPct = 100 * (data.r.technicalM + data.r.bossM) / data.t.distanceM; // ~32
+    // Scale each dimension to 0-10
+    const clamp = (v, lo, hi) => Math.max(0, Math.min(10, (v - lo) * 10 / (hi - lo)));
+    const radarData = [
+      clamp(100 - rnPct, 50, 90),          // 路段不可跑比例：50%無難度、90%極難 → 此路線≈65 → ~3
+      clamp(techPct, 5, 50),               // 技術路段佔比
+      clamp(vertR, 10, 80),                // 垂直爬升比
+      clamp(bossPct, 0, 20),               // 魔王陡坡佔比
+      clamp(data.s.std, 2, 20),            // 坡度震盪
+      clamp(data.t.distanceKm, 5, 50)      // 絕對距離
+    ];
+    new Chart(document.getElementById('chartRadar'), {
+      type: 'radar',
+      data: {
+        labels: ['不可跑比', '技術地形', '垂直爬升比', '魔王陡坡', '坡度震盪', '絕對距離'],
+        datasets: [{
+          label: '採茶組 12K',
+          data: radarData.map(v => +v.toFixed(1)),
+          backgroundColor: 'rgba(37,99,235,.2)',
+          borderColor: '#2563eb',
+          pointBackgroundColor: '#2563eb',
+          pointRadius: 4,
+          borderWidth: 2
+        }]
+      },
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        plugins: { legend: { display: false } },
+        scales: {
+          r: {
+            suggestedMin: 0, suggestedMax: 10,
+            ticks: { stepSize: 2, backdropColor: 'transparent', color: '#94a3b8', font: { size: 10 } },
+            pointLabels: { font: { size: 13, weight: '600' }, color: '#475569' },
+            grid: { color: 'rgba(148,163,184,.25)' },
+            angleLines: { color: 'rgba(148,163,184,.25)' }
+          }
+        }
+      }
+    });
+
+    // --- 2. Slope histogram ---
+    const edges = data.s.histEdges;
+    const labels = [];
+    for (let i = 0; i < edges.length - 1; i++) labels.push(edges[i] + '~' + edges[i + 1] + '%');
+    const colors = data.s.hist.map((_, i) => {
+      const mid = (edges[i] + edges[i + 1]) / 2;
+      if (mid < -15) return '#dc2626';
+      if (mid < -5)  return '#f97316';
+      if (mid < 0)   return '#fbbf24';
+      if (mid < 5)   return '#84cc16';
+      if (mid < 10)  return '#f59e0b';
+      if (mid < 20)  return '#ef4444';
+      return '#b91c1c';
+    });
+    new Chart(document.getElementById('chartHist'), {
+      type: 'bar',
+      data: {
+        labels,
+        datasets: [{ label: '累計距離(m)', data: data.s.hist, backgroundColor: colors, borderRadius: 4 }]
+      },
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        plugins: { legend: { display: false }, tooltip: { callbacks: { label: c => c.parsed.y + ' m' } } },
+        scales: {
+          ...noGrid,
+          y: { ...noGrid.y, ticks: { callback: v => v + ' m' } }
+        }
+      }
+    });
+
+    // --- 3. Elevation profile ---
+    const profile = data.p;
+    new Chart(document.getElementById('chartProfile'), {
+      type: 'line',
+      data: {
+        labels: profile.map(p => p[0]),
+        datasets: [{
+          label: '海拔 (m)',
+          data: profile.map(p => p[1]),
+          borderColor: '#059669',
+          backgroundColor: 'rgba(5,150,105,.18)',
+          fill: true,
+          pointRadius: 0,
+          tension: .3,
+          borderWidth: 2
+        }]
+      },
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            callbacks: {
+              title: items => 'km ' + items[0].label,
+              label: c => c.parsed.y + ' m'
+            }
+          }
+        },
+        scales: {
+          x: { ...noGrid.x, ticks: { callback: (v, i) => i % 15 === 0 ? profile[i][0].toFixed(1) + 'k' : '' } },
+          y: { ...noGrid.y, ticks: { callback: v => v + 'm' } }
+        }
+      }
+    });
+
+    // --- 4. Segment table ---
+    const tbody = document.getElementById('segmentTableBody');
+    const segments = [
+      { name: '①', range: '0 – 2.0 km', from: 0, to: 2.0, desc: '暖身緩上' },
+      { name: '②', range: '2.0 – 5.0 km', from: 2.0, to: 5.0, desc: '茶園小起伏' },
+      { name: '③', range: '5.0 – 7.6 km', from: 5.0, to: 7.6, desc: '主陡拉' },
+      { name: '④', range: '7.6 – 9.0 km', from: 7.6, to: 9.0, desc: '稜線波動' },
+      { name: '⑤', range: '9.0 – 11.0 km', from: 9.0, to: 11.0, desc: '連續下坡' },
+      { name: '⑥', range: '11.0 – 12.2 km', from: 11.0, to: 12.23, desc: '終點衝刺' }
+    ];
+    segments.forEach(s => {
+      let gain = 0, loss = 0;
+      for (let i = 1; i < profile.length; i++) {
+        const km0 = profile[i - 1][0], km1 = profile[i][0];
+        if (km1 < s.from || km0 > s.to) continue;
+        const d = profile[i][1] - profile[i - 1][1];
+        if (d > 0) gain += d; else loss -= d;
+      }
+      const weight = 1 + 0.03 * s.from;
+      const weightedGain = (gain * weight).toFixed(0);
+      const distKm = (s.to - s.from).toFixed(2);
+      const feel = weight > 1.2 ? 'tag-worst' : (weight > 1.1 ? '' : 'tag-best');
+      const tr = document.createElement('tr');
+      tr.innerHTML = `
+        <td><strong>${s.name}</strong></td>
+        <td>${s.range}</td>
+        <td>${distKm} km</td>
+        <td>+${gain.toFixed(0)} m</td>
+        <td>−${loss.toFixed(0)} m</td>
+        <td><span class="${feel}">×${weight.toFixed(2)} = ${weightedGain} m</span></td>
+        <td>${s.desc}</td>`;
+      tbody.appendChild(tr);
+    });
+
+    // --- 5. Bail-out map (simple 2D canvas) ---
+    (function drawBailoutMap() {
+      const canvas = document.getElementById('bailoutMap');
+      const W = canvas.width, H = canvas.height;
+      const ctx = canvas.getContext('2d');
+      const b = data.b;
+      const lonR = b.maxLon - b.minLon, latR = b.maxLat - b.minLat;
+      const pad = 30;
+      const sx = lon => pad + ((lon - b.minLon) / lonR) * (W - pad * 2);
+      const sy = lat => (H - pad) - ((lat - b.minLat) / latR) * (H - pad * 2);
+      ctx.fillStyle = '#0f172a';
+      ctx.fillRect(0, 0, W, H);
+
+      // Grid
+      ctx.strokeStyle = 'rgba(148,163,184,.15)';
+      ctx.lineWidth = 1;
+      for (let i = 0; i <= 8; i++) {
+        ctx.beginPath(); ctx.moveTo(pad + (i / 8) * (W - pad * 2), pad); ctx.lineTo(pad + (i / 8) * (W - pad * 2), H - pad); ctx.stroke();
+        ctx.beginPath(); ctx.moveTo(pad, pad + (i / 8) * (H - pad * 2)); ctx.lineTo(W - pad, pad + (i / 8) * (H - pad * 2)); ctx.stroke();
+      }
+
+      // Start point as "road reference"
+      const start = data.m[0];
+      const startX = sx(start[1]), startY = sy(start[0]);
+      const hav = (lat1, lon1, lat2, lon2) => {
+        const R = 6371000, toR = d => d * Math.PI / 180;
+        const dLat = toR(lat2 - lat1), dLon = toR(lon2 - lon1);
+        const a = Math.sin(dLat / 2) ** 2 + Math.cos(toR(lat1)) * Math.cos(toR(lat2)) * Math.sin(dLon / 2) ** 2;
+        return 2 * R * Math.asin(Math.sqrt(a));
+      };
+
+      // Draw segments colored by distance to start
+      const pts = data.m;
+      for (let i = 1; i < pts.length; i++) {
+        const d = hav(pts[i][0], pts[i][1], start[0], start[1]);
+        let color;
+        if (d < 500) color = '#10b981';
+        else if (d < 1000) color = '#f59e0b';
+        else color = '#ef4444';
+        ctx.strokeStyle = color;
+        ctx.lineWidth = 3;
+        ctx.lineCap = 'round';
+        ctx.beginPath();
+        ctx.moveTo(sx(pts[i - 1][1]), sy(pts[i - 1][0]));
+        ctx.lineTo(sx(pts[i][1]), sy(pts[i][0]));
+        ctx.stroke();
+      }
+
+      // Start/End marker
+      ctx.fillStyle = '#2563eb';
+      ctx.beginPath(); ctx.arc(startX, startY, 8, 0, Math.PI * 2); ctx.fill();
+      ctx.fillStyle = '#fff';
+      ctx.font = '12px system-ui';
+      ctx.fillText('起/終點', startX + 12, startY + 4);
+
+      // Km markers every 2km
+      ctx.fillStyle = '#fbbf24';
+      ctx.font = 'bold 11px system-ui';
+      for (let km = 2; km <= 12; km += 2) {
+        const p = pts.find(pt => pt[2] >= km);
+        if (!p) continue;
+        const x = sx(p[1]), y = sy(p[0]);
+        ctx.beginPath(); ctx.arc(x, y, 4, 0, Math.PI * 2); ctx.fill();
+        ctx.fillStyle = '#0f172a';
+        ctx.fillRect(x + 6, y - 7, 22, 14);
+        ctx.fillStyle = '#fbbf24';
+        ctx.fillText(km + 'k', x + 9, y + 3);
+      }
+    })();
+  })();
+  </script>
+  <script src="assets/theme.js"></script>
+</body>
+</html>

@@ -30,7 +30,7 @@
 
 ## 本專案背景（快速摘要）
 - 網站：https://yrciou.github.io/sportsblog/
-- 本地路徑：專案根目錄（相對路徑 `./`）
+- 本地路徑：以專案根目錄為基準（相對路徑，例如 `./`）
 - 技術棧：純靜態 HTML/CSS/JS，GitHub Pages，Chart.js，Supabase
 - 版型規範：詳見 `./CLAUDE.md`
 - 文章資料：`./posts-data.json`

@@ -1,6 +1,29 @@
 {
   "posts": [
     {
+      "slug": "zhaocha-trail-12k",
+      "title": "賽道分析：2026 找茶越野 12K（採茶組）",
+      "author": "YRCiou",
+      "topic": "Taiwan trail running race course analysis GPX elevation slope runnability Pinglin Zhaocha 12K",
+      "topics": ["zhaocha-course-analysis", "zhaocha-trail", "taiwan-trail", "trail-running", "race-analysis", "endurance-sports", "sports"],
+      "keywords": ["找茶越野", "採茶組", "12K", "坪林", "賽道分析", "GPX", "越野跑", "坡度", "可跑性", "台灣越野"],
+      "priority": 2,
+      "excerpt": "用 GPX 軌跡 × ASTER 30m 數值地形，拆解 2026 找茶越野採茶組 12K 全貌：12.23 km、527 m D+、最高 589 m。坡度分佈、可跑性戰術、體感係數、撤退路徑與鞋款／補給建議一次給齊。",
+      "createdAt": "2026-04-23T12:00:00.000Z",
+      "updatedAt": "2026-04-23T12:00:00.000Z",
+      "category": "越野",
+      "customHtml": true,
+      "hero": {
+        "url": "https://yrciou.github.io/sportsblog/assets/og-zhaocha-12k.jpg",
+        "thumbUrl": "https://yrciou.github.io/sportsblog/assets/og-zhaocha-12k.jpg",
+        "title": "2026 找茶越野採茶組 12K 賽道深度拆解",
+        "author": "YRCiou",
+        "sourceUrl": "https://yrciou.github.io/sportsblog/posts/zhaocha-trail-12k/",
+        "license": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      }
+    },
+    {
       "slug": "bjj-finishing-moves",
       "title": "BJJ 致勝招式歷史演進：GI × No-GI 完整統計（2002–2025）× 2026 趨勢預測",
       "author": "YRCiou",
