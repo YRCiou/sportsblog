@@ -77,24 +77,23 @@
     }
     .stat-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-      gap: .85rem;
+      grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+      gap: .75rem;
       margin: 1.3rem 0 1.5rem;
     }
     .stat-card {
       background: #fff;
       border: 1px solid #e2e8f0;
       border-radius: 12px;
-      padding: 1rem 1.1rem;
+      padding: .85rem 1rem;
       position: relative;
     }
-    .stat-card .label { font-size: .78rem; color: #64748b; letter-spacing: .04em; }
-    .stat-card .value { font-size: 1.55rem; font-weight: 800; color: #0f172a; margin-top: .25rem; }
-    .stat-card .unit  { font-size: .8rem; color: #64748b; margin-left: .2rem; }
-    .stat-card.accent-purple .value { color: #7c3aed; }
-    .stat-card.accent-amber  .value { color: #d97706; }
-    .stat-card.accent-green  .value { color: #059669; }
-    .stat-card.accent-red    .value { color: #dc2626; }
+    .stat-card .label { font-size: .75rem; color: #64748b; letter-spacing: .04em; }
+    .stat-card .value { font-size: clamp(1.55rem, 3.2vw, 2.4rem); font-weight: 800; color: #0f172a; margin-top: .2rem; line-height: 1.15; word-break: break-word; }
+    .stat-card.accent-blue  .value { color: #2563eb; }
+    .stat-card.accent-amber .value { color: #d97706; }
+    .stat-card.accent-green .value { color: #059669; }
+    .stat-card.accent-red   .value { color: #dc2626; }
 
     .chart-wrap {
       background: #fff;
@@ -123,22 +122,26 @@
     .chart-canvas-wrap.tall { height: 380px; }
 
     .insight-box {
-      background: linear-gradient(135deg, #4c1d95 0%, #6d28d9 100%);
-      color: white;
-      border-radius: 12px;
-      padding: 1.5rem 1.75rem;
+      background: #eff6ff;
+      border: 1.5px solid #93c5fd;
+      border-radius: 10px;
+      padding: 1.25rem 1.5rem;
       margin: 2rem 0;
+      color: #1e3a8a;
+      font-size: .95rem;
+      line-height: 1.75;
     }
-    .insight-box h3 { font-size: 1.1rem; margin: 0 0 .6rem; color: #ddd6fe; }
-    .insight-box p  { font-size: .95rem; line-height: 1.7; margin: .3rem 0 0; }
-    .insight-box strong { color: #c4b5fd; }
+    .insight-box h3     { font-size: 1rem; font-weight: 700; margin: 0 0 .55rem; color: #1e40af; }
+    .insight-box p      { margin: 0; }
+    .insight-box p + p  { margin-top: .7rem; }
+    .insight-box strong { color: #1d4ed8; }
 
     .warn-box {
       background: #fef2f2;
-      border-left: 4px solid #ef4444;
-      border-radius: 0 8px 8px 0;
+      border: 1.5px solid #fca5a5;
+      border-radius: 10px;
       padding: 1rem 1.25rem;
-      color: #7f1d1d;
+      color: #450a0a;
       font-size: .95rem;
       line-height: 1.7;
       margin: 1.5rem 0;
@@ -237,18 +240,18 @@
     }
 
     .tactical-box {
-      background: #f5f3ff;
-      border: 1.5px solid #c4b5fd;
+      background: #f0fdf4;
+      border: 1.5px solid #86efac;
       border-radius: 10px;
       padding: 1.25rem 1.5rem;
       margin: 2rem 0;
-      color: #4c1d95;
+      color: #14532d;
       font-size: .95rem;
     }
-    .tactical-box h3 { color: #5b21b6; font-size: 1rem; font-weight: 700; margin: 0 0 .55rem; }
+    .tactical-box h3 { color: #166534; font-size: 1rem; font-weight: 700; margin: 0 0 .55rem; }
     .tactical-box p  { line-height: 1.75; margin: 0; font-size: .98rem; }
     .tactical-box p + p { margin-top: .7rem; }
-    .tactical-box strong { color: #6d28d9; }
+    .tactical-box strong { color: #15803d; }
 
     .gear-grid {
       display: grid;
@@ -274,6 +277,9 @@
     .tag-best  { color: #059669; font-weight: 700; }
 
     .note { font-size: .82rem; color: #64748b; margin: .4rem 0 0; }
+    article p + p { margin-top: .75rem; }
+    article ul { padding-left: 1.5rem; margin: 1rem 0 1.2rem; }
+    article ul li { margin-bottom: .5rem; line-height: 1.7; }
   </style>
 
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -349,29 +355,37 @@
         <h2 class="section-title">一、基本資訊儀表板</h2>
 
         <div class="stat-grid">
-          <div class="stat-card accent-purple">
-            <div class="label">總里程</div>
-            <div class="value">43.39<span class="unit">km</span></div>
+          <div class="stat-card accent-blue">
+            <div class="label">總里程（km）</div>
+            <div class="value">43.39</div>
           </div>
           <div class="stat-card accent-amber">
-            <div class="label">總爬升 D+</div>
-            <div class="value">2,793<span class="unit">m</span></div>
+            <div class="label">總爬升 D+（m）</div>
+            <div class="value">2,793</div>
           </div>
           <div class="stat-card">
-            <div class="label">總下降 D−</div>
-            <div class="value">2,823<span class="unit">m</span></div>
+            <div class="label">總下降 D−（m）</div>
+            <div class="value">2,823</div>
           </div>
           <div class="stat-card accent-green">
-            <div class="label">最高海拔</div>
-            <div class="value">1,760<span class="unit">m</span></div>
+            <div class="label">最高海拔（m）</div>
+            <div class="value">1,760</div>
           </div>
           <div class="stat-card">
-            <div class="label">最低海拔</div>
-            <div class="value">656<span class="unit">m</span></div>
+            <div class="label">最低海拔（m）</div>
+            <div class="value">656</div>
           </div>
           <div class="stat-card accent-red">
-            <div class="label">垂直爬升比 m/km</div>
+            <div class="label">垂直爬升比（m/km）</div>
             <div class="value">64.4</div>
+          </div>
+          <div class="stat-card accent-blue">
+            <div class="label">起跑時間</div>
+            <div class="value">05:00</div>
+          </div>
+          <div class="stat-card accent-red">
+            <div class="label">關門（限時 15h）</div>
+            <div class="value">20:00</div>
           </div>
         </div>
 
@@ -454,7 +468,7 @@
             另外 80% 的時間你都在對抗地形──上坡推膝、下坡扛股四頭。
           </p>
           <p>
-            有三個短但明顯的「假平路」段（km 1.1–1.5、33.8–34.2、36.4–36.8），
+            有三個短但明顯的「假平路」段（1.1–1.5 km、33.8–34.2 km、36.4–36.8 km），
             <strong>這些地方容易偷跑過頭</strong>，尤其是後兩個位在 30 km 之後，一旦爆心率會直接影響最後段成績。
           </p>
         </div>
@@ -500,16 +514,16 @@
 
         <div class="stat-grid">
           <div class="stat-card">
-            <div class="label">平均坡度</div>
-            <div class="value">+0.02<span class="unit">°</span></div>
+            <div class="label">平均坡度（°）</div>
+            <div class="value">+0.02</div>
           </div>
           <div class="stat-card accent-red">
-            <div class="label">坡度標準差</div>
-            <div class="value">±18.7<span class="unit">°</span></div>
+            <div class="label">坡度標準差（°）</div>
+            <div class="value">±18.7</div>
           </div>
           <div class="stat-card accent-amber">
-            <div class="label">最震盪 1 km 區間</div>
-            <div class="value">26.6–27.7<span class="unit">km</span></div>
+            <div class="label">最震盪 1 km 區間（km）</div>
+            <div class="value">26.6–27.7</div>
           </div>
         </div>
 
@@ -585,7 +599,7 @@
           </p>
           <p>
             <strong>9:00 後熱壓力快速上升</strong>：濕度從 90% 掉到 60%，太陽直射稜線，
-            體感從 12°C 一路推到 24°C。此時跑者多半在 km 12–20 的下切與低谷地帶──
+            體感從 12°C 一路推到 24°C。此時跑者多半在 12–20 km 的下切與低谷地帶──
             <strong>要比開賽多補 50% 水分與鈉片</strong>。
           </p>
           <p>
@@ -642,7 +656,7 @@
         <div class="warn-box">
           <strong>⚠️ 遠離公路區段佔比較高（~30%）</strong><br>
           Far Away 40K 有約 <strong>1/3 里程落在離最近道路 500 m 以外</strong>，最遠點達 <strong>2.1 km</strong>，
-          集中在屋我尾山稜線（km 3–7）、中段深谷（km 18–22）、後半稜線（km 26–32）。
+          集中在屋我尾山稜線（3–7 km）、中段深谷（18–22 km）、後半稜線（26–32 km）。
           這些區段<strong>手機訊號不穩定</strong>、無車輛可達、自行脫離代價極大。
           <strong>出發前務必：</strong>告知家人完賽預估時間；確認賽事緊急聯絡電話已存入手機；攜帶緊急保暖層（求生毯）。
         </div>
@@ -652,7 +666,7 @@
         <div class="tactical-box">
           <h3>一句話戰術</h3>
           <p>
-            <strong>「屋我尾山只求活著過、中段谷地小跑小補、km 27 黑魔王全走不衝、最後 10 km 的假平路不給偷」</strong>──
+            <strong>「屋我尾山只求活著過、中段谷地小跑小補、27 km 黑魔王全走不衝、最後 10 km 的假平路不給偷」</strong>──
             這條路線的勝負不在菁英拼速度，而在一般跑者能不能守住<strong>屋我尾山後的心率與股四頭</strong>。
             起跑 60 分鐘內推太快，整場比賽就毀了。
           </p>
@@ -664,7 +678,7 @@
             <p>
               建議 <strong>深齒越野鞋（齒深 5 mm+）× 中等緩震</strong>。
               屋我尾山前段有繩索、石縫、樹根地形，短齒鞋在濕石上會滑。
-              2,800 m 的總爬升又要下 2,800 m，純硬鞋底會讓股四頭在 km 30 後爆掉。
+              2,800 m 的總爬升又要下 2,800 m，純硬鞋底會讓股四頭在 30 km 後爆掉。
               參考：Salomon Speedcross、Hoka Speedgoat、La Sportiva Bushido。
             </p>
           </div>
@@ -694,7 +708,7 @@
             <h4>護具</h4>
             <p>
               <strong>膝蓋貼紮 + 登山杖</strong>強烈建議。
-              屋我尾山下切與 km 27 急降對膝蓋都是爆擊，有登山杖可以分擔 20–30% 股四頭負荷。
+              屋我尾山下切與 27 km 急降對膝蓋都是爆擊，有登山杖可以分擔 20–30% 股四頭負荷。
             </p>
           </div>
           <div class="gear-item">
@@ -713,7 +727,7 @@
           這場的<strong>屋我尾山開場段是真的會嚇到</strong>：前 5 公里有幾段坡度逼近 60–67%，
           不只要抓繩、還得用腳掌邊緣踩石縫，體感和攀岩差不多。
           但過了頂之後景色一下子開闊──稜線上看大雪山系連綿山景，值回票價。
-          後半段的 km 27 又來一刀陡拉時，體力所剩無幾，那段是<strong>心態與裝備的雙重考驗</strong>。
+          後半段的 27 km 又來一刀陡拉時，體力所剩無幾，那段是<strong>心態與裝備的雙重考驗</strong>。
           建議把它當成一場「山區重訓」而非「越野跑」，心態對了就能完賽。
         </p>
 
@@ -905,7 +919,7 @@
       { name: '①', range: '0 – 6 km',   from: 0,  to: 6,   desc: '屋我尾山爆衝（手腳並用）' },
       { name: '②', range: '6 – 15 km',  from: 6,  to: 15,  desc: '大稜線下切' },
       { name: '③', range: '15 – 23 km', from: 15, to: 23,  desc: '谷地小陡升降' },
-      { name: '④', range: '23 – 28 km', from: 23, to: 28,  desc: '魔王 km 27（67% 陡拉）' },
+      { name: '④', range: '23 – 28 km', from: 23, to: 28,  desc: '魔王 27 km（67% 陡拉）' },
       { name: '⑤', range: '28 – 35 km', from: 28, to: 35,  desc: '二度稜線下切' },
       { name: '⑥', range: '35 – 40 km', from: 35, to: 40.7,desc: '收尾假平路' }
     ];
