@@ -151,10 +151,18 @@
       .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
   }
 
+  function imgObjectPosition(url) {
+    if (!url) return 'center center';
+    if (/\/assets\/og-[^/]+\.jpg/.test(url)) return 'left center';
+    if (/upload\.wikimedia\.org/.test(url)) return 'center top';
+    return 'center center';
+  }
+
   const cards = ranked.map(({ post }) => {
     const thumb = post.hero?.thumbUrl ?? post.hero?.url ?? '';
+    const pos = imgObjectPosition(thumb);
     const imgHtml = thumb
-      ? `<div class="ri-img"><img src="${escHtml(thumb)}" alt="${escHtml(post.title)}" loading="lazy"></div>`
+      ? `<div class="ri-img"><img src="${escHtml(thumb)}" alt="${escHtml(post.title)}" loading="lazy" style="object-position:${pos}"></div>`
       : `<div class="ri-img ri-img--empty"></div>`;
     const badge = post.category
       ? `<span class="cat-badge">${escHtml(post.category)}</span>`
