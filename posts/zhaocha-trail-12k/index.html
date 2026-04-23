@@ -787,7 +787,13 @@
           }
         },
         scales: {
-          x: { ...noGrid.x, ticks: { callback: (v, i) => i % 15 === 0 ? profile[i][0].toFixed(1) + 'k' : '' } },
+          x: { ...noGrid.x, ticks: { callback: (v, i) => {
+            const km = profile[i] ? profile[i][0] : null;
+            if (km === null) return '';
+            if (i === 0) return '0';
+            const r = Math.round(km);
+            return (r > 0 && Math.abs(km - r) < 0.09) ? r + 'k' : '';
+          }}},
           y: { ...noGrid.y, ticks: { callback: v => v + 'm' } }
         }
       }
