@@ -288,33 +288,57 @@ UTMB/
 }
 ```
 
-#### 4-3. 洞察框 `.insight-box`（深藍底，白字）
+#### 4-3. 洞察框 `.insight-box`（淡藍低飽和度）
 ```css
 .insight-box {
-  background: linear-gradient(135deg, #1e3a8a 0%, #1d4ed8 100%);
-  color: white;
-  border-radius: 12px;
-  padding: 1.5rem 1.75rem;
+  background: #eff6ff;
+  border: 1.5px solid #93c5fd;
+  border-radius: 10px;
+  padding: 1.25rem 1.5rem;
   margin: 2rem 0;
+  color: #1e3a8a;
+  font-size: .95rem;
+  line-height: 1.75;
 }
-.insight-box h3     { font-size: 1.1rem; margin-bottom: .6rem; color: #bfdbfe; }
-.insight-box p      { font-size: .95rem; line-height: 1.7; margin: 0; }
-.insight-box strong { color: #93c5fd; }
+.insight-box h3     { font-size: 1rem; font-weight: 700; margin: 0 0 .55rem; color: #1e40af; }
+.insight-box p      { margin: 0; }
+.insight-box p + p  { margin-top: .7rem; }
+.insight-box strong { color: #1d4ed8; }
 ```
 
-#### 4-4. 警示框 `.warn-box`（amber 色調）
+#### 4-3b. 戰術框 `.tactical-box`（淡綠低飽和度）
+```css
+.tactical-box {
+  background: #f0fdf4;
+  border: 1.5px solid #86efac;
+  border-radius: 10px;
+  padding: 1.25rem 1.5rem;
+  margin: 2rem 0;
+  color: #14532d;
+  font-size: .95rem;
+}
+.tactical-box h3     { font-size: 1rem; font-weight: 700; margin: 0 0 .55rem; color: #166534; }
+.tactical-box p      { line-height: 1.75; margin: 0; }
+.tactical-box p + p  { margin-top: .7rem; }
+.tactical-box strong { color: #15803d; }
+```
+
+#### 4-4. 警示框 `.warn-box`（淡紅低飽和度）
 ```css
 .warn-box {
-  background: #fffbeb;
-  border-left: 4px solid #f59e0b;
-  border-radius: 0 8px 8px 0;
+  background: #fef2f2;
+  border: 1.5px solid #fca5a5;
+  border-radius: 10px;
   padding: 1rem 1.25rem;
-  color: #78350f;
+  color: #450a0a;
   font-size: .95rem;
   line-height: 1.7;
   margin: 1.5rem 0;
 }
+.warn-box strong { color: #b91c1c; }
 ```
+
+> **方塊設計原則（低飽和度全框）**：所有內容方塊一律使用低飽和度底色 + 全框（`border: 1.5px solid`），禁止深色漸層背景。顏色語意：藍 = 洞察/觀察，綠 = 策略/提示，紅 = 警告/風險，琥珀 = 補充說明。
 
 #### 4-5. 表格 `.data-table`（**無直線，淺色系**）
 ```css
