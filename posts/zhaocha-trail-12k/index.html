@@ -77,20 +77,20 @@
     }
     .stat-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-      gap: .85rem;
+      grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+      gap: .75rem;
       margin: 1.3rem 0 1.5rem;
     }
     .stat-card {
       background: #fff;
       border: 1px solid #e2e8f0;
       border-radius: 12px;
-      padding: 1rem 1.1rem;
+      padding: .85rem 1rem;
       position: relative;
     }
-    .stat-card .label { font-size: .78rem; color: #64748b; letter-spacing: .04em; }
-    .stat-card .value { font-size: 1.55rem; font-weight: 800; color: #0f172a; margin-top: .25rem; }
-    .stat-card .unit  { font-size: .8rem; color: #64748b; margin-left: .2rem; }
+    .stat-card .label { font-size: .75rem; color: #64748b; letter-spacing: .04em; }
+    .stat-card .value { font-size: clamp(1.9rem, 3.8vw, 2.4rem); font-weight: 800; color: #0f172a; margin-top: .2rem; line-height: 1.1; }
+    .stat-card .unit  { font-size: .85rem; color: #64748b; margin-left: .15rem; }
     .stat-card.accent-blue  .value { color: #2563eb; }
     .stat-card.accent-amber .value { color: #d97706; }
     .stat-card.accent-green .value { color: #059669; }
@@ -359,8 +359,8 @@
             <div class="value">08:00</div>
           </div>
           <div class="stat-card accent-red">
-            <div class="label">關門時間</div>
-            <div class="value">13:00<span class="unit"> （限時 5h）</span></div>
+            <div class="label">關門時間（限時 5h）</div>
+            <div class="value">13:00</div>
           </div>
         </div>
 
