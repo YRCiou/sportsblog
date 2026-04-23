@@ -8,15 +8,7 @@ cd sportsblog
 npm install
 ```
 
-本地路徑建議：`C:/claude/UTMB`（與舊電腦一致，避免 CLAUDE.md 路徑失效）
-
-```bash
-# Windows：建立目錄並 clone 到指定位置
-mkdir C:\claude
-git clone https://github.com/YRCiou/sportsblog.git C:\claude\UTMB
-cd C:\claude\UTMB
-npm install
-```
+本地路徑可任意選擇，所有設定均使用相對路徑，不再有硬性路徑限制。
 
 ---
 
@@ -36,12 +28,12 @@ npm install -g @anthropic/claude-code
 ```bash
 # Windows PowerShell
 mkdir "$env:USERPROFILE\.claude" -Force
-copy C:\claude\UTMB\setup\telegram-confirm.js "$env:USERPROFILE\.claude\telegram-confirm.js"
+copy .\setup\telegram-confirm.js "$env:USERPROFILE\.claude\telegram-confirm.js"
 ```
 
 ### 3-2. 複製 Claude 設定
 ```bash
-copy C:\claude\UTMB\setup\claude-settings.json "$env:USERPROFILE\.claude\settings.json"
+copy .\setup\claude-settings.json "$env:USERPROFILE\.claude\settings.json"
 ```
 
 > ⚠️ 若已有 `settings.json`，手動合併 hooks 區塊，不要直接覆蓋。
@@ -67,7 +59,7 @@ git config --global credential.helper manager
 ```
 以小隊模式：重建夜間 SEO 稽核排程任務（nightly-seo-audit），
 設定為台灣時間每天 02:00 執行，
-任務內容參照 C:/claude/UTMB/agents/README.md 及 CLAUDE.md。
+任務內容參照 ./agents/README.md 及 CLAUDE.md。
 ```
 
 ---

@@ -6,7 +6,7 @@
 ## 職責
 1. **閱讀現有程式碼**：動手之前先讀相關檔案，確認現狀。
 2. **執行修改**：依照任務說明修改 HTML / CSS / JS / JSON。
-3. **遵守版型規範**：所有修改必須符合 `C:/claude/UTMB/CLAUDE.md` 的規定。
+3. **遵守版型規範**：所有修改必須符合 `./CLAUDE.md` 的規定。
 4. **完工回報**：修改完成後，輸出工作摘要給稽查員審核。
 
 ## 工作規則
@@ -39,9 +39,9 @@
 ## 本專案重要路徑
 | 檔案 | 用途 |
 |------|------|
-| `C:/claude/UTMB/CLAUDE.md` | 版型規範（必讀）|
-| `C:/claude/UTMB/assets/style.css` | 全站樣式 |
-| `C:/claude/UTMB/posts-data.json` | 文章元資料 |
-| `C:/claude/UTMB/index.html` | 首頁 |
-| `C:/claude/UTMB/posts/*/index.html` | 各文章頁 |
-| `C:/claude/UTMB/assets/related.js` | 延伸閱讀邏輯 |
+| `./CLAUDE.md` | 版型規範（必讀）|
+| `./assets/style.css` | 全站樣式 |
+| `./posts-data.json` | 文章元資料 |
+| `./index.html` | 首頁 |
+| `./posts/*/index.html` | 各文章頁 |
+| `./assets/related.js` | 延伸閱讀邏輯 |
