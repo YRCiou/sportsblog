@@ -723,8 +723,9 @@
 
     // --- 2. Slope histogram ---
     const edges = data.s.histEdges;
-    const labels = [];
-    for (let i = 0; i < edges.length - 1; i++) labels.push(edges[i] + '~' + edges[i + 1] + '%');
+    const fullLabels = [];
+    for (let i = 0; i < edges.length - 1; i++) fullLabels.push(edges[i] + '~' + edges[i + 1] + '%');
+    const shortLabels = edges.slice(0, -1).map(v => v + '%');
     const colors = data.s.hist.map((_, i) => {
       const mid = (edges[i] + edges[i + 1]) / 2;
       if (mid < -15) return '#dc2626';
@@ -738,12 +739,18 @@
     new Chart(document.getElementById('chartHist'), {
       type: 'bar',
       data: {
-        labels,
+        labels: shortLabels,
         datasets: [{ label: '累計距離(m)', data: data.s.hist, backgroundColor: colors, borderRadius: 4 }]
       },
       options: {
         responsive: true, maintainAspectRatio: false,
-        plugins: { legend: { display: false }, tooltip: { callbacks: { label: c => c.parsed.y + ' m' } } },
+        plugins: {
+          legend: { display: false },
+          tooltip: { callbacks: {
+            title: items => fullLabels[items[0].dataIndex],
+            label: c => c.parsed.y + ' m'
+          }}
+        },
         scales: {
           ...noGrid,
           y: { ...noGrid.y, ticks: { callback: v => v + ' m' } }
