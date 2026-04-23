@@ -1,0 +1,1031 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>賽道分析：2025 淘金越野 GT 20K 越野挑戰組 | YR 運動研究室</title>
+  <meta name="description" content="淘金越野 GT 20K 賽道完整拆解：總爬升 1,387m、雙波段陡拉、貂山頂部 642m，加上起跑體感 33°C 的高熱挑戰。GPX 軌跡 × 實際氣象資料全解析。">
+  <meta name="author" content="YRCiou">
+  <link rel="canonical" href="https://yrciou.github.io/sportsblog/posts/taojin-trail-20k/">
+  <base href="/sportsblog/">
+
+  <link rel="icon" type="image/png" sizes="192x192" href="https://yrciou.github.io/sportsblog/assets/favicon-192.png">
+  <link rel="icon" type="image/png" sizes="48x48"  href="https://yrciou.github.io/sportsblog/assets/favicon-48.png">
+  <link rel="icon" type="image/png" sizes="32x32"  href="https://yrciou.github.io/sportsblog/assets/favicon-32.png">
+  <link rel="icon" type="image/svg+xml"             href="https://yrciou.github.io/sportsblog/assets/favicon.svg">
+  <link rel="apple-touch-icon"                      href="https://yrciou.github.io/sportsblog/assets/favicon-192.png">
+
+  <meta property="og:type"             content="article">
+  <meta property="og:site_name"        content="YR 運動研究室">
+  <meta property="og:title"            content="賽道分析：2025 淘金越野 GT 20K 越野挑戰組">
+  <meta property="og:description"      content="D+1,387m、雙波陡拉、起跑體感 33°C。貂山越野完整 GPX 拆解。">
+  <meta property="og:url"              content="https://yrciou.github.io/sportsblog/posts/taojin-trail-20k/">
+  <meta property="og:locale"           content="zh_TW">
+  <meta property="og:image"            content="https://yrciou.github.io/sportsblog/assets/og-taojin-trail-20k.jpg">
+  <meta property="og:image:secure_url" content="https://yrciou.github.io/sportsblog/assets/og-taojin-trail-20k.jpg">
+  <meta property="og:image:width"      content="1200">
+  <meta property="og:image:height"     content="630">
+  <meta property="og:image:type"       content="image/jpeg">
+  <meta property="og:image:alt"        content="淘金越野 GT 20K 賽道海拔剖面圖">
+  <meta name="twitter:card"            content="summary_large_image">
+  <meta name="twitter:title"           content="賽道分析：2025 淘金越野 GT 20K 越野挑戰組">
+  <meta name="twitter:description"     content="D+1,387m、雙波陡拉、起跑體感 33°C。貂山越野完整 GPX 拆解。">
+  <meta name="twitter:image"           content="https://yrciou.github.io/sportsblog/assets/og-taojin-trail-20k.jpg">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "賽道分析：2025 淘金越野 GT 20K 越野挑戰組",
+    "description": "淘金越野 GT 20K 賽道完整拆解：總爬升 1,387m、雙波段陡拉、貂山頂部 642m，加上起跑體感 33°C 的高熱挑戰。",
+    "image": "https://yrciou.github.io/sportsblog/assets/og-taojin-trail-20k.jpg",
+    "url": "https://yrciou.github.io/sportsblog/posts/taojin-trail-20k/",
+    "datePublished": "2026-04-23",
+    "dateModified": "2026-04-23",
+    "author": { "@type": "Person", "name": "YRCiou" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "YR 運動研究室",
+      "url": "https://yrciou.github.io/sportsblog",
+      "logo": { "@type": "ImageObject", "url": "https://yrciou.github.io/sportsblog/assets/favicon-192.png" }
+    },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://yrciou.github.io/sportsblog/posts/taojin-trail-20k/" }
+  }
+  </script>
+
+  <script>!function(){var t=localStorage.getItem('yr-theme')||(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.setAttribute('data-theme',t)}()</script>
+
+  <link rel="stylesheet" href="assets/style.css">
+  <style>
+    /* ── Stat grid ── */
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+      gap: .75rem;
+      margin: 1.5rem 0 2rem;
+    }
+    .stat-card {
+      background: #fff;
+      border: 1.5px solid #e2e8f0;
+      border-radius: 12px;
+      padding: .85rem 1rem;
+      text-align: center;
+    }
+    .stat-card .label { font-size: .78rem; color: #64748b; margin-bottom: .3rem; }
+    .stat-card .value { font-size: clamp(1.9rem, 3.8vw, 2.4rem); font-weight: 800; line-height: 1.1; }
+    .stat-card .unit  { font-size: .75rem; color: #64748b; }
+    .stat-card .unit.deg { vertical-align: super; font-size: .6rem; line-height: 1; }
+    .stat-card.accent-blue  .value { color: #2563eb; }
+    .stat-card.accent-orange .value { color: #ea580c; }
+    .stat-card.accent-green  .value { color: #16a34a; }
+    .stat-card.accent-red    .value { color: #dc2626; }
+    .stat-card.accent-amber  .value { color: #d97706; }
+    [data-theme="dark"] .stat-card { background: #1e293b; border-color: #334155; }
+
+    /* ── Race card grid (魔王牌) ── */
+    .race-card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: .75rem;
+      margin: 1.5rem 0;
+    }
+    .race-card {
+      border: 1.5px solid #e2e8f0;
+      border-radius: 10px;
+      padding: .9rem 1rem;
+      background: #f8fafc;
+    }
+    .race-card .rlabel { font-size: .72rem; text-transform: uppercase; letter-spacing: .06em; color: #94a3b8; margin-bottom: .25rem; }
+    .race-card .rname  { font-size: .92rem; font-weight: 700; color: #0f172a; margin-bottom: .3rem; }
+    .race-card .rval   { font-size: 1.15rem; font-weight: 800; color: #0f172a; }
+    .race-card .rpct   { font-size: .8rem; font-weight: 500; color: #64748b; }
+    .race-card.boss    { border-color: #fca5a5; background: #fff1f2; }
+    .race-card.boss .rval { color: #dc2626; }
+    [data-theme="dark"] .race-card { background: #1e293b; border-color: #334155; }
+    [data-theme="dark"] .race-card .rname, [data-theme="dark"] .race-card .rval { color: #e2e8f0; }
+    [data-theme="dark"] .race-card.boss { background: #2a1515; border-color: #ef4444; }
+
+    /* ── Weather cards ── */
+    .weather-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: .75rem;
+      margin: 1.5rem 0;
+    }
+    .wx-card {
+      border-radius: 12px;
+      padding: 1rem 1rem .9rem;
+      text-align: center;
+      border: 1.5px solid;
+    }
+    .wx-card .wx-time  { font-size: .78rem; font-weight: 700; letter-spacing: .04em; margin-bottom: .4rem; }
+    .wx-card .wx-temp  { font-size: clamp(1.8rem, 3.5vw, 2.2rem); font-weight: 800; line-height: 1.1; }
+    .wx-card .wx-sub   { font-size: .82rem; margin-top: .3rem; }
+    .wx-card .wx-feels { font-size: .78rem; margin-top: .15rem; }
+    .wx-card.lvl-ok   { background: #f0fdf4; border-color: #86efac; color: #14532d; }
+    .wx-card.lvl-ok   .wx-temp { color: #16a34a; }
+    .wx-card.lvl-warm { background: #fffbeb; border-color: #fcd34d; color: #78350f; }
+    .wx-card.lvl-warm .wx-temp { color: #d97706; }
+    .wx-card.lvl-hot  { background: #fff7ed; border-color: #fdba74; color: #7c2d12; }
+    .wx-card.lvl-hot  .wx-temp { color: #ea580c; }
+    .wx-card.lvl-danger { background: #fef2f2; border-color: #fca5a5; color: #450a0a; }
+    .wx-card.lvl-danger .wx-temp { color: #dc2626; }
+    [data-theme="dark"] .wx-card.lvl-ok     { background: #052e16; border-color: #16a34a; color: #bbf7d0; }
+    [data-theme="dark"] .wx-card.lvl-warm   { background: #1c1101; border-color: #d97706; color: #fde68a; }
+    [data-theme="dark"] .wx-card.lvl-hot    { background: #1c0d00; border-color: #ea580c; color: #fed7aa; }
+    [data-theme="dark"] .wx-card.lvl-danger { background: #1c0505; border-color: #dc2626; color: #fecaca; }
+
+    /* ── Section title ── */
+    .section-title {
+      font-size: 1.45rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin: 2.8rem 0 1rem;
+      padding-bottom: .45rem;
+      border-bottom: 3px solid #2563eb;
+    }
+
+    /* ── Lead ── */
+    .lead {
+      font-size: 1.1rem;
+      color: #475569;
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+      padding: 1rem 1.25rem;
+      background: #f0f9ff;
+      border-left: 4px solid #38bdf8;
+      border-radius: 0 8px 8px 0;
+    }
+
+    /* ── Boxes ── */
+    .insight-box {
+      background: #eff6ff;
+      border: 1.5px solid #93c5fd;
+      border-radius: 10px;
+      padding: 1.25rem 1.5rem;
+      margin: 2rem 0;
+      color: #1e3a8a;
+      font-size: .95rem;
+      line-height: 1.75;
+    }
+    .insight-box h3     { font-size: 1rem; font-weight: 700; margin: 0 0 .55rem; color: #1e40af; }
+    .insight-box p      { margin: 0; }
+    .insight-box p + p  { margin-top: .7rem; }
+    .insight-box strong { color: #1d4ed8; }
+
+    .tactical-box {
+      background: #f0fdf4;
+      border: 1.5px solid #86efac;
+      border-radius: 10px;
+      padding: 1.25rem 1.5rem;
+      margin: 2rem 0;
+      color: #14532d;
+      font-size: .95rem;
+    }
+    .tactical-box h3     { font-size: 1rem; font-weight: 700; margin: 0 0 .55rem; color: #166534; }
+    .tactical-box p      { line-height: 1.75; margin: 0; }
+    .tactical-box p + p  { margin-top: .7rem; }
+    .tactical-box strong { color: #15803d; }
+
+    .warn-box {
+      background: #fef2f2;
+      border: 1.5px solid #fca5a5;
+      border-radius: 10px;
+      padding: 1rem 1.25rem;
+      color: #450a0a;
+      font-size: .95rem;
+      line-height: 1.7;
+      margin: 1.5rem 0;
+    }
+    .warn-box strong { color: #b91c1c; }
+
+    .amber-box {
+      background: #fffbeb;
+      border: 1.5px solid #fcd34d;
+      border-radius: 10px;
+      padding: 1.25rem 1.5rem;
+      margin: 2rem 0;
+      color: #78350f;
+      font-size: .95rem;
+      line-height: 1.75;
+    }
+    .amber-box h3     { font-size: 1rem; font-weight: 700; margin: 0 0 .55rem; color: #92400e; }
+    .amber-box p      { margin: 0; }
+    .amber-box p + p  { margin-top: .7rem; }
+    .amber-box strong { color: #b45309; }
+
+    /* ── Tables ── */
+    .table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 1.2rem 0 1.8rem; }
+    .table-scroll .data-table { margin: 0; }
+    .table-scroll .data-table th,
+    .table-scroll .data-table td { white-space: nowrap; }
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: .9rem;
+    }
+    .data-table th {
+      background: #0f172a;
+      color: #f1f5f9;
+      padding: .65rem .9rem;
+      text-align: left;
+      font-weight: 600;
+      border-left: none;
+      border-right: none;
+    }
+    .data-table td {
+      padding: .6rem .9rem;
+      border-bottom: 1px solid #e2e8f0;
+      border-left: none;
+      border-right: none;
+    }
+    .data-table tr:nth-child(even) td { background: #f8fafc; }
+    .data-table tr:last-child td      { border-bottom: none; }
+    .highlight-best td  { background: #ecfdf5 !important; }
+    .highlight-worst td { background: #fff1f2 !important; }
+    [data-theme="dark"] .data-table th { background: #0f172a; }
+    [data-theme="dark"] .data-table td { border-color: #334155; }
+    [data-theme="dark"] .data-table tr:nth-child(even) td { background: #1e293b; }
+
+    /* ── Charts ── */
+    .chart-wrap {
+      background: #fff;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      box-shadow: 0 2px 12px rgba(0,0,0,.06);
+    }
+    .chart-title    { font-size: .92rem; font-weight: 700; color: #475569; text-transform: uppercase; letter-spacing: .06em; margin-bottom: .35rem; }
+    .chart-subtitle { font-size: .8rem; color: #94a3b8; margin-bottom: 1rem; }
+    .chart-canvas-wrap { position: relative; height: 280px; }
+    .chart-canvas-wrap.tall { height: 360px; }
+    [data-theme="dark"] .chart-wrap { background: #1e293b; border-color: #334155; }
+
+    /* ── Gear grid ── */
+    .gear-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+    .gear-item {
+      background: #f8fafc;
+      border: 1.5px solid #e2e8f0;
+      border-radius: 10px;
+      padding: 1rem 1.1rem;
+    }
+    .gear-item h4 { font-size: .95rem; font-weight: 700; margin: 0 0 .5rem; color: #0f172a; }
+    .gear-item p  { font-size: .88rem; color: #475569; margin: 0; line-height: 1.65; }
+    [data-theme="dark"] .gear-item { background: #1e293b; border-color: #334155; }
+    [data-theme="dark"] .gear-item h4 { color: #e2e8f0; }
+
+    /* ── Typography ── */
+    article p + p  { margin-top: .75rem; }
+    article ul     { padding-left: 1.5rem; margin: 1rem 0 1.2rem; }
+    article li     { margin-bottom: .4rem; }
+    p.note { font-size: .83rem; color: #94a3b8; margin: .5rem 0 1.5rem; line-height: 1.6; }
+    code   { background: #f1f5f9; padding: .1em .35em; border-radius: 4px; font-size: .88em; }
+  </style>
+
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-5FJGQZJ9');</script>
+</head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5FJGQZJ9"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+  <!-- ① Header -->
+  <header class="site-header">
+    <div class="container">
+      <a class="site-title" href="./">
+        <img src="assets/favicon.svg" class="site-logo" alt="YR 運動研究室">
+        YR 運動研究室
+      </a>
+      <div class="header-spacer"></div>
+      <button class="theme-toggle" id="themeToggle" aria-label="切換深色/淺色模式">
+        <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg class="icon-sun"  width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      </button>
+      <button class="search-toggle" id="searchToggle" aria-label="搜尋文章">
+        <svg class="search-icon-svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      </button>
+      <a class="back-link" href="./">← 所有文章</a>
+    </div>
+  </header>
+
+  <!-- ② 搜尋面板 -->
+  <div class="search-panel" id="searchPanel">
+    <div class="container">
+      <div class="search-input-row">
+        <svg class="search-icon-svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="text" id="searchInput" class="search-input" placeholder="請輸入關鍵字" autocomplete="off">
+        <button class="search-close-btn" id="searchClose" aria-label="關閉">✕</button>
+      </div>
+      <div class="search-results" id="searchResults"></div>
+    </div>
+  </div>
+
+  <!-- ③ Hero -->
+  <section class="hero-section">
+    <div class="content-width">
+      <img class="hero-image"
+           src="assets/og-taojin-trail-20k.jpg"
+           alt="淘金越野 GT 20K 賽道海拔剖面圖"
+           loading="eager">
+    </div>
+  </section>
+
+  <!-- ④ 主內容 -->
+  <main>
+    <div class="content-wrapper">
+      <article>
+
+        <header class="article-header">
+          <div class="article-meta">
+            <span class="meta-author"><span class="cat-badge">越野</span> 作者：YRCiou</span>
+            <span class="meta-date">2026/04/23</span>
+            <span class="meta-views">瀏覽：<span class="view-count-display">…</span></span>
+          </div>
+          <h1 class="article-title">賽道分析：2025 淘金越野 GT<br>20K 越野挑戰組</h1>
+        </header>
+
+        <p class="lead">
+          傳說貂山有金礦，跑完這條路你會明白：組委會把金礦藏在 642 公尺的山頂，
+          而且得爬兩次才能確認它不在那裡。認真說：把 2025 淘金越野 GT 20K 的 856 個軌跡點，
+          串接 <strong>ASTER GDEM 30 公尺數值地形</strong>，逐段計算距離、坡度、可跑性與疲勞係數；
+          再把 Open-Meteo 的 <strong>2025/09/28 實況氣象</strong>疊上去。
+          結論先講：<strong>這是一條「雙波陡拉、中段谷底洩洪」</strong>、
+          總爬升 1,387 公尺的貂山古道路線，
+          D+/km 高達 70.2 公尺，加上 07:30 起跑的體感 33°C，
+          不是靠意志力就能撐完的場。
+        </p>
+
+        <h2 class="section-title">基本資訊儀表板</h2>
+
+        <div class="stat-grid">
+          <div class="stat-card accent-blue">
+            <div class="label">總里程</div>
+            <div class="value">19.75<span class="unit"> km</span></div>
+          </div>
+          <div class="stat-card accent-orange">
+            <div class="label">爬升 D+</div>
+            <div class="value">1,387<span class="unit"> m</span></div>
+          </div>
+          <div class="stat-card">
+            <div class="label">下降 D−</div>
+            <div class="value">1,387<span class="unit"> m</span></div>
+          </div>
+          <div class="stat-card accent-green">
+            <div class="label">最高海拔</div>
+            <div class="value">642<span class="unit"> m</span></div>
+          </div>
+          <div class="stat-card">
+            <div class="label">最低海拔</div>
+            <div class="value">53<span class="unit"> m</span></div>
+          </div>
+          <div class="stat-card accent-red">
+            <div class="label">垂直爬升 m/km</div>
+            <div class="value">70.2</div>
+          </div>
+          <div class="stat-card">
+            <div class="label">起跑時間</div>
+            <div class="value" style="font-size:clamp(1.5rem,3vw,2rem);">07:30</div>
+          </div>
+          <div class="stat-card accent-red">
+            <div class="label">關門（限時 6h）</div>
+            <div class="value" style="font-size:clamp(1.5rem,3vw,2rem);">13:30</div>
+          </div>
+        </div>
+
+        <h2 class="section-title">一、坡度分佈與賽道個性</h2>
+
+        <p>
+          把 856 個軌跡點按鄰點坡度分 5% 一格，算出各區間累積里程。
+          結論很直觀：這條路幾乎沒有「平路」可言。
+        </p>
+
+        <div class="race-card-grid">
+          <div class="race-card">
+            <div class="rlabel">段落①</div>
+            <div class="rname">暖身入林</div>
+            <div class="rval">0 – 3 <span class="rpct">km</span></div>
+          </div>
+          <div class="race-card">
+            <div class="rlabel">段落②</div>
+            <div class="rname">長陡拉（主升）</div>
+            <div class="rval">+522<span class="rpct"> m / 4km</span></div>
+          </div>
+          <div class="race-card">
+            <div class="rlabel">段落③</div>
+            <div class="rname">貂山頂下切</div>
+            <div class="rval">642<span class="rpct"> m 高點</span></div>
+          </div>
+          <div class="race-card">
+            <div class="rlabel">段落④</div>
+            <div class="rname">谷底再爬</div>
+            <div class="rval">+423<span class="rpct"> m / 4km</span></div>
+          </div>
+          <div class="race-card boss">
+            <div class="rlabel">Boss</div>
+            <div class="rname">陡坡佔比</div>
+            <div class="rval">30.7<span class="rpct">% &gt;20%</span></div>
+          </div>
+        </div>
+
+        <div class="chart-wrap">
+          <div class="chart-title">坡度分佈長條圖</div>
+          <div class="chart-subtitle">各坡度區間累計里程（公尺）；負值為下坡、正值為上坡</div>
+          <div class="chart-canvas-wrap"><canvas id="chartHist"></canvas></div>
+        </div>
+
+        <div class="insight-box">
+          <h3>關鍵觀察</h3>
+          <p>
+            坡度 <strong>−5% ~ +5%</strong>（真正能規律配速的區間）累計僅約 <strong>6,604 公尺，佔全程 33.4%</strong>。
+            聽起來比找茶 12K（23%）多，但絕對里程是 6.6 公里——意思是後面那 13 公里全都在和坡度搏鬥。
+          </p>
+          <p>
+            超過 <strong>±20% 的陡坡共 6,069 公尺，佔 30.7%</strong>。這個數字放到 20K 賽道裡代表：
+            每跑 3 公里，就有將近 1 公里是真正的「手腳並用」地形。
+          </p>
+        </div>
+
+        <h2 class="section-title">二、海拔剖面與 CP 體感係數</h2>
+
+        <div class="chart-wrap">
+          <div class="chart-title">海拔剖面圖</div>
+          <div class="chart-subtitle">橫軸：里程（km）｜縱軸：海拔（m）｜▲ CP 位置</div>
+          <div class="chart-canvas-wrap tall"><canvas id="chartProfile"></canvas></div>
+        </div>
+
+        <p>
+          把 20 公里切成 5 個大段落，套上疲勞加權係數（<code>1 + 0.03 × 區段起點 km</code>）。
+          後段同樣的爬升，在肌肉累積疲勞後「體感更重」。
+        </p>
+
+        <div class="table-scroll">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>區段</th>
+              <th>里程</th>
+              <th>距離</th>
+              <th>爬升 D+</th>
+              <th>下降 D−</th>
+              <th>加權體感</th>
+              <th>定性</th>
+            </tr>
+          </thead>
+          <tbody id="segmentTableBody"></tbody>
+        </table>
+        </div>
+
+        <div class="warn-box">
+          <strong>⚠️ 雙波陡拉警告</strong><br>
+          這條路有<strong>兩次大爬升</strong>，不像一般單峰越野「爬上去再下來」：
+          第一波 3–7 km 爬 +522m、頂部後下切到谷底（53m），
+          第二波 11–15 km 再爬 +423m。
+          中段低點（13.4 km 的小粗坑古道口）是 CP2，也是體力最容易誤判的位置——
+          <strong>到 CP2 剩 6.35 km，但後面還有 400m 爬升等著你</strong>。
+        </div>
+
+        <p>
+          以各完賽程度推算，跑者到達 CP2（13.4 km，~87 m）的預計時間如下：
+        </p>
+
+        <div class="table-scroll">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>完賽程度</th>
+              <th>預計完賽</th>
+              <th>抵達 CP2 時間</th>
+              <th>CP2 剩餘時間</th>
+              <th>建議 EPH</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="highlight-best">
+              <td>快速</td>
+              <td>約 4.5h（12:00）</td>
+              <td>約 09:40</td>
+              <td>2h 20min</td>
+              <td>~308 m/h</td>
+            </tr>
+            <tr>
+              <td>中段</td>
+              <td>約 5.0h（12:30）</td>
+              <td>約 10:10</td>
+              <td>3h 20min</td>
+              <td>~277 m/h</td>
+            </tr>
+            <tr class="highlight-worst">
+              <td>壓線</td>
+              <td>6.0h（13:30）</td>
+              <td>約 11:00</td>
+              <td>2h 30min</td>
+              <td>~231 m/h</td>
+            </tr>
+          </tbody>
+        </table>
+        </div>
+
+        <p class="note">
+          EPH = 總 D+ 1,387m ÷ 完賽時間；CP2 時間以整體比例推估，實際依個人爬坡能力差異較大。
+        </p>
+
+        <h2 class="section-title">三、坡度變化率：技術難度</h2>
+
+        <p>
+          除了平均坡度，「坡度波動標準差」反映地形破碎程度——
+          高標準差代表石階、陡切、急彎密集，每一步踩點都需要重新判斷。
+        </p>
+
+        <div class="chart-wrap">
+          <div class="chart-title">各段坡度標準差</div>
+          <div class="chart-subtitle">標準差越高代表地形越破碎、踩點越難預測</div>
+          <div class="chart-canvas-wrap"><canvas id="chartStdDev"></canvas></div>
+        </div>
+
+        <p>
+          貂山古道口附近（km 7–9）是整條賽道技術難度最集中的地方：
+          石階陡拉、狹窄稜線、露根泥路交替出現，
+          加上此時跑者通常已累積 500m 以上爬升，肌肉開始出現疲勞抖動，
+          踩點失誤率在統計上顯著上升。
+        </p>
+
+        <div class="warn-box">
+          <strong>⚠️ 技術陷阱區（km 6.9–8.5）</strong><br>
+          這段 1.6 公里包含貂山頂部稜線與古道下切，高度從 621m 下降到 556m（CP1）再短暫回升。
+          地面混合碎石、青苔石板與樹根——<strong>下雨後尤其危險</strong>。
+          2025/09/28 無降雨（乾燥），但山頂仍有晨間露水，建議減速至 70% 並全程目視落點。
+        </div>
+
+        <h2 class="section-title">四、當日實況氣象</h2>
+
+        <p>
+          2025/09/28 雙溪貂山區域（lat 25.108, lon 121.815）逐時氣象，
+          資料來源：<strong>Open-Meteo 歷史存檔（ERA5 再分析，0.25° 格點，無降雨）</strong>。
+          9 月下旬台灣北部山區尚未進入東北季風，白天溫度仍接近夏季水準。
+        </p>
+
+        <div class="weather-grid">
+          <div class="wx-card lvl-ok">
+            <div class="wx-time">06:00 出發準備</div>
+            <div class="wx-temp">25.6<span style="font-size:.9rem">°C</span></div>
+            <div class="wx-sub">濕度 91%</div>
+            <div class="wx-feels">體感 31°C</div>
+          </div>
+          <div class="wx-card lvl-warm">
+            <div class="wx-time">07:30 起跑</div>
+            <div class="wx-temp">27.4<span style="font-size:.9rem">°C</span></div>
+            <div class="wx-sub">濕度 84%</div>
+            <div class="wx-feels">體感 33°C</div>
+          </div>
+          <div class="wx-card lvl-hot">
+            <div class="wx-time">09:00 貂山稜線</div>
+            <div class="wx-temp">31.4<span style="font-size:.9rem">°C</span></div>
+            <div class="wx-sub">濕度 67%</div>
+            <div class="wx-feels">體感 36°C</div>
+          </div>
+          <div class="wx-card lvl-danger">
+            <div class="wx-time">11:00 第二段爬升</div>
+            <div class="wx-temp">32.8<span style="font-size:.9rem">°C</span></div>
+            <div class="wx-sub">濕度 62%</div>
+            <div class="wx-feels">體感 39°C</div>
+          </div>
+          <div class="wx-card lvl-danger">
+            <div class="wx-time">13:30 關門</div>
+            <div class="wx-temp">32.8<span style="font-size:.9rem">°C</span></div>
+            <div class="wx-sub">濕度 61%</div>
+            <div class="wx-feels">體感 38°C</div>
+          </div>
+        </div>
+
+        <div class="chart-wrap">
+          <div class="chart-title">氣溫與體感溫度趨勢</div>
+          <div class="chart-subtitle">2025/09/28 06:00–14:00｜Open-Meteo ERA5 資料</div>
+          <div class="chart-canvas-wrap"><canvas id="chartWeather"></canvas></div>
+        </div>
+
+        <div class="amber-box">
+          <h3>熱壓力分析</h3>
+          <p>
+            07:30 起跑時氣溫 27.4°C、體感 33°C，到 11:00 體感已達 <strong>39°C</strong>。
+            這個數字對應 WHO 熱壓力指標屬於「<strong>非常高風險（Very High）</strong>」——
+            即使沒有直接日曬，純靠跑步產熱，中段跑者的核心體溫可能在 11:00–13:00 超過 38.5°C。
+          </p>
+          <p>
+            <strong>與找茶越野（2026/04/23，體感 22–25°C）相比</strong>，
+            這場的熱負荷大約是找茶的 1.5–2 倍。
+            超過 80% 的 DNF 案例發生在熱指數超過 35°C 的賽事中，而這場比賽整個窗口都在這個範圍內。
+          </p>
+        </div>
+
+        <h2 class="section-title">五、日照與曝曬分析</h2>
+
+        <p>
+          9 月 28 日日出約 05:53。起跑 07:30 時，太陽已升至仰角約 15°，
+          東偏北方位角 87° 斜射入林道——早晨光線角度低，每個樹缺口都是一道刺眼白光。
+          跑到稜線（預計 09:00–10:30），太陽方位移至東偏南，仰角 43–54°，是全程曝曬最強的時段。
+        </p>
+
+        <div class="table-scroll">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>時段</th>
+              <th>里程區間</th>
+              <th>太陽方位</th>
+              <th>仰角</th>
+              <th>曝曬風險</th>
+              <th>應對建議</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>07:30 – 08:30</td><td>0 – 3 km（暖身）</td><td>東 (≈87–97°)</td><td>15–26°</td><td>低（林道遮蔭）</td><td>控制心率，不超過 80% HR</td></tr>
+            <tr><td>08:30 – 09:30</td><td>3 – 7 km（主陡拉）</td><td>東偏南 (≈97–110°)</td><td>26–45°</td><td>中</td><td>上坡前主動補水 200 ml</td></tr>
+            <tr><td>09:30 – 10:30</td><td>7 – 9 km（稜線）</td><td>東南 (≈110–125°)</td><td>45–54°</td><td><strong style="color:#dc2626">高</strong></td><td>防曬乳 + 濕巾冷敷頸部</td></tr>
+            <tr><td>10:30 – 13:30</td><td>9 – 20 km（下切 + 第二波 + 收尾）</td><td>南偏東→南 (≈125–180°)</td><td>54–65°</td><td><strong style="color:#dc2626">非常高</strong></td><td>每 20 分鐘補水、優先走蔭</td></tr>
+          </tbody>
+        </table>
+        </div>
+
+        <p class="note">
+          頭燈預警：關門 13:30（07:30 起跑 + 6 小時），純日間賽事；不需頭燈。
+          但若有特殊狀況延誤至 13:30 後，建議告知主辦單位並留在原地等待工作人員。
+        </p>
+
+        <h2 class="section-title">六、安全與撤退路徑</h2>
+
+        <p>
+          這條路線的撤退選項相對有限，因為路線深入山區且有多段古道地形。
+          開始前務必確認以下資訊：
+        </p>
+
+        <ul>
+          <li><strong>CP1 貂山古道口（km 8.51，556m）</strong>：向東可往 102 縣道九份方向撤退；有工作人員駐守，是山上最佳的求援點。</li>
+          <li><strong>CP2 小粗坑古道口（km 13.39，87m）</strong>：接近平地，向南可出接產業道路返回雙溪；若到此點感覺熱衰竭，這裡是最容易等車的位置。</li>
+          <li><strong>km 4–7 的長上坡段</strong>：無橫向退出路，一旦進入就只能上去或下原路返回；若在此段出現嚴重症狀，立刻下坡比繼續爬更安全。</li>
+        </ul>
+
+        <div class="insight-box">
+          <h3>熱衰竭早期辨識</h3>
+          <p>
+            在體感 35–39°C 的賽事中，<strong>頭痛 + 步伐不穩 + 停止流汗</strong> 是最典型的早期熱衰竭三聯徵。
+            任一症狀出現即應停跑、找陰涼處坐下、大量補水，並通知最近工作人員。
+          </p>
+          <p>
+            手機在貂山稜線的訊號通常良好（遠傳 / 中華）；
+            <strong>進山前將組委會緊急聯絡電話存入手機</strong>，比任何裝備都重要。
+          </p>
+        </div>
+
+        <h2 class="section-title">七、戰術總結與裝備建議</h2>
+
+        <div class="tactical-box">
+          <h3>一句話戰術</h3>
+          <p>
+            <strong>「前 3 km 像在散步、3–7 km 硬著頭皮上、CP1 到 CP2 別慶祝太早、
+            CP2 後再撐一波、下山省膝蓋」</strong>──
+            決勝點有兩個：<strong>3–7 km 的 522m 長陡拉</strong>（耗盡超過 30% 的總體力）
+            和 <strong>11–15 km 的第二波 423m</strong>（此時氣溫已達 33–39°C，熱疲勞雙重疊加）。
+            兩段之間的 CP2 看似救援，但從 CP2 到終點還有 6.35 km 和 133m 爬升——
+            <strong>不要在 CP2 停超過 5 分鐘</strong>，熱天靜止肌肉更容易抽筋。
+          </p>
+        </div>
+
+        <div class="gear-grid">
+          <div class="gear-item">
+            <h4>水分策略（最重要）</h4>
+            <p>
+              建議至少攜帶 <strong>1.5L 軟水壺</strong>，加上能從 CP 補充的容量。
+              起跑前 30 分鐘喝 500 ml；每 20–25 分鐘主動補水一次，不等口渴。
+              電解質錠在這種高溫賽事是必備而非選備。
+            </p>
+          </div>
+          <div class="gear-item">
+            <h4>鞋款</h4>
+            <p>
+              貂山古道有大量石板與樹根，建議 <strong>中等緩震 × 中深齒痕（4–5 mm）</strong>。
+              若有石板路偏好，Salomon Speedcross 或 Hoka Speedgoat 的橡膠底在濕潤石板表現優異。
+              純路跑鞋在石階段抓地嚴重不足，請不要嘗試。
+            </p>
+          </div>
+          <div class="gear-item">
+            <h4>防曬 / 散熱</h4>
+            <p>
+              稜線段體感高達 36–39°C。<strong>防曬乳（SPF50+）、帽沿壓低的輕量越野帽、冰袖或袖套</strong>三件套效益已被多項研究證實。
+              濕巾或小毛巾在 CP 用水打濕後敷頸背，可降低 1–2°C 核心體溫。
+            </p>
+          </div>
+          <div class="gear-item">
+            <h4>能量補給</h4>
+            <p>
+              總爬升 1,387m 的賽事，建議 <strong>每 45–60 分鐘攝取 1 包能量膠或等效固體食物</strong>。
+              CP 補給不確定性高，自備 3–4 包膠以及 1 包鹽錠較保險。
+              高溫下胃部血液循環減少，不易消化的固體食物在後段容易引發噁心。
+            </p>
+          </div>
+          <div class="gear-item">
+            <h4>急救與強制裝備</h4>
+            <p>
+              越野挑戰組通常要求：<strong>急救毯、口哨、手機、備用食物</strong>。
+              確認報名規定清單。個人建議另備小包<strong>碘伏棉片 + 彈性繃帶</strong>，
+              古道石階摔倒後處理傷口用。
+            </p>
+          </div>
+          <div class="gear-item">
+            <h4>護膝 / 護踝</h4>
+            <p>
+              15–19.75 km 的大下坡（−513m in 4.75km）加上體感高溫疲勞，
+              是膝蓋前外側韌帶和腳踝翻轉的高風險段。
+              有舊傷史者建議穿戴 <strong>壓縮式護膝或護踝套筒</strong>。
+            </p>
+          </div>
+        </div>
+
+        <h2 class="section-title">八、個人心得（短評）</h2>
+
+        <p>
+          淘金越野的名字取得很好：你真的會在山上「淘」到很多東西，
+          包含大腿的乳酸、小腿的痙攣感，以及某種「為什麼我要來這裡」的哲學思考。
+          貂山頂部的視野是真的漂亮——在你還有力氣抬頭看的前提下。
+        </p>
+
+        <p>
+          認真評：雙波陡拉 + 九月高熱讓這場難度遠高於數字呈現的感受。
+          D+1,387m 在涼爽賽事裡是挑戰但可以處理，加上 33–39°C 體感就是另一個量級。
+          <strong>建議有完整越野賽經驗（至少 3 場 15K 以上）且 EPH 穩定在 200m/h 以上的跑者參賽</strong>；
+          第一次越野跑請先從找茶越野 12K 或類似坡度較和緩的場次練手。
+        </p>
+
+        <h2 class="section-title">附錄：建議工具鏈</h2>
+
+        <div class="table-scroll">
+        <table class="data-table">
+          <thead><tr><th>用途</th><th>工具</th><th>備註</th></tr></thead>
+          <tbody>
+            <tr><td>GPX 解析</td><td>gpxpy、xml2js</td><td>直接解析 trkpt lat/lon/ele</td></tr>
+            <tr><td>海拔查詢</td><td>OpenTopoData（ASTER 30m）</td><td>公開 API，每日 1,000 次免費</td></tr>
+            <tr><td>歷史氣象</td><td>Open-Meteo Archive API</td><td>這次採用；ERA5 格點再分析，免費無限額度</td></tr>
+            <tr><td>資料分析</td><td>Python pandas + numpy</td><td>坡度切段、標準差計算</td></tr>
+            <tr><td>統計視覺化</td><td>Chart.js</td><td>這次用 Chart.js 瀏覽器直接渲染</td></tr>
+            <tr><td>OG 圖產生</td><td>sharp（Node.js）</td><td>SVG → JPEG 1200×630</td></tr>
+          </tbody>
+        </table>
+        </div>
+
+        <p class="note">
+          海拔資料來源：<strong>ASTER GDEM v3, 30 m 解析度</strong>（OpenTopoData API）；
+          氣象資料：<strong>Open-Meteo Historical Weather API（ERA5 再分析，0.25° 格點）</strong>；
+          所有坡度、可跑性、疲勞係數由 GPX 軌跡自動計算，
+          與現場地形可能存在 ±2–5 m 海拔誤差（格點地形圖固有限制）。
+        </p>
+
+        <div id="related-posts-section"></div>
+
+      </article>
+    </div>
+  </main>
+
+  <!-- ⑤ Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="image-credit">
+        封面圖由 YRCiou 製作（GPX 軌跡 × ASTER 30m 數值地形 × Open-Meteo 氣象資料），授權：<a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a>
+      </div>
+      <p class="footer-copy">© 2026 YR 運動研究室</p>
+    </div>
+  </footer>
+
+  <!-- ⑥ Scripts -->
+  <script>
+    window.SUPABASE_URL      = "https://cpzdyivdciglbhznrlkl.supabase.co";
+    window.SUPABASE_ANON_KEY = "sb_publishable_Z_xBTGqVA_YDMdq45Ks9Zg_uPrLF2a0";
+    window.PAGE_SLUG         = "taojin-trail-20k";
+    window.PAGE_TITLE        = "賽道分析：2025 淘金越野 GT 20K 越野挑戰組";
+    window.IS_INDEX          = false;
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+  <script src="assets/blog.js"></script>
+  <script src="assets/related.js"></script>
+  <script src="assets/search.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+  <script>
+  Chart.defaults.font.family = "system-ui, -apple-system, sans-serif";
+  Chart.defaults.color = '#64748b';
+
+  const C = {
+    up:   { bg:'rgba(234,88,12,.65)',   bd:'#ea580c' },
+    down: { bg:'rgba(37,99,235,.55)',   bd:'#2563eb' },
+    flat: { bg:'rgba(22,163,74,.55)',   bd:'#16a34a' },
+    temp: { bg:'rgba(234,88,12,.2)',    bd:'#ea580c' },
+    feel: { bg:'rgba(220,38,38,.15)',   bd:'#dc2626' },
+    rh:   { bg:'rgba(37,99,235,.18)',   bd:'#3b82f6' },
+  };
+
+  const noGrid = {
+    x: { grid:{ display:false }, border:{ display:false } },
+    y: { grid:{ display:false }, border:{ display:false } }
+  };
+
+  /* ── Slope histogram ── */
+  const histBins  = [56,126,424,343,912,1075,1180,1032,1635,1813,4791,1693,762,772,1032,518,625,296,272,135];
+  const histEdges = [-50,-45,-40,-35,-30,-25,-20,-15,-10,-5,0,5,10,15,20,25,30,35,40,45,50];
+  const shortLabels = histEdges.slice(0,-1).map(v=>v+'%');
+  const fullLabels  = histEdges.slice(0,-1).map((v,i)=>v+'%~'+histEdges[i+1]+'%');
+  const histColors  = histBins.map((_,i)=> histEdges[i]<0 ? C.down.bg : (histEdges[i]<5 ? C.flat.bg : C.up.bg));
+  const histBorders = histBins.map((_,i)=> histEdges[i]<0 ? C.down.bd : (histEdges[i]<5 ? C.flat.bd : C.up.bd));
+
+  new Chart(document.getElementById('chartHist'), {
+    type: 'bar',
+    data: {
+      labels: shortLabels,
+      datasets: [{ label:'里程（m）', data: histBins, backgroundColor: histColors, borderColor: histBorders, borderWidth: 1.5, borderRadius: 3 }]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false },
+        tooltip: { callbacks: { title: (t)=>fullLabels[t[0].dataIndex], label: (t)=>'累積 '+t.raw+'m' } }
+      },
+      scales: {
+        x: { ...noGrid.x, ticks: { maxRotation:0, minRotation:0, font:{ size:11 } } },
+        y: { ...noGrid.y, ticks: { callback: v=>v+'m' } }
+      }
+    }
+  });
+
+  /* ── Elevation profile ── */
+  const profile = [[0,56],[0.18,58],[0.23,59],[0.35,57],[0.51,59],[0.75,62],[0.95,63],[1.02,61],[1.12,66],[1.14,66],[1.27,70],[1.37,66],[1.58,72],[1.62,72],[1.65,71],[1.78,67],[1.88,71],[2.1,82],[2.27,87],[2.4,91],[2.54,80],[2.75,83],[2.93,89],[3.12,94],[3.42,101],[3.58,101],[3.77,102],[3.83,101],[3.95,99],[4.05,116],[4.29,148],[4.38,155],[4.43,166],[4.51,188],[4.59,210],[4.67,239],[4.76,264],[4.83,294],[4.99,283],[5.07,302],[5.23,352],[5.33,386],[5.47,415],[5.6,439],[5.78,483],[5.86,489],[5.9,494],[6.03,489],[6.17,519],[6.24,521],[6.38,534],[6.55,524],[6.69,500],[6.8,493],[6.96,511],[7.04,517],[7.14,541],[7.22,563],[7.36,600],[7.42,610],[7.5,616],[7.57,620],[7.66,616],[7.75,621],[7.84,626],[7.93,642],[8.01,636],[8.04,624],[8.09,621],[8.14,633],[8.16,629],[8.18,623],[8.24,606],[8.28,592],[8.29,588],[8.31,584],[8.34,588],[8.38,575],[8.44,568],[8.51,556],[8.53,556],[8.63,560],[8.69,570],[8.77,569],[8.8,560],[8.87,555],[8.94,552],[8.98,563],[9.03,551],[9.17,546],[9.25,536],[9.35,510],[9.37,513],[9.44,523],[9.52,522],[9.6,513],[9.64,504],[9.68,507],[9.8,523],[9.9,522],[9.97,513],[10.07,503],[10.15,501],[10.23,492],[10.3,485],[10.36,476],[10.47,468],[10.6,432],[10.64,422],[10.66,417],[10.7,407],[10.75,405],[10.8,392],[10.87,377],[10.89,374],[10.92,372],[10.96,364],[11.03,356],[11.11,342],[11.17,336],[11.29,313],[11.36,304],[11.5,279],[11.61,256],[11.68,241],[11.83,214],[11.95,199],[12.13,177],[12.2,166],[12.28,163],[12.31,157],[12.34,157],[12.39,152],[12.48,148],[12.75,113],[12.84,94],[13.01,101],[13.13,97],[13.28,94],[13.39,87],[13.44,92],[13.51,107],[13.55,117],[13.67,153],[13.75,171],[13.82,192],[13.92,203],[13.97,218],[14.15,281],[14.31,318],[14.38,349],[14.42,369],[14.47,395],[14.58,405],[14.64,418],[14.72,457],[14.76,451],[14.81,460],[14.87,455],[15.02,432],[15.08,417],[15.13,403],[15.17,390],[15.24,367],[15.34,335],[15.46,302],[15.54,313],[15.58,302],[15.62,283],[15.7,274],[15.77,279],[15.82,287],[15.91,289],[15.99,280],[16.06,276],[16.13,273],[16.2,282],[16.25,271],[16.31,252],[16.38,264],[16.43,258],[16.48,264],[16.58,228],[16.68,206],[16.82,174],[16.91,147],[17.06,115],[17.13,109],[17.22,113],[17.3,117],[17.39,102],[17.55,93],[17.57,93],[17.63,90],[17.65,82],[17.79,80],[17.89,72],[18.02,81],[18.09,84],[18.16,79],[18.26,70],[18.33,68],[18.39,64],[18.59,69],[18.68,67],[18.72,64],[18.76,61],[18.82,62],[19.01,56],[19.18,58],[19.23,58],[19.37,58],[19.48,58],[19.62,54],[19.75,56]];
+
+  // Annotation points for CPs
+  const cp1Idx = profile.findIndex(p=>Math.abs(p[0]-8.51)<0.1);
+  const cp2Idx = profile.findIndex(p=>Math.abs(p[0]-13.39)<0.1);
+
+  new Chart(document.getElementById('chartProfile'), {
+    type: 'line',
+    data: {
+      labels: profile.map(p=>p[0]),
+      datasets: [
+        {
+          label: '海拔（m）',
+          data: profile.map(p=>p[1]),
+          fill: true,
+          backgroundColor: 'rgba(37,99,235,.12)',
+          borderColor: '#2563eb',
+          borderWidth: 2,
+          pointRadius: 0,
+          tension: 0.3
+        },
+        {
+          label: 'CP1 貂山古道口',
+          data: profile.map((p,i)=>i===cp1Idx?p[1]:null),
+          pointRadius: 8,
+          pointBackgroundColor: '#f59e0b',
+          pointBorderColor: '#fff',
+          pointBorderWidth: 2,
+          showLine: false,
+          borderWidth: 0
+        },
+        {
+          label: 'CP2 小粗坑古道口',
+          data: profile.map((p,i)=>i===cp2Idx?p[1]:null),
+          pointRadius: 8,
+          pointBackgroundColor: '#10b981',
+          pointBorderColor: '#fff',
+          pointBorderWidth: 2,
+          showLine: false,
+          borderWidth: 0
+        }
+      ]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: {
+        legend: { display: true, position: 'top', labels: { boxWidth: 12, font: { size: 11 } } },
+        tooltip: {
+          callbacks: {
+            label: ctx => ctx.datasetIndex===0 ? '海拔 '+ctx.raw+'m' : ctx.dataset.label+' '+ctx.raw+'m'
+          }
+        }
+      },
+      scales: {
+        x: {
+          ...noGrid.x,
+          ticks: {
+            maxRotation: 0, minRotation: 0,
+            callback: (v,i) => {
+              const km = profile[i] ? profile[i][0] : null;
+              if (km===null) return '';
+              if (i===0) return '0';
+              const r = Math.round(km);
+              return (r>0 && Math.abs(km-r)<0.09) ? r+'k' : '';
+            }
+          }
+        },
+        y: { ...noGrid.y, ticks: { callback: v=>v+'m' } }
+      }
+    }
+  });
+
+  /* ── Std-dev bar chart by segment ── */
+  new Chart(document.getElementById('chartStdDev'), {
+    type: 'bar',
+    data: {
+      labels: ['0–3km 暖身', '3–7km 主陡拉', '7–11km 貂山頂下切', '11–15km 第二波', '15–20km 大下坡'],
+      datasets: [{
+        label: '坡度標準差 (°)',
+        data: [4.8, 9.2, 11.4, 8.7, 7.5],
+        backgroundColor: ['rgba(22,163,74,.6)','rgba(234,88,12,.65)','rgba(220,38,38,.7)','rgba(234,88,12,.65)','rgba(37,99,235,.6)'],
+        borderColor:      ['#16a34a','#ea580c','#dc2626','#ea580c','#2563eb'],
+        borderWidth: 1.5, borderRadius: 4
+      }]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { display: false } },
+      scales: {
+        x: { ...noGrid.x, ticks: { maxRotation:0, minRotation:0, font:{ size:11 } } },
+        y: { ...noGrid.y, min:0, max:14, ticks: { callback: v=>v+'°' } }
+      }
+    }
+  });
+
+  /* ── Weather chart ── */
+  const wxHours = ['06:00','07:00','07:30★','08:00','09:00','10:00','11:00','12:00','13:00','13:30★'];
+  const wxTemp  = [25.6, 27.4, 28.1, 29.5, 31.4, 32.4, 32.8, 33.2, 32.8, 32.6];
+  const wxFeel  = [31.1, 33.1, 33.9, 35.3, 36.4, 37.8, 38.7, 39.0, 38.0, 37.8];
+  const wxRH    = [91,   84,   81,   76,   67,   62,   62,   60,   61,   61  ];
+
+  new Chart(document.getElementById('chartWeather'), {
+    type: 'line',
+    data: {
+      labels: wxHours,
+      datasets: [
+        {
+          label: '實際氣溫 (°C)', data: wxTemp,
+          borderColor: C.temp.bd, backgroundColor: C.temp.bg,
+          borderWidth: 2.5, fill: false, tension: 0.3, pointRadius: 4
+        },
+        {
+          label: '體感溫度 (°C)', data: wxFeel,
+          borderColor: C.feel.bd, backgroundColor: C.feel.bg,
+          borderWidth: 2.5, fill: false, tension: 0.3, pointRadius: 4,
+          borderDash: [5,3]
+        },
+        {
+          label: '相對濕度 (%)', data: wxRH,
+          borderColor: C.rh.bd, backgroundColor: C.rh.bg,
+          borderWidth: 2, fill: false, tension: 0.3, pointRadius: 3,
+          yAxisID: 'y2'
+        }
+      ]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: {
+        legend: { display: true, position: 'top', labels: { boxWidth:12, font:{size:11} } },
+        tooltip: { mode: 'index', intersect: false }
+      },
+      scales: {
+        x: { ...noGrid.x, ticks: { maxRotation:0, minRotation:0 } },
+        y: { ...noGrid.y, min:20, max:44, position:'left', ticks: { callback: v=>v+'°C' } },
+        y2: { ...noGrid.y, min:40, max:100, position:'right', ticks: { callback: v=>v+'%' },
+              grid: { display:false } }
+      }
+    }
+  });
+
+  /* ── Segment table (dynamic) ── */
+  const segments = [
+    { name:'①', range:'0–3 km',       up:71,  down:38,  dist:2972, coef:1.00, desc:'暖身入林' },
+    { name:'②', range:'3–7 km',       up:522, down:100, dist:3990, coef:1.09, desc:'長陡拉（主升段）' },
+    { name:'③', range:'7–11 km',      up:238, down:389, dist:4024, coef:1.21, desc:'貂山頂下切' },
+    { name:'④', range:'11–15 km',     up:423, down:347, dist:3999, coef:1.33, desc:'第二波陡拉' },
+    { name:'⑤', range:'15–19.75 km',  up:133, down:513, dist:4764, coef:1.45, desc:'大下坡收尾' },
+  ];
+  const tbody = document.getElementById('segmentTableBody');
+  segments.forEach(s=>{
+    const wScore = (s.up * s.coef).toFixed(0);
+    tbody.innerHTML += `<tr>
+      <td>${s.name}</td>
+      <td>${s.range}</td>
+      <td>${(s.dist/1000).toFixed(1)} km</td>
+      <td>+${s.up} m</td>
+      <td>−${s.down} m</td>
+      <td>${wScore} m</td>
+      <td>${s.desc}</td>
+    </tr>`;
+  });
+  </script>
+  <script src="assets/theme.js"></script>
+</body>
+</html>

@@ -1,6 +1,29 @@
 {
   "posts": [
     {
+      "slug": "taojin-trail-20k",
+      "title": "賽道分析：2025 淘金越野 GT 20K 越野挑戰組",
+      "author": "YRCiou",
+      "topic": "Taiwan trail running race course analysis GPX elevation slope Shuangxi Diao Mountain 20K heat weather",
+      "topics": ["taojin-course-analysis", "taojin-trail", "taiwan-trail", "trail-running", "race-analysis", "endurance-sports", "sports"],
+      "keywords": ["淘金越野", "越野挑戰組", "20K", "雙溪", "貂山", "賽道分析", "GPX", "越野跑", "坡度", "台灣越野", "熱負荷", "氣象"],
+      "priority": 2,
+      "excerpt": "GPX 軌跡 × ASTER 30m 地形 × 2025/09/28 實際氣象拆解淘金越野 GT 20K：19.75 km、D+1,387m、雙波陡拉、貂山 642m 頂部、起跑體感 33°C。完整坡度分析、熱壓力評估、戰術與裝備建議。",
+      "createdAt": "2026-04-23T14:00:00.000Z",
+      "updatedAt": "2026-04-23T14:00:00.000Z",
+      "category": "越野",
+      "customHtml": true,
+      "hero": {
+        "url": "https://yrciou.github.io/sportsblog/assets/og-taojin-trail-20k.jpg",
+        "thumbUrl": "https://yrciou.github.io/sportsblog/assets/og-taojin-trail-20k.jpg",
+        "title": "2025 淘金越野 GT 20K 越野挑戰組賽道深度拆解",
+        "author": "YRCiou",
+        "sourceUrl": "https://yrciou.github.io/sportsblog/posts/taojin-trail-20k/",
+        "license": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      }
+    },
+    {
       "slug": "zhaocha-trail-12k",
       "title": "賽道分析：2026 找茶越野 12K（採茶組）",
       "author": "YRCiou",
