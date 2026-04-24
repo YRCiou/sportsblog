@@ -742,6 +742,10 @@ img { max-width: 100%; height: auto; display: block; }
 [data-theme="dark"] .stat-lbl   { color: #94a3b8; }
 [data-theme="dark"] .stat-src   { color: #64748b; }
 
+/* 表格內標籤色 */
+[data-theme="dark"] .tag-worst { color: #f87171; }
+[data-theme="dark"] .tag-best  { color: #4ade80; }
+
 /* 表格（共用 .data-table）*/
 [data-theme="dark"] .table-scroll                         { border-color: #334155; }
 [data-theme="dark"] .data-table tbody td                  { color: #cbd5e1; border-color: #2d3f52; }
