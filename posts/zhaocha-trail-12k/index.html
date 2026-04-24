@@ -81,6 +81,10 @@
       gap: .75rem;
       margin: 1.3rem 0 1.5rem;
     }
+    /* 固定三欄等寬：用於坡度變化率等 3 個數據的小格 */
+    .stat-grid--3col {
+      grid-template-columns: repeat(3, 1fr);
+    }
     .stat-card {
       background: #fff;
       border: 1px solid #e2e8f0;
@@ -90,6 +94,8 @@
     }
     .stat-card .label { font-size: .75rem; color: #64748b; letter-spacing: .04em; }
     .stat-card .value { font-size: clamp(1.55rem, 3.2vw, 2.4rem); font-weight: 800; color: #0f172a; margin-top: .2rem; line-height: 1.15; word-break: break-word; }
+    /* 三欄等寬格內字體與 vw 連動，確保長字串（如 6.9–7.9 km）不斷行 */
+    .stat-grid--3col .stat-card .value { font-size: clamp(0.95rem, 2.2vw, 1.75rem); white-space: nowrap; overflow: hidden; word-break: normal; }
     .stat-card .unit  { font-size: .85rem; color: #64748b; margin-left: .15rem; }
     .stat-card.accent-blue  .value { color: #2563eb; }
     .stat-card.accent-amber .value { color: #d97706; }
@@ -524,7 +530,7 @@
           我們計算全段坡度的標準差來量化「路面穩定度」：
         </p>
 
-        <div class="stat-grid">
+        <div class="stat-grid stat-grid--3col">
           <div class="stat-card">
             <div class="label">平均坡度（°）</div>
             <div class="value">+0.18</div>
