@@ -730,7 +730,15 @@ img { max-width: 100%; height: auto; display: block; }
 [data-theme="dark"] .warn-box a               { color: #f87171; }
 
 /* KPI stat 卡片 */
-[data-theme="dark"] .stat-card  { background: #1e293b; border-color: #334155; }
+[data-theme="dark"] .stat-card                      { background: #1e293b; border-color: #334155; }
+[data-theme="dark"] .stat-card .label               { color: #94a3b8; }
+[data-theme="dark"] .stat-card .value               { color: #e2e8f0; }
+[data-theme="dark"] .stat-card .unit                { color: #94a3b8; }
+[data-theme="dark"] .stat-card.accent-blue   .value { color: #60a5fa; }
+[data-theme="dark"] .stat-card.accent-amber  .value { color: #fbbf24; }
+[data-theme="dark"] .stat-card.accent-green  .value { color: #4ade80; }
+[data-theme="dark"] .stat-card.accent-red    .value { color: #f87171; }
+[data-theme="dark"] .stat-card.accent-orange .value { color: #fb923c; }
 [data-theme="dark"] .stat-lbl   { color: #94a3b8; }
 [data-theme="dark"] .stat-src   { color: #64748b; }
 
