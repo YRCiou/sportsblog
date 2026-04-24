@@ -717,8 +717,17 @@ img { max-width: 100%; height: auto; display: block; }
 /* section-title、lead、insight/warn box（所有文章共用）*/
 [data-theme="dark"] .section-title            { color: #e2e8f0; border-color: var(--c-accent); }
 [data-theme="dark"] .lead                     { background: #0c1f35; color: #cbd5e1; border-left-color: #38bdf8; }
-[data-theme="dark"] .insight-box              { background: #0a2219; color: #86efac; border-left-color: #22c55e; }
-[data-theme="dark"] .warn-box                 { background: #1c1506; color: #fde68a; border-left-color: #f59e0b; }
+[data-theme="dark"] .insight-box              { background: #0c1a35; color: #bfdbfe; border-color: #3b82f6; }
+[data-theme="dark"] .insight-box h3           { color: #93c5fd; }
+[data-theme="dark"] .insight-box strong       { color: #93c5fd; }
+[data-theme="dark"] .insight-box a            { color: #38bdf8; }
+[data-theme="dark"] .tactical-box             { background: #052e16; color: #bbf7d0; border-color: #16a34a; }
+[data-theme="dark"] .tactical-box h3          { color: #86efac; }
+[data-theme="dark"] .tactical-box strong      { color: #86efac; }
+[data-theme="dark"] .tactical-box a           { color: #4ade80; }
+[data-theme="dark"] .warn-box                 { background: #1c0505; color: #fecaca; border-color: #ef4444; }
+[data-theme="dark"] .warn-box strong          { color: #fca5a5; }
+[data-theme="dark"] .warn-box a               { color: #f87171; }
 
 /* KPI stat 卡片 */
 [data-theme="dark"] .stat-card  { background: #1e293b; border-color: #334155; }
