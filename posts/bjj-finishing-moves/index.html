@@ -107,7 +107,7 @@
     /* ── KPI 統計卡片 ───────────────────────────────── */
     .stat-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(min(140px, 100%), 1fr));
       gap: .75rem;
       margin: 1.5rem 0 2rem;
     }
@@ -115,19 +115,27 @@
       background: #fff;
       border: 1.5px solid #e2e8f0;
       border-radius: 12px;
-      padding: .85rem 1rem;
+      padding: .85rem .75rem;
       text-align: center;
       box-shadow: 0 2px 8px rgba(0,0,0,.05);
+      min-width: 0;       /* 允許縮到比 min-content 還窄，避免欄寬不等 */
+      overflow: hidden;   /* 防止子元素強行撐開 */
     }
     .stat-val {
       display: block;
-      font-size: clamp(1.9rem, 3.8vw, 2.4rem);
+      font-size: clamp(1.5rem, 3.6vw, 2.4rem);
       font-weight: 800;
       color: #2563eb;
       line-height: 1.15;
+      word-break: keep-all;
+      overflow-wrap: anywhere;
     }
-    .stat-lbl { font-size: .8rem; color: #64748b; margin-top: .3rem; line-height: 1.5; }
-    .stat-src { font-size: .72rem; color: #94a3b8; margin-top: .4rem; }
+    .stat-lbl { font-size: .78rem; color: #64748b; margin-top: .35rem; line-height: 1.5; word-break: break-word; }
+    .stat-src { font-size: .7rem; color: #94a3b8; margin-top: .35rem; word-break: break-word; }
+    [data-theme="dark"] .stat-card { background: #1e293b; border-color: #334155; }
+    [data-theme="dark"] .stat-val   { color: #93c5fd; }       /* 深色背景用淺藍 */
+    [data-theme="dark"] .stat-lbl   { color: #cbd5e1; }
+    [data-theme="dark"] .stat-src   { color: #94a3b8; }
 
     /* ── 表格（可橫向滑動）─────────────────────────── */
     .table-scroll {
@@ -310,10 +318,32 @@
 
     /* ── RWD ───────────────────────────────────────── */
     @media (max-width: 640px) {
-      .stat-grid  { grid-template-columns: repeat(2, 1fr); }
-      .tech-grid  { grid-template-columns: repeat(2, 1fr); }
+      .stat-grid  { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .5rem; }
+      .tech-grid  { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .section-title { font-size: 1.2rem; }
+      .stat-card  { padding: .7rem .55rem; }
+      .stat-val   { font-size: clamp(1.35rem, 6vw, 1.85rem); }
+      .stat-lbl   { font-size: .72rem; }
+      .stat-src   { font-size: .66rem; }
     }
+    @media (max-width: 380px) {
+      .stat-grid  { grid-template-columns: 1fr; }
+    }
+
+    /* ── 深色模式：所有藍色文字改為淺色 ─────────────── */
+    [data-theme="dark"] .tc-pct       { color: #93c5fd; }
+    [data-theme="dark"] .pred-val     { color: #93c5fd; }
+    [data-theme="dark"] .tech-card    { background: #1e293b; border-color: #334155; }
+    [data-theme="dark"] .tc-name-zh   { color: #e2e8f0; }
+    [data-theme="dark"] .tc-name-en   { color: #94a3b8; }
+    [data-theme="dark"] .tc-desc      { color: #cbd5e1; }
+    [data-theme="dark"] .formula-box  { background: #1e293b; border-color: #334155; color: #bfdbfe; }
+    [data-theme="dark"] .pred-name    { color: #e2e8f0; }
+    [data-theme="dark"] .pred-bar-wrap{ background: #334155; }
+    [data-theme="dark"] .pred-list li { border-bottom-color: #334155; }
+    [data-theme="dark"] .ref-list     { color: #cbd5e1; }
+    [data-theme="dark"] .ref-list a   { color: #93c5fd; }
+    [data-theme="dark"] .toggle-btn.active { background: #3b82f6; border-color: #3b82f6; }
   </style>
 </head>
 <body>
