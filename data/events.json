@@ -1,5 +1,5 @@
 {
-  "updated": "2026-04-24T19:43:00.037Z",
+  "updated": "2026-04-25T19:37:08.015Z",
   "source": "utmb.world + travelpayouts.com",
   "events": [
     {
@@ -68,7 +68,7 @@
       "utmbUrl": "https://utmb.world/utmb-world-series-events",
       "flightPrice": 8894,
       "flightCurrency": "TWD",
-      "flightUpdated": "2026-04-24T19:42:45.718Z",
+      "flightUpdated": "2026-04-25T19:36:57.086Z",
       "flightUrl": "https://www.skyscanner.com.tw/transport/flights/tpe/bkk/260427/260505/?adults=1&cabinclass=economy"
     },
     {
@@ -135,7 +135,7 @@
       "lng": 150.3115,
       "nearestAirport": "SYD",
       "utmbUrl": "https://utmb.world/utmb-world-series-events",
-      "flightPrice": 18321,
+      "flightPrice": null,
       "flightCurrency": "TWD",
       "flightUpdated": "2026-04-17T19:50:32.590Z",
       "isMajor": true,
