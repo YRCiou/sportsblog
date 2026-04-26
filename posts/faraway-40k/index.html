@@ -57,6 +57,10 @@
 
   <link rel="stylesheet" href="assets/style.css">
   <style>
+    /* 防止寬表格／canvas 撐爆手機橫向 viewport（iOS Safari） */
+    html, body { overflow-x: hidden; }
+    body { overflow-x: clip; }
+
     .section-title {
       font-size: 1.45rem;
       font-weight: 700;

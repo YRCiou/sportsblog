@@ -40,6 +40,8 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  overflow-x: hidden;       /* 舊版瀏覽器 fallback */
+  overflow-x: clip;         /* iOS 16+ / 現代瀏覽器：不破壞 position: sticky */
 }
 main { flex: 1; }
 a { color: var(--c-accent); text-decoration: none; }
