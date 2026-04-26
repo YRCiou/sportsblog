@@ -342,6 +342,18 @@ img { max-width: 100%; height: auto; display: block; }
   color: var(--c-text);
 }
 
+/* ── 通用 .lead 引言（文章頁 inline style 會覆寫，首頁用此全局樣式）*/
+.lead {
+  font-size: 1.1rem;
+  color: #475569;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  padding: 1rem 1.25rem;
+  background: #f0f9ff;
+  border-left: 4px solid #38bdf8;
+  border-radius: 0 8px 8px 0;
+}
+
 /* ── 文章內容 ────────────────────────────────────────────── */
 .article-content {
   font-family: var(--font-serif);
