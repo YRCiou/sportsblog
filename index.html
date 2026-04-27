@@ -163,10 +163,10 @@
         YR 運動研究室
       </a>
       <nav class="header-tabs" id="categoryTabs">
-        <button class="tab-btn active" data-cat="all">全部</button>
-        <button class="tab-btn" data-cat="越野">越野</button>
-        <button class="tab-btn" data-cat="巴柔">巴柔</button>
-        <button class="tab-btn" data-cat="舉重">舉重</button>
+        <a class="tab-btn active" href="./">全部</a>
+        <a class="tab-btn" href="./trail-running/">越野</a>
+        <a class="tab-btn" href="./bjj/">巴柔</a>
+        <a class="tab-btn" href="./weightlifting/">舉重</a>
       </nav>
       <div class="header-spacer"></div>
       <div class="site-stats">總瀏覽：<span class="view-count-display">…</span></div>
@@ -209,17 +209,7 @@
   <main>
     <div class="container index-main">
 
-      <p class="lead">YR 運動研究室整合 <strong>GPX 軌跡 × 氣象實況 × 學術文獻</strong>，深度拆解台灣越野跑賽道（發發爾衛、淘金越野、找茶越野）與 UTMB 世界系列賽策略，以及巴柔（BJJ）運動科學——致勝招式演進統計與腳趾傷害完全預防指南。所有分析整合 <a href="https://open-meteo.com" target="_blank" rel="noopener">Open-Meteo</a> 歷史氣象與 <a href="https://pubmed.ncbi.nlm.nih.gov" target="_blank" rel="noopener">PubMed</a> 學術資料。</p>
-
-      <h2 class="section-title">越野跑 GPX 賽道分析</h2>
-      <p class="category-intro">
-        以 GPX 軌跡結合 ASTER 30m 數值地形，拆解每公里坡度、可跑性分佈、CP 體感係數與撤退路徑。搭配 <a href="https://open-meteo.com" target="_blank" rel="noopener">Open-Meteo</a> 歷史氣象還原比賽當日實況，提供具體的配速策略與裝備建議。目前收錄台灣賽事：<strong>發發爾衛 Far Away 40K、淘金越野 GT 30K／20K、找茶越野 12K</strong>，以及 <strong>UTMB 世界系列賽行事曆與抽籤深度分析</strong>。
-      </p>
-
-      <h2 class="section-title">巴柔 BJJ 運動科學</h2>
-      <p class="category-intro">
-        整合 <a href="https://pubmed.ncbi.nlm.nih.gov" target="_blank" rel="noopener">PubMed</a> 學術文獻與 IBJJF／ASJJF 歷年賽事數據，分析 <strong>GI 有道袍 × No-GI 無道袍</strong> 致勝招式演進趨勢（2002–2025），並系統性拆解腳趾傷害機制、統計與預防貼紮策略。每篇文章均附互動圖表與蒙地卡羅模擬工具。
-      </p>
+      <p class="lead" style="margin-top:1.5rem;">運動很開心，但訓練很累，所以要找相對輕鬆的路徑。</p>
 
       <div class="index-header">
         <h2 class="section-title" style="margin:0;border-bottom:none;">全部文章</h2>
@@ -252,7 +242,7 @@
           <h2 class="card-title">賽道分析：2025 淘金越野 GT 30K 越野競賽組</h2>
           <div class="card-meta">
             <span class="card-author">✍ YRCiou</span>
-            <span class="card-date">🗓 2026/04/23</span>
+            <span class="card-date">🗓 2026/04/24</span>
           </div>
           <p class="card-excerpt">GPX 軌跡 × ASTER 30m 地形 × 2025/09/28 實際氣象拆解淘金越野 GT 30K：30.36 km、D+2,446m、垂直爬升比 80.6 m/km 重山系。四段地獄結構、CP3 後最後一刀 532m 再爬升，完整坡度分析、熱壓力評估、戰術與裝備建議。</p>
           <div class="card-footer">
@@ -394,23 +384,6 @@
   </script>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
   <script src="assets/blog.js"></script>
-  <script>
-    // 頁籤過濾
-    document.querySelectorAll('#categoryTabs .tab-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        document.querySelectorAll('#categoryTabs .tab-btn').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        const cat = btn.dataset.cat;
-        let visibleCount = 0;
-        document.querySelectorAll('.post-card').forEach(card => {
-          const match = cat === 'all' || card.dataset.category === cat;
-          card.style.display = match ? '' : 'none';
-          if (match) visibleCount++;
-        });
-        document.querySelector('.post-count').textContent = visibleCount + ' 篇';
-      });
-    });
-  </script>
   <script src="assets/search.js"></script>
   <script src="assets/theme.js"></script>
 </body>

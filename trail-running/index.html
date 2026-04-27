@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>越野跑賽道分析｜YR 運動研究室</title>
+  <meta name="description" content="GPX 軌跡 × 海拔地形 × 氣象實況，深度拆解越野跑賽道：發發爾衛、淘金越野、找茶越野、UTMB 世界系列賽。">
+  <link rel="canonical" href="https://yrciou.github.io/sportsblog/trail-running/">
+  <base href="/sportsblog/">
+  <link rel="shortcut icon" type="image/x-icon"     href="https://yrciou.github.io/sportsblog/favicon.ico">
+  <link rel="icon" type="image/png" sizes="192x192" href="https://yrciou.github.io/sportsblog/assets/favicon-192.png">
+  <link rel="icon" type="image/png" sizes="48x48"  href="https://yrciou.github.io/sportsblog/assets/favicon-48.png">
+  <link rel="icon" type="image/png" sizes="32x32"  href="https://yrciou.github.io/sportsblog/assets/favicon-32.png">
+  <link rel="icon" type="image/svg+xml"             href="https://yrciou.github.io/sportsblog/assets/favicon.svg">
+  <link rel="apple-touch-icon"                      href="https://yrciou.github.io/sportsblog/assets/favicon-192.png">
+  <meta property="og:type"        content="website">
+  <meta property="og:site_name"   content="YR 運動研究室">
+  <meta property="og:title"       content="越野跑賽道分析｜YR 運動研究室">
+  <meta property="og:description" content="GPX 軌跡 × 海拔地形 × 氣象實況，深度拆解越野跑賽道：發發爾衛、淘金越野、找茶越野、UTMB 世界系列賽。">
+  <meta property="og:url"         content="https://yrciou.github.io/sportsblog/trail-running/">
+  <meta property="og:locale"      content="zh_TW">
+  <meta property="og:image"       content="https://yrciou.github.io/sportsblog/assets/og-homepage.jpg">
+  <script>!function(){var t=localStorage.getItem('yr-theme')||(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.setAttribute('data-theme',t)}()</script>
+  <link rel="stylesheet" href="assets/style.css">
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-5FJGQZJ9');</script>
+  <!-- Microsoft Clarity -->
+  <script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y)})(window,document,"clarity","script","wi4b768wc3");</script>
+</head>
+<body>
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5FJGQZJ9"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <header class="site-header">
+    <div class="container">
+      <a class="site-title" href="../">
+        <img src="assets/favicon.svg" class="site-logo" alt="YR 運動研究室">
+        YR 運動研究室
+      </a>
+      <nav class="header-tabs" id="categoryTabs">
+        <a class="tab-btn" href="../">全部</a>
+        <a class="tab-btn active" href="../trail-running/">越野</a>
+        <a class="tab-btn" href="../bjj/">巴柔</a>
+        <a class="tab-btn" href="../weightlifting/">舉重</a>
+      </nav>
+      <div class="header-spacer"></div>
+      <div class="site-stats">總瀏覽：<span class="view-count-display">…</span></div>
+      <button class="theme-toggle" id="themeToggle" aria-label="切換深色/淺色模式">
+        <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg class="icon-sun"  width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      </button>
+      <button class="search-toggle" id="searchToggle" aria-label="搜尋文章">
+        <svg class="search-icon-svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      </button>
+    </div>
+  </header>
+  <div class="search-panel" id="searchPanel">
+    <div class="container">
+      <div class="search-input-row">
+        <svg class="search-icon-svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="text" id="searchInput" class="search-input" placeholder="請輸入關鍵字" autocomplete="off">
+        <button class="search-close-btn" id="searchClose" aria-label="關閉">✕</button>
+      </div>
+      <div class="search-results" id="searchResults"></div>
+    </div>
+  </div>
+
+  <main>
+    <div class="container index-main">
+      <div class="index-header" style="margin-top:2rem;">
+        <h2 class="section-title" style="margin:0;border-bottom:none;">越野跑文章</h2>
+        <span class="post-count">6 篇</span>
+      </div>
+      <div class="cards-grid">
+    <article class="post-card" data-slug="faraway-40k" data-category="越野">
+      <a href="../posts/faraway-40k/" class="card-link">
+        <div class="card-image"><img src="https://yrciou.github.io/sportsblog/assets/og-faraway-40k.jpg" alt="賽道分析：2025 發發爾衛 Far Away 40K" loading="lazy" style="object-position: left center"></div>
+        <div class="card-body">
+          <h2 class="card-title">賽道分析：2025 發發爾衛 Far Away 40K</h2>
+          <div class="card-meta">
+            <span class="card-author">✍ YRCiou</span>
+            <span class="card-date">🗓 2026/04/24</span>
+          </div>
+          <p class="card-excerpt">以 GPX × ASTER 地形 × 2025/03/01 實際氣象拆解 Far Away 40K：43.39 km、D+2,793 m、最高 1,760 m、垂直爬升比 64.4 m/km 準重山系。屋我尾山手腳並用 67% 陡拉、4 座大小王、完整坡度／氣象／撤退／裝備戰術全拆解。</p>
+          <div class="card-footer">
+            <span class="card-views">👁 <span class="view-count-display" data-slug="faraway-40k">–</span></span>
+          </div>
+        </div>
+      </a>
+    </article>
+
+    <article class="post-card" data-slug="taojin-trail-30k" data-category="越野">
+      <a href="../posts/taojin-trail-30k/" class="card-link">
+        <div class="card-image"><img src="https://yrciou.github.io/sportsblog/assets/og-taojin-trail-30k.jpg" alt="賽道分析：2025 淘金越野 GT 30K 越野競賽組" loading="lazy" style="object-position: left center"></div>
+        <div class="card-body">
+          <h2 class="card-title">賽道分析：2025 淘金越野 GT 30K 越野競賽組</h2>
+          <div class="card-meta">
+            <span class="card-author">✍ YRCiou</span>
+            <span class="card-date">🗓 2026/04/24</span>
+          </div>
+          <p class="card-excerpt">GPX 軌跡 × ASTER 30m 地形 × 2025/09/28 實際氣象拆解淘金越野 GT 30K：30.36 km、D+2,446m、垂直爬升比 80.6 m/km 重山系。四段地獄結構、CP3 後最後一刀 532m 再爬升，完整坡度分析、熱壓力評估、戰術與裝備建議。</p>
+          <div class="card-footer">
+            <span class="card-views">👁 <span class="view-count-display" data-slug="taojin-trail-30k">–</span></span>
+          </div>
+        </div>
+      </a>
+    </article>
+
+    <article class="post-card" data-slug="taojin-trail-20k" data-category="越野">
+      <a href="../posts/taojin-trail-20k/" class="card-link">
+        <div class="card-image"><img src="https://yrciou.github.io/sportsblog/assets/og-taojin-trail-20k.jpg" alt="賽道分析：2025 淘金越野 GT 20K 越野挑戰組" loading="lazy" style="object-position: left center"></div>
+        <div class="card-body">
+          <h2 class="card-title">賽道分析：2025 淘金越野 GT 20K 越野挑戰組</h2>
+          <div class="card-meta">
+            <span class="card-author">✍ YRCiou</span>
+            <span class="card-date">🗓 2026/04/23</span>
+          </div>
+          <p class="card-excerpt">GPX 軌跡 × ASTER 30m 地形 × 2025/09/28 實際氣象拆解淘金越野 GT 20K：19.75 km、D+1,387m、雙波陡拉、貂山 642m 頂部、起跑體感 33°C。完整坡度分析、熱壓力評估、戰術與裝備建議。</p>
+          <div class="card-footer">
+            <span class="card-views">👁 <span class="view-count-display" data-slug="taojin-trail-20k">–</span></span>
+          </div>
+        </div>
+      </a>
+    </article>
+
+    <article class="post-card" data-slug="zhaocha-trail-12k" data-category="越野">
+      <a href="../posts/zhaocha-trail-12k/" class="card-link">
+        <div class="card-image"><img src="https://yrciou.github.io/sportsblog/assets/og-zhaocha-12k.jpg" alt="賽道分析：2026 找茶越野 12K（採茶組）" loading="lazy" style="object-position: left center"></div>
+        <div class="card-body">
+          <h2 class="card-title">賽道分析：2026 找茶越野 12K（採茶組）</h2>
+          <div class="card-meta">
+            <span class="card-author">✍ YRCiou</span>
+            <span class="card-date">🗓 2026/04/23</span>
+          </div>
+          <p class="card-excerpt">用 GPX 軌跡 × ASTER 30m 數值地形，拆解 2026 找茶越野採茶組 12K 全貌：12.23 km、527 m D+、最高 589 m。坡度分佈、可跑性戰術、體感係數、撤退路徑與鞋款／補給建議一次給齊。</p>
+          <div class="card-footer">
+            <span class="card-views">👁 <span class="view-count-display" data-slug="zhaocha-trail-12k">–</span></span>
+          </div>
+        </div>
+      </a>
+    </article>
+
+    <article class="post-card" data-slug="utmb-world-events" data-category="越野">
+      <a href="../posts/utmb-world-events/" class="card-link">
+        <div class="card-image"><img src="assets/utmb-world-events-hero.svg" alt="UTMB 世界系列賽行事曆：賽事資訊 × 台灣出發機票" loading="lazy"></div>
+        <div class="card-body">
+          <h2 class="card-title">UTMB 世界系列賽行事曆：賽事資訊 × 台灣出發機票</h2>
+          <div class="card-meta">
+            <span class="card-author">✍ YRCiou</span>
+            <span class="card-date">🗓 2026/04/09</span>
+          </div>
+          <p class="card-excerpt">未來 10 個月所有 UTMB World Series 賽事一覽，每日自動更新從台灣出發的最低來回機票價格。支援日期排序、價格排序，以及世界地圖賽事定位。</p>
+          <div class="card-footer">
+            <span class="card-views">👁 <span class="view-count-display" data-slug="utmb-world-events">–</span></span>
+          </div>
+        </div>
+      </a>
+    </article>
+
+    <article class="post-card" data-slug="utmb-lottery-odds" data-category="越野">
+      <a href="../posts/utmb-lottery-odds/" class="card-link">
+        <div class="card-image"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/UTMB_2015_Starting_Line.jpg/1280px-UTMB_2015_Starting_Line.jpg" alt="UTMB 抽籤深度分析：哪個距離中籤率最高？" loading="lazy" style="object-position: center top"></div>
+        <div class="card-body">
+          <h2 class="card-title">UTMB 抽籤深度分析：哪個距離中籤率最高？</h2>
+          <div class="card-meta">
+            <span class="card-author">✍ YRCiou</span>
+            <span class="card-date">🗓 2026/04/08</span>
+          </div>
+          <p class="card-excerpt">深入分析 2023–2025 年官方抽籤數據，比較 UTMB、CCC、OCC 三大 Finals 中籤率。數據打破直覺：距離最短的 OCC 反而最難抽中，CCC 才是目前最佳選擇。內建蒙地卡羅模擬計算機，輸入跑石數立即估算你的機率。</p>
+          <div class="card-footer">
+            <span class="card-views">👁 <span class="view-count-display" data-slug="utmb-lottery-odds">–</span></span>
+          </div>
+        </div>
+      </a>
+    </article>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p class="footer-copy">© 2026 YR 運動研究室</p>
+    </div>
+  </footer>
+
+  <script>
+    window.SUPABASE_URL      = "https://cpzdyivdciglbhznrlkl.supabase.co";
+    window.SUPABASE_ANON_KEY = "sb_publishable_Z_xBTGqVA_YDMdq45Ks9Zg_uPrLF2a0";
+    window.PAGE_SLUG         = 'category-trail-running';
+    window.PAGE_TITLE        = "越野跑賽道分析｜YR 運動研究室";
+    window.IS_INDEX          = true;
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+  <script src="assets/blog.js"></script>
+  <script src="assets/search.js"></script>
+  <script src="assets/theme.js"></script>
+</body>
+</html>
