@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0a1628"/>
+      <stop offset="55%" stop-color="#0f2040"/>
+      <stop offset="100%" stop-color="#0c1a35"/>
+    </linearGradient>
+    <linearGradient id="accentLine" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#3b82f6" stop-opacity="0"/>
+      <stop offset="30%" stop-color="#3b82f6"/>
+      <stop offset="70%" stop-color="#22d3ee"/>
+      <stop offset="100%" stop-color="#22d3ee" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="mountainGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1e3a5f" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#0a1628" stop-opacity="0.4"/>
+    </linearGradient>
+    <linearGradient id="mountain2Grad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#152d4a" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#0a1628" stop-opacity="0.3"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bgGrad)"/>
+
+  <!-- Stars (decorative dots) -->
+  <circle cx="120" cy="80" r="1.5" fill="#e2e8f0" opacity="0.4"/>
+  <circle cx="240" cy="50" r="1" fill="#e2e8f0" opacity="0.3"/>
+  <circle cx="380" cy="95" r="1.5" fill="#e2e8f0" opacity="0.5"/>
+  <circle cx="520" cy="40" r="1" fill="#e2e8f0" opacity="0.3"/>
+  <circle cx="680" cy="70" r="2" fill="#e2e8f0" opacity="0.4"/>
+  <circle cx="820" cy="45" r="1.5" fill="#e2e8f0" opacity="0.35"/>
+  <circle cx="950" cy="85" r="1" fill="#e2e8f0" opacity="0.3"/>
+  <circle cx="1080" cy="55" r="2" fill="#e2e8f0" opacity="0.4"/>
+  <circle cx="160" cy="140" r="1" fill="#e2e8f0" opacity="0.25"/>
+  <circle cx="750" cy="120" r="1.5" fill="#e2e8f0" opacity="0.3"/>
+
+  <!-- Mountain silhouette (background, far) -->
+  <polygon points="0,420 150,220 300,320 450,180 600,280 750,160 900,260 1050,200 1200,300 1200,630 0,630"
+           fill="url(#mountain2Grad)"/>
+
+  <!-- Mountain silhouette (foreground) -->
+  <polygon points="0,500 200,320 350,420 500,250 650,350 800,240 950,360 1100,290 1200,380 1200,630 0,630"
+           fill="url(#mountainGrad)"/>
+
+  <!-- Accent line -->
+  <line x1="0" y1="420" x2="1200" y2="420" stroke="url(#accentLine)" stroke-width="1.5" opacity="0.6"/>
+
+  <!-- Main title -->
+  <text x="600" y="230" text-anchor="middle"
+        font-family="'Noto Serif TC', 'Source Han Serif TC', Georgia, serif"
+        font-size="100" font-weight="700" letter-spacing="12"
+        fill="#f1f5f9">YR 運動研究室</text>
+
+  <!-- Accent underline below title -->
+  <rect x="440" y="248" width="320" height="3" rx="2" fill="url(#accentLine)" opacity="0.8"/>
+
+  <!-- Subtitle -->
+  <text x="600" y="310" text-anchor="middle"
+        font-family="'Noto Sans TC', 'Source Han Sans TC', Arial, sans-serif"
+        font-size="30" font-weight="400" letter-spacing="4"
+        fill="#94a3b8">越野跑賽道深度分析 × 巴柔運動科學 × UTMB 抽籤策略</text>
+
+  <!-- Keyword tags row -->
+  <!-- Tag 1: GPX軌跡 -->
+  <rect x="222" y="345" width="130" height="36" rx="18" fill="none" stroke="#3b82f6" stroke-width="1.5" opacity="0.7"/>
+  <text x="287" y="368" text-anchor="middle"
+        font-family="Arial, sans-serif" font-size="18" fill="#60a5fa">GPX 軌跡</text>
+
+  <!-- Tag 2: PubMed學術 -->
+  <rect x="370" y="345" width="140" height="36" rx="18" fill="none" stroke="#22d3ee" stroke-width="1.5" opacity="0.7"/>
+  <text x="440" y="368" text-anchor="middle"
+        font-family="Arial, sans-serif" font-size="18" fill="#67e8f9">PubMed 學術</text>
+
+  <!-- Tag 3: 氣象實況 -->
+  <rect x="528" y="345" width="130" height="36" rx="18" fill="none" stroke="#38bdf8" stroke-width="1.5" opacity="0.7"/>
+  <text x="593" y="368" text-anchor="middle"
+        font-family="Arial, sans-serif" font-size="18" fill="#7dd3fc">氣象實況</text>
+
+  <!-- Tag 4: UTMB抽籤 -->
+  <rect x="676" y="345" width="130" height="36" rx="18" fill="none" stroke="#3b82f6" stroke-width="1.5" opacity="0.7"/>
+  <text x="741" y="368" text-anchor="middle"
+        font-family="Arial, sans-serif" font-size="18" fill="#60a5fa">UTMB 抽籤</text>
+
+  <!-- Tag 5: BJJ傷害 -->
+  <rect x="824" y="345" width="130" height="36" rx="18" fill="none" stroke="#22d3ee" stroke-width="1.5" opacity="0.7"/>
+  <text x="889" y="368" text-anchor="middle"
+        font-family="Arial, sans-serif" font-size="18" fill="#67e8f9">BJJ 傷害</text>
+
+  <!-- URL label -->
+  <text x="600" y="510" text-anchor="middle"
+        font-family="'Courier New', monospace"
+        font-size="22" letter-spacing="2"
+        fill="#475569">yrciou.github.io / sportsblog</text>
+</svg>

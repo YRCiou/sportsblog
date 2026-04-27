@@ -15,30 +15,113 @@
   <link rel="apple-touch-icon"                      href="https://yrciou.github.io/sportsblog/assets/favicon-192.png">
   <meta property="og:type"        content="website">
   <meta property="og:site_name"   content="YR 運動研究室">
-  <meta property="og:title"       content="YR 運動研究室">
-  <meta property="og:description" content="YR 運動研究室 — 越野跑研究、賽事分析與訓練筆記">
+  <meta property="og:title"       content="YR 運動研究室 — 越野跑 × 巴柔 × 運動科學深度分析">
+  <meta property="og:description" content="整合 GPX 軌跡、氣象實況與 PubMed 學術文獻，深度分析台灣越野跑賽道（發發爾衛、淘金越野、找茶越野）、UTMB 抽籤策略，以及巴柔 BJJ 致勝招式演進與傷害預防。">
   <meta property="og:url"         content="https://yrciou.github.io/sportsblog/">
   <meta property="og:locale"      content="zh_TW">
-  <meta property="og:image"            content="https://yrciou.github.io/sportsblog/assets/og-utmb.jpg">
-  <meta property="og:image:secure_url" content="https://yrciou.github.io/sportsblog/assets/og-utmb.jpg">
+  <meta property="og:image"            content="https://yrciou.github.io/sportsblog/assets/og-homepage.jpg">
+  <meta property="og:image:secure_url" content="https://yrciou.github.io/sportsblog/assets/og-homepage.jpg">
   <meta property="og:image:width"      content="1200">
   <meta property="og:image:height"     content="630">
   <meta property="og:image:type"       content="image/jpeg">
-  <meta property="og:image:alt"        content="YR 運動研究室 — 越野跑 × 巴柔 × 運動科學">
+  <meta property="og:image:alt"        content="YR 運動研究室 — 越野跑賽道深度分析 × 巴柔運動科學 × UTMB 抽籤策略">
   <meta name="twitter:card"        content="summary_large_image">
-  <meta name="twitter:title"       content="YR 運動研究室 — 越野跑 × 巴柔 × 運動科學">
-  <meta name="twitter:description" content="越野跑賽事深度分析（UTMB 抽籤中籤率、世界系列賽行事曆）與巴柔運動科學（BJJ 致勝招式統計、腳趾傷害預防），整合 PubMed 學術文獻與官方賽事數據。">
-  <meta name="twitter:image"       content="https://yrciou.github.io/sportsblog/assets/og-utmb.jpg">
+  <meta name="twitter:title"       content="YR 運動研究室 — 越野跑 × 巴柔 × 運動科學深度分析">
+  <meta name="twitter:description" content="整合 GPX 軌跡、氣象實況與 PubMed 學術文獻，深度分析台灣越野跑賽道與 UTMB 抽籤策略，以及巴柔 BJJ 致勝招式統計與傷害預防。">
+  <meta name="twitter:image"       content="https://yrciou.github.io/sportsblog/assets/og-homepage.jpg">
   <!-- 防閃白：在 CSS 載入前即設定主題 -->
   <script>!function(){var t=localStorage.getItem('yr-theme')||(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.setAttribute('data-theme',t)}()</script>
   <link rel="stylesheet" href="assets/style.css">
+  <style>
+    /* ── 首頁 Hero Banner ───────────────────────── */
+    .home-hero {
+      background: linear-gradient(135deg, #0a1628 0%, #0f2040 55%, #0c1a35 100%);
+      padding: 3.5rem 0 3rem;
+      text-align: center;
+      border-bottom: 1px solid #1e293b;
+      position: relative;
+      overflow: hidden;
+    }
+    .home-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url('assets/og-homepage.svg') center/cover no-repeat;
+      opacity: 0.12;
+      pointer-events: none;
+    }
+    .home-hero-inner { position: relative; z-index: 1; }
+    .home-hero-title {
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 800;
+      color: #f1f5f9;
+      margin: 0 0 .6rem;
+      letter-spacing: .05em;
+    }
+    .home-hero-sub {
+      font-size: clamp(.95rem, 2vw, 1.2rem);
+      color: #94a3b8;
+      margin: 0 0 1.5rem;
+      letter-spacing: .03em;
+    }
+    .home-hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .55rem;
+      justify-content: center;
+    }
+    .home-hero-tags span {
+      background: rgba(34,211,238,.08);
+      border: 1px solid rgba(34,211,238,.35);
+      color: #67e8f9;
+      padding: .28rem .9rem;
+      border-radius: 999px;
+      font-size: .82rem;
+      font-weight: 500;
+      letter-spacing: .02em;
+    }
+    [data-theme="dark"] .home-hero { background: linear-gradient(135deg, #060d1a 0%, #0a1830 55%, #060f1e 100%); }
+
+    /* ── 分類介紹段落 ───────────────────────────── */
+    .category-intro {
+      background: #f0f9ff;
+      border-left: 4px solid #38bdf8;
+      border-radius: 0 8px 8px 0;
+      padding: .85rem 1.2rem;
+      margin: .6rem 0 2.2rem;
+      color: #475569;
+      font-size: .95rem;
+      line-height: 1.75;
+    }
+    [data-theme="dark"] .category-intro {
+      background: #0c1a2e;
+      color: #94a3b8;
+      border-left-color: #3b82f6;
+    }
+
+    /* ── 資料來源 ────────────────────────────────── */
+    .sources-list {
+      list-style: none;
+      padding: 0;
+      margin: .8rem 0 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: .5rem 1.5rem;
+    }
+    .sources-list li::before { content: '↗ '; color: #38bdf8; font-weight: 700; }
+    .sources-list li { font-size: .9rem; color: #64748b; }
+    .sources-list a { color: #2563eb; }
+    [data-theme="dark"] .sources-list a { color: #38bdf8; }
+  </style>
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Blog",
   "name": "YR 運動研究室",
-  "description": "越野跑賽事深度分析、巴柔傷害預防研究與訓練筆記。整合學術文獻與實戰數據。",
+  "description": "越野跑賽事深度分析、巴柔傷害預防研究與訓練筆記。整合 GPX 軌跡、氣象實況與 PubMed 學術文獻。",
   "url": "https://yrciou.github.io/sportsblog/",
+  "image": "https://yrciou.github.io/sportsblog/assets/og-homepage.jpg",
+  "dateModified": "2026-04-27",
   "publisher": {
     "@type": "Organization",
     "name": "YR 運動研究室",
@@ -107,14 +190,41 @@
     </div>
   </div>
 
+  <!-- ── 首頁 Hero Banner ── -->
+  <section class="home-hero">
+    <div class="container home-hero-inner">
+      <h1 class="home-hero-title">YR 運動研究室</h1>
+      <p class="home-hero-sub">越野跑賽道深度分析 × 巴柔運動科學 × UTMB 抽籤策略</p>
+      <div class="home-hero-tags">
+        <span>GPX 軌跡分析</span>
+        <span>PubMed 學術文獻</span>
+        <span>氣象實況整合</span>
+        <span>UTMB 抽籤機率</span>
+        <span>BJJ 傷害預防</span>
+        <span>坡度戰術拆解</span>
+      </div>
+    </div>
+  </section>
+
   <main>
     <div class="container index-main">
-      <div class="index-header">
-        <h1>所有文章</h1>
-        <span class="post-count">8 篇</span>
-      </div>
 
       <p class="lead">YR 運動研究室整合 <strong>GPX 軌跡 × 氣象實況 × 學術文獻</strong>，深度拆解台灣越野跑賽道（發發爾衛、淘金越野、找茶越野）與 UTMB 世界系列賽策略，以及巴柔（BJJ）運動科學——致勝招式演進統計與腳趾傷害完全預防指南。所有分析整合 <a href="https://open-meteo.com" target="_blank" rel="noopener">Open-Meteo</a> 歷史氣象與 <a href="https://pubmed.ncbi.nlm.nih.gov" target="_blank" rel="noopener">PubMed</a> 學術資料。</p>
+
+      <h2 class="section-title">越野跑 GPX 賽道分析</h2>
+      <p class="category-intro">
+        以 GPX 軌跡結合 ASTER 30m 數值地形，拆解每公里坡度、可跑性分佈、CP 體感係數與撤退路徑。搭配 <a href="https://open-meteo.com" target="_blank" rel="noopener">Open-Meteo</a> 歷史氣象還原比賽當日實況，提供具體的配速策略與裝備建議。目前收錄台灣賽事：<strong>發發爾衛 Far Away 40K、淘金越野 GT 30K／20K、找茶越野 12K</strong>，以及 <strong>UTMB 世界系列賽行事曆與抽籤深度分析</strong>。
+      </p>
+
+      <h2 class="section-title">巴柔 BJJ 運動科學</h2>
+      <p class="category-intro">
+        整合 <a href="https://pubmed.ncbi.nlm.nih.gov" target="_blank" rel="noopener">PubMed</a> 學術文獻與 IBJJF／ASJJF 歷年賽事數據，分析 <strong>GI 有道袍 × No-GI 無道袍</strong> 致勝招式演進趨勢（2002–2025），並系統性拆解腳趾傷害機制、統計與預防貼紮策略。每篇文章均附互動圖表與蒙地卡羅模擬工具。
+      </p>
+
+      <div class="index-header">
+        <h2 class="section-title" style="margin:0;border-bottom:none;">全部文章</h2>
+        <span class="post-count">8 篇</span>
+      </div>
 
       <div class="cards-grid">
 <!-- CARDS_START -->
@@ -255,6 +365,17 @@
     </article>
     <!-- CARDS_END -->
       </div>
+    </div>
+
+      <h2 class="section-title">資料來源與分析工具</h2>
+      <ul class="sources-list">
+        <li><a href="https://open-meteo.com" target="_blank" rel="noopener">Open-Meteo</a> — 歷史氣象封存資料（ERA5 再分析）</li>
+        <li><a href="https://pubmed.ncbi.nlm.nih.gov" target="_blank" rel="noopener">PubMed / NCBI</a> — 運動醫學學術文獻資料庫</li>
+        <li><a href="https://www.ibjjf.com" target="_blank" rel="noopener">IBJJF</a> — 國際巴西柔術聯合會官方賽事數據</li>
+        <li><a href="https://utmb.world" target="_blank" rel="noopener">UTMB World</a> — UTMB 世界系列賽官方資訊</li>
+        <li><a href="https://overpass-api.de" target="_blank" rel="noopener">OSM Overpass API</a> — 道路網路 GIS 資料（撤退路徑分析）</li>
+        <li><a href="https://asterweb.jpl.nasa.gov" target="_blank" rel="noopener">NASA ASTER GDEM</a> — 30m 數值地形高程模型</li>
+      </ul>
     </div>
   </main>
 
