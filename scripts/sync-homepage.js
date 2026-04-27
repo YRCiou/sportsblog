@@ -122,16 +122,19 @@ const categories = [
 
 function renderCategoryPage(cat) {
   const filtered = posts.filter(p => p.category === cat.label);
+  // 注意：分類頁也必須用 `./posts/` 因為 <base href="/sportsblog/"> 會把
+  // `../posts/` 解析成 `/posts/`（丟失 sportsblog）
   const cardsHtml = filtered.length
-    ? filtered.map(p => renderCard(p, '../posts/')).join('\n\n')
+    ? filtered.map(p => renderCard(p, './posts/')).join('\n\n')
     : '    <p style="grid-column: 1 / -1; color: #94a3b8; font-size: 1rem; padding: 2rem 0; text-align: center;">尚無文章，敬請期待。</p>';
 
-  // tab active state
+  // tab active state — 注意：<base href="/sportsblog/"> 會把 `../` 解析成 `/`，
+  // 所以這裡必須用 `./` 才能保留 `/sportsblog/` 前綴
   const tabHtml = `
-        <a class="tab-btn${cat.label === '__all__' ? ' active' : ''}" href="../">全部</a>
-        <a class="tab-btn${cat.slug === 'trail-running' ? ' active' : ''}" href="../trail-running/">越野</a>
-        <a class="tab-btn${cat.slug === 'bjj' ? ' active' : ''}" href="../bjj/">巴柔</a>
-        <a class="tab-btn${cat.slug === 'weightlifting' ? ' active' : ''}" href="../weightlifting/">舉重</a>`;
+        <a class="tab-btn${cat.label === '__all__' ? ' active' : ''}" href="./">全部</a>
+        <a class="tab-btn${cat.slug === 'trail-running' ? ' active' : ''}" href="./trail-running/">越野</a>
+        <a class="tab-btn${cat.slug === 'bjj' ? ' active' : ''}" href="./bjj/">巴柔</a>
+        <a class="tab-btn${cat.slug === 'weightlifting' ? ' active' : ''}" href="./weightlifting/">舉重</a>`;
 
   return `<!DOCTYPE html>
 <html lang="zh-TW">
@@ -171,7 +174,7 @@ function renderCategoryPage(cat) {
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <header class="site-header">
     <div class="container">
-      <a class="site-title" href="../">
+      <a class="site-title" href="./">
         <img src="assets/favicon.svg" class="site-logo" alt="YR 運動研究室">
         YR 運動研究室
       </a>
