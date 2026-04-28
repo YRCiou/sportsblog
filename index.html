@@ -35,20 +35,35 @@
   <style>
     /* ── 首頁 Hero Banner ───────────────────────── */
     .home-hero {
-      width: 100%;
-      line-height: 0;
+      position: relative;
       overflow: hidden;
-      border-bottom: 1px solid #1e293b;
+      line-height: 0;
+      border-bottom: 1px solid #0f172a;
+      background: #060d1a;
     }
+    /* 全幅背景：同張圖放大 + 模糊 + 壓暗，填滿左右空白 */
+    .home-hero::before {
+      content: '';
+      position: absolute;
+      inset: -40px;
+      background: url('assets/banner-hero.jpg') center top / cover no-repeat;
+      filter: blur(18px) brightness(0.35) saturate(0.7);
+      transform: scale(1.08);
+      z-index: 0;
+    }
+    /* 中央清晰圖：對齊 container（1320px） */
     .home-hero-img {
+      position: relative;
+      z-index: 1;
+      display: block;
       width: 100%;
-      height: auto;
+      max-width: 1320px;
       max-height: 560px;
       object-fit: cover;
       object-position: center top;
-      display: block;
+      margin: 0 auto;
     }
-    /* SEO 用 H1：視覺上隱藏但保留語意（無障礙設計標準） */
+    /* SEO 用 H1：視覺隱藏，保留語意 */
     .home-hero-title {
       position: absolute;
       width: 1px; height: 1px;
