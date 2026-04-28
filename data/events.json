@@ -1,5 +1,5 @@
 {
-  "updated": "2026-04-27T20:03:01.814Z",
+  "updated": "2026-04-28T20:08:55.193Z",
   "source": "utmb.world + travelpayouts.com",
   "events": [
     {
@@ -610,7 +610,7 @@
       "lng": -122.9574,
       "nearestAirport": "YVR",
       "utmbUrl": "https://utmb.world/utmb-world-series-events",
-      "flightPrice": 30537,
+      "flightPrice": null,
       "flightCurrency": "TWD",
       "flightUpdated": "2026-04-21T19:58:40.399Z",
       "flightUrl": "https://www.skyscanner.com.tw/transport/flights/tpe/yvr/260818/260825/?adults=1&cabinclass=economy"
