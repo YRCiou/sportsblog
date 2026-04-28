@@ -76,19 +76,6 @@
       border-left-color: #3b82f6;
     }
 
-    /* ── 資料來源 ────────────────────────────────── */
-    .sources-list {
-      list-style: none;
-      padding: 0;
-      margin: .8rem 0 0;
-      display: flex;
-      flex-wrap: wrap;
-      gap: .5rem 1.5rem;
-    }
-    .sources-list li::before { content: '↗ '; color: #38bdf8; font-weight: 700; }
-    .sources-list li { font-size: .9rem; color: #64748b; }
-    .sources-list a { color: #2563eb; }
-    [data-theme="dark"] .sources-list a { color: #38bdf8; }
   </style>
   <script type="application/ld+json">
 {
@@ -329,18 +316,6 @@
       </div>
     </div>
 
-      <h2 class="section-title">分析方法</h2>
-      <p class="category-intro">每篇文章以 <strong>GPX 軌跡 × ASTER 30m 數值地形 × Open-Meteo 歷史氣象</strong>三軸整合為基礎，搭配 PubMed 學術文獻與官方賽事數據，產出坡度分佈、可跑性評級、體感係數與撤退路徑分析。BJJ 系列文章整合 IBJJF 歷年比賽資料與 12 篇 PubMed 運動醫學文獻。</p>
-
-      <h2 class="section-title">資料來源與分析工具</h2>
-      <ul class="sources-list">
-        <li><a href="https://open-meteo.com" target="_blank" rel="noopener">Open-Meteo</a> — 歷史氣象封存資料（ERA5 再分析）</li>
-        <li><a href="https://pubmed.ncbi.nlm.nih.gov" target="_blank" rel="noopener">PubMed / NCBI</a> — 運動醫學學術文獻資料庫</li>
-        <li><a href="https://www.ibjjf.com" target="_blank" rel="noopener">IBJJF</a> — 國際巴西柔術聯合會官方賽事數據</li>
-        <li><a href="https://utmb.world" target="_blank" rel="noopener">UTMB World</a> — UTMB 世界系列賽官方資訊</li>
-        <li><a href="https://overpass-api.de" target="_blank" rel="noopener">OSM Overpass API</a> — 道路網路 GIS 資料（撤退路徑分析）</li>
-        <li><a href="https://asterweb.jpl.nasa.gov" target="_blank" rel="noopener">NASA ASTER GDEM</a> — 30m 數值地形高程模型</li>
-      </ul>
     </div>
   </main>
 
