@@ -35,52 +35,29 @@
   <style>
     /* ── 首頁 Hero Banner ───────────────────────── */
     .home-hero {
-      background: linear-gradient(135deg, #0a1628 0%, #0f2040 55%, #0c1a35 100%);
-      padding: 3.5rem 0 3rem;
-      text-align: center;
-      border-bottom: 1px solid #1e293b;
-      position: relative;
+      width: 100%;
+      line-height: 0;
       overflow: hidden;
+      border-bottom: 1px solid #1e293b;
     }
-    .home-hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: url('assets/hero-bg-dots.svg') center/cover no-repeat;
-      opacity: 0.55;
-      pointer-events: none;
+    .home-hero-img {
+      width: 100%;
+      height: auto;
+      max-height: 560px;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
     }
-    .home-hero-inner { position: relative; z-index: 1; }
+    /* SEO 用 H1：視覺上隱藏但保留語意（無障礙設計標準） */
     .home-hero-title {
-      font-size: clamp(2rem, 5vw, 3rem);
-      font-weight: 800;
-      color: #f1f5f9;
-      margin: 0 0 .6rem;
-      letter-spacing: .05em;
+      position: absolute;
+      width: 1px; height: 1px;
+      padding: 0; margin: -1px;
+      overflow: hidden;
+      clip: rect(0,0,0,0);
+      white-space: nowrap;
+      border: 0;
     }
-    .home-hero-sub {
-      font-size: clamp(.95rem, 2vw, 1.2rem);
-      color: #94a3b8;
-      margin: 0 0 1.5rem;
-      letter-spacing: .03em;
-    }
-    .home-hero-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: .55rem;
-      justify-content: center;
-    }
-    .home-hero-tags span {
-      background: rgba(34,211,238,.08);
-      border: 1px solid rgba(34,211,238,.35);
-      color: #67e8f9;
-      padding: .28rem .9rem;
-      border-radius: 999px;
-      font-size: .82rem;
-      font-weight: 500;
-      letter-spacing: .02em;
-    }
-    [data-theme="dark"] .home-hero { background: linear-gradient(135deg, #060d1a 0%, #0a1830 55%, #060f1e 100%); }
 
     /* ── 分類介紹段落 ───────────────────────────── */
     .category-intro {
@@ -193,18 +170,12 @@
 
   <!-- ── 首頁 Hero Banner ── -->
   <section class="home-hero">
-    <div class="container home-hero-inner">
-      <h1 class="home-hero-title">YR 運動研究室</h1>
-      <p class="home-hero-sub">越野跑賽道深度分析 × 巴柔運動科學 × UTMB 抽籤策略</p>
-      <div class="home-hero-tags">
-        <span>GPX 軌跡分析</span>
-        <span>PubMed 學術文獻</span>
-        <span>氣象實況整合</span>
-        <span>UTMB 抽籤機率</span>
-        <span>BJJ 傷害預防</span>
-        <span>坡度戰術拆解</span>
-      </div>
-    </div>
+    <h1 class="home-hero-title">YR 運動科學實驗室 — 越野跑 × 巴柔 × 運動科學深度分析</h1>
+    <img class="home-hero-img"
+         src="assets/banner-hero.jpg"
+         alt="YR 運動科學實驗室 — 越野跑賽道分析、巴柔運動科學、UTMB 抽籤策略"
+         loading="eager"
+         width="1440" height="800">
   </section>
 
   <main>
