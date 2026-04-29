@@ -842,24 +842,30 @@
 
     // --- 2. Slope histogram ---
     const edges = data.s.histEdges;
-    const labels = [];
-    for (let i = 0; i < edges.length - 1; i++) labels.push(edges[i] + '~' + edges[i + 1] + '%');
-    const colors = data.s.hist.map((_, i) => {
-      const mid = (edges[i] + edges[i + 1]) / 2;
-      if (mid < -15) return '#dc2626';
-      if (mid < -5)  return '#f97316';
-      if (mid < 0)   return '#fbbf24';
-      if (mid < 5)   return '#84cc16';
-      if (mid < 10)  return '#f59e0b';
-      if (mid < 20)  return '#ef4444';
-      return '#b91c1c';
-    });
+    const shortLabels = [], fullLabels = [];
+    for (let i = 0; i < edges.length - 1; i++) {
+      shortLabels.push(edges[i] + '~' + edges[i+1] + '%');
+      fullLabels.push(edges[i] + '% ~ ' + edges[i+1] + '%');
+    }
+    const slopeBg = mid => mid < -10 ? 'rgba(96,165,250,.40)' : mid < 0 ? 'rgba(147,197,253,.42)' : mid < 5 ? 'rgba(134,239,172,.50)' : mid < 15 ? 'rgba(253,230,138,.58)' : 'rgba(252,165,165,.58)';
+    const slopeBd = mid => mid < -10 ? '#60a5fa' : mid < 0 ? '#93c5fd' : mid < 5 ? '#4ade80' : mid < 15 ? '#fcd34d' : '#fca5a5';
+    const colors  = data.s.hist.map((_, i) => { const mid = (edges[i]+edges[i+1])/2; return slopeBg(mid); });
+    const borders = data.s.hist.map((_, i) => { const mid = (edges[i]+edges[i+1])/2; return slopeBd(mid); });
     new Chart(document.getElementById('chartHist'), {
       type: 'bar',
-      data: { labels, datasets: [{ data: data.s.hist, backgroundColor: colors, borderRadius: 4 }] },
+      data: {
+        labels: shortLabels,
+        datasets: [{ label: '累計距離(m)', data: data.s.hist, backgroundColor: colors, borderColor: borders, borderWidth: 1.2, borderRadius: 4 }]
+      },
       options: {
         responsive: true, maintainAspectRatio: false,
-        plugins: { legend: { display: false }, tooltip: { callbacks: { label: c => c.parsed.y + ' m' } } },
+        plugins: {
+          legend: { display: false },
+          tooltip: { callbacks: {
+            title: items => fullLabels[items[0].dataIndex],
+            label: c => c.parsed.y + ' m'
+          }}
+        },
         scales: { ...noGrid, y: { ...noGrid.y, ticks: { callback: v => v + ' m' } } }
       }
     });
