@@ -2,7 +2,7 @@
   "posts": [
     {
       "slug": "faraway-40k",
-      "title": "賽道分析：2025 發發爾衛 Far Away 40K",
+      "title": "賽道分析：發發爾衛 Far Away 40K",
       "author": "YRCiou",
       "topic": "Taiwan trail running race course analysis GPX elevation slope Wuweishan Dasyueshan Far Away 40K cliff scrambling",
       "topics": ["faraway-course-analysis", "faraway-trail", "taiwan-trail", "trail-running", "race-analysis", "endurance-sports", "sports"],
@@ -16,7 +16,7 @@
       "hero": {
         "url": "https://yrciou.github.io/sportsblog/assets/og-faraway-40k.jpg",
         "thumbUrl": "https://yrciou.github.io/sportsblog/assets/og-faraway-40k.jpg",
-        "title": "2025 發發爾衛 Far Away 40K 賽道深度拆解",
+        "title": "發發爾衛 Far Away 40K 賽道深度拆解",
         "author": "YRCiou",
         "sourceUrl": "https://yrciou.github.io/sportsblog/posts/faraway-40k/",
         "license": "CC BY 4.0",
@@ -25,7 +25,7 @@
     },
     {
       "slug": "taojin-trail-30k",
-      "title": "賽道分析：2025 淘金越野 GT 30K 越野競賽組",
+      "title": "賽道分析：淘金越野 GT 30K 越野競賽組",
       "author": "YRCiou",
       "topic": "Taiwan trail running race course analysis GPX elevation slope Ruifang Diao Mountain 30K heat weather four segments",
       "topics": ["taojin-course-analysis", "taojin-trail", "taiwan-trail", "trail-running", "race-analysis", "endurance-sports", "sports"],
@@ -39,7 +39,7 @@
       "hero": {
         "url": "https://yrciou.github.io/sportsblog/assets/og-taojin-trail-30k.jpg",
         "thumbUrl": "https://yrciou.github.io/sportsblog/assets/og-taojin-trail-30k.jpg",
-        "title": "2025 淘金越野 GT 30K 越野競賽組賽道深度拆解",
+        "title": "淘金越野 GT 30K 越野競賽組賽道深度拆解",
         "author": "YRCiou",
         "sourceUrl": "https://yrciou.github.io/sportsblog/posts/taojin-trail-30k/",
         "license": "CC BY 4.0",
@@ -48,7 +48,7 @@
     },
     {
       "slug": "taojin-trail-20k",
-      "title": "賽道分析：2025 淘金越野 GT 20K 越野挑戰組",
+      "title": "賽道分析：淘金越野 GT 20K 越野挑戰組",
       "author": "YRCiou",
       "topic": "Taiwan trail running race course analysis GPX elevation slope Shuangxi Diao Mountain 20K heat weather",
       "topics": ["taojin-course-analysis", "taojin-trail", "taiwan-trail", "trail-running", "race-analysis", "endurance-sports", "sports"],
@@ -62,7 +62,7 @@
       "hero": {
         "url": "https://yrciou.github.io/sportsblog/assets/og-taojin-trail-20k.jpg",
         "thumbUrl": "https://yrciou.github.io/sportsblog/assets/og-taojin-trail-20k.jpg",
-        "title": "2025 淘金越野 GT 20K 越野挑戰組賽道深度拆解",
+        "title": "淘金越野 GT 20K 越野挑戰組賽道深度拆解",
         "author": "YRCiou",
         "sourceUrl": "https://yrciou.github.io/sportsblog/posts/taojin-trail-20k/",
         "license": "CC BY 4.0",
@@ -71,7 +71,7 @@
     },
     {
       "slug": "zhaocha-trail-12k",
-      "title": "賽道分析：2026 找茶越野 12K（採茶組）",
+      "title": "賽道分析：找茶越野 12K（採茶組）",
       "author": "YRCiou",
       "topic": "Taiwan trail running race course analysis GPX elevation slope runnability Pinglin Zhaocha 12K",
       "topics": ["zhaocha-course-analysis", "zhaocha-trail", "taiwan-trail", "trail-running", "race-analysis", "endurance-sports", "sports"],
